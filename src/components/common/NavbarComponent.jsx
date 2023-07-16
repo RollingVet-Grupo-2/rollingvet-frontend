@@ -1,9 +1,13 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
+import Logo from "../../assets/rollingVetLogo.svg";
+
 const NavbarPage = () => {
     return (
-        <Navbar expand="lg" style={{ backgroundColor: "#98EDC4" }}>
+        <Navbar expand="lg" style={{ backgroundColor: "#ddd" }}>
             <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand href="#home">
+                    <img src={Logo} alt="Rolling Vet logo oficial" style={{width:"150px"}} />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
