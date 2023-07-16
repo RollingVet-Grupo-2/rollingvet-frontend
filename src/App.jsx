@@ -1,9 +1,11 @@
-import './App.css'
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavbarPageComponent from './components/common/NavbarComponent';
 
 function App() {
 
   return (
     <>
+    <NavbarPageComponent></NavbarPageComponent>
     </>
   )
 }
