@@ -1,13 +1,24 @@
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Row, Table } from "react-bootstrap";
+import calendario from "../../assets/img/administrador/calendar.svg";
 import "../../css/AdminTurnos.css";
 const AdminTurnos = () => {
   return (
     <section className="container py-3 text-center">
-      <h1>Lista de Turnos</h1>
-      <Button variant="dark" size="lg">
-        Agregar turno
-      </Button>
+      <section className="mb-3 mb-md-0">
+        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+          <Col className="mb-3 mb-md-0">
+            <h1>Administrar Turnos</h1>
+            <Button variant="success" size="lg">
+              Agregar turno
+            </Button>
+          </Col>
+          <Col style={{ height: "10rem" }}>
+            <img src={calendario} alt="Turno" className="img-fluid h-100" />
+          </Col>
+        </Row>
+      </section>
       <section className="py-3">
+        <h2>Lista de Turnos</h2>
         <Table
           responsive
           striped
