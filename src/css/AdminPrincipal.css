@@ -3,3 +3,7 @@
   padding: 1rem;
   vertical-align: middle;
 }
+
+.bg-vets {
+  background: url(../assets/img/administrador/vets.svg);
+}

@@ -1,20 +1,58 @@
 import { Button, Card, Col, Row, Table } from "react-bootstrap";
+import trabajadores from "../../assets/img/administrador/co-workers.svg";
+import vets from "../../assets/img/administrador/vets.svg";
 import "../../css/AdminPrincipal.css";
 
 const AdminPrincipal = () => {
   return (
     <section className="container text-center py-3">
-      <h1>Bienvenido Administrador</h1>
-      <section className="py-3">
-        <Button variant="dark" size="lg" className="mb-3 mb-md-0 me-md-3 p-3">
-          Administrar Pacientes
-        </Button>
-        <Button variant="dark" size="lg" className="p-3">
-          Administrar Turnos
-        </Button>
+      <section className="border border-3 rounded rounded-3 shadow mb-3">
+        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+          <Col>
+            <h1 className="mb-0">¡Hola, Admin!</h1>
+            <p className="lead mb-0">
+              Te damos la bienvenida a la página principal de administración.
+            </p>
+          </Col>
+          <Col>
+            <img src={trabajadores} alt="Trabajadores" className="img-fluid" />
+          </Col>
+        </Row>
       </section>
-      <section className="row justify-content-center align-items-center py-3">
-        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+      <section className="py-3">
+        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+          <Col>
+            <img src={vets} alt="Veterinarios" className="img-fluid" />
+          </Col>
+          <Col>
+            <h2>
+              Administrá fichas de pacientes y turnos desde cualquier lugar.
+            </h2>
+            <Button
+              variant="success"
+              size="lg"
+              className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
+            >
+              Administrar Pacientes
+            </Button>
+            <Button variant="success" size="lg" className="p-3">
+              Administrar Turnos
+            </Button>
+          </Col>
+        </Row>
+      </section>
+      <hr />
+      <section className="row justify-content-center align-items-center pt-3">
+        <h2 className="py-3">
+          Visualizá rapidamente y de forma sencilla la cantidad de veterinarios
+          disponibles, pacientes registrados y turnos asignados.
+        </h2>
+        <Card
+          bg="info"
+          text="light"
+          style={{ width: "18rem" }}
+          className="mb-3 me-md-3 shadow py-2"
+        >
           <Card.Body as={Row} className="align-items-center">
             <Col xs={2}>
               <span>
@@ -22,13 +60,18 @@ const AdminPrincipal = () => {
               </span>
             </Col>
             <Col xs={10}>
-              <Card.Title>Version del Sistema</Card.Title>
-              <Card.Text className="fw-bold">N° 0.0.1</Card.Text>
+              <Card.Title>Sistema</Card.Title>
+              <Card.Text className="fw-bold">Version N° 0.0.1</Card.Text>
             </Col>
           </Card.Body>
         </Card>
 
-        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+        <Card
+          bg="success"
+          text="light"
+          style={{ width: "18rem" }}
+          className="mb-3 me-md-3 shadow py-2"
+        >
           <Card.Body as={Row} className="align-items-center">
             <Col xs={2}>
               <span>
@@ -42,7 +85,12 @@ const AdminPrincipal = () => {
           </Card.Body>
         </Card>
 
-        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+        <Card
+          bg="danger"
+          text="light"
+          style={{ width: "18rem" }}
+          className="mb-3 me-md-3 shadow py-2"
+        >
           <Card.Body as={Row} className="align-items-center">
             <Col xs={2}>
               <span>
@@ -56,7 +104,12 @@ const AdminPrincipal = () => {
           </Card.Body>
         </Card>
 
-        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+        <Card
+          bg="warning"
+          text="light"
+          style={{ width: "18rem" }}
+          className="mb-3 me-md-3 shadow py-2"
+        >
           <Card.Body as={Row} className="align-items-center">
             <Col xs={2}>
               <span>
@@ -70,8 +123,8 @@ const AdminPrincipal = () => {
           </Card.Body>
         </Card>
       </section>
-      <section>
-        <h2>Turnos Asignados</h2>
+      <section className="py-3">
+        <h3>Lista de Turnos</h3>
         <Table
           striped
           responsive
@@ -139,6 +192,7 @@ const AdminPrincipal = () => {
             </tr>
           </tbody>
         </Table>
+        <hr />
       </section>
     </section>
   );
