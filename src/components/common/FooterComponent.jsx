@@ -3,8 +3,8 @@ import Logo from "../../assets/rollingVetLogo.svg";
 const FooterComponent = () => {
     return (
         <footer className="footer">
-            <section className="container container_footer_section">
-                <div className="row">
+            <section className="container py-4">
+                <div className="row mx-0 gap-4 gap-md-0">
                     <article className="col-md-4">
                         <img
                             src={Logo}
@@ -13,10 +13,10 @@ const FooterComponent = () => {
                         />
                         <div className="d-flex gap-2">
                             <div>
-                                <i class="bi bi-facebook icons"></i>
+                                <i className="bi bi-facebook icons"></i>
                             </div>
                             <div>
-                                <i class="bi bi-instagram icons"></i>
+                                <i className="bi bi-instagram icons"></i>
                             </div>
                             <div>
                                 <i className="bi bi-whatsapp icons"></i>
