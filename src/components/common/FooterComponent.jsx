@@ -3,18 +3,53 @@ import Logo from "../../assets/rollingVetLogo.svg";
 const FooterComponent = () => {
     return (
         <footer className="footer">
-            <section className="container">
+            <section className="container container_footer_section">
                 <div className="row">
-                    <article className="col-md-6">
-                        <img src={Logo} alt="Logo RollingVet" className="logo"/>
-                        <div>
-                        <i class="bi bi-facebook"></i>
+                    <article className="col-md-4">
+                        <img
+                            src={Logo}
+                            alt="Logo RollingVet"
+                            className="logo"
+                        />
+                        <div className="d-flex gap-2">
+                            <div>
+                                <i class="bi bi-facebook icons"></i>
+                            </div>
+                            <div>
+                                <i class="bi bi-instagram icons"></i>
+                            </div>
+                            <div>
+                                <i className="bi bi-whatsapp icons"></i>
+                            </div>
                         </div>
                     </article>
-                    <article className="col-md-6">
-                        <h3>TEXTO</h3>
+                    <article className="col-md-4">
+                        <h3 className="footerSectionTitle">NOSOTROS</h3>
+                        <div className="d-flex flex-column">
+                            <a href="#" className="links_footer">
+                                Quiénes somos
+                            </a>
+                            <a href="#" className="links_footer">
+                                Servicios
+                            </a>
+                            <a href="#" className="links_footer">
+                                Medios de pago
+                            </a>
+                        </div>
+                    </article>
+                    <article className="col-md-4">
+                        <h3 className="footerSectionTitle">CONTACTANOS</h3>
+                        <div className="d-flex flex-column">
+                            <span className="text_contactanos_footer pb-0">Gral. Paz 576 4000 San Miguel de Tucumán</span>
+                            <span className="text_contactanos_footer">lunea a Sábado 8:30 a 13h | 16 a 21h</span>
+                            <span className="text_contactanos_footer">381 000 0000</span>
+                            <span className="text_contactanos_footer"></span>
+                        </div>
                     </article>
                 </div>
+            </section>
+            <section className="d-flex justify-content-center align-items-center py-3 copy_footer_section">
+                <h3 className="fs-5 fw-light">&copy;Todos los derechos reservados - RollingVet</h3>
             </section>
         </footer>
     );

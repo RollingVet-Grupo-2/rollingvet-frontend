@@ -1,12 +1,34 @@
 .footer {
     background-color: #ddd;
-    padding: 20px 0;
+}
+.container_footer_section {
+    padding: 30px 0;
 }
 .logo {
     width: 230px;
 }
 .icons {
-    height: 30px;
-    width: 30px;
-    
+    font-size: 1.4em;
+    color: #6CD3A2;
+}
+.icons:hover {
+    color: #3d9068;
+}
+.footerSectionTitle{
+    color: #6CD3A2;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.links_footer {
+    color: #3d9068;
+    text-decoration: none;
+}
+.links_footer:hover{
+    color: #6CD3A2;
+}
+.text_contactanos_footer{
+    color: #3d9068;
+}
+.copy_footer_section {
+    background-color: #6CD3A2;
 }
