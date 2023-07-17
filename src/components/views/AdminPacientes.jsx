@@ -1,14 +1,25 @@
-import { Button, Table } from "react-bootstrap";
+import { Button, Col, Row, Table } from "react-bootstrap";
+import paciente from "../../assets/img/administrador/good-doggy.svg";
 import "../../css/AdminPacientes.css";
 
 const AdminPacientes = () => {
   return (
     <section className="container py-3 text-center">
-      <h1>Lista de Pacientes</h1>
-      <Button variant="dark" size="lg">
-        Agregar paciente
-      </Button>
+      <section className="mb-3 mb-md-0">
+        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+          <Col className="mb-3 mb-md-0">
+            <h1>Administrar Pacientes</h1>
+            <Button variant="success" size="lg">
+              Agregar paciente
+            </Button>
+          </Col>
+          <Col style={{ height: "10rem" }}>
+            <img src={paciente} alt="Paciente" className="img-fluid h-100" />
+          </Col>
+        </Row>
+      </section>
       <section className="py-3">
+        <h2>Lista de Pacientes</h2>
         <Table
           responsive
           striped
