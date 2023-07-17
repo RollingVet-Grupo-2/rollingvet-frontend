@@ -1,4 +1,4 @@
-import { Button, Card, Table } from "react-bootstrap";
+import { Button, Card, Col, Row, Table } from "react-bootstrap";
 import "../../css/AdminPrincipal.css";
 
 const AdminPrincipal = () => {
@@ -6,7 +6,7 @@ const AdminPrincipal = () => {
     <section className="container text-center py-3">
       <h1>Bienvenido Administrador</h1>
       <section className="py-3">
-        <Button variant="dark" size="lg" className="me-md-3 p-3">
+        <Button variant="dark" size="lg" className="mb-3 mb-md-0 me-md-3 p-3">
           Administrar Pacientes
         </Button>
         <Button variant="dark" size="lg" className="p-3">
@@ -15,23 +15,58 @@ const AdminPrincipal = () => {
       </section>
       <section className="row justify-content-center align-items-center py-3">
         <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
-          <Card.Body>
-            <Card.Title>Version del Sistema</Card.Title>
-            <Card.Text>N° 0.0.1</Card.Text>
+          <Card.Body as={Row} className="align-items-center">
+            <Col xs={2}>
+              <span>
+                <i className="bi bi-pc-display-horizontal fs-1"></i>
+              </span>
+            </Col>
+            <Col xs={10}>
+              <Card.Title>Version del Sistema</Card.Title>
+              <Card.Text className="fw-bold">N° 0.0.1</Card.Text>
+            </Col>
           </Card.Body>
         </Card>
 
         <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
-          <Card.Body>
-            <Card.Title>Veterinarios</Card.Title>
-            <Card.Text>2</Card.Text>
+          <Card.Body as={Row} className="align-items-center">
+            <Col xs={2}>
+              <span>
+                <i className="bi bi-universal-access fs-1"></i>
+              </span>
+            </Col>
+            <Col xs={10}>
+              <Card.Title>Veterinarios</Card.Title>
+              <Card.Text className="fw-bold">2</Card.Text>
+            </Col>
           </Card.Body>
         </Card>
 
-        <Card border="dark" style={{ width: "18rem" }} className="mb-3">
-          <Card.Body>
-            <Card.Title>Turnos</Card.Title>
-            <Card.Text>6</Card.Text>
+        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+          <Card.Body as={Row} className="align-items-center">
+            <Col xs={2}>
+              <span>
+                <i className="bi bi-people-fill fs-1"></i>
+              </span>
+            </Col>
+            <Col xs={10}>
+              <Card.Title>Pacientes</Card.Title>
+              <Card.Text className="fw-bold">6</Card.Text>
+            </Col>
+          </Card.Body>
+        </Card>
+
+        <Card border="dark" style={{ width: "18rem" }} className="mb-3 me-md-3">
+          <Card.Body as={Row} className="align-items-center">
+            <Col xs={2}>
+              <span>
+                <i className="bi bi-file-text fs-1"></i>
+              </span>
+            </Col>
+            <Col xs={10}>
+              <Card.Title>Turnos</Card.Title>
+              <Card.Text className="fw-bold">6</Card.Text>
+            </Col>
           </Card.Body>
         </Card>
       </section>
