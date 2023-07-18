@@ -71,7 +71,7 @@ const CrearPaciente = () => {
               type="submit"
               className="fw-bold"
             >
-              Crear receta
+              Crear paciente
             </Button>
           </div>
         </Form>
