@@ -6,7 +6,6 @@
     width: 230px;
 }
 .icons {
-    font-size: 1.4em;
     color: #6CD3A2;
 }
 .icons:hover {
@@ -14,15 +13,13 @@
 }
 .footerSectionTitle{
     color: #6CD3A2;
-    font-size: 1.2em;
-    font-weight: bold;
 }
-.links_footer {
-    color: #3d9068;
-    text-decoration: none;
+.links_footer{
+    transition: .3s ease-in-out;
 }
 .links_footer:hover{
     color: #6CD3A2;
+    transform: translate(10px);
 }
 .text_contactanos_footer{
     color: #3d9068;
