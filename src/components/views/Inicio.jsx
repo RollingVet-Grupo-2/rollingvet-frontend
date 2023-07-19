@@ -1,5 +1,6 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CardServicio from "./servicio/CardServicio";
+import SliderProducto from "./producto/SliderProducto";
 
 const Inicio = () => {
   return (
@@ -22,6 +23,10 @@ const Inicio = () => {
           <CardServicio></CardServicio>
           <CardServicio></CardServicio>
         </Row>
+      </Container>
+      <Container className="py-3">
+        <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
+        <SliderProducto></SliderProducto>
       </Container>
     </>
   );
