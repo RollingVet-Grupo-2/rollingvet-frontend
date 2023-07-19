@@ -4,3 +4,9 @@
 .logo {
     width: 230px;
 }
+.navLinks{
+    transition: .2s ease-in-out;
+}
+.navLinks:hover{
+    box-shadow: 0px 2px 0px black;
+}

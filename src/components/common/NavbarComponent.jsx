@@ -15,12 +15,13 @@ const NavbarPage = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link href="#home">Inicio</Nav.Link>
-                        <Nav.Link href="#link">Login</Nav.Link>
+                    <Nav className="ms-auto gap-md-4">
+                        <Nav.Link href="#home" className="navLinks">Inicio</Nav.Link>
+                        <Nav.Link href="#home" className="navLinks">Contacto</Nav.Link>
+                        <Nav.Link href="#link" className="navLinks">Login</Nav.Link>
                         <Dropdown>
                             <Dropdown.Toggle
-                                variant="danger"
+                                variant="success"
                                 id="dropdown-basic"
                             >
                                 Administrar
