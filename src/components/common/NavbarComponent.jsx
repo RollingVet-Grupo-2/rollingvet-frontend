@@ -1,5 +1,7 @@
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import Logo from "../../assets/rollingVetLogo.svg";
+import LogoMobile from "../../assets/rollingVetLogoMobile.svg";
+
 import "../../css/navbar.css";
 
 const NavbarPage = () => {
@@ -7,11 +9,10 @@ const NavbarPage = () => {
         <Navbar expand="lg" className="nav">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img
-                        src={Logo}
-                        alt="Rolling Vet logo oficial"
-                        className="logo"
-                    />
+                    <picture>
+                        <source className="logo"  media="(min-width:768px)" srcSet={Logo}/>
+                        <img className="logoMobile" src={LogoMobile} alt="Logo Veterinaria RollingVet" />
+                    </picture>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">

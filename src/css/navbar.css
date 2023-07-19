@@ -1,9 +1,7 @@
 .nav {
     background-color: #ddd;
 }
-.logo {
-    width: 230px;
-}
+
 .navLinks{
     transition: .2s ease-in-out;
 }
