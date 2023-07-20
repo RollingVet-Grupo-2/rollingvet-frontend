@@ -1,9 +1,10 @@
+import '../../css/error404.css'
 
 const Error404 = () => {
     return (
-        <div>
-            
-        </div>
+        <section className="text-center">
+        
+        </section>
     );
 };
 
