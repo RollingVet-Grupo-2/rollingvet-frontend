@@ -1,4 +1,4 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import ContainerServicios from "./servicio/ContainerServicios";
 import SliderProducto from "./producto/SliderProducto";
 import SliderMarcas from "./marca/SliderMarcas";
@@ -19,9 +19,7 @@ const Inicio = () => {
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Nuestros Servicios</h2>
-        <Row xs={1} md={2} className="g-3">
           <ContainerServicios></ContainerServicios>
-        </Row>
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
