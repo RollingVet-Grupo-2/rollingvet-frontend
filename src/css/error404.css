@@ -51,3 +51,9 @@
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
 }
+
+@media (max-width: 360px) {
+    .boton-error404 {
+    margin-top: 10px;
+    }
+}
