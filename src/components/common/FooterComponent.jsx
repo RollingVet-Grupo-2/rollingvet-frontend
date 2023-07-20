@@ -23,7 +23,7 @@ const FooterComponent = () => {
                             </div>
                         </div>
                     </article>
-                    <article className="col-md-4">
+                    <article className="col-md-4 ps-md-4 pt-md-2">
                         <h3 className="footerSectionTitle fs-4">NOSOTROS</h3>
                         <div className="d-flex flex-column">
                             <a href="#" className="links_footer nav-link">
@@ -37,11 +37,11 @@ const FooterComponent = () => {
                             </a>
                         </div>
                     </article>
-                    <article className="col-md-4">
+                    <article className="col-md-4 pt-md-2">
                         <h3 className="footerSectionTitle fs-4">CONTACTANOS</h3>
                         <div className="d-flex flex-column">
                             <span className="links_footer fs-6 pb-0">Gral. Paz 576 4000 San Miguel de Tucumán</span>
-                            <span className="links_footer fs-6">lunea a Sábado 8:30 a 13h | 16 a 21h</span>
+                            <span className="links_footer fs-6">Lunes a Viernes 8:30 a 13h | 16 a 21h</span>
                             <span className="links_footer fs-6">381 000 0000</span>
                         </div>
                     </article>
