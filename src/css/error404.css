@@ -1,12 +1,28 @@
-.errorSection{
-    flex-grow: 1;
-}
+/*****  Imagen Perrito  *****/
 
 .perrito_error404 {
-    max-height: 450px;
-    max-width: auto;
+    max-height: 300px;
+    max-width: 330px;
+    margin: 0;
+    padding: 0;
 }
 
+#perrito{
+    margin: 0;
+    position: absolute;
+    z-index: 3;
+}
+
+.card-error{
+    margin-top: -35px;
+    z-index: 2;
+}
+/*****  Botones  *****/
+
+.contenedor-404{
+    background-color: #6CD3A2;
+    border-top:3px solid #a75ef0a4;
+}
 
 .boton-error404 {
     background: #fff;
@@ -55,5 +71,14 @@
 @media (max-width: 360px) {
     .boton-error404 {
     margin-top: 10px;
+    }
+
+    .card-error{
+        margin-top: -28px;
+    }
+
+    .perrito_error404 {
+        max-height: 300px;
+        max-width: 260px;
     }
 }
