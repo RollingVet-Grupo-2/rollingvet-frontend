@@ -12,8 +12,8 @@ const Error404 = () => {
             <p>No se pudo encontrar la pagina solicitada.</p>
             <p>Puedes elegir las siguientes opciones:</p>
             <div className='flex-sm-column mb-5'>
-                <Button className='boton-error404 my-2 my-sm-0 mx-2'>VOLVER ATRAS</Button>
-                <Button className='boton-error404'>PAGINA DE INICIO</Button>
+                <Button className='boton-error404 my-2 my-sm-0 mx-2'><b>VOLVER ATRAS</b></Button>
+                <Button className='boton-error404'><b>PAGINA DE INICIO</b></Button>
             </div>
         </div>
             </div>
