@@ -1,5 +1,5 @@
 import '../../css/error404.css'
-import imagen404 from '../../assets/ImagenError404.jpg'
+import imagen404 from '../../assets/imagenErrorRV.jpg'
 import { Button } from 'react-bootstrap';
 const Error404 = () => {
     return (
