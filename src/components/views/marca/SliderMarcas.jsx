@@ -1,5 +1,4 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { ArrowRight, ArrowLeft } from "react-bootstrap-icons";
+import { Row } from "react-bootstrap";
 import CardMarca from "./CardMarca";
 
 import imgMarca1 from "../../../assets/CardMarca/marcas_Eukanuba_gris.png";

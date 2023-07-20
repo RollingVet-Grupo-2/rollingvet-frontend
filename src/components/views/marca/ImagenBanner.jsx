@@ -1,4 +1,3 @@
-
 const ImagenBanner = ({src}) => {
     return (
         <div className="text-center">

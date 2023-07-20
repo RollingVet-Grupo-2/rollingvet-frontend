@@ -31,8 +31,10 @@ const Inicio = () => {
         <SliderProducto></SliderProducto>
       </Container>
       <Container fluid className="py-3">
+        <Container>
         <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
         <SliderMarcas></SliderMarcas>
+        </Container>
         <BannerMarca></BannerMarca>
       </Container>
     </>
