@@ -1,4 +1,53 @@
-.perrito_error404{
-    max-height: 400px;
+.errorSection{
+    flex-grow: 1;
+}
+
+.perrito_error404 {
+    max-height: 450px;
     max-width: auto;
+}
+
+
+.boton-error404 {
+    background: #fff;
+    /* color de fondo */
+    color: #a75ef0a4;
+    /* color de fuente */
+    border: 2px solid #a75ef0a4;
+    /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px;
+    /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.boton-error404:hover {
+    color: #fff;
+    background : #a75ef0a4;
+    border-color: #a75ef0a4;
+    /* color de fuente hover */
+}
+
+.boton-error404::after {
+    content: "";
+    background : #a75ef0a4;
+    /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.boton-error404:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
 }
