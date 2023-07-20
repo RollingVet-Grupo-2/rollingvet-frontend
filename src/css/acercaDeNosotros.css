@@ -8,12 +8,27 @@
     font-size: 5.5em;
     animation: titleAnimation 1s alternate infinite;
 }
-@keyframes titleAnimation {
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.04);
 
+@media screen and (max-width:991px) {
+    .titleAboutUs {
+        font-size: 4em;
+    }
+}
+@media screen and (max-width:768px) {
+    .titleAboutUs {
+        font-size: 2.5em;
+    }
+    .heroSection_container {
+        background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
+        height: calc(70vh - 71.792px);
+    }
+}
+@media screen and (max-width:576px) {
+    .titleAboutUs {
+        font-size: 1.5em;
+    }
+    .heroSection_container {
+        background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
+        height: calc(50vh - 71.792px);
     }
 }
