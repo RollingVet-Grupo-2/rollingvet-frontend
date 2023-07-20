@@ -1,6 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CardServicio from "./servicio/CardServicio";
 import SliderProducto from "./producto/SliderProducto";
+import SliderMarcas from "./marca/SliderMarcas";
 
 const Inicio = () => {
   return (
@@ -27,6 +28,10 @@ const Inicio = () => {
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
         <SliderProducto></SliderProducto>
+      </Container>
+      <Container fluid className="py-3">
+        <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
+        <SliderMarcas></SliderMarcas>
       </Container>
     </>
   );
