@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    {/* <NavbarPageComponent></NavbarPageComponent> */}
+    <NavbarPageComponent></NavbarPageComponent>
     <FooterComponent></FooterComponent>
     </>
   )
