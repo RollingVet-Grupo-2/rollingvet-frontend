@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-    {/* <NavbarPageComponent></NavbarPageComponent> */}
-    <Error404></Error404>
+    <NavbarPageComponent></NavbarPageComponent>
+    {/*    <Error404></Error404> */}
     <FooterComponent></FooterComponent>
     </>
   )
