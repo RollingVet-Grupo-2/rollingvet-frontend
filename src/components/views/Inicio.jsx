@@ -3,6 +3,7 @@ import ContainerServicios from "./servicio/ContainerServicios";
 import SliderProducto from "./producto/SliderProducto";
 import SliderMarcas from "./marca/SliderMarcas";
 import BannerMarca from "./marca/BannerMarca";
+import SliderClientes from "./clientes/SliderClientes";
 
 const Inicio = () => {
   return (
@@ -31,6 +32,10 @@ const Inicio = () => {
         <SliderMarcas></SliderMarcas>
         </Container>
         <BannerMarca></BannerMarca>
+      </Container>
+      <Container className="py-3">
+        <h2 className="display-2 px-3 px-md-5 py-2">Clientes felices, Mascotas saludables</h2>
+        <SliderClientes></SliderClientes>
       </Container>
     </>
   );
