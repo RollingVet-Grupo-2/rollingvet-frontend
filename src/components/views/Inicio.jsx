@@ -4,6 +4,7 @@ import SliderProducto from "./producto/SliderProducto";
 import SliderMarcas from "./marca/SliderMarcas";
 import BannerMarca from "./marca/BannerMarca";
 import SliderClientes from "./clientes/SliderClientes";
+import ContenedorVeterinario from "./veterinario/ContenedorVeterinario";
 
 const Inicio = () => {
   return (
@@ -20,7 +21,7 @@ const Inicio = () => {
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Nuestros Servicios</h2>
-          <ContainerServicios></ContainerServicios>
+        <ContainerServicios></ContainerServicios>
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
@@ -28,14 +29,18 @@ const Inicio = () => {
       </Container>
       <Container fluid className="py-3">
         <Container>
-        <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
-        <SliderMarcas></SliderMarcas>
+          <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
+          <SliderMarcas></SliderMarcas>
         </Container>
         <BannerMarca></BannerMarca>
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Clientes felices, Mascotas saludables</h2>
         <SliderClientes></SliderClientes>
+      </Container>
+      <Container className="py-3">
+        <h2 className="display-2 px-3 px-md-5 py-2">Contamos con los mejores Profesionales</h2>
+        <ContenedorVeterinario></ContenedorVeterinario>
       </Container>
     </>
   );
