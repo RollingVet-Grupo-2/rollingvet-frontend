@@ -9,7 +9,7 @@ import imgMascotaCliente3 from "../../../assets/CardCliente/mascotas/cliente_mas
 
 const SliderClientes = () => {
   return (
-    <Container className="p-5">
+    <Container className="py-3 px-1 px-md-5">
       <Carousel slide={true} controls={true} indicators={false}>
         <Carousel.Item>
           <CardCliente
