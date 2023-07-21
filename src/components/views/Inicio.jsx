@@ -1,4 +1,6 @@
 import { Container, Button } from "react-bootstrap";
+import "../../css/seccionPrincipal.css"
+import imgHero from "../../assets/Principal/principal_Hero.png";
 import ContainerServicios from "./servicio/ContainerServicios";
 import SliderProducto from "./producto/SliderProducto";
 import SliderMarcas from "./marca/SliderMarcas";
@@ -9,15 +11,20 @@ import ContenedorVeterinario from "./veterinario/ContenedorVeterinario";
 const Inicio = () => {
   return (
     <>
-      <Container fluid className="text-bg-secondary py-5">
+      <Container fluid className="seccionHeroFondo py-5">
         <h1 className="display-1 p-3 text-center">Cuida a tus mascotas con RollingVet</h1>
         <h2 className="h2 px-3 px-md-5 py-2">
           La forma más sencilla de cuidar a tus mascotas. Dales a tus compañeros el cuidado que merecen!
         </h2>
-        <div className="d-flex justify-content-center gap-2 gap-md-5 p-3">
-          <Button variant="primary">Reservar Turno</Button>
-          <Button variant="outline-primary">Contactanos</Button>
-        </div>
+        <Container>
+          <div className="w-100 text-center imgSeccionHero">
+            <img src={imgHero} alt="Perro y Gato" className="w-50 h-50" />
+          </div>
+          <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 rounded-4 bg-secondary contenedorBotonesHero">
+            <Button variant="primary" className="px-4 py-3 rounded-4">Reservar Turno</Button>
+            <Button variant="outline-primary" className="px-4 py-3 rounded-4">Contactanos</Button>
+          </div>
+        </Container>
       </Container>
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Nuestros Servicios</h2>
