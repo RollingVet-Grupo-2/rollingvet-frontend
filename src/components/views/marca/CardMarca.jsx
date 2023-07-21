@@ -1,5 +1,5 @@
 import { Col } from "react-bootstrap";
-import "../../../css/CardMarca.css"
+import "../../../css/Filtros.css"
 
 const CardMarca = ({ nombreMarca, imgMarca }) => {
   return (
