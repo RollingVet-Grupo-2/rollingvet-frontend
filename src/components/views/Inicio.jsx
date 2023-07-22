@@ -1,5 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import "../../css/seccionPrincipal.css"
+import "../../css/Filtros.css"
 import logoRollingVet from "../../assets/rollingVetLogo.svg"
 import imgHero from "../../assets/Principal/principal_Hero.png";
 import forma1 from "../../assets/Principal/formas/forma1.svg";
@@ -49,14 +50,12 @@ const Inicio = () => {
         <ContainerServicios></ContainerServicios>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro} forma={forma3}></SeparadorCustom>
-      <Container fluid className="py-3">
-        <Container>
+      <Container className="py-3">
           <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
-        </Container>
         <SliderProducto></SliderProducto>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorGato} forma={forma10}></SeparadorCustom>
-      <Container fluid className="py-3">
+      <Container fluid className="py-3 degradadoFondo">
         <BannerMarca></BannerMarca>
         <Container>
           <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
