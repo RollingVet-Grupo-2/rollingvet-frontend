@@ -57,11 +57,11 @@ const Inicio = () => {
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorGato} forma={forma10}></SeparadorCustom>
       <Container fluid className="py-3">
+        <BannerMarca></BannerMarca>
         <Container>
           <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
           <SliderMarcas></SliderMarcas>
         </Container>
-        <BannerMarca></BannerMarca>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro2} forma={forma6}></SeparadorCustom>
       <Container className="py-3">
