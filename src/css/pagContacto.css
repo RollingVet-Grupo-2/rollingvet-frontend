@@ -26,7 +26,7 @@
     animation-duration: 2s;
 }
 
-.contenedor_gatitos{
+.contenedor_gatito{
     animation-duration: 4s;
 }
 
@@ -54,7 +54,7 @@
 }
 
 @media (max-width: 767px){
-    .contenedor_gatitos{
+    .contenedor_gatito{
         display: none;
     }
 }
