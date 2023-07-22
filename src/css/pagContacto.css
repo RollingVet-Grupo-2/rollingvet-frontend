@@ -1,9 +1,23 @@
 #root{
-    color: #454c5a;
+    color: #454c5a;   
+}
+
+.imagen_mascotas {
+    max-height: 400px;
+    max-width: auto;
+    animation-duration: 3s;
+}
+
+.mascotas {
+    z-index: 3;
 }
 
 .contenedor_bienvenida{
-    background-color: darkslategrey;
+    background-color:  #BDEAD8;
+    margin-top: -136px;
+    z-index: 0;
+    border-radius: 10px;
+    z-index: 1;
 }
 
 .card_texto{
@@ -13,20 +27,41 @@
 }
 
 .contenedor_gatitos{
-    padding: 0px 50px;
     animation-duration: 4s;
 }
 
-.imagen_gatitos{
+.imagen_gatito{
     max-height: auto;
     max-width: 500px;
     border: solid 2px #454c5a;
+    z-index: 0;
 }
 
 .card_direccion{
     background-color: #77e7b1;
-    max-width: 300px;
+    max-width: auto;
     max-height: 200px;
     border: solid 2px #454c5a;
     animation-duration: 5s;
+}
+
+@media (min-width: 416px) and (max-width:1024px){
+    .imagen_mascotas{
+        max-height: 500px;
+        max-width: 680px;
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 767px){
+    .contenedor_gatitos{
+        display: none;
+    }
+}
+
+@media (max-width: 415px){
+    .imagen_mascotas{
+        max-width: 350px;
+        margin-bottom: 92px;
+    }
 }
