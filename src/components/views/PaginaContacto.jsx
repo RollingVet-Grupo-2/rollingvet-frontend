@@ -2,8 +2,7 @@ import { Container } from "react-bootstrap";
 import gatito from '../../assets/img/paginaContacto/pexels-tranmautritam-2188791.jpg'
 import '../../css/pagContacto.css'
 import mascotas from '../../assets/img/paginaContacto/pngegg (3).png'
-import FormularioContacto from "./FormularioContacto";
-
+import FormularioContacto from "./FormularioContacto"
 
 const PaginaContacto = () => {
     return (
@@ -32,19 +31,19 @@ const PaginaContacto = () => {
                 </article>
             </Container>
             <FormularioContacto></FormularioContacto>
-            <section class="canales_contacto text-light text-center py-5 mt-4 row">
-                <article class="container row">
-                    <h3 class="fs-3">Estamos disponibles las 24 horas, todos los días.</h3>
-                    <div class="col-md-4">
-                        <a href="../pages/error404.html" class="btn text-primary"><i class="bi bi-wechat fs-1"></i></a>
+            <section className="canales_contacto text-light text-center py-5 mt-4 row">
+                <article className="container row">
+                    <h3 className="mb-5">Estamos disponibles las 24 horas, todos los días.</h3>
+                    <div className="col-md-4">
+                    <i className="bi bi-envelope-at"></i>
                         <p>rolling_vet@rolling.com</p>
                     </div>
-                    <div class="col-md-4">
-                        <a href="../pages/error404.html" class="btn text-primary"><i class="bi bi-phone fs-1"></i></a>
+                    <div className="col-md-4 my-5 my-md-0">
+                    <i className="bi bi-instagram"></i>
                         <p>@rolling_vet</p>
                     </div>
-                    <div class="col-md-4">
-                        <a href="../pages/error404.html" class="btn text-primary"><i class="bi bi-card-text fs-1"></i></a>
+                    <div className="col-md-4">
+                    <i className="bi bi-telephone-outbound"></i>
                         <p>381-6543210</p>
                     </div>
                 </article>
