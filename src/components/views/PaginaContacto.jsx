@@ -19,9 +19,7 @@ const PaginaContacto = () => {
                         </div>
                     </div>
                 </article>
-                {/*<aside className="col_verde">
-                    <div className="linea_vertical"></div>
-    </aside>*/}
+                
                 <div className="contenedor_gatitos animate__animated animate__fadeInUp">
                     <img className="imagen_gatitos" src={gatito} alt="Imagen gatitos" />
                 </div>
