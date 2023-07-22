@@ -1,36 +1,63 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import { ArrowRight, ArrowLeft } from "react-bootstrap-icons";
+import { Button, Container } from "react-bootstrap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import NavegacionSlider from "./NavegacionSlider";
 import CardProducto from "./CardProducto";
-
-import imgProducto1 from "../../../assets/CardProducto/producto_Abrigo.png";
-import imgProducto2 from "../../../assets/CardProducto/producto_Cama.png";
-import imgProducto3 from "../../../assets/CardProducto/producto_ComidaRoyalCanin.png";
-import imgProducto4 from "../../../assets/CardProducto/producto_JugueteGato.png";
-import imgProducto5 from "../../../assets/CardProducto/producto_JugueteHuesos.png";
-import imgProducto6 from "../../../assets/CardProducto/producto_Plato.png";
+import imgProducto1 from "../../../assets/Principal/CardProducto/producto_Abrigo.png";
+import imgProducto2 from "../../../assets/Principal/CardProducto/producto_Cama.png";
+import imgProducto3 from "../../../assets/Principal/CardProducto/producto_ComidaRoyalCanin.png";
+import imgProducto4 from "../../../assets/Principal/CardProducto/producto_JugueteGato.png";
+import imgProducto5 from "../../../assets/Principal/CardProducto/producto_JugueteHuesos.png";
+import imgProducto6 from "../../../assets/Principal/CardProducto/producto_Plato.png";
+import imgProducto7 from "../../../assets/Principal/CardProducto/producto_AlimentoGato.png";
+import { ChevronDoubleRight } from "react-bootstrap-icons";
 
 const SliderProducto = () => {
   return (
     <Container>
-      <div className="w-100 d-flex gap-2 justify-content-between align-items-center">
-          <a href="http://">Ver Todos</a>
-        <div className="d-flex gap-2 justify-content-end p-3">
-          <Button variant="outline-dark">
-            <ArrowLeft></ArrowLeft>
-          </Button>
-          <Button variant="outline-dark">
-            <ArrowRight></ArrowRight>
-          </Button>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={16}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+        }}>
+        <div slot="container-start" className="w-100 d-flex gap-2 justify-content-between align-items-center py-3">
+          <Button variant="outline-dark" className="px-3 py-2 rounded-4 fw-bold">Ver Todos<ChevronDoubleRight className="ms-2 fs-4"/></Button>
+          <NavegacionSlider></NavegacionSlider>
         </div>
-      </div>
-      <Row xs={1} md={3} lg={4} className="g-3">
-        <CardProducto nombreProducto={"Producto 1"} precioProducto={1500} imgProducto={imgProducto1}></CardProducto>
-        <CardProducto nombreProducto={"Producto 2"} precioProducto={2000} imgProducto={imgProducto2}></CardProducto>
-        <CardProducto nombreProducto={"Producto 3"} precioProducto={5000} imgProducto={imgProducto3}></CardProducto>
-        <CardProducto nombreProducto={"Producto 4"} precioProducto={4000} imgProducto={imgProducto4}></CardProducto>
-        <CardProducto nombreProducto={"Producto 5"} precioProducto={2401} imgProducto={imgProducto5}></CardProducto>
-        <CardProducto nombreProducto={"Producto 6"} precioProducto={5402} imgProducto={imgProducto6}></CardProducto>
-      </Row>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Abrigo impermeable"} precioProducto={5940} imgProducto={imgProducto1} categoriaProducto={"Perro, Indumentaria"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Cama Cucha para Perro"} precioProducto={4670} imgProducto={imgProducto2} categoriaProducto={"Perro, Camas y Cuchas"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Alimento Royal Canin 3kg"} precioProducto={6964.5} imgProducto={imgProducto3} categoriaProducto={"Perro, Alimento"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Rascador Torre para Gato"} precioProducto={15600} imgProducto={imgProducto4} categoriaProducto={"Gato, Juguetes"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Combo Huesos de Goma"} precioProducto={2670} imgProducto={imgProducto5} categoriaProducto={"Perro, Juguetes"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Plato Comedero Plástico"} precioProducto={1923} imgProducto={imgProducto6} categoriaProducto={"Perro, Comederos y Bebederos"}></CardProducto>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardProducto nombreProducto={"Alimento Royal Canin Feline"} precioProducto={1248} imgProducto={imgProducto7} categoriaProducto={"Gato, Alimento"}></CardProducto>
+        </SwiperSlide>
+      </Swiper>
     </Container>
   );
 };
