@@ -1,0 +1,49 @@
+#root{
+    color: #454c5a;
+}
+
+.contenedor_bienvenida{
+    background-color: darkslategrey;
+}
+
+.card_texto{
+    background-color:  #BDEAD8;
+    border: solid 2px #454c5a;
+    animation-duration: 2s;
+}
+
+.contenedor_gatitos{
+    padding: 0px 50px;
+    animation-duration: 4s;
+}
+
+.imagen_gatitos{
+    max-height: auto;
+    max-width: 500px;
+    border: solid 2px #454c5a;
+}
+
+.card_direccion{
+    background-color: #77e7b1;
+    max-width: 300px;
+    max-height: 200px;
+    border: solid 2px #454c5a;
+    animation-duration: 5s;
+}
+
+.col_verde{
+    background-color: #6CD3A2;
+    margin: 20px -70px 70px -30px;
+    height: 500px;
+    width: 300px;
+    z-index: 1;
+    border: solid 2px #454c5a;
+}
+
+.linea_vertical{
+    border-left:2px solid ;
+    height: 400px;
+    left: 1000px;
+    top: 20%;
+    position: absolute;
+}
