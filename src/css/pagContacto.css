@@ -71,6 +71,13 @@
 .perro_formulario{
     margin-bottom: -54px;
 }
+
+/****** Canales de contacto ******/
+
+.canales_contacto{
+    background-color: darkslategrey;
+}
+
 /****** Media queries ******/
 
 @media (min-width: 416px) and (max-width:1024px){
@@ -101,5 +108,16 @@
     .perro_formulario{
         max-width: 350px;
         margin-bottom: -27px;
+    }
+}
+
+@media (max-width: 280px){
+    .imagen_mascotas{
+        max-width: 200px;
+        margin-bottom: 111px;
+    }
+    .perro_formulario{
+        max-width: 200px;
+        margin-bottom: -16px;
     }
 }
