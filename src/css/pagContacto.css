@@ -1,6 +1,12 @@
 #root{
-    color: #454c5a;   
+    color: #454c5a;
 }
+
+.row{
+    margin:0;
+}
+
+/****** Imagen mascotas ******/
 
 .imagen_mascotas {
     max-height: 400px;
@@ -11,6 +17,8 @@
 .mascotas {
     z-index: 3;
 }
+
+/****** Bienvenida ******/
 
 .contenedor_bienvenida{
     background-color:  #BDEAD8;
@@ -45,13 +53,39 @@
     animation-duration: 5s;
 }
 
+/****** Formulario de contacto ******/
+
+.contenedor_formulario{
+    background-color: #BDEAD8;
+}
+
+.fondo_huellas{
+    background-color: aliceblue;
+    background-image: url('../assets/img/paginaContacto/pngegg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/****** Perro Formulario ******/
+.perro_formulario{
+    margin-bottom: -54px;
+}
+/****** Media queries ******/
+
 @media (min-width: 416px) and (max-width:1024px){
     .imagen_mascotas{
         max-height: 500px;
         max-width: 680px;
         margin-bottom: 50px;
     }
+    .perro_formulario{
+        max-width: 400px;
+        margin-bottom: -410px;
+    }
 }
+
+
 
 @media (max-width: 767px){
     .contenedor_gatito{
@@ -63,5 +97,9 @@
     .imagen_mascotas{
         max-width: 350px;
         margin-bottom: 92px;
+    }
+    .perro_formulario{
+        max-width: 350px;
+        margin-bottom: -27px;
     }
 }
