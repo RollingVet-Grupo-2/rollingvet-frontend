@@ -1,5 +1,5 @@
 import '../../css/pagContacto.css'
-import { Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import perroFormulario from '../../assets/img/paginaContacto/perroForm.png'
 
 const FormularioContacto = () => {
@@ -40,6 +40,7 @@ const FormularioContacto = () => {
                                 </Form.Label>
                                 <Form.Control className='bg-secondary border-dark-subtle bg-opacity-50 border-bottom border-0' as='textarea' type='email' required></Form.Control>
                             </Form.Group>
+                            <Button className='boton_formContacto' type='submit'>Enviar</Button>
                         </Form>
                     </Col>
                 </Row>

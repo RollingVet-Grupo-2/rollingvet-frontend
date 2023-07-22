@@ -1,8 +1,9 @@
 import { Container } from "react-bootstrap";
 import gatito from '../../assets/img/paginaContacto/pexels-tranmautritam-2188791.jpg'
-import '../../css/pagContacto.css'
-import mascotas from '../../assets/img/paginaContacto/pngegg (3).png'
-import FormularioContacto from "./FormularioContacto"
+import logowsp from '../../assets/img/paginaContacto/wh38f34e-whatsapp-logo-file-whatsapp-svg-wikipedia.png'
+import '../../css/pagContacto.css';
+import mascotas from '../../assets/img/paginaContacto/pngegg (3).png';
+import FormularioContacto from "./FormularioContacto";
 
 const PaginaContacto = () => {
     return (
@@ -48,6 +49,11 @@ const PaginaContacto = () => {
                     </div>
                 </article>
             </section>
+            <div className="whatsapp">
+                <a href="https://api.whatsapp.com/send/?phone=5493813658035" target="blank">
+            <img className="logo_wsp" src={logowsp} alt="Logo de wsp" />
+                </a>
+            </div>
         </>
     );
 };

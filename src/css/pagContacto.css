@@ -67,7 +67,53 @@
     background-size: cover;
 }
 
+.boton_formContacto {
+    background: #fff;
+    /* color de fondo */
+    color: darkslategrey;
+    /* color de fuente */
+    border: 2px solid darkslategrey;
+    /* tamaño y color de borde */
+    margin: 5px 0px;
+    padding: 7px 12px;
+    border-radius: 3px;
+    /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.boton_formContacto:hover {
+    color: #fff;
+    background: darkslategrey;
+    border-color: darkslategrey;
+    /* color de fuente hover */
+}
+
+.boton_formContacto::after {
+    content: "";
+    background: darkslategrey;
+    /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.boton_formContacto:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
+
 /****** Perro Formulario ******/
+
 .perro_formulario{
     margin-bottom: -54px;
 }
@@ -77,6 +123,18 @@
 .canales_contacto{
     background-color: darkslategrey;
 }
+
+/****** Logo wsp ******/
+
+.logo_wsp{
+    max-width: 60px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+ }
 
 /****** Media queries ******/
 
@@ -88,11 +146,9 @@
     }
     .perro_formulario{
         max-width: 400px;
-        margin-bottom: -410px;
+        margin-bottom: -521px;
     }
 }
-
-
 
 @media (max-width: 767px){
     .contenedor_gatito{
@@ -121,3 +177,4 @@
         margin-bottom: -16px;
     }
 }
+
