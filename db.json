@@ -1,0 +1,36 @@
+{
+  "turnos": [
+    {
+      "id": 1,
+      "veterinario": "Dr. Juan Pérez",
+      "mascota": "Luna",
+      "detalle_cita": "Vacunación",
+      "fecha": "2023-08-23",
+      "hora": "08:00 AM"
+    },
+    {
+      "id": 2,
+      "veterinario": "Dra. Ana González",
+      "mascota": "Rocco",
+      "detalle_cita": "Desparasitacion",
+      "fecha": "2023-08-25",
+      "hora": "10:00 AM"
+    },
+    {
+      "id": 3,
+      "veterinario": "Dr. Juan Pérez",
+      "mascota": "Toby",
+      "detalle_cita": "Control de peso",
+      "fecha": "2023-08-25",
+      "hora": "11:00 AM"
+    },
+    {
+      "id": 4,
+      "veterinario": "Dra. Ana González",
+      "mascota": "Firulais",
+      "detalle_cita": "Corte y baño",
+      "fecha": "2023-08-25",
+      "hora": "12:00 AM"
+    }
+  ]
+}

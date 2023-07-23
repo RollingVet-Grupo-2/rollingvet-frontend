@@ -1,7 +1,23 @@
 import { Button, Col, Row, Table } from "react-bootstrap";
 import calendario from "../../assets/img/administrador/calendar.svg";
 import "../../css/AdminTurnos.css";
+import { useEffect, useState } from "react";
+import { obtenerTurnos } from "../helpers/queries";
+import ItemTurno from "./turnos/ItemTurno";
+
 const AdminTurnos = () => {
+  const [turnos, setTurnos] = useState([]);
+
+  useEffect(() => {
+    obtenerTurnos().then((respuesta) => {
+      if (respuesta) {
+        setTurnos(respuesta);
+      } else {
+        //aviso al usuario que no obtuve respuesta
+        console.log("No hubo respuesta");
+      }
+    });
+  }, []);
   return (
     <section className="container py-3 text-center">
       <section className="mb-3 mb-md-0">
@@ -37,138 +53,13 @@ const AdminTurnos = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Luna</td>
-              <td>Vacunación</td>
-              <td>
-                5 Agosto 2023 <span>10:00 AM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Toby</td>
-              <td>Revisión anual</td>
-              <td>
-                5 Agosto 2023 <span>11:00 AM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Milo</td>
-              <td>Desparasitación</td>
-              <td>
-                5 Agosto 2023 <span>12:00 PM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Bruno</td>
-              <td>Corte de uñas</td>
-              <td>
-                5 Agosto 2023 <span>01:00 PM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Mia</td>
-              <td>Consulta por alergias</td>
-              <td>
-                6 Agosto 2023 <span>10:00 AM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Sasha</td>
-              <td>Control de peso</td>
-              <td>
-                6 Agosto 2023 <span>11:00 AM</span>
-              </td>
-              <td>
-                <div className="d-flex gap-2 justify-content-center">
-                  <a
-                    role="button"
-                    href=""
-                    className="btn btn-warning btn btn-primary"
-                  >
-                    <i className="bi bi-pencil-square"></i>
-                  </a>
-                  <button type="button" className="btn btn-danger">
-                    <i className="bi bi-trash"></i>
-                  </button>
-                </div>
-              </td>
-            </tr>
+            {turnos ? (
+              turnos.map((turno) => (
+                <ItemTurno key={turno.id} turno={turno} setTurnos={setTurnos} />
+              ))
+            ) : (
+              <p>No hay turnos asignados</p>
+            )}
           </tbody>
         </Table>
       </section>

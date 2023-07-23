@@ -8,9 +8,9 @@ import EditarTurno from "./components/views/turnos/EditarTurno";
 function App() {
   return (
     <>
-      {/* <AdminTurnos /> */}
+      <AdminTurnos />
       {/* <CrearTurno /> */}
-      <EditarTurno />
+      {/* <EditarTurno /> */}
     </>
   );
 }
