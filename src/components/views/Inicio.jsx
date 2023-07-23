@@ -10,6 +10,7 @@ import forma6 from "../../assets/Principal/formas/forma6.svg";
 import forma10 from "../../assets/Principal/formas/forma10.svg";
 import imgSeparadorPerro from "../../assets/Principal/separador/separador_Perro.png";
 import imgSeparadorPerro2 from "../../assets/Principal/separador/separador_Perro2.png";
+import imgSeparadorPerro3 from "../../assets/Principal/separador/separador_Perro3.png";
 import imgSeparadorGato from "../../assets/Principal/separador/separador_Gato.png";
 import ContainerServicios from "./servicio/ContainerServicios";
 import SliderProducto from "./producto/SliderProducto";
@@ -18,15 +19,16 @@ import BannerMarca from "./marca/BannerMarca";
 import SliderClientes from "./clientes/SliderClientes";
 import ContenedorVeterinario from "./veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
+import SliderPlanes from "./principal/plan/SliderPlanes";
 
 const Inicio = () => {
   return (
     <>
       <Container fluid className="seccionHeroFondo position-relative py-5 overflow-hidden z-0">
         <h1 className="display-1 p-3 text-center">Cuida a tus mascotas con <strong>RollingVet</strong></h1>
-        <h2 className="h2 px-3 px-md-5 py-4">
+        <p className="lead px-3 px-md-5 py-4">
           La forma más sencilla de cuidar a tus mascotas. Dales a tus compañeros el cuidado que merecen!
-        </h2>
+        </p>
         <div className="w-100 h-100 position-relative z-n1">
           <div className="w-100 position-absolute imgForma1" >
             <img src={forma1} alt="Froma 1" className="w-75" />
@@ -70,6 +72,12 @@ const Inicio = () => {
       <Container className="py-3">
         <h2 className="display-2 px-3 px-md-5 py-2">Contamos con los mejores Profesionales</h2>
         <ContenedorVeterinario></ContenedorVeterinario>
+      </Container>
+      <SeparadorCustom imgSeparador={imgSeparadorPerro3} forma={forma3}></SeparadorCustom>
+      <Container className="py-3">
+        <h2 className="display-2 px-3 px-md-5 py-2">Descubre nuestros planes especiales</h2>
+        <p className="lead px-3 px-md-5 py-2">Ofrecemos planes especiales de cuidado para tus mascotas, adaptados a sus diferentes etapas de vida. Elige el plan que corresponda a la edad de tu compañero  y accede a un formulario para obtener más información sobre los servicios y beneficios incluidos en cada plan. ¡Brindamos la atención que tus mascotas merecen en cada etapa de su vida!</p>
+        <SliderPlanes></SliderPlanes>
       </Container>
     </>
   );
