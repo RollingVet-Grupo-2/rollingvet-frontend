@@ -1,6 +1,78 @@
 import { Button } from "react-bootstrap";
+import {
+  borrarTurno,
+  obtenerTurnoPorId,
+  obtenerTurnos,
+} from "../../helpers/queries";
+import Swal from "sweetalert2";
 
-const ItemTurno = ({ turno, setTurno }) => {
+const ItemTurno = ({ turno, setTurnos }) => {
+  const handleDelete = () => {
+    Swal.fire({
+      title: "¿Estas seguro de borrar el turno?",
+      text: "El siguiente cambio no podra ser revertido",
+      icon: "warning",
+      iconColor: "a75ef0a4",
+      showCancelButton: true,
+      confirmButtonColor: "#a75ef0a4",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "¡Si, estoy seguro!",
+      cancelButtonText: "Cancelar",
+      background: "#062e32",
+      color: "#41e9a6",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        borrarTurno(turno.id).then((respuesta) => {
+          if (respuesta.status === 200) {
+            obtenerTurnos().then((respuesta) => {
+              if (respuesta) {
+                setTurnos(respuesta);
+              } else {
+                Swal.fire({
+                  title: "Oops! Lo siento!",
+                  text: "El turno no pudo ser eliminado. Intente nuevamente más tarde.",
+                  icon: "error",
+                  iconColor: "#a75ef0a4",
+                  background: "#062e32",
+                  color: "#41e9a6",
+                  confirmButtonColor: "#a75ef0a4",
+                });
+              }
+            });
+            Swal.fire({
+              title: "¡Turno eliminado!",
+              text: "El turno fue eliminado con exito.",
+              icon: "success",
+              iconColor: "#a75ef0a4",
+              background: "#062e32",
+              color: "#41e9a6",
+              confirmButtonColor: "#a75ef0a4",
+            });
+          } else {
+            Swal.fire({
+              title: "Oops! Lo siento!",
+              text: "El turno no pudo ser eliminado. Intente nuevamente más tarde.",
+              icon: "error",
+              iconColor: "#a75ef0a4",
+              background: "#062e32",
+              color: "#41e9a6",
+              confirmButtonColor: "#a75ef0a4",
+            });
+          }
+        });
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire({
+          title: "¡Operación cancelada!",
+          text: "El turno no fue eliminado.",
+          icon: "error",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+    });
+  };
+
   return (
     <>
       <tr>
@@ -21,7 +93,7 @@ const ItemTurno = ({ turno, setTurno }) => {
             <a className="btn btn-warning btn btn-primary">
               <i className="bi bi-pencil-square"></i>
             </a>
-            <Button className="btn btn-danger">
+            <Button className="btn btn-danger" onClick={handleDelete}>
               <i className="bi bi-trash"></i>
             </Button>
           </div>

@@ -27,7 +27,7 @@ const CrearTurno = () => {
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
-          text: "Intente realizar esta operación en otro momento.",
+          text: "El turno no pudo ser creado. Intente nuevamente más tarde",
           icon: "error",
           iconColor: "#a75ef0a4",
           background: "#062e32",

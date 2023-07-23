@@ -16,8 +16,9 @@ const AdminTurnos = () => {
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
-          text: "Intente realizar esta operación en otro momento.",
+          text: "No se pudo obtener la lista de turnos asignados. Intente nuevamente más tarde.",
           icon: "error",
+          iconColor: "#a75ef0a4",
           background: "#062e32",
           color: "#41e9a6",
           confirmButtonColor: "#41e9a6",

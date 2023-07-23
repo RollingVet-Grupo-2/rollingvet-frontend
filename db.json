@@ -55,62 +55,6 @@
       "fecha": "2023-08-30",
       "horario": "10:00 AM",
       "id": 7
-    },
-    {
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Romeo",
-      "detalle_cita": "Corte de uñas",
-      "fecha": "2023-08-30",
-      "horario": "10:00 AM",
-      "id": 8
-    },
-    {
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Romeo",
-      "detalle_cita": "Corte de uñas",
-      "fecha": "2023-08-30",
-      "horario": "10:00 AM",
-      "id": 9
-    },
-    {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Picante",
-      "detalle_cita": "Desparasitación",
-      "fecha": "2023-08-31",
-      "horario": "11:00 AM",
-      "id": 10
-    },
-    {
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Romeo",
-      "detalle_cita": "Vacunacion",
-      "fecha": "2023-08-04",
-      "horario": "10:00 AM",
-      "id": 11
-    },
-    {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Morita",
-      "detalle_cita": "Vacunacion",
-      "fecha": "2023-08-29",
-      "horario": "12:00 AM",
-      "id": 12
-    },
-    {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Salchicha",
-      "detalle_cita": "Revision anual",
-      "fecha": "2023-08-30",
-      "horario": "11:00 AM",
-      "id": 13
-    },
-    {
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Pichicho",
-      "detalle_cita": "Corte de uñas",
-      "fecha": "2023-08-30",
-      "horario": "18:00 PM",
-      "id": 14
     }
   ]
 }

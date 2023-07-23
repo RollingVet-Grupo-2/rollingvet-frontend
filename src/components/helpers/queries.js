@@ -34,3 +34,14 @@ export const crearTurno = async (turno) => {
     console.log(error);
   }
 };
+
+export const borrarTurno = async (id) => {
+  try {
+    const respuesta = await fetch(API_TURNOS + "/" + id, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
