@@ -52,10 +52,13 @@ const EditarTurno = () => {
                   message: "Debes ingresar 20 caracteres como máximo",
                 },
                 pattern: {
-                  value: /^(?!\\s+$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+$/,
+                  value: /^(?!\\s*$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/,
                   message:
-                    "El nombre de la mascota no debe contener números, simbolos y/o espacios en blanco.",
+                    "El nombre de la mascota no debe contener números, y/o simbolos.",
                 },
+                validate: (value) =>
+                  value.trim() !== "" ||
+                  "No puedes ingresar solo espacios en blanco.",
               })}
             />
             <Form.Text className="text-danger">
@@ -78,10 +81,13 @@ const EditarTurno = () => {
                   message: "Debes ingresar 20 caracteres como máximo",
                 },
                 pattern: {
-                  value: /^(?!\\s+$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]+$/,
+                  value: /^(?!\\s*$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/,
                   message:
-                    "El detalle de la cita no debe contener números, simbolos y/o espacios en blanco.",
+                    "El detalle de la cita no debe contener números, y/o simbolos.",
                 },
+                validate: (value) =>
+                  value.trim() !== "" ||
+                  "No puedes ingresar solo espacios en blanco.",
               })}
             />
             <Form.Text className="text-danger">
