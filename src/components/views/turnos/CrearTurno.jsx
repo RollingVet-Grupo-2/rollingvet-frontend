@@ -1,5 +1,7 @@
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearTurno } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearTurno = () => {
   const {
@@ -10,7 +12,30 @@ const CrearTurno = () => {
   } = useForm();
 
   const onSubmit = (turno) => {
-    console.log(turno);
+    crearTurno(turno).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "¡Turno creado!",
+          text: "El turno se creo con exito.",
+          icon: "success",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "Intente realizar esta operación en otro momento.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+    });
   };
 
   return (

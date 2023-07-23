@@ -4,6 +4,7 @@ import "../../css/AdminTurnos.css";
 import { useEffect, useState } from "react";
 import { obtenerTurnos } from "../helpers/queries";
 import ItemTurno from "./turnos/ItemTurno";
+import Swal from "sweetalert2";
 
 const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
@@ -13,8 +14,14 @@ const AdminTurnos = () => {
       if (respuesta) {
         setTurnos(respuesta);
       } else {
-        //aviso al usuario que no obtuve respuesta
-        console.log("No hubo respuesta");
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "Intente realizar esta operación en otro momento.",
+          icon: "error",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
       }
     });
   }, []);
