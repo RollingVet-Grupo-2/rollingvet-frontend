@@ -86,7 +86,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
             month: "long",
             day: "numeric",
           })}
-          <span> - {turno.hora}</span>
+          <span> - {turno.horario}</span>
         </td>
         <td>
           <div className="d-flex gap-2 justify-content-center">
