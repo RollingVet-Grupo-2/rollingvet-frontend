@@ -29,7 +29,11 @@
 }
 
 .card_texto{
-    background-color:  #BDEAD8;
+    background-image: url('../assets/img/paginaContacto/fondoContacto.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
     border: solid 2px #454c5a;
     animation-duration: 2s;
 }
