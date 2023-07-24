@@ -5,6 +5,7 @@ import "../../css/AdminPrincipal.css";
 import { useEffect, useState } from "react";
 import { obtenerTurnos } from "../helpers/queries";
 import Swal from "sweetalert2";
+import TurnosAsignados from "./turnos/TurnosAsignados";
 
 const AdminPrincipal = () => {
   const [turnos, setTurnos] = useState([]);
@@ -12,7 +13,6 @@ const AdminPrincipal = () => {
   useEffect(() => {
     obtenerTurnos().then((respuesta) => {
       if (respuesta) {
-        console.log(respuesta);
         setTurnos(respuesta);
       } else {
         Swal.fire("No se obtuvieron los turnos");
@@ -157,54 +157,13 @@ const AdminPrincipal = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Luna</td>
-              <td>Vacunación</td>
-              <td>
-                5 Agosto 2023 <span>10:00 AM</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Toby</td>
-              <td>Revisión anual</td>
-              <td>
-                5 Agosto 2023 <span>11:00 AM</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Milo</td>
-              <td>Desparasitación</td>
-              <td>
-                5 Agosto 2023 <span>12:00 PM</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Bruno</td>
-              <td>Corte de uñas</td>
-              <td>
-                5 Agosto 2023 <span>01:00 PM</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Dr. Juan Pérez</td>
-              <td>Mia</td>
-              <td>Consulta por alergias</td>
-              <td>
-                6 Agosto 2023 <span>10:00 AM</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Dra. Ana González</td>
-              <td>Sasha</td>
-              <td>Control de peso</td>
-              <td>
-                6 Agosto 2023 <span>11:00 AM</span>
-              </td>
-            </tr>
+            {turnos ? (
+              turnos.map((turno) => (
+                <TurnosAsignados key={turno.id} turno={turno} />
+              ))
+            ) : (
+              <p>No hay turnos asignados</p>
+            )}
           </tbody>
         </Table>
         <hr />
