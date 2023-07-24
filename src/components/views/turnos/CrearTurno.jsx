@@ -13,6 +13,18 @@ const CrearTurno = () => {
 
   const onSubmit = (turno) => {
     crearTurno(turno).then((respuesta) => {
+      if (!respuesta) {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "El turno no pudo ser creado. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+
       if (respuesta.status === 201) {
         Swal.fire({
           title: "¡Turno creado!",
@@ -24,16 +36,6 @@ const CrearTurno = () => {
           confirmButtonColor: "#a75ef0a4",
         });
         reset();
-      } else {
-        Swal.fire({
-          title: "Oops! Lo siento!",
-          text: "El turno no pudo ser creado. Intente nuevamente más tarde",
-          icon: "error",
-          iconColor: "#a75ef0a4",
-          background: "#062e32",
-          color: "#41e9a6",
-          confirmButtonColor: "#a75ef0a4",
-        });
       }
     });
   };
@@ -147,7 +149,6 @@ const CrearTurno = () => {
               {errors.fecha?.message}
             </Form.Text>
           </Form.Group>
-          <hr />
           <Form.Group className="mb-3" controlId="inputHora">
             <Form.Label>Hora*</Form.Label>
             <Form.Select

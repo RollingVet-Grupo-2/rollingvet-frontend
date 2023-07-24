@@ -45,3 +45,18 @@ export const borrarTurno = async (id) => {
     console.log(error);
   }
 };
+
+export const editarTurno = async (turno, id) => {
+  try {
+    const respuesta = await fetch(API_TURNOS + "/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(turno),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};

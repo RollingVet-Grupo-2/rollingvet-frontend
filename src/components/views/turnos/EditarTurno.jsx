@@ -1,5 +1,12 @@
+import { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import {
+  editarTurno,
+  obtenerTurnoPorId,
+  obtenerTurnos,
+} from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const EditarTurno = () => {
   const {
@@ -7,10 +14,57 @@ const EditarTurno = () => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
 
-  const onSubmit = (turno) => {
-    console.log(turno);
+  useEffect(() => {
+    obtenerTurnoPorId(7).then((respuesta) => {
+      if (respuesta) {
+        setValue("veterinario", respuesta.veterinario);
+        setValue("mascota", respuesta.mascota);
+        setValue("detalle_cita", respuesta.detalle_cita);
+        setValue("fecha", respuesta.fecha);
+        setValue("horario", respuesta.horario);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener los datos del turno seleccionado. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
+  }, []);
+
+  const onSubmit = (turnoEditado) => {
+    editarTurno(turnoEditado, 7).then((respuesta) => {
+      if (!respuesta || respuesta.status === 404) {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo modificar el turno. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "¡Turno editado!",
+          text: "El turno se modificó con exito.",
+          icon: "success",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+    });
   };
 
   return (
@@ -40,6 +94,7 @@ const EditarTurno = () => {
             <Form.Label>Mascota*</Form.Label>
             <Form.Control
               type="text"
+              disabled
               {...register("mascota", {
                 required:
                   "Debes ingresar el nombre de la mascota. Este campo es obligatorio.",
@@ -120,7 +175,6 @@ const EditarTurno = () => {
               {errors.fecha?.message}
             </Form.Text>
           </Form.Group>
-          <hr />
           <Form.Group className="mb-3" controlId="inputHora">
             <Form.Label>Hora*</Form.Label>
             <Form.Select
