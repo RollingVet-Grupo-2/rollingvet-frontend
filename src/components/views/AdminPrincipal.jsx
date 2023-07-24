@@ -2,8 +2,23 @@ import { Button, Card, Col, Row, Table } from "react-bootstrap";
 import trabajadores from "../../assets/img/administrador/co-workers.svg";
 import vets from "../../assets/img/administrador/vets.svg";
 import "../../css/AdminPrincipal.css";
+import { useEffect, useState } from "react";
+import { obtenerTurnos } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const AdminPrincipal = () => {
+  const [turnos, setTurnos] = useState([]);
+
+  useEffect(() => {
+    obtenerTurnos().then((respuesta) => {
+      if (respuesta) {
+        console.log(respuesta);
+        setTurnos(respuesta);
+      } else {
+        Swal.fire("No se obtuvieron los turnos");
+      }
+    });
+  }, []);
   return (
     <section className="container text-center py-3">
       <section className="border border-3 rounded rounded-3 shadow mb-3">
