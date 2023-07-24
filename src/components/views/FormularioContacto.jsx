@@ -85,7 +85,7 @@ const FormularioContacto = () => {
                                         }
                                     })}
                                 ></Form.Control>
-                                <Form.Text className="text-danger fw-bold">
+                                <Form.Text className="text-danger">
                                     {errors.emailContacto?.message}
                                 </Form.Text>
                             </Form.Group>

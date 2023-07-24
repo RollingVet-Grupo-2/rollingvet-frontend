@@ -21,7 +21,7 @@
 /****** Bienvenida ******/
 
 .contenedor_bienvenida{
-    background-color:  #BDEAD8;
+    background-color: darkslategray;
     margin-top: -136px;
     z-index: 0;
     border-radius: 10px;
@@ -29,17 +29,16 @@
 }
 
 .card_texto{
-    background-image: url('../assets/img/paginaContacto/fondoContacto.jpg');
+    background-image: url('../assets/img/paginaContacto/contactoFondo.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
-    border: solid 2px #454c5a;
-    animation-duration: 2s;
+    /* border: solid 2px #454c5a; */
+    animation-duration: 8s;
 }
 
 .contenedor_gatito{
-    animation-duration: 4s;
+    animation-duration: 10s;
 }
 
 .imagen_gatito{
@@ -50,11 +49,11 @@
 }
 
 .card_direccion{
-    background-color: #77e7b1;
+    background-color: #BDEAD8;
     max-width: auto;
     max-height: 200px;
     border: solid 2px #454c5a;
-    animation-duration: 5s;
+    animation-duration: 12s;
 }
 
 /****** Formulario de contacto ******/
