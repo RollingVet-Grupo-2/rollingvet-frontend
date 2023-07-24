@@ -23,7 +23,7 @@ const FormularioContacto = () => {
                     Complete el formulario con sus datos, deje su mensaje y un agente de
                     atencion al cliente se pondra en contacto con usted.{" "}
                 </p>
-                <img
+                    <img
                     className="perro_formulario"
                     src={perroFormulario}
                     alt="Imagen perro"
@@ -84,7 +84,7 @@ const FormularioContacto = () => {
                                         }
                                     })}
                                 ></Form.Control>
-                                <Form.Text className="text-danger">
+                                <Form.Text className="text-danger fw-bold">
                                     {errors.emailContacto?.message}
                                 </Form.Text>
                             </Form.Group>
