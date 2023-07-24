@@ -55,17 +55,14 @@
 
 /****** Formulario de contacto ******/
 
-.patitas{
-    filter: opacity(0.7);
-}
-
 .contenedor_formulario{
+    position: relative;
     background-color: #BDEAD8;
 }
 
 .fondo_huellas{
     background-color: aliceblue;
-    background-image: url('../assets/img/paginaContacto/pngegg.png');
+    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -118,8 +115,16 @@
 
 /****** Perro Formulario ******/
 
+.contenedor_textoImg{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 .perro_formulario{
-    margin-bottom: -54px;
+    margin-bottom: -44px;
+    position: absolute;
+    bottom: 0;
 }
 
 /****** Canales de contacto ******/
@@ -138,25 +143,37 @@
     position: fixed;
     bottom: 20px;
     right:20px;
- }
+}
 
 /****** Media queries ******/
 
-@media (min-width: 416px) and (max-width:1024px){
+
+@media (min-width: 1023px) and (max-width: 1024px){
+    .perro_formulario{
+        margin-bottom: -33px;
+    }
+}
+
+@media (min-width: 542px) and (max-width: 1000px){
     .imagen_mascotas{
         max-height: 500px;
         max-width: 680px;
         margin-bottom: 50px;
     }
     .perro_formulario{
-        max-width: 400px;
-        margin-bottom: -521px;
+        margin-bottom: -25px;
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 541px){
+    .imagen_mascotas{
+        max-width: 500px;
+    }
     .contenedor_gatito{
         display: none;
+    }
+    .perro_formulario{
+        position: inherit;
     }
 }
 
@@ -166,8 +183,8 @@
         margin-bottom: 92px;
     }
     .perro_formulario{
-        max-width: 350px;
-        margin-bottom: -27px;
+        margin-bottom: -32.5px;
+        position: inherit;
     }
 }
 
@@ -177,8 +194,7 @@
         margin-bottom: 111px;
     }
     .perro_formulario{
-        max-width: 200px;
-        margin-bottom: -16px;
+        margin-bottom: -22.5px;
     }
 }
 

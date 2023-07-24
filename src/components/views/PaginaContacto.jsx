@@ -26,7 +26,7 @@ const PaginaContacto = () => {
                             </div>
                         </div>
                     </aside>
-                    <aside className="col-md-6 col-lg-4 text-center mt-5 contenedor_gatito animate__animated animate__fadeInUp">
+                    <aside className="col-md-6 col-lg-5 text-center mt-5 contenedor_gatito animate__animated animate__fadeInUp">
                         <img className="img-fluid" src={gatito} alt="Imagen gatito" />
                     </aside>
                 </article>

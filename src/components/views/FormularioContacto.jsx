@@ -17,14 +17,15 @@ const FormularioContacto = () => {
 
     return (
         <section className="my-5 pt-5 d-flex flex-column-reverse flex-md-row contenedor_formulario justify-content-around">
-            <aside className="col-12 col-md-6 col-lg-5 text-center">
+            <aside className="contenedor_textoImg col-12 col-md-5 col-lg-5 text-center">
                 <h3>Nos contactamos con vos!</h3>
-                <p>
+                <hr />
+                    <p>
                     Complete el formulario con sus datos, deje su mensaje y un agente de
-                    atencion al cliente se pondra en contacto con usted.{" "}
+                    atencion al cliente se pondra en contacto con usted.
                 </p>
                     <img
-                    className="perro_formulario"
+                    className="perro_formulario col-12 col-md-12 col-lg-12"
                     src={perroFormulario}
                     alt="Imagen perro"
                 />
