@@ -1,5 +1,5 @@
 import { Card, Badge } from "react-bootstrap";
-import "../../../css/CardCliente.css";
+import "../../../../css/principal/CardCliente.css";
 
 const CardCliente = ({
     nombreCliente,

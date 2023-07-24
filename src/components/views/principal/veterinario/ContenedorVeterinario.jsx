@@ -1,7 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import CardVeterinario from "./CardVeterinario";
-import imgVeterinario1 from "../../../assets/CardVeterinario/veterinario1.jpg"
-import imgVeterinario2 from "../../../assets/CardVeterinario/veterinario2.jpg"
+import imgVeterinario1 from "../../../../assets/img/Principal/CardVeterinario/veterinario1.jpg"
+import imgVeterinario2 from "../../../../assets/img/Principal/CardVeterinario/veterinario2.jpg"
 
 const ContenedorVeterinario = () => {
   return (

@@ -1,7 +1,7 @@
 import CardPlan from "./CardPlan";
-import imgPlanPrimerosPasos from "../../../../assets/Principal/CardPlan/plan_PrimerosPasos.jpg";
-import imgPlanAdulto from "../../../../assets/Principal/CardPlan/plan_Madurando.jpg";
-import imgPlanMadurando from "../../../../assets/Principal/CardPlan/plan_Adulto.jpg";
+import imgPlanPrimerosPasos from "../../../../assets/img/Principal/CardPlan/plan_PrimerosPasos.jpg";
+import imgPlanAdulto from "../../../../assets/img/Principal/CardPlan/plan_Madurando.jpg";
+import imgPlanMadurando from "../../../../assets/img/Principal/CardPlan/plan_Adulto.jpg";
 import { Button } from "react-bootstrap";
 import { ArrowRight, ArrowLeft } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide } from "swiper/react";

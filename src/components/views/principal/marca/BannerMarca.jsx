@@ -1,7 +1,7 @@
 import { Carousel } from 'react-bootstrap';
 import ImagenBanner from './ImagenBanner';
-import BannerMarca1 from "../../../assets/BannerMarca/banner_Large_RoyalCanin.png"
-import BannerMarca2 from "../../../assets/BannerMarca/banner_Large_Eukanuba.png"
+import BannerMarca1 from "../../../../assets/img/Principal/BannerMarca/banner_Large_RoyalCanin.png"
+import BannerMarca2 from "../../../../assets/img/Principal/BannerMarca/banner_Large_Eukanuba.png"
 
 const BannerMarca = () => {
     return (

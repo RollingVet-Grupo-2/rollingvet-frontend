@@ -1,23 +1,23 @@
 import { Container, Button } from "react-bootstrap";
-import "../../css/seccionPrincipal.css"
-import "../../css/Filtros.css"
+import "../../css/principal/seccionPrincipal.css"
+import "../../css/principal/Filtros.css"
 import logoRollingVet from "../../assets/rollingVetLogo.svg"
-import imgHero from "../../assets/Principal/principal_Hero.png";
-import forma1 from "../../assets/Principal/formas/forma1.svg";
-import forma3 from "../../assets/Principal/formas/forma3.svg";
-import forma7 from "../../assets/Principal/formas/forma7.svg";
-import forma6 from "../../assets/Principal/formas/forma6.svg";
-import forma10 from "../../assets/Principal/formas/forma10.svg";
-import imgSeparadorPerro from "../../assets/Principal/separador/separador_Perro.png";
-import imgSeparadorPerro2 from "../../assets/Principal/separador/separador_Perro2.png";
-import imgSeparadorPerro3 from "../../assets/Principal/separador/separador_Perro3.png";
-import imgSeparadorGato from "../../assets/Principal/separador/separador_Gato.png";
-import ContainerServicios from "./servicio/ContainerServicios";
-import SliderProducto from "./producto/SliderProducto";
-import SliderMarcas from "./marca/SliderMarcas";
-import BannerMarca from "./marca/BannerMarca";
-import SliderClientes from "./clientes/SliderClientes";
-import ContenedorVeterinario from "./veterinario/ContenedorVeterinario";
+import imgHero from "../../assets/img/Principal/principal_Hero.png";
+import forma1 from "../../assets/img/Principal/formas/forma1.svg";
+import forma3 from "../../assets/img/Principal/formas/forma3.svg";
+import forma7 from "../../assets/img/Principal/formas/forma7.svg";
+import forma6 from "../../assets/img/Principal/formas/forma6.svg";
+import forma10 from "../../assets/img/Principal/formas/forma10.svg";
+import imgSeparadorPerro from "../../assets/img/Principal/separador/separador_Perro.png";
+import imgSeparadorPerro2 from "../../assets/img/Principal/separador/separador_Perro2.png";
+import imgSeparadorPerro3 from "../../assets/img/Principal/separador/separador_Perro3.png";
+import imgSeparadorGato from "../../assets/img/Principal/separador/separador_Gato.png";
+import ContainerServicios from "./principal/servicio/ContainerServicios";
+import SliderProducto from "./principal/producto/SliderProducto";
+import SliderMarcas from "./principal/marca/SliderMarcas";
+import BannerMarca from "./principal/marca/BannerMarca";
+import SliderClientes from "./principal/clientes/SliderClientes";
+import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
 

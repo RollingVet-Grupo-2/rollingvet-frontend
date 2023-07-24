@@ -3,13 +3,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import NavegacionSlider from "./NavegacionSlider";
 import CardProducto from "./CardProducto";
-import imgProducto1 from "../../../assets/Principal/CardProducto/producto_Abrigo.png";
-import imgProducto2 from "../../../assets/Principal/CardProducto/producto_Cama.png";
-import imgProducto3 from "../../../assets/Principal/CardProducto/producto_ComidaRoyalCanin.png";
-import imgProducto4 from "../../../assets/Principal/CardProducto/producto_JugueteGato.png";
-import imgProducto5 from "../../../assets/Principal/CardProducto/producto_JugueteHuesos.png";
-import imgProducto6 from "../../../assets/Principal/CardProducto/producto_Plato.png";
-import imgProducto7 from "../../../assets/Principal/CardProducto/producto_AlimentoGato.png";
+import imgProducto1 from "../../../../assets/img/Principal/CardProducto/producto_Abrigo.png";
+import imgProducto2 from "../../../../assets/img/Principal/CardProducto/producto_Cama.png";
+import imgProducto3 from "../../../../assets/img/Principal/CardProducto/producto_ComidaRoyalCanin.png";
+import imgProducto4 from "../../../../assets/img/Principal/CardProducto/producto_JugueteGato.png";
+import imgProducto5 from "../../../../assets/img/Principal/CardProducto/producto_JugueteHuesos.png";
+import imgProducto6 from "../../../../assets/img/Principal/CardProducto/producto_Plato.png";
+import imgProducto7 from "../../../../assets/img/Principal/CardProducto/producto_AlimentoGato.png";
 import { ChevronDoubleRight } from "react-bootstrap-icons";
 
 const SliderProducto = () => {

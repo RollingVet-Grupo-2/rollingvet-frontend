@@ -1,11 +1,11 @@
 import { Carousel, CarouselItem, Container } from "react-bootstrap";
 import CardCliente from "./CardCliente";
-import imgCliente1 from "../../../assets/CardCliente/clientes/cliente1.png";
-import imgMascotaCliente1 from "../../../assets/CardCliente/mascotas/cliente_mascota_Perro1.jpg";
-import imgCliente2 from "../../../assets/CardCliente/clientes/cliente2.png";
-import imgMascotaCliente2 from "../../../assets/CardCliente/mascotas/cliente_mascota_Gato1.jpg";
-import imgCliente3 from "../../../assets/CardCliente/clientes/cliente3.png";
-import imgMascotaCliente3 from "../../../assets/CardCliente/mascotas/cliente_mascota_Perro2.jpg";
+import imgCliente1 from "../../../../assets/img/Principal/CardCliente/clientes/cliente1.png";
+import imgMascotaCliente1 from "../../../../assets/img/Principal/CardCliente/mascotas/cliente_mascota_Perro1.jpg";
+import imgCliente2 from "../../../../assets/img/Principal/CardCliente/clientes/cliente2.png";
+import imgMascotaCliente2 from "../../../../assets/img/Principal/CardCliente/mascotas/cliente_mascota_Gato1.jpg";
+import imgCliente3 from "../../../../assets/img/Principal/CardCliente/clientes/cliente3.png";
+import imgMascotaCliente3 from "../../../../assets/img/Principal/CardCliente/mascotas/cliente_mascota_Perro2.jpg";
 
 const SliderClientes = () => {
   return (

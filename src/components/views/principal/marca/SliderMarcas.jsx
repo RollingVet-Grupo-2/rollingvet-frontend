@@ -3,14 +3,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
-import "../../../css/Filtros.css";
-import imgMarca1 from "../../../assets/Principal/CardMarca/marcas_Eukanuba_Dark.png";
-import imgMarca2 from "../../../assets/Principal/CardMarca/marcas_RoyalCanin_Dark.png";
-import imgMarca3 from "../../../assets/Principal/CardMarca/marcas_Whiskas_Dark.png";
-import imgMarca4 from "../../../assets/Principal/CardMarca/marcas_VitalCan_Dark.png";
-import imgMarca5 from "../../../assets/Principal/CardMarca/marcas_Agility_Dark.png";
-import imgMarca6 from "../../../assets/Principal/CardMarca/marcas_Pedigree_Dark.png";
-import imgMarca7 from "../../../assets/Principal/CardMarca/marcas_Sieger_Dark.png";
+import "../../../../css/principal/Filtros.css";
+import imgMarca1 from "../../../../assets/img/Principal/CardMarca/marcas_Eukanuba_Dark.png";
+import imgMarca2 from "../../../../assets/img/Principal/CardMarca/marcas_RoyalCanin_Dark.png";
+import imgMarca3 from "../../../../assets/img/Principal/CardMarca/marcas_Whiskas_Dark.png";
+import imgMarca4 from "../../../../assets/img/Principal/CardMarca/marcas_VitalCan_Dark.png";
+import imgMarca5 from "../../../../assets/img/Principal/CardMarca/marcas_Agility_Dark.png";
+import imgMarca6 from "../../../../assets/img/Principal/CardMarca/marcas_Pedigree_Dark.png";
+import imgMarca7 from "../../../../assets/img/Principal/CardMarca/marcas_Sieger_Dark.png";
 import { Container } from "react-bootstrap";
 
 const SliderMarcas = () => {

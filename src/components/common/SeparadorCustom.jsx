@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import "../../css/SeccionPrincipal.css";
-import "../../css/Filtros.css";
+import "../../css/principal/SeccionPrincipal.css";
+import "../../css/principal/Filtros.css";
 const SeparadorCustom = ({ imgSeparador, forma }) => {
     return (
         <Container className="py-3">

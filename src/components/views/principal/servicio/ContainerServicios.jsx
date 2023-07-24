@@ -1,10 +1,10 @@
 import { Row } from "react-bootstrap";
 import CardServicio from "./CardServicio";
 
-import imgConsulta from "../../../assets/CardServicio/servicio_Consulta.jpg";
-import imgAlimentacion from "../../../assets/CardServicio/servicio_Alimentacion.jpg";
-import imgCirugia from "../../../assets/CardServicio/servicio_Cirugia.jpg";
-import imgVacuna from "../../../assets/CardServicio/servicio_Vacuna.jpg";
+import imgConsulta from "../../../../assets/img/Principal/CardServicio/servicio_Consulta.jpg";
+import imgAlimentacion from "../../../../assets/img/Principal/CardServicio/servicio_Alimentacion.jpg";
+import imgCirugia from "../../../../assets/img/Principal/CardServicio/servicio_Cirugia.jpg";
+import imgVacuna from "../../../../assets/img/Principal/CardServicio/servicio_Vacuna.jpg";
 
 const ContainerServicios = () => {
   return (

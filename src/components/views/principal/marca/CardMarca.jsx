@@ -1,4 +1,4 @@
-import "../../../css/Filtros.css";
+import "../../../../css/principal/Filtros.css";
 
 const CardMarca = ({ nombreMarca, imgMarca }) => {
   return (

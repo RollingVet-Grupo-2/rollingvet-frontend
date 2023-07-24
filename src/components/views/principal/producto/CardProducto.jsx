@@ -1,5 +1,5 @@
 import { Card, Col, Button } from "react-bootstrap";
-import "../../../css/CardProducto.css"
+import "../../../../css/principal/CardProducto.css"
 import { PlusLg } from "react-bootstrap-icons";
 
 const CardProducto = ({nombreProducto, precioProducto, imgProducto, categoriaProducto}) => {

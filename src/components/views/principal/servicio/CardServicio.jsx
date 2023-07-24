@@ -1,5 +1,5 @@
 import { Card, Col, Button } from "react-bootstrap";
-import "../../../css/CardServicio.css";
+import "../../../../css/principal/CardServicio.css";
 
 const CardServicio = ({imgServicio,nombreServicio}) => {
   return (
