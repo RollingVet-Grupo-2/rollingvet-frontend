@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
+  const [busqueda, setBusqueda] = useState();
 
   useEffect(() => {
     obtenerTurnos().then((respuesta) => {
@@ -61,12 +62,16 @@ const AdminTurnos = () => {
             </tr>
           </thead>
           <tbody>
-            {turnos ? (
+            {turnos.length === 0 ? (
+              <tr>
+                <td className="lead" colSpan={5}>
+                  No hay turnos asignados
+                </td>
+              </tr>
+            ) : (
               turnos.map((turno) => (
                 <ItemTurno key={turno.id} turno={turno} setTurnos={setTurnos} />
               ))
-            ) : (
-              <p>No hay turnos asignados</p>
             )}
           </tbody>
         </Table>
