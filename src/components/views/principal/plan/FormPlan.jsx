@@ -1,7 +1,8 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
-const FormPlan = () => {
+const FormPlan = ({onHide}) => {
   const {
     register,
     handleSubmit,
@@ -11,6 +12,14 @@ const FormPlan = () => {
 
   const onSubmit = (solicitud) => {
     console.log(solicitud);
+    Swal.fire({
+        icon: 'success',
+        title: 'Solicitud enviada',
+        text: 'Gracias por enviar tu solicitud, nos contactaremos a la brevedad.',
+      }).then(() => {
+        onHide();
+      });
+    reset();
   };
 
   return (
@@ -21,20 +30,20 @@ const FormPlan = () => {
             <Form.Label>Nombre</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ingresa tu Nombre"
+              placeholder="Ingresa tu nombre"
               {...register("nombre", {
                 required: "El nombre es obligatorio",
                 maxLength: {
                   value: 30,
-                  message: "El nombre debe tener 30 caractéres como máximo",
+                  message: "El nombre debe tener 30 caractéres como máximo.",
                 },
                 minLength: {
                   value: 2,
-                  message: "El nombre debe tener 2 caractéres como mínimo",
+                  message: "El nombre debe tener 2 caractéres como mínimo.",
                 },
                 pattern: {
                   value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ]+$/,
-                  message: "Ingresa un nombre válido",
+                  message: "Ingresa un nombre válido.",
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
               })}
@@ -49,20 +58,20 @@ const FormPlan = () => {
             <Form.Label>Apellido</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Ingresa tu Apellido"
+              placeholder="Ingresa tu apellido"
               {...register("apellido", {
-                required: "El apellido es obligatorio",
+                required: "El apellido es obligatorio.",
                 maxLength: {
                   value: 30,
-                  message: "El apellido debe tener 30 caractéres como máximo",
+                  message: "El apellido debe tener 30 caractéres como máximo.",
                 },
                 minLength: {
                   value: 2,
-                  message: "El apellido debe tener 2 caractéres como mínimo",
+                  message: "El apellido debe tener 2 caractéres como mínimo.",
                 },
                 pattern: {
                   value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ]+$/,
-                  message: "Ingresa un apellido válido",
+                  message: "Ingresa un apellido válido.",
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
               })}
@@ -76,13 +85,13 @@ const FormPlan = () => {
         <Form.Label>Email</Form.Label>
         <Form.Control
           type="email"
-          placeholder="Ej: usuario@dominio.com"
+          placeholder="Ej: usuario@dominio.com."
           {...register("email", {
-            required: "El email es obligatorio",
+            required: "El email es obligatorio.",
             pattern: {
               value:
                 /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-              message: "El email debe tener el formato 'usuario@dominio.com'",
+              message: "El email debe tener el formato 'usuario@dominio.com'.",
             },
           })}
           isInvalid={errors.email}
@@ -95,18 +104,18 @@ const FormPlan = () => {
           type="tel"
           placeholder="Ej: 3817557733"
           {...register("tel", {
-            required: "El teléfono es obligatorio",
+            required: "El teléfono es obligatorio.",
             pattern: {
               value: /^[0-9]+$/,
-              message: "El teléfono solo puede contener números",
+              message: "El teléfono solo puede contener números.",
             },
             minLength: {
               value: 10,
-              message: "El teléfono debe tener al menos 10 dígitos",
+              message: "El teléfono debe tener al menos 10 dígitos.",
             },
             maxLength: {
               value: 10,
-              message: "El teléfono debe tener como máximo 10 dígitos",
+              message: "El teléfono debe tener como máximo 10 dígitos.",
             },
             validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
           })}
@@ -121,14 +130,14 @@ const FormPlan = () => {
           rows={3}
           placeholder="Puedes escribir tu solicitud aquí..."
           {...register("info", {
-            required: "La solicitud es obligatoria",
+            required: "La solicitud es obligatoria.",
             maxLength: {
               value: 500,
-              message: "La solicitud debe tener 500 caractéres como máximo",
+              message: "La solicitud debe tener 500 caractéres como máximo.",
             },
             minLength: {
               value: 10,
-              message: "La solicitud debe tener 10 caractéres como mínimo",
+              message: "La solicitud debe tener 10 caractéres como mínimo.",
             },
             validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
           })}
