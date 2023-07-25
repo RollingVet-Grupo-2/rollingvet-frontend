@@ -141,7 +141,7 @@ const AdminPrincipal = () => {
             </Col>
             <Col xs={10}>
               <Card.Title>Turnos</Card.Title>
-              <Card.Text className="fw-bold">6</Card.Text>
+              <Card.Text className="fw-bold">{turnos.length}</Card.Text>
             </Col>
           </Card.Body>
         </Card>
@@ -165,12 +165,16 @@ const AdminPrincipal = () => {
             </tr>
           </thead>
           <tbody>
-            {turnos ? (
+            {turnos.length === 0 ? (
+              <tr>
+                <td colSpan={4} className="lead">
+                  No hay turnos asignados
+                </td>
+              </tr>
+            ) : (
               turnos.map((turno) => (
                 <TurnosAsignados key={turno.id} turno={turno} />
               ))
-            ) : (
-              <p>No hay turnos asignados</p>
             )}
           </tbody>
         </Table>
