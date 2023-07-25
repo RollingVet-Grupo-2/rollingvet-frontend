@@ -20,6 +20,7 @@ import SliderClientes from "./principal/clientes/SliderClientes";
 import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
+import FormPlan from "./principal/plan/FormPlan";
 
 const Inicio = () => {
   return (
