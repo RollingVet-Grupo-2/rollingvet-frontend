@@ -1,4 +1,4 @@
-import { Button, Col, Row, Table } from "react-bootstrap";
+import { Button, Col, Form, Row, Table } from "react-bootstrap";
 import calendario from "../../assets/img/administrador/calendar.svg";
 import "../../css/AdminTurnos.css";
 import { useEffect, useState } from "react";
@@ -8,7 +8,49 @@ import Swal from "sweetalert2";
 
 const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
-  const [busqueda, setBusqueda] = useState();
+  const [busqueda, setBusqueda] = useState("");
+
+  const buscarTurnos = (e) => {
+    setBusqueda(e.target.value);
+  };
+
+  const resultados = !busqueda
+    ? turnos
+    : turnos.filter((turno) =>
+        turno.mascota.toLowerCase().includes(busqueda.toLowerCase())
+      ) || (
+        <tr>
+          <td className="lead" colSpan={5}>
+            No existen mascotas con el nombre ingresado.
+          </td>
+        </tr>
+      );
+
+  const mostrarTurnos = () => {
+    if (turnos.length === 0) {
+      return (
+        <tr>
+          <td className="lead" colSpan={5}>
+            No hay turnos asignados
+          </td>
+        </tr>
+      );
+    }
+
+    if (resultados.length === 0) {
+      return (
+        <tr>
+          <td className="lead" colSpan={5}>
+            No se encontraron coincidencias
+          </td>
+        </tr>
+      );
+    }
+
+    return resultados.map((turno) => (
+      <ItemTurno key={turno.id} turno={turno} setTurnos={setTurnos} />
+    ));
+  };
 
   useEffect(() => {
     obtenerTurnos().then((respuesta) => {
@@ -27,6 +69,7 @@ const AdminTurnos = () => {
       }
     });
   }, []);
+
   return (
     <section className="container py-3 text-center">
       <section className="mb-3 mb-md-0">
@@ -43,6 +86,22 @@ const AdminTurnos = () => {
         </Row>
       </section>
       <section className="py-3">
+        <Form as={Row} className="justify-content-center align-items-center">
+          <Form.Group
+            as={Col}
+            md={8}
+            className="mb-3"
+            controlId="formBasicEmail"
+          >
+            <Form.Label className="h3">Buscar Turnos</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Ingresa el nombre de la mascota"
+              value={busqueda}
+              onChange={buscarTurnos}
+            />
+          </Form.Group>
+        </Form>
         <h2>Lista de Turnos</h2>
         <Table
           responsive
@@ -61,19 +120,7 @@ const AdminTurnos = () => {
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody>
-            {turnos.length === 0 ? (
-              <tr>
-                <td className="lead" colSpan={5}>
-                  No hay turnos asignados
-                </td>
-              </tr>
-            ) : (
-              turnos.map((turno) => (
-                <ItemTurno key={turno.id} turno={turno} setTurnos={setTurnos} />
-              ))
-            )}
-          </tbody>
+          <tbody>{mostrarTurnos()}</tbody>
         </Table>
       </section>
     </section>
