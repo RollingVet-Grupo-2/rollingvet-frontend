@@ -10,7 +10,7 @@ const ModalFormPlan = ({show,onHide}) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body className="px-4">
-                <p>Si quieres solicitar mas información sobre los planes que ofrecemos, puedes completar el siguiente formulario:</p>
+                <p>Si quieres <strong>solicitar mas información</strong> sobre los <strong>planes que ofrecemos</strong>, puedes completar el siguiente formulario:</p>
                 <FormPlan></FormPlan>
             </Modal.Body>
         </Modal>
