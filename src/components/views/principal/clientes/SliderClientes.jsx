@@ -10,7 +10,7 @@ import imgMascotaCliente3 from "../../../../assets/img/Principal/CardCliente/mas
 const SliderClientes = () => {
   return (
     <Container className="py-3 px-1 px-md-5">
-      <Carousel slide={true} controls={true} indicators={false}>
+      <Carousel slide={true} controls={false} indicators={false}>
         <Carousel.Item>
           <CardCliente
             nombreCliente={"María Rodriguez"}

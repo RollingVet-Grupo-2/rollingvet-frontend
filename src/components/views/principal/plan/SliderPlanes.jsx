@@ -2,13 +2,12 @@ import CardPlan from "./CardPlan";
 import imgPlanPrimerosPasos from "../../../../assets/img/Principal/CardPlan/plan_PrimerosPasos.jpg";
 import imgPlanAdulto from "../../../../assets/img/Principal/CardPlan/plan_Madurando.jpg";
 import imgPlanMadurando from "../../../../assets/img/Principal/CardPlan/plan_Adulto.jpg";
-import { Button } from "react-bootstrap";
-import { ArrowRight, ArrowLeft } from "react-bootstrap-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
+import NavegacionSlider from "../producto/NavegacionSlider";
 
 
 const SliderPlanes = () => {
@@ -44,12 +43,7 @@ const SliderPlanes = () => {
         },
       }}>
         <div slot="container-start" className="d-flex gap-2 justify-content-end p-3">
-            <Button variant="outline-dark" type="button" className="rounded-circle p-2 lh-1 plan-swiper-button-prev">
-                <ArrowLeft size={24}></ArrowLeft>
-            </Button>
-            <Button variant="outline-dark" type="button" className="rounded-circle p-2 lh-1 plan-swiper-button-next">
-                <ArrowRight size={24}></ArrowRight>
-            </Button>
+          <NavegacionSlider></NavegacionSlider>
         </div>
       <SwiperSlide>
         <CardPlan

@@ -1,6 +1,8 @@
 import { Button, Container } from "react-bootstrap";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
+import 'swiper/css/navigation';
 import NavegacionSlider from "./NavegacionSlider";
 import CardProducto from "./CardProducto";
 import imgProducto1 from "../../../../assets/img/Principal/CardProducto/producto_Abrigo.png";
@@ -18,8 +20,13 @@ const SliderProducto = () => {
       <Swiper
         slidesPerView={1}
         spaceBetween={16}
+        navigation={{
+          nextEl: ".plan-swiper-button-next",
+          prevEl: ".plan-swiper-button-prev",
+        }}
+        modules={[Navigation]}
         breakpoints={{
-          640: {
+          576: {
             slidesPerView: 1,
             spaceBetween: 10,
           },
@@ -27,7 +34,7 @@ const SliderProducto = () => {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          1024: {
+          992: {
             slidesPerView: 3,
             spaceBetween: 10,
           },
