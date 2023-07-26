@@ -7,7 +7,9 @@ function App() {
   return (
     <>
     <NavbarPageComponent></NavbarPageComponent>
+
     <Inicio></Inicio>
+
     </>
   )
 }
