@@ -1,4 +1,5 @@
 const API_TURNOS = import.meta.env.VITE_API_TURNOS;
+const API_VETERINARIOS = import.meta.env.VITE_API_VETERINARIOS;
 
 export const obtenerTurnos = async () => {
   try {
@@ -56,6 +57,16 @@ export const editarTurno = async (turno, id) => {
       body: JSON.stringify(turno),
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const obtenerVeterinarios = async () => {
+  try {
+    const respuesta = await fetch(API_VETERINARIOS);
+    const listaVeterinarios = await respuesta.json();
+    return listaVeterinarios;
   } catch (error) {
     console.log(error);
   }
