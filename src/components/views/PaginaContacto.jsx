@@ -8,20 +8,21 @@ import FormularioContacto from "./FormularioContacto";
 const PaginaContacto = () => {
     return (
         <>
-            <Container className="d-flex flex-column seccionPrincipal text-center">
+            <section className="d-flex flex-column seccionPrincipal text-center">
                 <div className="row col-12 mascotas">
                     <img className="imagen_mascotas animate__animated animate__fadeInUp" src={mascotas} alt="Imagen mascotas" />
                 </div>
-                <article className="row justify-content-center contenedor_bienvenida  py-5 py-lg-4">
-                    <aside className="col-md-11 col-lg-7 text-center">
-                        <div className="card_texto p-lg-5 ms-lg-5 mt-lg-5 animate__animated animate__fadeInUp">
+                <article className="row justify-content-center contenedor_bienvenida py-5 py-md-5">
+                    <aside className="col-md-11 col-lg-7 text-center py-4 px-0">
+                        <div className="card_texto p-lg-5 ms-lg-3 mt-md-4 animate__animated animate__fadeInUp">
                             <h2>Aquí encontraras diferentes medios para poder contactarte con nosotros</h2>
                             <hr />
-                            <p className="fs-6 fw-semibold">En nuestra veterinaria, nos apasiona el cuidado y bienestar de todas las mascotas. Nuestras instalaciones están equipadas con tecnología de vanguardia para diagnosticar y tratar diversas condiciones de salud. En nuestra veterinaria, su compañero peludo será tratado con el mismo cariño y dedicación que brindaríamos a nuestros propios animales.</p>
-                            <h5 className="mt-lg-3">Te esperamos en:</h5>
-                            <div className="col-12 col-lg-7 card_direccion float-end p-2 animate__animated animate__jackInTheBox">
+                            <p className="fs-4 fw-semibold">En nuestra veterinaria, nos apasiona el cuidado y bienestar de todas las mascotas. Nuestras instalaciones están equipadas con tecnología de vanguardia para diagnosticar y tratar diversas condiciones de salud. En nuestra veterinaria, su compañero peludo será tratado con el mismo cariño y dedicación que brindaríamos a nuestros propios animales.</p>
+                            <hr/>
+                            <h5 className="my-lg-4">Te esperamos en:</h5>
+                            <div className="col-12 col-lg-7 card_direccion float-end p-3 animate__animated animate__jackInTheBox">
                                 <i className="fi fi-sr-marker"></i>
-                                <p className="pt-2"><b>Gral. Paz 576, T4000
+                                <p className="pt-4"><b>Gral. Paz 576, T4000
                                     <br />San Miguel de Tucumán, Tucumán</b></p>
                             </div>
                         </div>
@@ -30,9 +31,9 @@ const PaginaContacto = () => {
                         <img className="img-fluid" src={gatito} alt="Imagen gatito" />
                     </aside>
                 </article>
-            </Container>
+            </section>
             <FormularioContacto></FormularioContacto>
-            <section className="canales_contacto text-light text-center py-5 mt-4 row">
+            <section className="canales_contacto text-center py-5 mt-4 row">
                 <article className="container row">
                     <h3 className="mb-5">Estamos disponibles las 24 horas, todos los días.</h3>
                     <div className="col-md-4">

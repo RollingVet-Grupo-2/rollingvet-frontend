@@ -9,8 +9,8 @@
 /****** Imagen mascotas ******/
 
 .imagen_mascotas {
-    animation-duration: 3s;
-    margin-bottom: -12.1%;
+    animation-duration: 2s;
+    margin-bottom: -12.2%;
 }
 
 .mascotas {
@@ -21,8 +21,6 @@
 
 .contenedor_bienvenida{
     background-color: darkslategray;
-    z-index: 0;
-    border-radius: 10px;
     z-index: 1;
 }
 
@@ -31,12 +29,11 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    /* border: solid 2px #454c5a; */
-    animation-duration: 8s;
+    animation-duration: 4s;
 }
 
 .contenedor_gatito{
-    animation-duration: 10s;
+    animation-duration: 3s;
 }
 
 .imagen_gatito{
@@ -51,7 +48,7 @@
     max-width: auto;
     max-height: 200px;
     border: solid 2px #454c5a;
-    animation-duration: 12s;
+    animation-duration: 8s;
 }
 
 /****** Formulario de contacto ******/
@@ -131,6 +128,7 @@
 /****** Canales de contacto ******/
 
 .canales_contacto{
+    color: #BDEAD8;
     background-color: darkslategrey;
 }
 
@@ -148,16 +146,19 @@
     ;
 }
 
-/****** Media queries ******/
+/******    Media queries    ******/
 
 
 @media  (max-width: 767px){
     .perro_formulario{
         position: inherit;
     }
+    .imagen_mascotas{
+        margin-bottom: -11.7%;
+    }
 }
 
-@media (max-width: 550px){
+@media (max-width: 912px){
     .contenedor_gatito{
         display: none;
     }

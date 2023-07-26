@@ -120,7 +120,7 @@ const FormularioContacto = () => {
                                     <b>Consulta/Mensaje</b>
                                 </Form.Label>
                                 <Form.Control
-                                    className="bg-secondary border-dark bg-opacity-25 border-bottom border-end border-0"
+                                    className="bg-secondary border-dark bg-opacity-25 border-bottom border-end"
                                     as="textarea"
                                     type="text"
                                     {...register('consultaContacto',
