@@ -8,8 +8,8 @@ import FormularioContacto from "./FormularioContacto";
 const PaginaContacto = () => {
     return (
         <>
-            <Container className="seccionPrincipal text-center">
-                <div className="mascotas col-12">
+            <Container className="d-flex flex-column seccionPrincipal text-center">
+                <div className="row col-12 mascotas">
                     <img className="imagen_mascotas animate__animated animate__fadeInUp" src={mascotas} alt="Imagen mascotas" />
                 </div>
                 <article className="row justify-content-center contenedor_bienvenida  py-5 py-lg-4">
