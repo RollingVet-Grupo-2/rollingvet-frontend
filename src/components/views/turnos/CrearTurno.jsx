@@ -98,7 +98,7 @@ const CrearTurno = () => {
       return (
         <Form.Select
           aria-label="Select mascotasSelect"
-          {...register("mascotasSelect", {
+          {...register("mascotas", {
             required:
               "Debes elegir el mascotasSelect. Este campo es obligatorio.",
           })}
