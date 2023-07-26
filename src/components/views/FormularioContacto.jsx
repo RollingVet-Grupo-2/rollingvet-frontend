@@ -79,7 +79,7 @@ const FormularioContacto = () => {
                                             "Debes ingresar el correo electronico. Este campo es obligatorio.",
                                         pattern: {
                                             value:
-                                                /^[a-z0-9!#$%&'+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'+/=? ^_`{|}~-]+)@(?:[a-z0-9](?:[a-z0-9-][a-z0-9])?.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                                            /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
                                             message:
                                                 "El formato del correo electronico debe ser válido. Ej: mail@dominio.com",
                                         }
