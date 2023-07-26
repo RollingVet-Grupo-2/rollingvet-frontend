@@ -34,6 +34,16 @@ const CrearTurno = () => {
       if (respuesta) {
         let mascotas = respuesta.map((turno) => turno.mascota);
         setMascotas(mascotas);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener las mascotas registradas. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
       }
     });
   };
@@ -42,6 +52,16 @@ const CrearTurno = () => {
     obtenerVeterinarios().then((respuesta) => {
       if (respuesta) {
         setVeterinarios(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "El turno no se pudo obtener información de veterinarios. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
       }
     });
   };
