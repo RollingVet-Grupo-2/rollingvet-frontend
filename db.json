@@ -3,58 +3,66 @@
     {
       "id": 1,
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Luna",
-      "detalle_cita": "Vacunación",
+      "mascotas": "Luna",
+      "detalle_cita": "Alimentación y asesoramiento nutricional",
       "fecha": "2023-08-23",
-      "horario": "08:00 AM"
+      "horario": "09:00 AM"
     },
     {
       "id": 2,
       "veterinario": "Dra. Ana González",
-      "mascota": "Rocco",
-      "detalle_cita": "Desparasitacion",
+      "mascotas": "Rocco",
+      "detalle_cita": "Cirugias y procedimientos quirúrgicos",
       "fecha": "2023-08-25",
-      "horario": "10:00 AM"
+      "horario": "17:00 PM"
     },
     {
       "id": 3,
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Toby",
-      "detalle_cita": "Control de peso",
+      "mascotas": "Toby",
+      "detalle_cita": "Vacunación y control de enfermedades",
       "fecha": "2023-08-25",
-      "horario": "11:00 AM"
+      "horario": "10:00 AM"
     },
     {
       "id": 4,
       "veterinario": "Dra. Ana González",
-      "mascota": "Firulais",
-      "detalle_cita": "Corte y baño",
+      "mascotas": "Firulais",
+      "detalle_cita": "Consultas especializadas",
       "fecha": "2023-08-25",
-      "horario": "12:00 AM"
+      "horario": "18:00 PM"
     },
     {
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Clifford",
-      "detalle_cita": "Consulta/Chequeo",
+      "mascotas": "Clifford",
+      "detalle_cita": "Desparasitación",
       "fecha": "2023-08-26",
-      "horario": "10:00 AM",
+      "horario": "11:00 AM",
       "id": 5
     },
     {
       "veterinario": "Dra. Ana González",
-      "mascota": "Morita",
-      "detalle_cita": "Revision anual",
+      "mascotas": "Morita",
+      "detalle_cita": "Baño, peluquería o corte de uñas",
       "fecha": "2023-08-29",
-      "horario": "18:00 PM",
+      "horario": "19:00 PM",
       "id": 6
     },
     {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Romeo",
-      "detalle_cita": "Corte de pelo",
-      "fecha": "2023-08-30",
-      "horario": "20:00 PM",
+      "mascotas": "Romeo",
+      "detalle_cita": "Alimentación y asesoramiento nutricional",
+      "veterinario": "Dr. Juan Pérez",
+      "fecha": "2023-08-31",
+      "horario": "11:00 AM",
       "id": 7
+    },
+    {
+      "mascotas": "Romeo",
+      "detalle_cita": "Consultas especializadas",
+      "veterinario": "Dra. Ana González",
+      "fecha": "2023-08-31",
+      "horario": "18:00 PM",
+      "id": 8
     }
   ],
   "pacientes": [
@@ -92,9 +100,15 @@
       "nombre": "Dr. Juan Pérez",
       "servicios": [
         "Alimentación y asesoramiento nutricional",
-        "Vacunación y control de enfermedades"
+        "Vacunación y control de enfermedades",
+        "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -102,9 +116,15 @@
       "nombre": "Dra. Ana González",
       "servicios": [
         "Cirugias y procedimientos quirúrgicos",
-        "Consultas especializadas"
+        "Consultas especializadas",
+        "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ]

@@ -9,8 +9,8 @@ function App() {
   return (
     <>
       {/* <AdminTurnos /> */}
-      <CrearTurno />
-      {/* <EditarTurno /> */}
+      {/* <CrearTurno /> */}
+      <EditarTurno />
     </>
   );
 }

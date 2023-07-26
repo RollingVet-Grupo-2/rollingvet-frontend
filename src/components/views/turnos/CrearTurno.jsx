@@ -25,11 +25,11 @@ const CrearTurno = () => {
   const [horarioVeterinario, setHorarioVeterinario] = useState([]);
 
   useEffect(() => {
-    fetchTurnos();
+    fetchMascotas();
     fetchVeterinarios();
   }, []);
 
-  const fetchTurnos = () => {
+  const fetchMascotas = () => {
     obtenerTurnos().then((respuesta) => {
       if (respuesta) {
         let mascotas = respuesta.map((turno) => turno.mascota);
@@ -55,7 +55,7 @@ const CrearTurno = () => {
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
-          text: "El turno no se pudo obtener información de veterinarios. Intente nuevamente más tarde",
+          text: "No se pudo obtener información de veterinarios. Intente nuevamente más tarde",
           icon: "error",
           iconColor: "#a75ef0a4",
           background: "#062e32",

@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
   editarTurno,
   obtenerTurnoPorId,
   obtenerTurnos,
+  obtenerVeterinarios,
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
@@ -15,32 +16,128 @@ const EditarTurno = () => {
     formState: { errors },
     reset,
     setValue,
+    getValues,
+    clearErrors,
+    setError,
   } = useForm();
 
+  const [mascotas, setMascotas] = useState([]);
+  const [veterinarios, setVeterinarios] = useState([]);
+  const [servicioElegido, setServicioElegido] = useState("");
+  const [veterinarioElegido, setVeterinarioElegido] = useState([]);
+  const [horarioVeterinario, setHorarioVeterinario] = useState([]);
+
   useEffect(() => {
-    obtenerTurnoPorId(7).then((respuesta) => {
+    fetchMascotas();
+    fetchVeterinarios();
+  }, []);
+
+  const fetchMascotas = () => {
+    obtenerTurnos().then((respuesta) => {
       if (respuesta) {
-        setValue("veterinario", respuesta.veterinario);
-        setValue("mascota", respuesta.mascota);
-        setValue("detalle_cita", respuesta.detalle_cita);
-        setValue("fecha", respuesta.fecha);
-        setValue("horario", respuesta.horario);
+        let mascotas = respuesta.map((turno) => turno.mascotas);
+        setMascotas(mascotas);
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
-          text: "No se pudo obtener los datos del turno seleccionado. Intente nuevamente más tarde.",
+          text: "No se pudo obtener las mascotas registradas. Intente nuevamente más tarde",
           icon: "error",
           iconColor: "#a75ef0a4",
           background: "#062e32",
           color: "#41e9a6",
-          confirmButtonColor: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
         });
       }
     });
-  }, []);
+  };
+
+  const fetchVeterinarios = () => {
+    obtenerVeterinarios().then((respuesta) => {
+      if (respuesta) {
+        setVeterinarios(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener información de veterinarios. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+    });
+  };
+
+  const manejarSelectDetalle = (e) => {
+    let servicio = e.target.value;
+    setServicioElegido(servicio);
+    let veterinarioFiltrado = veterinarios.filter((veterinario) =>
+      veterinario.servicios.includes(servicio)
+    );
+    setVeterinarioElegido(veterinarioFiltrado);
+    setHorarioVeterinario([]);
+    if (servicio !== "") {
+      clearErrors("detalle_cita");
+    } else {
+      setError("detalle_cita", {
+        type: "required",
+        message:
+          "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
+      });
+    }
+  };
+
+  const manejarSelectVeterinario = (e) => {
+    let veterinario = e.target.value;
+    let veterinarioEncontrado = veterinarioElegido.find(
+      (veterinario) => veterinario.nombre === e.target.value
+    );
+    if (veterinarioEncontrado) {
+      setHorarioVeterinario(veterinarioEncontrado.horarios);
+    }
+    if (veterinario !== "") {
+      clearErrors("veterinario");
+    } else {
+      setError("veterinario", {
+        type: "required",
+        message: "Debes elegir el veterinario. Este campo es obligatorio.",
+      });
+    }
+  };
+
+  const mostrarMascotas = () => {
+    if (mascotas.length === 0) {
+      return (
+        <Form.Select
+          aria-label="Select mascotas"
+          {...register("mascotas", {
+            required: "Debes elegir una mascota. Este campo es obligatorio.",
+          })}
+        >
+          <option value={""}>No hay mascotas registradas</option>
+        </Form.Select>
+      );
+    }
+    return (
+      <Form.Select
+        aria-label="Select mascotas"
+        {...register("mascotas", {
+          required: "Debes elegir la mascota. Este campo es obligatorio.",
+        })}
+      >
+        <option value={""}>Elegir mascota registrada</option>
+        {mascotas.map((mascota, index) => (
+          <option key={mascota + `${index}`} value={mascota}>
+            {mascota}
+          </option>
+        ))}
+      </Form.Select>
+    );
+  };
 
   const onSubmit = (turnoEditado) => {
-    editarTurno(turnoEditado, 7).then((respuesta) => {
+    editarTurno(turnoEditado, 8).then((respuesta) => {
       if (!respuesta || respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -74,6 +171,36 @@ const EditarTurno = () => {
       <Container className="row justify-content-center align-items-center px-0 mx-0 fs-5">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="inputVeterinario">
+            <Form.Label>Mascota*</Form.Label>
+            {mostrarMascotas()}
+            <Form.Text className="text-danger">
+              {errors.mascotas?.message}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="inputDetalle">
+            <Form.Label>Detalle de Cita*</Form.Label>
+            <Form.Select
+              aria-label="Select detalle de cita"
+              {...register("detalle_cita", {
+                required:
+                  "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
+              })}
+              onChange={manejarSelectDetalle}
+            >
+              <option value={""}>Elegir servicio</option>
+              {veterinarios.map((veterinario) =>
+                veterinario.servicios.map((servicio) => (
+                  <option key={servicio} value={servicio}>
+                    {servicio}
+                  </option>
+                ))
+              )}
+            </Form.Select>
+            <Form.Text className="text-danger">
+              {errors.detalle_cita?.message || ""}
+            </Form.Text>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="inputVeterinario">
             <Form.Label>Veterinario*</Form.Label>
             <Form.Select
               aria-label="Select veterinario"
@@ -81,72 +208,17 @@ const EditarTurno = () => {
                 required:
                   "Debes elegir el veterinario. Este campo es obligatorio.",
               })}
+              onChange={manejarSelectVeterinario}
             >
               <option value="">Elegir veterinario</option>
-              <option value="Dr. Juan Pérez">Dr. Juan Pérez</option>
-              <option value="Dra. Ana González">Dra. Ana González</option>
+              {veterinarioElegido.map((veterinario) => (
+                <option key={veterinario.id} value={veterinario.nombre}>
+                  {veterinario.nombre}
+                </option>
+              ))}
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.veterinario?.message}
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="inputMascota">
-            <Form.Label>Mascota*</Form.Label>
-            <Form.Control
-              type="text"
-              disabled
-              {...register("mascota", {
-                required:
-                  "Debes ingresar el nombre de la mascota. Este campo es obligatorio.",
-                minLength: {
-                  value: 3,
-                  message: "Debes ingresar 3 caracteres como mínimo",
-                },
-                maxLength: {
-                  value: 20,
-                  message: "Debes ingresar 20 caracteres como máximo",
-                },
-                pattern: {
-                  value: /^(?!\\s*$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/,
-                  message:
-                    "El nombre de la mascota no debe contener números, y/o simbolos.",
-                },
-                validate: (value) =>
-                  value.trim() !== "" ||
-                  "No puedes ingresar solo espacios en blanco.",
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.mascota?.message}
-            </Form.Text>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="inputDetalle">
-            <Form.Label>Detalle de Cita*</Form.Label>
-            <Form.Control
-              type="text"
-              {...register("detalle_cita", {
-                required:
-                  "Debes ingresar el detalle de la cita. Este campo es obligatorio.",
-                minLength: {
-                  value: 3,
-                  message: "Debes ingresar 3 caracteres como mínimo",
-                },
-                maxLength: {
-                  value: 20,
-                  message: "Debes ingresar 20 caracteres como máximo",
-                },
-                pattern: {
-                  value: /^(?!\\s*$)[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s]+$/,
-                  message:
-                    "El detalle de la cita no debe contener números, y/o simbolos.",
-                },
-                validate: (value) =>
-                  value.trim() !== "" ||
-                  "No puedes ingresar solo espacios en blanco.",
-              })}
-            />
-            <Form.Text className="text-danger">
-              {errors.detalle_cita?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputFecha">
@@ -184,14 +256,11 @@ const EditarTurno = () => {
               })}
             >
               <option value="">Elegir horario</option>
-              <option value="09:00 AM">09:00 AM</option>
-              <option value="10:00 AM">10:00 AM</option>
-              <option value="11:00 AM">11:00 AM</option>
-              <option value="12:00 AM">12:00 AM</option>
-              <option value="17:00 PM">17:00 PM</option>
-              <option value="18:00 PM">18:00 PM</option>
-              <option value="19:00 PM">19:00 PM</option>
-              <option value="20:00 PM">20:00 PM</option>
+              {horarioVeterinario.map((horario) => (
+                <option key={horario} value={horario}>
+                  {horario}
+                </option>
+              ))}
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.horario?.message}
