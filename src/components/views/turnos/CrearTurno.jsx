@@ -12,14 +12,16 @@ const CrearTurno = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
+    setError,
+    clearErrors,
   } = useForm();
 
   const [mascotas, setMascotas] = useState([]);
   const [veterinarios, setVeterinarios] = useState([]);
   const [servicioElegido, setServicioElegido] = useState("");
-  const [veterinarioElegido, setVeterinarioElegido] = useState(veterinarios);
+  const [veterinarioElegido, setVeterinarioElegido] = useState([]);
   const [horarioVeterinario, setHorarioVeterinario] = useState([]);
 
   useEffect(() => {
@@ -52,15 +54,32 @@ const CrearTurno = () => {
     );
     setVeterinarioElegido(veterinarioFiltrado);
     setHorarioVeterinario([]);
+    if (servicio !== "") {
+      clearErrors("detalle_cita");
+    } else {
+      setError("detalle_cita", {
+        type: "required",
+        message:
+          "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
+      });
+    }
   };
 
   const manejarSelectVeterinario = (e) => {
-    setHorarioVeterinario([]);
+    let veterinario = e.target.value;
     let veterinarioEncontrado = veterinarioElegido.find(
       (veterinario) => veterinario.nombre === e.target.value
     );
     if (veterinarioEncontrado) {
       setHorarioVeterinario(veterinarioEncontrado.horarios);
+    }
+    if (veterinario !== "") {
+      clearErrors("veterinario");
+    } else {
+      setError("veterinario", {
+        type: "required",
+        message: "Debes elegir el veterinario. Este campo es obligatorio.",
+      });
     }
   };
 
@@ -97,10 +116,9 @@ const CrearTurno = () => {
     if (mascotas.length === 0) {
       return (
         <Form.Select
-          aria-label="Select mascotasSelect"
+          aria-label="Select mascotas"
           {...register("mascotas", {
-            required:
-              "Debes elegir el mascotasSelect. Este campo es obligatorio.",
+            required: "Debes elegir una mascota. Este campo es obligatorio.",
           })}
         >
           <option value={""}>No hay mascotas registradas</option>
@@ -142,7 +160,7 @@ const CrearTurno = () => {
               aria-label="Select detalle de cita"
               {...register("detalle_cita", {
                 required:
-                  "Debes ingresar el detalle de la cita. Este campo es obligatorio.",
+                  "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
               })}
               onChange={manejarSelectDetalle}
             >
@@ -156,7 +174,7 @@ const CrearTurno = () => {
               )}
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.detalle_cita?.message}
+              {errors.detalle_cita?.message || ""}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputVeterinario">
