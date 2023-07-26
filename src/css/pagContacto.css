@@ -36,12 +36,6 @@
     animation-duration: 3s;
 }
 
-.imagen_gatito{
-    max-height: auto;
-    max-width: 500px;
-    border: solid 2px #454c5a;
-    z-index: 0;
-}
 
 .card_direccion{
     background-color: #BDEAD8;
@@ -147,6 +141,18 @@
 }
 
 /******    Media queries    ******/
+
+@media  (min-width: 1570px){
+    .imagen_mascotas{
+        max-height: 300px;
+    }
+}
+
+@media  (min-width: 1400px){
+    .imagen_mascotas{
+        margin-bottom: -12.4%;
+    }
+}
 
 
 @media  (max-width: 767px){
