@@ -5,7 +5,7 @@ import Registro from "./components/common/Registro"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {  BrowserRouter ,Routes,Route} from "react-router-dom"
 import "./css/login.css"
-
+import "./css/registro.css"
 function App() {
 
   return (

@@ -25,13 +25,11 @@ body{
     box-shadow: inset -5px -5px rgba(250, 244, 244, 0.5);
     border-radius: 25px;
     flex-wrap: nowrap;
-     width: 40%;
-     display: flex;
+        width: 40%;
+        display: flex;
         padding: 5px;
         align-items: center;
         flex-direction: column;
-        max-width: 400px;
-  padding: 20px;
     
 }
 
@@ -46,14 +44,7 @@ body{
 
 }
 
-.container{
-    --bs-gutter-x: 20rem;
-    --bs-gutter-y: 5.0rem;
+button{
     display: flex;
-    align-items: center;
-    align-content: stretch;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    padding: 40px;
-    height: 100vh;
+    flex-direction: center;
 }
