@@ -8,6 +8,7 @@ import forma3 from "../../assets/img/Principal/formas/forma3.svg";
 import forma7 from "../../assets/img/Principal/formas/forma7.svg";
 import forma6 from "../../assets/img/Principal/formas/forma6.svg";
 import forma10 from "../../assets/img/Principal/formas/forma10.svg";
+import forma11 from "../../assets/img/Principal/formas/forma12.svg";
 import imgSeparadorPerro from "../../assets/img/Principal/separador/separador_Perro.png";
 import imgSeparadorPerro2 from "../../assets/img/Principal/separador/separador_Perro2.png";
 import imgSeparadorPerro3 from "../../assets/img/Principal/separador/separador_Perro3.png";
@@ -20,14 +21,13 @@ import SliderClientes from "./principal/clientes/SliderClientes";
 import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
-import FormPlan from "./principal/plan/FormPlan";
 
 const Inicio = () => {
   return (
     <>
-      <Container fluid className="seccionHeroFondo position-relative py-5 overflow-hidden z-0">
+      <Container fluid className="seccionHeroFondo position-relative py-5 overflow-hidden z-0 text-light">
         <h1 className="display-1 p-3 text-center">Cuida a tus mascotas con <strong>RollingVet</strong></h1>
-        <p className="lead px-3 px-md-5 py-4">
+        <p className="lead px-3 px-md-5 py-4 mx-auto text-center textoHero">
           La forma más sencilla de cuidar a tus mascotas. Dales a tus compañeros el cuidado que merecen!
         </p>
         <div className="w-100 h-100 position-relative z-n1">
@@ -40,11 +40,16 @@ const Inicio = () => {
         </div>
         <Container>
           <div className="w-100 text-center imgSeccionHero">
-            <img src={imgHero} alt="Perro y Gato" className="w-50 h-50" />
+            <img src={imgHero} alt="Perro y Gato" />
           </div>
-          <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 rounded-4 bg-secondary contenedorBotonesHero">
+          <div className="contenedorBotonesHero position-relative">
+            <div className="z-n1 formaBotonesHero position-absolute start-50 translate-middle">
+                <img src={forma11} alt="Froma 11"/>
+            </div>
+            <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 botonesHero">
             <Button variant="primary" className="px-4 py-3 rounded-4">Reservar Turno</Button>
             <Button variant="outline-primary" className="px-4 py-3 rounded-4">Contactanos</Button>
+            </div>
           </div>
         </Container>
       </Container>
@@ -54,7 +59,7 @@ const Inicio = () => {
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro} forma={forma3}></SeparadorCustom>
       <Container className="py-3">
-          <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
+        <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
         <SliderProducto></SliderProducto>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorGato} forma={forma10}></SeparadorCustom>

@@ -5,10 +5,10 @@ import { PlusLg } from "react-bootstrap-icons";
 const CardProducto = ({nombreProducto, precioProducto, imgProducto, categoriaProducto}) => {
     return (
         <Col>
-            <Card className="rounded-4 overflow-hidden fondoCardProducto">
+            <Card className="rounded-4 overflow-hidden fondoCardProducto border-0">
                 <Card.Img src={imgProducto} alt={nombreProducto} className="rounded-4 py-4 px-3 px-md-5 object-fit-contain imgProducto" />
                 <Card.ImgOverlay className="d-flex flex-column justify-content-end p-2">
-                    <div className="w-100 mt-auto rounded-4 p-2 text-dark contenedorDatosProducto">
+                    <div className="w-100 mt-auto rounded-4 p-2 text-dark border border-2 border-dark contenedorDatosProducto">
                         <Card.Title>{nombreProducto}</Card.Title>
                         <div className="d-flex justify-content-between align-items-center">
                             <div>
