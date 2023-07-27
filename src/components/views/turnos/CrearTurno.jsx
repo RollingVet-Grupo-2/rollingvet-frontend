@@ -12,7 +12,7 @@ const CrearTurno = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitted },
     reset,
     setError,
     clearErrors,
@@ -32,7 +32,7 @@ const CrearTurno = () => {
   const fetchMascotas = () => {
     obtenerTurnos().then((respuesta) => {
       if (respuesta) {
-        let mascotas = respuesta.map((turno) => turno.mascota);
+        let mascotas = respuesta.map((turno) => turno.mascotas);
         setMascotas(mascotas);
       } else {
         Swal.fire({
@@ -74,14 +74,16 @@ const CrearTurno = () => {
     );
     setVeterinarioElegido(veterinarioFiltrado);
     setHorarioVeterinario([]);
-    if (servicio !== "") {
-      clearErrors("detalle_cita");
-    } else {
-      setError("detalle_cita", {
-        type: "required",
-        message:
-          "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
-      });
+    if (isSubmitted) {
+      if (servicio !== "") {
+        clearErrors("detalle_cita");
+      } else {
+        setError("detalle_cita", {
+          type: "required",
+          message:
+            "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
+        });
+      }
     }
   };
 

@@ -13,40 +13,36 @@ const EditarTurno = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    reset,
+    formState: { errors, isSubmitted },
     setValue,
-    getValues,
     clearErrors,
     setError,
+    getValues,
   } = useForm();
 
-  const [mascotas, setMascotas] = useState([]);
+  const [mascota, setMascota] = useState("");
   const [veterinarios, setVeterinarios] = useState([]);
   const [servicioElegido, setServicioElegido] = useState("");
   const [veterinarioElegido, setVeterinarioElegido] = useState([]);
   const [horarioVeterinario, setHorarioVeterinario] = useState([]);
 
   useEffect(() => {
-    fetchMascotas();
     fetchVeterinarios();
+    setearValores();
   }, []);
 
-  const fetchMascotas = () => {
-    obtenerTurnos().then((respuesta) => {
+  const setearValores = () => {
+    obtenerTurnoPorId(8).then((respuesta) => {
       if (respuesta) {
-        let mascotas = respuesta.map((turno) => turno.mascotas);
-        setMascotas(mascotas);
-      } else {
-        Swal.fire({
-          title: "Oops! Lo siento!",
-          text: "No se pudo obtener las mascotas registradas. Intente nuevamente más tarde",
-          icon: "error",
-          iconColor: "#a75ef0a4",
-          background: "#062e32",
-          color: "#41e9a6",
-          confirmButtonColor: "#a75ef0a4",
-        });
+        setValue("mascotas", respuesta.mascotas);
+        setValue("detalle_cita", respuesta.detalle_cita);
+        setValue("veterinario", respuesta.veterinario);
+        setValue("fecha", respuesta.fecha);
+        setValue("horario", respuesta.horario);
+        setMascota(respuesta.mascotas);
+        setServicioElegido([respuesta.detalle_cita]);
+        setVeterinarioElegido([respuesta.veterinario]);
+        setHorarioVeterinario([respuesta.horario]);
       }
     });
   };
@@ -77,14 +73,16 @@ const EditarTurno = () => {
     );
     setVeterinarioElegido(veterinarioFiltrado);
     setHorarioVeterinario([]);
-    if (servicio !== "") {
-      clearErrors("detalle_cita");
-    } else {
-      setError("detalle_cita", {
-        type: "required",
-        message:
-          "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
-      });
+    if (isSubmitted) {
+      if (servicio !== "") {
+        clearErrors("detalle_cita");
+      } else {
+        setError("detalle_cita", {
+          type: "required",
+          message:
+            "Debes seleccionar el detalle de la cita. Este campo es obligatorio.",
+        });
+      }
     }
   };
 
@@ -96,44 +94,16 @@ const EditarTurno = () => {
     if (veterinarioEncontrado) {
       setHorarioVeterinario(veterinarioEncontrado.horarios);
     }
-    if (veterinario !== "") {
-      clearErrors("veterinario");
-    } else {
-      setError("veterinario", {
-        type: "required",
-        message: "Debes elegir el veterinario. Este campo es obligatorio.",
-      });
+    if (isSubmitted) {
+      if (veterinario !== "") {
+        clearErrors("veterinario");
+      } else {
+        setError("veterinario", {
+          type: "required",
+          message: "Debes elegir el veterinario. Este campo es obligatorio.",
+        });
+      }
     }
-  };
-
-  const mostrarMascotas = () => {
-    if (mascotas.length === 0) {
-      return (
-        <Form.Select
-          aria-label="Select mascotas"
-          {...register("mascotas", {
-            required: "Debes elegir una mascota. Este campo es obligatorio.",
-          })}
-        >
-          <option value={""}>No hay mascotas registradas</option>
-        </Form.Select>
-      );
-    }
-    return (
-      <Form.Select
-        aria-label="Select mascotas"
-        {...register("mascotas", {
-          required: "Debes elegir la mascota. Este campo es obligatorio.",
-        })}
-      >
-        <option value={""}>Elegir mascota registrada</option>
-        {mascotas.map((mascota, index) => (
-          <option key={mascota + `${index}`} value={mascota}>
-            {mascota}
-          </option>
-        ))}
-      </Form.Select>
-    );
   };
 
   const onSubmit = (turnoEditado) => {
@@ -172,7 +142,17 @@ const EditarTurno = () => {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="inputVeterinario">
             <Form.Label>Mascota*</Form.Label>
-            {mostrarMascotas()}
+            <Form.Select
+              aria-label="Select mascotas"
+              {...register("mascotas", {
+                required: "Debes elegir la mascota. Este campo es obligatorio.",
+              })}
+              disabled
+            >
+              <option value={mascota} disabled>
+                {mascota}
+              </option>
+            </Form.Select>
             <Form.Text className="text-danger">
               {errors.mascotas?.message}
             </Form.Text>
@@ -212,8 +192,11 @@ const EditarTurno = () => {
             >
               <option value="">Elegir veterinario</option>
               {veterinarioElegido.map((veterinario) => (
-                <option key={veterinario.id} value={veterinario.nombre}>
-                  {veterinario.nombre}
+                <option
+                  key={veterinario.id || veterinario}
+                  value={veterinario.nombre || veterinario}
+                >
+                  {veterinario.nombre || [veterinario]}
                 </option>
               ))}
             </Form.Select>

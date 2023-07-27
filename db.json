@@ -1,4 +1,38 @@
 {
+  "veterinarios": [
+    {
+      "id": 1,
+      "nombre": "Dr. Juan Pérez",
+      "servicios": [
+        "Alimentación y asesoramiento nutricional",
+        "Vacunación y control de enfermedades",
+        "Desparasitación"
+      ],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
+      "experiencia": "10 años"
+    },
+    {
+      "id": 2,
+      "nombre": "Dra. Ana González",
+      "servicios": [
+        "Cirugias y procedimientos quirúrgicos",
+        "Consultas especializadas",
+        "Baño, peluquería o corte de uñas"
+      ],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
+      "experiencia": "12 años"
+    }
+  ],
   "turnos": [
     {
       "id": 1,
@@ -52,80 +86,51 @@
       "mascotas": "Romeo",
       "detalle_cita": "Alimentación y asesoramiento nutricional",
       "veterinario": "Dr. Juan Pérez",
-      "fecha": "2023-08-31",
-      "horario": "11:00 AM",
+      "fecha": "2023-09-01",
+      "horario": "12:00 AM",
       "id": 7
-    },
-    {
-      "mascotas": "Romeo",
-      "detalle_cita": "Consultas especializadas",
-      "veterinario": "Dra. Ana González",
-      "fecha": "2023-08-31",
-      "horario": "18:00 PM",
-      "id": 8
     }
   ],
-  "pacientes": [
+  "duenios": [
     {
       "id": 1,
-      "dueño": [
-        {
-          "nombre": "String",
-          "apellido": "String",
-          "email": "String",
-          "telefono": "String",
-          "direccion": "String"
-        }
-      ],
-      "mascota": [
-        {
-          "nombre": "String",
-          "especie": "String",
-          "raza": "String"
-        }
-      ]
-    }
-  ],
-  "turnos2": [
-    {
-      "id": 1,
-      "veterinarioId": 1,
-      "mascotaId": 1,
-      "fecha": "2023-08-23"
-    }
-  ],
-  "veterinarios": [
-    {
-      "id": 1,
-      "nombre": "Dr. Juan Pérez",
-      "servicios": [
-        "Alimentación y asesoramiento nutricional",
-        "Vacunación y control de enfermedades",
-        "Desparasitación"
-      ],
-      "horarios": [
-        "09:00 AM",
-        "10:00 AM",
-        "11:00 AM",
-        "12:00 AM"
-      ],
-      "experiencia": "10 años"
+      "nombre": "Duenio1",
+      "email": "EmailDuenio1",
+      "telefono": "TelefonoDuenio1",
+      "direccion": "DireccionDuenio1"
     },
     {
       "id": 2,
-      "nombre": "Dra. Ana González",
-      "servicios": [
-        "Cirugias y procedimientos quirúrgicos",
-        "Consultas especializadas",
-        "Baño, peluquería o corte de uñas"
-      ],
-      "horarios": [
-        "17:00 PM",
-        "18:00 PM",
-        "19:00 PM",
-        "20:00 PM"
-      ],
-      "experiencia": "12 años"
+      "nombre": "Duenio2",
+      "email": "EmailDuenio2",
+      "telefono": "TelefonoDuenio2",
+      "direccion": "DireccionDuenio2"
+    }
+  ],
+  "mascotas": [
+    {
+      "id": 1,
+      "nombre": "Mascota1",
+      "edad": "EdadMascota1",
+      "especie": "EspecieMascota1",
+      "raza": "RazaMascota1",
+      "duenioId": 1
+    },
+    {
+      "id": 2,
+      "nombre": "Mascota1",
+      "edad": "EdadMascota1",
+      "especie": "EspecieMascota1",
+      "raza": "RazaMascota1",
+      "duenioId": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Mascota1",
+      "edad": "EdadMascota1",
+      "especie": "EspecieMascota1",
+      "raza": "RazaMascota1",
+      "duenioId": 2
     }
   ]
 }
