@@ -1,7 +1,9 @@
 import {useState} from "react"
 import "react-bootstrap"
+import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
-import axios from "axios";
+import "../../css/login.css"
+
 function Login(){
   const [correo,setCorreo]= useState()
   const [contrasena,setContrasena]= useState()
@@ -15,38 +17,49 @@ function Login(){
   }
 
   return(
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-      <div className="bg-white p-b3 rounded w-25">
+    <div className="container">
+    <div className=" formulario">
+      <div className=" m-5 d-flex1">
        <h2 className="text-center">Iniciar sesion</h2>
        <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+        <div className="d-flex px-4 m-3">
           <label htmlFor="Email">
-            <strong>Correo electronico</strong>
+            <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg></strong>
           </label>
           <input type="text"
           placeholder="Ingresar Correo" 
           autoComplete="off"
           name="Correo electronico"
-          className="form-control rounded-0"
+          className=" form-control rounded-0 text-center"
           onChange={(e) => setCorreo(e.target.value)}
           />
         </div>
-        <div className="mb-3">
+        <div className="d-flex px-4 m-3">
           <label htmlFor="contraseña">
-            <strong>contraseña</strong>
+            <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+  <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+</svg></strong>
           </label>
           <input type="password"
           placeholder="Ingresar Contraseña" 
           autoComplete="off"
           name="password"
-          className="form-control rounded-0"
+          className="form-control rounded-0 text-center"
           onChange={(e) => setContrasena(e.target.value)}/>
         </div>
-        <button type="submit" className="btn btn-success w-90  rounded-0">iNGRESAR</button>
-        </form>
-        <p>¿Olvidaste tu contraseña? </p>
-        <Link to="/registro" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">Registrarse</Link>
+        <div className="d-grid gap-2 w-90">
+      <Button type="submit" variant="primary" size="md">
+        Ingresar
+      </Button>
       </div>
+        </form>
+        <h5 className="text-center">¿Olvidaste tu contraseña? </h5>
+        <Link to="/registro" className="btn btn-default border w-100  rounded-3 bg-success" >Registrarse</Link>
+      </div>
+    </div>
     </div>
   );
 }
