@@ -1,0 +1,9 @@
+.login{
+    height: 100vh;
+}
+
+.container{
+    width: 300px;
+    height:min-content;
+    border-radius:5px ;
+}
