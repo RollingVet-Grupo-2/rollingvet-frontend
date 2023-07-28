@@ -8,7 +8,12 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -19,7 +24,12 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ],
@@ -90,20 +100,16 @@
       "direccion": "DireccionDuenio1",
       "mascotas": [
         {
-          "id": 1,
           "nombre": "Mascota1",
           "edad": "EdadMascota1",
           "especie": "EspecieMascota1",
-          "raza": "RazaMascota1",
-          "duenioId": 1
+          "raza": "RazaMascota1"
         },
         {
-          "id": 2,
           "nombre": "Mascota1",
           "edad": "EdadMascota1",
           "especie": "EspecieMascota1",
-          "raza": "RazaMascota1",
-          "duenioId": 1
+          "raza": "RazaMascota1"
         }
       ]
     },
@@ -115,14 +121,23 @@
       "direccion": "DireccionDuenio2",
       "mascotas": [
         {
-          "id": 3,
           "nombre": "Mascota1",
           "edad": "EdadMascota1",
           "especie": "EspecieMascota1",
-          "raza": "RazaMascota1",
-          "duenioId": 2
+          "raza": "RazaMascota1"
         }
       ]
+    },
+    {
+      "mascotas": [
+        {
+          "nombre": "Luna",
+          "edad": "4 año",
+          "especie": "Perro",
+          "raza": "Labrador"
+        }
+      ],
+      "id": 3
     }
   ]
 }
