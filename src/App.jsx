@@ -8,8 +8,8 @@ import EditarPaciente from "./components/views/pacientes/EditarPaciente";
 function App() {
   return (
     <>
-      {/* <AdminPacientes /> */}
-      <CrearPaciente />
+      <AdminPacientes />
+      {/* <CrearPaciente /> */}
       {/* <EditarPaciente /> */}
     </>
   );
