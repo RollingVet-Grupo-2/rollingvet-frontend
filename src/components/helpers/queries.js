@@ -17,11 +17,11 @@ export const obtenerPacientes = async () => {
   return listaPacientes;
 };
 
-export const validarEmailExistente = async (pacienteParaCrear) => {
+export const validarEmailExistente = async (email) => {
   const respuesta = await fetch(API_PACIENTES);
   const listaPacientes = await respuesta.json();
-  const emailExistente = listaPacientes.find(
-    (paciente) => paciente.email === pacienteParaCrear.email
+  const emailExistente = listaPacientes.some(
+    (paciente) => paciente.email === email
   );
   return emailExistente;
 };

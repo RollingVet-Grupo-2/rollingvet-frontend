@@ -16,13 +16,6 @@ const CrearPaciente = () => {
 
   const [paso, setPaso] = useState(1);
   const [paciente, setPaciente] = useState({});
-  const irAlSiguientePaso = () => {
-    setPaso((pasoActual) => pasoActual + 1);
-  };
-
-  const irAlPasoAnterior = () => {
-    setPaso((pasoActual) => pasoActual - 1);
-  };
 
   const pasosMaximos = 2;
 
@@ -68,7 +61,15 @@ const CrearPaciente = () => {
     }
   };
 
-  const onSubmit = (paciente) => {
+  const irAlSiguientePaso = () => {
+    setPaso((pasoActual) => pasoActual + 1);
+  };
+
+  const irAlPasoAnterior = () => {
+    setPaso((pasoActual) => pasoActual - 1);
+  };
+
+  const darFormatoPaciente = (paciente) => {
     const pacienteFormateado = {
       nombre: paciente.dueño,
       email: paciente.email,
@@ -83,6 +84,11 @@ const CrearPaciente = () => {
         },
       ],
     };
+    return pacienteFormateado;
+  };
+
+  const onSubmit = (paciente) => {
+    let pacienteFormateado = darFormatoPaciente(paciente);
     setPaciente(pacienteFormateado);
     crearPaciente(pacienteFormateado).then((respuesta) => {
       if (respuesta.status === 404) {
@@ -91,6 +97,7 @@ const CrearPaciente = () => {
       if (respuesta.status === 201) {
         console.log("se creo paciente con exito");
         reset();
+        setPaso(1);
       }
     });
   };
@@ -157,9 +164,12 @@ const CrearPaciente = () => {
                         "El formato del correo electronico debe ser válido. Ej: mail@dominio.com",
                     },
                     validate: {
-                      pacienteExistente: async (value) =>
-                        (await validarEmailExistente(value)) ||
-                        "El email ya se encuentra registrado. Ingrese otro email.",
+                      pacienteExistente: async (value) => {
+                        const existeEmail = await validarEmailExistente(value);
+                        return existeEmail
+                          ? "El email ya se encuentra registrado. Ingrese otro email."
+                          : true;
+                      },
                     },
                   })}
                 />

@@ -8,12 +8,7 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": [
-        "09:00 AM",
-        "10:00 AM",
-        "11:00 AM",
-        "12:00 AM"
-      ],
+      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
       "experiencia": "10 años"
     },
     {
@@ -24,12 +19,7 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": [
-        "17:00 PM",
-        "18:00 PM",
-        "19:00 PM",
-        "20:00 PM"
-      ],
+      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
       "experiencia": "12 años"
     }
   ],
@@ -133,21 +123,6 @@
           "duenioId": 2
         }
       ]
-    },
-    {
-      "nombre": "Carlos Gomez",
-      "email": "herreranicoo17@gmail.com",
-      "telefono": "3815905162",
-      "direccion": "Combate de Las Piedras 2150",
-      "mascotas": [
-        {
-          "nombre": "Luna",
-          "edad": "1 año",
-          "especie": "Perro",
-          "raza": "Labrador"
-        }
-      ],
-      "id": 3
     }
   ]
 }
