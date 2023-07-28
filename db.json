@@ -1,0 +1,143 @@
+{
+  "veterinarios": [
+    {
+      "id": 1,
+      "nombre": "Dr. Juan Pérez",
+      "servicios": [
+        "Alimentación y asesoramiento nutricional",
+        "Vacunación y control de enfermedades",
+        "Desparasitación"
+      ],
+      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "experiencia": "10 años"
+    },
+    {
+      "id": 2,
+      "nombre": "Dra. Ana González",
+      "servicios": [
+        "Cirugias y procedimientos quirúrgicos",
+        "Consultas especializadas",
+        "Baño, peluquería o corte de uñas"
+      ],
+      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "experiencia": "12 años"
+    }
+  ],
+  "turnos": [
+    {
+      "id": 1,
+      "veterinario": "Dr. Juan Pérez",
+      "mascota": "Luna",
+      "detalle_cita": "Alimentación y asesoramiento nutricional",
+      "fecha": "2023-08-23",
+      "horario": "09:00 AM"
+    },
+    {
+      "id": 2,
+      "veterinario": "Dra. Ana González",
+      "mascota": "Rocco",
+      "detalle_cita": "Cirugias y procedimientos quirúrgicos",
+      "fecha": "2023-08-25",
+      "horario": "17:00 PM"
+    },
+    {
+      "id": 3,
+      "veterinario": "Dr. Juan Pérez",
+      "mascota": "Toby",
+      "detalle_cita": "Vacunación y control de enfermedades",
+      "fecha": "2023-08-25",
+      "horario": "10:00 AM"
+    },
+    {
+      "id": 4,
+      "veterinario": "Dra. Ana González",
+      "mascota": "Firulais",
+      "detalle_cita": "Consultas especializadas",
+      "fecha": "2023-08-25",
+      "horario": "18:00 PM"
+    },
+    {
+      "veterinario": "Dr. Juan Pérez",
+      "mascota": "Clifford",
+      "detalle_cita": "Desparasitación",
+      "fecha": "2023-08-26",
+      "horario": "11:00 AM",
+      "id": 5
+    },
+    {
+      "veterinario": "Dra. Ana González",
+      "mascota": "Morita",
+      "detalle_cita": "Baño, peluquería o corte de uñas",
+      "fecha": "2023-08-29",
+      "horario": "19:00 PM",
+      "id": 6
+    },
+    {
+      "mascota": "Romeo",
+      "detalle_cita": "Alimentación y asesoramiento nutricional",
+      "veterinario": "Dr. Juan Pérez",
+      "fecha": "2023-09-01",
+      "horario": "12:00 AM",
+      "id": 7
+    }
+  ],
+  "pacientes": [
+    {
+      "id": 1,
+      "nombre": "Duenio1",
+      "email": "EmailDuenio1",
+      "telefono": "TelefonoDuenio1",
+      "direccion": "DireccionDuenio1",
+      "mascotas": [
+        {
+          "id": 1,
+          "nombre": "Mascota1",
+          "edad": "EdadMascota1",
+          "especie": "EspecieMascota1",
+          "raza": "RazaMascota1",
+          "duenioId": 1
+        },
+        {
+          "id": 2,
+          "nombre": "Mascota1",
+          "edad": "EdadMascota1",
+          "especie": "EspecieMascota1",
+          "raza": "RazaMascota1",
+          "duenioId": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Duenio2",
+      "email": "EmailDuenio2",
+      "telefono": "TelefonoDuenio2",
+      "direccion": "DireccionDuenio2",
+      "mascotas": [
+        {
+          "id": 3,
+          "nombre": "Mascota1",
+          "edad": "EdadMascota1",
+          "especie": "EspecieMascota1",
+          "raza": "RazaMascota1",
+          "duenioId": 2
+        }
+      ]
+    },
+    {
+      "nombre": "Carlos Gomez",
+      "email": "herreranicoo17@gmail.com",
+      "telefono": "3815905162",
+      "direccion": "Combate de Las Piedras 2150",
+      "mascotas": [
+        {
+          "nombre": "Luna",
+          "edad": "1 año",
+          "especie": "Perro",
+          "raza": "Labrador"
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
