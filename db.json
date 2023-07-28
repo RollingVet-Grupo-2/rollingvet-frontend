@@ -37,7 +37,7 @@
     {
       "id": 1,
       "veterinario": "Dr. Juan Pérez",
-      "mascotas": "Luna",
+      "mascota": "Luna",
       "detalle_cita": "Alimentación y asesoramiento nutricional",
       "fecha": "2023-08-23",
       "horario": "09:00 AM"
@@ -45,7 +45,7 @@
     {
       "id": 2,
       "veterinario": "Dra. Ana González",
-      "mascotas": "Rocco",
+      "mascota": "Rocco",
       "detalle_cita": "Cirugias y procedimientos quirúrgicos",
       "fecha": "2023-08-25",
       "horario": "17:00 PM"
@@ -53,7 +53,7 @@
     {
       "id": 3,
       "veterinario": "Dr. Juan Pérez",
-      "mascotas": "Toby",
+      "mascota": "Toby",
       "detalle_cita": "Vacunación y control de enfermedades",
       "fecha": "2023-08-25",
       "horario": "10:00 AM"
@@ -61,14 +61,14 @@
     {
       "id": 4,
       "veterinario": "Dra. Ana González",
-      "mascotas": "Firulais",
+      "mascota": "Firulais",
       "detalle_cita": "Consultas especializadas",
       "fecha": "2023-08-25",
       "horario": "18:00 PM"
     },
     {
       "veterinario": "Dr. Juan Pérez",
-      "mascotas": "Clifford",
+      "mascota": "Clifford",
       "detalle_cita": "Desparasitación",
       "fecha": "2023-08-26",
       "horario": "11:00 AM",
@@ -76,19 +76,27 @@
     },
     {
       "veterinario": "Dra. Ana González",
-      "mascotas": "Morita",
+      "mascota": "Morita",
       "detalle_cita": "Baño, peluquería o corte de uñas",
       "fecha": "2023-08-29",
       "horario": "19:00 PM",
       "id": 6
     },
     {
-      "mascotas": "Romeo",
+      "mascota": "Romeo",
       "detalle_cita": "Alimentación y asesoramiento nutricional",
       "veterinario": "Dr. Juan Pérez",
       "fecha": "2023-09-01",
       "horario": "12:00 AM",
       "id": 7
+    },
+    {
+      "mascota": "Romeo",
+      "detalle_cita": "Desparasitación",
+      "veterinario": "Dr. Juan Pérez",
+      "fecha": "2023-08-05",
+      "horario": "10:00 AM",
+      "id": 8
     }
   ],
   "duenios": [

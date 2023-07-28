@@ -32,7 +32,7 @@ const CrearTurno = () => {
   const fetchMascotas = () => {
     obtenerTurnos().then((respuesta) => {
       if (respuesta) {
-        let mascotas = respuesta.map((turno) => turno.mascotas);
+        let mascotas = respuesta.map((turno) => turno.mascota);
         setMascotas(mascotas);
       } else {
         Swal.fire({
@@ -139,7 +139,7 @@ const CrearTurno = () => {
       return (
         <Form.Select
           aria-label="Select mascotas"
-          {...register("mascotas", {
+          {...register("mascota", {
             required: "Debes elegir una mascota. Este campo es obligatorio.",
           })}
         >
@@ -150,7 +150,7 @@ const CrearTurno = () => {
     return (
       <Form.Select
         aria-label="Select mascotas"
-        {...register("mascotas", {
+        {...register("mascota", {
           required: "Debes elegir la mascota. Este campo es obligatorio.",
         })}
       >
@@ -173,7 +173,7 @@ const CrearTurno = () => {
             <Form.Label>Mascota*</Form.Label>
             {mostrarMascotas()}
             <Form.Text className="text-danger">
-              {errors.mascotas?.message}
+              {errors.mascota?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputDetalle">

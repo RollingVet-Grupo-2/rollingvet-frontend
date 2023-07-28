@@ -34,12 +34,12 @@ const EditarTurno = () => {
   const setearValores = () => {
     obtenerTurnoPorId(8).then((respuesta) => {
       if (respuesta) {
-        setValue("mascotas", respuesta.mascotas);
+        setValue("mascota", respuesta.mascota);
         setValue("detalle_cita", respuesta.detalle_cita);
         setValue("veterinario", respuesta.veterinario);
         setValue("fecha", respuesta.fecha);
         setValue("horario", respuesta.horario);
-        setMascota(respuesta.mascotas);
+        setMascota(respuesta.mascota);
         setServicioElegido([respuesta.detalle_cita]);
         setVeterinarioElegido([respuesta.veterinario]);
         setHorarioVeterinario([respuesta.horario]);
@@ -143,8 +143,8 @@ const EditarTurno = () => {
           <Form.Group className="mb-3" controlId="inputVeterinario">
             <Form.Label>Mascota*</Form.Label>
             <Form.Select
-              aria-label="Select mascotas"
-              {...register("mascotas", {
+              aria-label="Select mascota"
+              {...register("mascota", {
                 required: "Debes elegir la mascota. Este campo es obligatorio.",
               })}
               disabled
@@ -154,7 +154,7 @@ const EditarTurno = () => {
               </option>
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.mascotas?.message}
+              {errors.mascota?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputDetalle">
