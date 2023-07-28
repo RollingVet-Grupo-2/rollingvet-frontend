@@ -8,7 +8,12 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -19,7 +24,12 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ],

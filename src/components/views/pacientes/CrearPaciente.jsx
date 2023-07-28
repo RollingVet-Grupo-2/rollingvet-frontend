@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearPaciente } from "../../helpers/queries";
+import { crearPaciente, validarEmailExistente } from "../../helpers/queries";
 
 const CrearPaciente = () => {
   const {
@@ -16,7 +16,7 @@ const CrearPaciente = () => {
 
   const [paso, setPaso] = useState(1);
   const [paciente, setPaciente] = useState({});
-  const completarPaso = () => {
+  const irAlSiguientePaso = () => {
     setPaso((pasoActual) => pasoActual + 1);
   };
 
@@ -55,11 +55,11 @@ const CrearPaciente = () => {
         <div className="text-center">
           <Button
             disabled={!isValid}
-            onClick={completarPaso}
             variant="success"
             size="lg"
             type="button"
             className="fw-bold"
+            onClick={irAlSiguientePaso}
           >
             Siguiente paso
           </Button>
@@ -83,7 +83,6 @@ const CrearPaciente = () => {
         },
       ],
     };
-    console.log(pacienteFormateado);
     setPaciente(pacienteFormateado);
     crearPaciente(pacienteFormateado).then((respuesta) => {
       if (respuesta.status === 404) {
@@ -94,7 +93,6 @@ const CrearPaciente = () => {
         reset();
       }
     });
-    agregarMascota();
   };
 
   return (
@@ -157,6 +155,11 @@ const CrearPaciente = () => {
                         /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=? ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
                       message:
                         "El formato del correo electronico debe ser válido. Ej: mail@dominio.com",
+                    },
+                    validate: {
+                      pacienteExistente: async (value) =>
+                        (await validarEmailExistente(value)) ||
+                        "El email ya se encuentra registrado. Ingrese otro email.",
                     },
                   })}
                 />
