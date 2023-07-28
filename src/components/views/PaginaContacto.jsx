@@ -12,15 +12,15 @@ const PaginaContacto = () => {
                 <div className="row col-12 mascotas">
                     <img className="imagen_mascotas animate__animated animate__fadeInUp" src={mascotas} alt="Imagen mascotas" />
                 </div>
-                <article className="row justify-content-center contenedor_bienvenida py-5 ps-md-1 py-md-5">
-                    <aside className="col-md-11 col-lg-7 text-center py-4 px-2">
+                <article className="row justify-content-center contenedor_bienvenida py-5">
+                    <aside className="col-lg-12 text-center py-4">
                         <div className="card_texto py-lg-5 mt-md-4 px-3 animate__animated animate__fadeInUp">
                             <h2>Aquí encontraras diferentes medios para poder contactarte con nosotros</h2>
                             <hr />
                             <p className="fs-4 fw-semibold">En nuestra veterinaria, nos apasiona el cuidado y bienestar de todas las mascotas. Nuestras instalaciones están equipadas con tecnología de vanguardia para diagnosticar y tratar diversas condiciones de salud. En nuestra veterinaria, su compañero peludo será tratado con el mismo cariño y dedicación que brindaríamos a nuestros propios animales.</p>
                             <hr/>
                             <h5 className="my-lg-4">Te esperamos en:</h5>
-                            <div className="py-4 col-12 col-lg-7 card_direccion float-end p-3 animate__animated animate__jackInTheBox">
+                            <div className="py-4 animate__animated animate__jackInTheBox">
                                 <i className="fs-4 fi fi-sr-marker"></i>
                                 <p><b>Gral. Paz 576, T4000
                                     <br />San Miguel de Tucumán, Tucumán</b></p>

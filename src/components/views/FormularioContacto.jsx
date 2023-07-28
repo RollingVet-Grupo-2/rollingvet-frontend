@@ -17,20 +17,18 @@ const FormularioContacto = () => {
 
     return (
         <section className="my-5 pt-5 d-flex flex-column-reverse flex-md-row contenedor_formulario justify-content-around">
-            <aside className="contenedor_textoImg col-12 col-md-5 col-lg-5 text-center">
-                <h3>Nos contactamos con vos!</h3>
-                <hr />
-                    <p>
-                    Complete el formulario con sus datos, deje su mensaje y un agente de
-                    atencion al cliente se pondra en contacto con usted.
-                </p>
+            <aside className="col-md-5 col-lg-6 text-center">
                     <img
-                    className="perro_formulario col-12 col-md-12 col-lg-12"
+                    className="perro_formulario col-6 pt-4"
                     src={perroFormulario}
                     alt="Imagen perro"
                 />
+                <div className="pt-4 py-xxl-5 bordeSuperior">
+                <h3>Nos contactamos con vos!</h3>
+                <p>Completa el formulario y un agente de atencion al cliente se pondra en contacto con vos para poder atender tu consulta.</p>
+                </div>
             </aside>
-            <aside className="text-center col-12 col-md-5 col-lg-4 rounded fondo_huellas mb-5">
+            <aside className="text-center col-12 col-md-5 col-lg-4 mb-5 rounded fondo_huellas">
                 <h4 className="pt-2">Formulario de contacto</h4>
                 <hr />
                 <Row className='"mx-0 justify-content-md-center'>

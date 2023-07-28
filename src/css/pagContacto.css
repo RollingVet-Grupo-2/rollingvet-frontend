@@ -47,6 +47,11 @@
 
 /****** Formulario de contacto ******/
 
+.bordeSuperior{
+    border-top: solid 5px #fff;
+    border-radius: 5px;
+}
+
 .contenedor_formulario{
     position: relative;
     background-color: #BDEAD8;
@@ -110,13 +115,12 @@
 .contenedor_textoImg{
     display: flex;
     flex-direction: column;
-    position: relative;
 }
 
 .perro_formulario{
-    margin-bottom: -7.7%;
-    position: absolute;
+    margin-bottom: -3.9%;
     bottom: 0;
+    z-index: 3;
 }
 
 /****** Canales de contacto ******/
@@ -142,18 +146,13 @@
 
 /******    Media queries    ******/
 
-@media  (min-width: 1570px){
-    .imagen_mascotas{
-        max-height: 300px;
-    }
-}
+
 
 @media  (min-width: 1400px){
     .imagen_mascotas{
         margin-bottom: -12.4%;
     }
 }
-
 
 @media  (max-width: 767px){
     .perro_formulario{
@@ -164,9 +163,5 @@
     }
 }
 
-@media (max-width: 912px){
-    .contenedor_gatito{
-        display: none;
-    }
-}
+
 
