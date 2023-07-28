@@ -1,0 +1,10 @@
+.fondoCardProducto {
+    background: radial-gradient(100% 70% at 60% 45%, #F4B693 0%, rgba(255, 255, 255, 0.00) 100%);
+    height: 25rem;
+}
+.contenedorDatosProducto{
+    background:linear-gradient(transparent -25%, var(--bs-primary) 50%);
+}
+.imgProducto{
+    filter: drop-shadow(0 1rem 0.8rem rgba(0, 0, 0, 0.2));
+}
