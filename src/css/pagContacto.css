@@ -1,0 +1,166 @@
+#root{
+    color: #454c5a;
+}
+
+.row{
+    margin:0;
+}
+
+/****** Imagen mascotas ******/
+
+.imagen_mascotas {
+    animation-duration: 2s;
+    margin-bottom: -12.2%;
+}
+
+.mascotas {
+    z-index: 3;
+}
+
+/****** Bienvenida ******/
+
+.contenedor_bienvenida{
+    background-color: darkslategray;
+    z-index: 1;
+}
+
+.card_texto{
+    background-image: url('../assets/img/paginaContacto/contactoFondo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation-duration: 4s;
+}
+
+.contenedor_gatito{
+    animation-duration: 3s;
+}
+
+.imagen_gatito{
+    max-height: auto;
+    max-width: 500px;
+    border: solid 2px #454c5a;
+    z-index: 0;
+}
+
+.card_direccion{
+    background-color: #BDEAD8;
+    max-width: auto;
+    max-height: 200px;
+    border: solid 2px #454c5a;
+    animation-duration: 8s;
+}
+
+/****** Formulario de contacto ******/
+
+.contenedor_formulario{
+    position: relative;
+    background-color: #BDEAD8;
+}
+
+.fondo_huellas{
+    background-color: aliceblue;
+    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.boton_formContacto {
+    background: #fff;
+    /* color de fondo */
+    color: darkslategrey;
+    /* color de fuente */
+    border: 2px solid darkslategrey;
+    /* tamaño y color de borde */
+    margin: 5px 0px;
+    padding: 7px 12px;
+    border-radius: 3px;
+    /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.boton_formContacto:hover {
+    color: #fff;
+    background: darkslategrey;
+    border-color: darkslategrey;
+    /* color de fuente hover */
+}
+
+.boton_formContacto::after {
+    content: "";
+    background: darkslategrey;
+    /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+
+.boton_formContacto:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
+
+/****** Perro Formulario ******/
+
+.contenedor_textoImg{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.perro_formulario{
+    margin-bottom: -7.7%;
+    position: absolute;
+    bottom: 0;
+}
+
+/****** Canales de contacto ******/
+
+.canales_contacto{
+    color: #BDEAD8;
+    background-color: darkslategrey;
+}
+
+/****** Logo wsp ******/
+
+.logo_wsp{
+    max-width: 60px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right:20px;
+    z-index: 4
+    ;
+}
+
+/******    Media queries    ******/
+
+
+@media  (max-width: 767px){
+    .perro_formulario{
+        position: inherit;
+    }
+    .imagen_mascotas{
+        margin-bottom: -11.7%;
+    }
+}
+
+@media (max-width: 912px){
+    .contenedor_gatito{
+        display: none;
+    }
+}
+
