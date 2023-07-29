@@ -109,23 +109,25 @@ const AdminPacientes = () => {
           </Form.Group>
         </Form>
         <h2>Lista de Pacientes</h2>
-        <Table
-          responsive
-          striped
-          bordered
-          hover
-          variant="dark"
-          className="table-center text-center"
-        >
-          <thead>
-            <tr>
-              <th>Dueño</th>
-              <th>Mascotas</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>{mostrarPacientes()}</tbody>
-        </Table>
+        <Row className="justify-content-center align-items-center">
+          <Table
+            responsive
+            striped
+            bordered
+            hover
+            variant="dark"
+            className="table-center text-center"
+          >
+            <thead>
+              <tr>
+                <th>Dueño</th>
+                <th>Mascotas</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>{mostrarPacientes()}</tbody>
+          </Table>
+        </Row>
       </section>
     </section>
   );
