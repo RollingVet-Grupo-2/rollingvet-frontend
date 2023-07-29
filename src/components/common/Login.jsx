@@ -30,7 +30,9 @@ export const Login = () => {
         
       }
     }
-  }
+  } 
+
+  
 
   return(
     <div className="container">
@@ -56,7 +58,7 @@ export const Login = () => {
           <input type="password" id="txtpas" placeholder="Ingresar Contraseña" autoComplete="off" name="password" className="form-control" onChange={(e=> setPas(e.target.value))} /> 
         </div>
         <div className="d-grid gap-2 w-90">
-      <Button onClick={iniciarSesion} type="submit" variant="primary" size="md" >
+      <Button  onClick={iniciarSesion} type="submit" variant="primary" size="md" >
         Ingresar
       </Button>
       </div>
