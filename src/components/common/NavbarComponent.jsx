@@ -1,7 +1,8 @@
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import Logo from "../../assets/rollingVetLogo.svg";
 import LogoMobile from "../../assets/rollingVetLogoMobile.svg";
-
+import { useNavigate } from "react-router";
+import { NavLink } from "react-router-dom";
 import "../../css/navbar.css";
 
 const NavbarPage = () => {
@@ -17,9 +18,9 @@ const NavbarPage = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto gap-md-4">
-                        <Nav.Link href="#home" className="navLinks">Inicio</Nav.Link>
-                        <Nav.Link href="#home" className="navLinks">Contacto</Nav.Link>
-                        <Nav.Link href="#link" className="navLinks">Login</Nav.Link>
+                        <NavLink end className={"navLinks nav-item nav-link"} to={"/"}>Inicio</NavLink>
+                        <NavLink className={"navLinks nav-item nav-link"} to={"/contacto"}>Contacto</NavLink>
+                        <NavLink className={"navLinks nav-item nav-link"}>Login</NavLink>
                         <Dropdown>
                             <Dropdown.Toggle
                                 variant="success"
