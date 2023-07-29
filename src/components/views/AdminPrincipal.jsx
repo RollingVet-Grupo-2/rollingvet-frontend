@@ -3,14 +3,62 @@ import trabajadores from "../../assets/img/administrador/co-workers.svg";
 import vets from "../../assets/img/administrador/vets.svg";
 import "../../css/AdminPrincipal.css";
 import { useEffect, useState } from "react";
-import { obtenerTurnos } from "../helpers/queries";
+import {
+  obtenerPacientes,
+  obtenerTurnos,
+  obtenerVeterinarios,
+} from "../helpers/queries";
 import Swal from "sweetalert2";
 import TurnosAsignados from "./turnos/TurnosAsignados";
 
 const AdminPrincipal = () => {
+  const [veterinarios, setVeterinarios] = useState([]);
+  const [pacientes, setPacientes] = useState([]);
   const [turnos, setTurnos] = useState([]);
 
   useEffect(() => {
+    fetchVeterinarios();
+    fetchPacientes();
+    fetchTurnos();
+  }, []);
+
+  const fetchVeterinarios = () => {
+    obtenerVeterinarios().then((respuesta) => {
+      if (respuesta) {
+        setVeterinarios(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener la lista de pacientes. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
+  };
+
+  const fetchPacientes = () => {
+    obtenerPacientes().then((respuesta) => {
+      if (respuesta) {
+        setPacientes(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener la lista de pacientes. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
+  };
+
+  const fetchTurnos = () => {
     obtenerTurnos().then((respuesta) => {
       if (respuesta) {
         setTurnos(respuesta);
@@ -26,7 +74,8 @@ const AdminPrincipal = () => {
         });
       }
     });
-  }, []);
+  };
+
   return (
     <section className="container text-center py-3">
       <section className="border border-3 rounded rounded-3 shadow mb-3">
@@ -103,7 +152,11 @@ const AdminPrincipal = () => {
             </Col>
             <Col xs={10}>
               <Card.Title>Veterinarios</Card.Title>
-              <Card.Text className="fw-bold">2</Card.Text>
+              <Card.Text className="fw-bold">
+                {veterinarios
+                  ? veterinarios.length
+                  : "No se pudo obtener datos"}
+              </Card.Text>
             </Col>
           </Card.Body>
         </Card>
@@ -121,8 +174,16 @@ const AdminPrincipal = () => {
               </span>
             </Col>
             <Col xs={10}>
-              <Card.Title>Pacientes</Card.Title>
-              <Card.Text className="fw-bold">6</Card.Text>
+              <Card.Title>
+                Pacientes: <span className="fw-bold">{pacientes.length}</span>
+              </Card.Title>
+              <Card.Text className="h5">
+                Mascotas:{" "}
+                <span className="fw-bold">
+                  {" "}
+                  {pacientes.flatMap((paciente) => paciente.mascotas).length}
+                </span>
+              </Card.Text>
             </Col>
           </Card.Body>
         </Card>
