@@ -33,7 +33,7 @@ const AdminPacientes = () => {
       return (
         <tr>
           <td className="lead" colSpan={6}>
-            No hay pacientes asignados
+            No hay pacientes registrados.
           </td>
         </tr>
       );
@@ -43,7 +43,7 @@ const AdminPacientes = () => {
       return (
         <tr>
           <td className="lead" colSpan={6}>
-            No se encontraron coincidencias
+            No se encontraron coincidencias.
           </td>
         </tr>
       );
