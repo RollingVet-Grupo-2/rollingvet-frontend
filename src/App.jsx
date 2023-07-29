@@ -4,13 +4,25 @@ import "./App.css";
 import AdminTurnos from "./components/views/AdminTurnos";
 import CrearTurno from "./components/views/turnos/CrearTurno";
 import EditarTurno from "./components/views/turnos/EditarTurno";
-
+import AdminPrincipal from "./components/views/AdminPrincipal";
+import NavbarPageComponent from './components/common/NavbarComponent';
+import Inicio from './components/views/Inicio';
+import FooterComponent from "./components/common/FooterComponent";
+import Error404 from "./components/views/Error404";
+import "./App.css";
+import PaginaContacto from "./components/views/PaginaContacto";
 function App() {
   return (
     <>
-      {/* <AdminTurnos /> */}
-      {/* <CrearTurno /> */}
-      <EditarTurno />
+    <NavbarPageComponent></NavbarPageComponent>
+    <AdminPrincipal />
+    {/* <AdminTurnos /> */}
+    {/* <CrearTurno /> */}
+    {/* <EditarTurno /> */}
+    {/* <Inicio></Inicio> */}
+    {/* <Error404></Error404> */}
+    {/* <PaginaContacto></PaginaContacto> */}
+    <FooterComponent></FooterComponent>
     </>
   );
 }
