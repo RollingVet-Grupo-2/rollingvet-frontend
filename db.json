@@ -1,9 +1,9 @@
  {
- "usuarios": [
+ "usuario": [
   {
     "id": 1,
     "nombreUsuario": "admin",
-    "email": "admin@rollingcode.com",
+    "email": "admin@rollingvet.com",
     "password": "123456aA"
   }
 ]

@@ -2,18 +2,39 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import { useForm } from "react-hook-form"
 import Row from 'react-bootstrap/Row';
+import "../../css/login.css"
+import { iniciarSesion } from '../helpers/queries';
+import Swal from "sweetalert2";
+
 
 const Login =() =>{
     const { register, handleSubmit, formState: {errors}, reset} = useForm(); 
 
 const onSubmit = (usuario)=>{
     console.log(usuario);
-    reset();
+    iniciarSesion(usuario).then((respuesta)=>{
+      if(respuesta && respuesta.status === 200){
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta));
+        setUsuarioLogueado(respuesta)
+        reset();
+      }else{
+        Swal.fire(
+          'Error',
+          'El email o password son incorrectos',
+          'error'
+        )
+      }
+    })
+    
 }
 
     return (
+      <section className="my-5 pt-5 d-flex flex-column-reverse flex-md-row contenedor_formulario justify-content-around">
+            <aside className="text-center col-12 col-md-5 col-lg-4 rounded fondo_huellas mb-5">
+                <h4 className="pt-2">Iniciar sesion</h4>
+                <hr />
         <Form onSubmit={handleSubmit (onSubmit)}>
-        <Form.Group as={Row} className="mb-3" >
+        <Form.Group as={Row} >
           <Form.Label column sm="2">
             Email
           </Form.Label>
@@ -32,9 +53,9 @@ const onSubmit = (usuario)=>{
              {errors.email?.message}
            </Form.Text>
         </Form.Group>
-        <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
-          <Form.Label column sm="2">
-            Password
+        <Form.Group as={Row}  controlId="formPlaintextPassword">
+          <Form.Label column sm="3">
+           Contraseña
           </Form.Label>
           <Col sm="10">
             <Form.Control 
@@ -56,6 +77,8 @@ const onSubmit = (usuario)=>{
           Ingresar
         </button>
       </Form>
+      </aside>
+      </section>
     );
 }
 
