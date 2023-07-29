@@ -9,12 +9,13 @@ import {
     ListGroup,
     ListGroupItem,
 } from "react-bootstrap";
+import sobreNosotrosImg from "../../assets/acercaDeNosotros/sobreNosotros.svg"
 import gitHubIcon from "../../../node_modules/bootstrap-icons/icons/github.svg";
 import correoIcon from "../../../node_modules/bootstrap-icons/icons/envelope.svg";
 import linkedinIcon from "../../../node_modules/bootstrap-icons/icons/linkedin.svg";
 import youtubeIcon from "../../../node_modules/bootstrap-icons/icons/youtube.svg";
 import tiktokIcon from "../../../node_modules/bootstrap-icons/icons/tiktok.svg";
-import codeSlash from "../../../node_modules/bootstrap-icons/icons/code-slash.svg"
+import codeSlash from "../../../node_modules/bootstrap-icons/icons/code-slash.svg";
 import Sol from "../../assets/acercaDeNosotros/Sol.jpeg";
 import Rodri from "../../assets/acercaDeNosotros/Rodri.jpg";
 import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
@@ -34,8 +35,21 @@ const AcercaDeNosotros = () => {
                     </h1>
                 </section>
             </div>
-
-            <article className="py-5 bg-light">
+            <Container className="py-5">
+                <Row>
+                    <Col md={6}>
+                        <h2 className="fw-bold fs-1">Sobre nosotros</h2>
+                        <p className="fs-4">
+                            Somos un grupo interesado en aprender día a día e investigar las últimas tecnologías, nos estamos preparando para dar todo cuando sea necesario y esperamos grandes cosas de cada uno de nosotros de cara al futuro.
+                        </p>
+                    </Col>
+                    <Col md={6}>
+                        <img src={sobreNosotrosImg} alt="" className="img-fluid"/>
+                    </Col>
+                </Row>
+            </Container>
+            _
+            <section className="py-5 bg-light">
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
                 <Container>
                     <Row>
@@ -237,9 +251,7 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>
-                                            Nicolás Herrera
-                                        </Card.Title>
+                                        <Card.Title>Nicolás Herrera</Card.Title>
                                         <Card.Text>
                                             Some quick example text to build on
                                             the card title and make up the bulk
@@ -320,8 +332,8 @@ const AcercaDeNosotros = () => {
                             </Atropos>
                         </Col>
 
-                         {/* ESTEBAN */}
-                         <Col md={4} xl={3} className="mb-4">
+                        {/* ESTEBAN */}
+                        <Col md={4} xl={3} className="mb-4">
                             <Atropos
                                 activeOffset={40}
                                 shadow={0.5}
@@ -339,9 +351,7 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>
-                                            Esteban Molina
-                                        </Card.Title>
+                                        <Card.Title>Esteban Molina</Card.Title>
                                         <Card.Text>
                                             Some quick example text to build on
                                             the card title and make up the bulk
@@ -594,7 +604,7 @@ const AcercaDeNosotros = () => {
                         </Col>
                     </Row>
                 </Container>
-            </article>
+            </section>
         </>
     );
 };
