@@ -71,7 +71,7 @@ const CrearPaciente = () => {
 
   const darFormatoPaciente = (paciente) => {
     const pacienteFormateado = {
-      nombre: paciente.dueño,
+      nombre: paciente.nombre,
       email: paciente.email,
       telefono: paciente.telefono,
       direccion: paciente.direccion,
@@ -92,10 +92,26 @@ const CrearPaciente = () => {
     setPaciente(pacienteFormateado);
     crearPaciente(pacienteFormateado).then((respuesta) => {
       if (respuesta.status === 404) {
-        console.log("no se pudo crear paciente");
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo crear el paciente. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
       }
       if (respuesta.status === 201) {
-        console.log("se creo paciente con exito");
+        Swal.fire({
+          title: "¡Paciente creado!",
+          text: "¡El paciente fue creado con exito!",
+          icon: "success",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
         reset();
         setPaso(1);
       }
@@ -122,7 +138,7 @@ const CrearPaciente = () => {
                 <Form.Control
                   type="text"
                   placeholder="Ej: Carlos Gómez"
-                  {...register("dueño", {
+                  {...register("nombre", {
                     required:
                       "Debes ingresar el nombre y apellido del dueño. Este campo es obligatorio.",
                     minLength: {
@@ -146,7 +162,7 @@ const CrearPaciente = () => {
                   })}
                 />
                 <Form.Text className="text-danger">
-                  {errors.dueño?.message}
+                  {errors.nombre?.message}
                 </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="inputEmail">

@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { obtenerPacientePorId } from "../../helpers/queries";
+import { editarPaciente, obtenerPacientePorId } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const EditarPaciente = () => {
   const {
@@ -11,8 +12,50 @@ const EditarPaciente = () => {
     setValue,
   } = useForm();
 
+  const darFormatoPaciente = (paciente) => {
+    const pacienteFormateado = {
+      nombre: paciente.nombre,
+      email: paciente.email,
+      telefono: paciente.telefono,
+      direccion: paciente.direccion,
+      mascotas: [
+        {
+          nombre: paciente.mascota,
+          edad: paciente.edad,
+          especie: paciente.especie,
+          raza: paciente.raza,
+        },
+      ],
+    };
+    return pacienteFormateado;
+  };
+
   const onSubmit = (paciente) => {
-    console.log(paciente);
+    let pacienteFormateado = darFormatoPaciente(paciente);
+    editarPaciente(pacienteFormateado, 4).then((respuesta) => {
+      if (respuesta.status === 404) {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo editar el paciente. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "¡Paciente modificado!",
+          text: "¡El paciente fue modificado con exito!",
+          icon: "success",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
   };
 
   const setearValoresEnFormulario = (respuesta) => {
@@ -29,10 +72,17 @@ const EditarPaciente = () => {
   useEffect(() => {
     obtenerPacientePorId(4).then((respuesta) => {
       if (respuesta) {
-        console.log(respuesta);
         setearValoresEnFormulario(respuesta);
       } else {
-        console.log("No se pudo obtener datos del paciente.");
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener los datos del paciente. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
       }
     });
   }, []);

@@ -35,14 +35,16 @@ export const obtenerPacientePorId = async (id) => {
   }
 };
 
-export const validarEmailExistente = async (email) => {
+export const editarPaciente = async (paciente, id) => {
   try {
-    const respuesta = await fetch(API_PACIENTES);
-    const listaPacientes = await respuesta.json();
-    const emailExistente = listaPacientes.some(
-      (paciente) => paciente.email === email
-    );
-    return emailExistente;
+    const respuesta = await fetch(API_PACIENTES + "/" + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(paciente),
+    });
+    return respuesta;
   } catch (error) {
     console.log(error);
   }
@@ -54,6 +56,19 @@ export const eliminarPaciente = async (id) => {
       method: "DELETE",
     });
     return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const validarEmailExistente = async (email) => {
+  try {
+    const respuesta = await fetch(API_PACIENTES);
+    const listaPacientes = await respuesta.json();
+    const emailExistente = listaPacientes.some(
+      (paciente) => paciente.email === email
+    );
+    return emailExistente;
   } catch (error) {
     console.log(error);
   }

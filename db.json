@@ -8,7 +8,12 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -19,7 +24,12 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ],
@@ -134,16 +144,16 @@
       ]
     },
     {
-      "nombre": "Marcelo",
-      "email": "mailmarcelo@gmail.com",
-      "telefono": "3815132165",
+      "nombre": "Silvita",
+      "email": "silvita@gmail.com",
+      "telefono": "3815555555",
       "direccion": "Piedras 2150",
       "mascotas": [
         {
-          "nombre": "Hachi",
-          "edad": "3 años",
+          "nombre": "Coki",
+          "edad": "7 años",
           "especie": "Perro",
-          "raza": "Caniche"
+          "raza": "Pequines"
         }
       ],
       "id": 4
