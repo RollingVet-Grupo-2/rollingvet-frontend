@@ -8,7 +8,12 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -19,7 +24,12 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ],
@@ -81,46 +91,42 @@
       "id": 7
     }
   ],
-  "duenios": [
+  "pacientes": [
     {
       "id": 1,
       "nombre": "Duenio1",
       "email": "EmailDuenio1",
       "telefono": "TelefonoDuenio1",
-      "direccion": "DireccionDuenio1"
+      "direccion": "DireccionDuenio1",
+      "mascotas": [
+        {
+          "nombre": "Mascota1",
+          "edad": "EdadMascota1",
+          "especie": "EspecieMascota1",
+          "raza": "RazaMascota1"
+        },
+        {
+          "nombre": "Mascota2",
+          "edad": "EdadMascota2",
+          "especie": "EspecieMascota2",
+          "raza": "RazaMascota2"
+        }
+      ]
     },
     {
       "id": 2,
       "nombre": "Duenio2",
       "email": "EmailDuenio2",
       "telefono": "TelefonoDuenio2",
-      "direccion": "DireccionDuenio2"
-    }
-  ],
-  "mascotas": [
-    {
-      "id": 1,
-      "nombre": "Mascota1",
-      "edad": "EdadMascota1",
-      "especie": "EspecieMascota1",
-      "raza": "RazaMascota1",
-      "duenioId": 1
-    },
-    {
-      "id": 2,
-      "nombre": "Mascota1",
-      "edad": "EdadMascota1",
-      "especie": "EspecieMascota1",
-      "raza": "RazaMascota1",
-      "duenioId": 1
-    },
-    {
-      "id": 3,
-      "nombre": "Mascota1",
-      "edad": "EdadMascota1",
-      "especie": "EspecieMascota1",
-      "raza": "RazaMascota1",
-      "duenioId": 2
+      "direccion": "DireccionDuenio2",
+      "mascotas": [
+        {
+          "nombre": "Mascota3",
+          "edad": "EdadMascota3",
+          "especie": "EspecieMascota3",
+          "raza": "RazaMascota3"
+        }
+      ]
     }
   ]
 }

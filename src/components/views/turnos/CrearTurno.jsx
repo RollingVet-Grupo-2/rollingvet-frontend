@@ -2,6 +2,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
   crearTurno,
+  obtenerMascotas,
   obtenerTurnos,
   obtenerVeterinarios,
 } from "../../helpers/queries";
@@ -30,10 +31,12 @@ const CrearTurno = () => {
   }, []);
 
   const fetchMascotas = () => {
-    obtenerTurnos().then((respuesta) => {
+    obtenerMascotas().then((respuesta) => {
       if (respuesta) {
-        let mascotas = respuesta.map((turno) => turno.mascota);
-        setMascotas(mascotas);
+        let arrayMascotas = respuesta.flatMap((paciente) =>
+          paciente.mascotas.map((mascota) => mascota.nombre)
+        );
+        setMascotas(arrayMascotas);
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
