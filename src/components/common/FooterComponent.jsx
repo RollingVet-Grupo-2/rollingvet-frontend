@@ -1,17 +1,19 @@
 import "../../css/footer.css";
 import Logo from "../../assets/rollingVetLogo.svg";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const FooterComponent = () => {
     return (
         <footer className="footer">
             <section className="container py-4 px-0">
                 <div className="row mx-0 gap-4 gap-md-0">
                     <article className="col-md-4">
-                        <img
-                            src={Logo}
-                            alt="Logo RollingVet"
-                            className="logo"
-                        />
+                        <Link to={"/"}>
+                            <img
+                                src={Logo}
+                                alt="Logo RollingVet"
+                                className="logo"
+                            />
+                        </Link>
                         <div className="d-flex gap-2">
                             <div>
                                 <i className="bi bi-facebook icons fs-4"></i>

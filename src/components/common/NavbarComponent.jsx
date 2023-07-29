@@ -2,7 +2,7 @@ import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import Logo from "../../assets/rollingVetLogo.svg";
 import LogoMobile from "../../assets/rollingVetLogoMobile.svg";
 import { useNavigate } from "react-router";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../css/navbar.css";
 
 const NavbarPage = () => {
@@ -11,10 +11,12 @@ const NavbarPage = () => {
         <Navbar expand="lg" className="nav">
             <Container>
                 <Navbar.Brand href="#home">
-                    <picture>
-                        <source className="logo"  media="(min-width:768px)" srcSet={Logo}/>
-                        <img className="logoMobile" src={LogoMobile} alt="Logo Veterinaria RollingVet" />
-                    </picture>
+                    <Link to={"/"}>
+                        <picture>
+                            <source className="logo"  media="(min-width:768px)" srcSet={Logo}/>
+                            <img className="logoMobile" src={LogoMobile} alt="Logo Veterinaria RollingVet" />
+                        </picture>
+                    </Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
