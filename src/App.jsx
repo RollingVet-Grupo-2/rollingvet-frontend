@@ -8,9 +8,9 @@ import EditarPaciente from "./components/views/pacientes/EditarPaciente";
 function App() {
   return (
     <>
-      {/* <AdminPacientes /> */}
+      <AdminPacientes />
       {/* <CrearPaciente /> */}
-      <EditarPaciente />
+      {/* <EditarPaciente /> */}
     </>
   );
 }

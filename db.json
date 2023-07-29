@@ -8,12 +8,7 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": [
-        "09:00 AM",
-        "10:00 AM",
-        "11:00 AM",
-        "12:00 AM"
-      ],
+      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
       "experiencia": "10 años"
     },
     {
@@ -24,12 +19,7 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": [
-        "17:00 PM",
-        "18:00 PM",
-        "19:00 PM",
-        "20:00 PM"
-      ],
+      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
       "experiencia": "12 años"
     }
   ],
@@ -37,7 +27,7 @@
     {
       "id": 1,
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Luna",
+      "mascota": "Max",
       "detalle_cita": "Alimentación y asesoramiento nutricional",
       "fecha": "2023-08-23",
       "horario": "09:00 AM"
@@ -45,7 +35,7 @@
     {
       "id": 2,
       "veterinario": "Dra. Ana González",
-      "mascota": "Rocco",
+      "mascota": "Luna",
       "detalle_cita": "Cirugias y procedimientos quirúrgicos",
       "fecha": "2023-08-25",
       "horario": "17:00 PM"
@@ -53,7 +43,7 @@
     {
       "id": 3,
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Toby",
+      "mascota": "Rocky",
       "detalle_cita": "Vacunación y control de enfermedades",
       "fecha": "2023-08-25",
       "horario": "10:00 AM"
@@ -61,14 +51,14 @@
     {
       "id": 4,
       "veterinario": "Dra. Ana González",
-      "mascota": "Firulais",
+      "mascota": "Buddy",
       "detalle_cita": "Consultas especializadas",
       "fecha": "2023-08-25",
       "horario": "18:00 PM"
     },
     {
       "veterinario": "Dr. Juan Pérez",
-      "mascota": "Clifford",
+      "mascota": "Milo",
       "detalle_cita": "Desparasitación",
       "fecha": "2023-08-26",
       "horario": "11:00 AM",
@@ -76,87 +66,131 @@
     },
     {
       "veterinario": "Dra. Ana González",
-      "mascota": "Morita",
+      "mascota": "Nala",
       "detalle_cita": "Baño, peluquería o corte de uñas",
       "fecha": "2023-08-29",
       "horario": "19:00 PM",
       "id": 6
     },
     {
-      "mascota": "Romeo",
+      "mascota": "Toby",
       "detalle_cita": "Alimentación y asesoramiento nutricional",
       "veterinario": "Dr. Juan Pérez",
       "fecha": "2023-09-01",
       "horario": "12:00 AM",
       "id": 7
+    },
+    {
+      "mascota": "Chloe",
+      "detalle_cita": "Desparasitación",
+      "veterinario": "Dr. Juan Pérez",
+      "fecha": "2023-08-31",
+      "horario": "12:00 AM",
+      "id": 8
     }
   ],
   "pacientes": [
     {
       "id": 1,
-      "nombre": "Duenio1",
-      "email": "EmailDuenio1",
-      "telefono": "TelefonoDuenio1",
-      "direccion": "DireccionDuenio1",
+      "nombre": "Juan Perez",
+      "email": "juan@email.com",
+      "telefono": "38145551234",
+      "direccion": "Calle Principal 123",
       "mascotas": [
         {
-          "nombre": "Mascota1",
-          "edad": "EdadMascota1",
-          "especie": "EspecieMascota1",
-          "raza": "RazaMascota1"
+          "nombre": "Max",
+          "edad": "4 años",
+          "especie": "Perro",
+          "raza": "Labrador Retriever"
         },
         {
-          "nombre": "Mascota2",
-          "edad": "EdadMascota2",
-          "especie": "EspecieMascota2",
-          "raza": "RazaMascota2"
+          "nombre": "Luna",
+          "edad": "2 años",
+          "especie": "Gato",
+          "raza": "Siames"
         }
       ]
     },
     {
       "id": 2,
-      "nombre": "Duenio2",
-      "email": "EmailDuenio2",
-      "telefono": "TelefonoDuenio2",
-      "direccion": "DireccionDuenio2",
+      "nombre": "María González",
+      "email": "maria@email.com",
+      "telefono": "38159876543",
+      "direccion": "Avenida Central 456",
       "mascotas": [
         {
-          "nombre": "Mascota3",
-          "edad": "EdadMascota3",
-          "especie": "EspecieMascota3",
-          "raza": "RazaMascota3"
+          "nombre": "Rocky",
+          "edad": "3 años",
+          "especie": "Perro",
+          "raza": "Bulldog"
         }
       ]
     },
     {
       "id": 3,
-      "nombre": "Duenio3",
-      "email": "EmailDuenio3",
-      "telefono": "TelefonoDuenio3",
-      "direccion": "DireccionDuenio3",
+      "nombre": "Luis Martínez",
+      "email": "luis@email.com",
+      "telefono": "38167891234",
+      "direccion": "Calle Secundaria 789",
       "mascotas": [
         {
-          "nombre": "Luna",
-          "edad": "4 años",
+          "nombre": "Buddy",
+          "edad": "1 año",
           "especie": "Perro",
-          "raza": "Labrador"
+          "raza": "Golden Retriever"
         }
       ]
     },
     {
-      "nombre": "Silvita",
-      "email": "silvita@gmail.com",
-      "telefono": "3815555555",
-      "direccion": "Piedras 2150",
+      "id": 4,
+      "nombre": "Ana Rodríguez",
+      "email": "ana@email.com",
+      "telefono": "38154567890",
+      "direccion": "Avenida Principal 234",
       "mascotas": [
         {
-          "nombre": "Coki",
-          "edad": "7 años",
+          "nombre": "Milo",
+          "edad": "5 años",
           "especie": "Perro",
-          "raza": "Pequines"
+          "raza": "Chihuahua"
+        },
+        {
+          "nombre": "Nala",
+          "edad": "3 años",
+          "especie": "Gato",
+          "raza": "Persa"
         }
-      ],
-      "id": 4
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Carlos López",
+      "email": "carlos@email.com",
+      "telefono": "38162223333",
+      "direccion": "Calle Secundaria 456",
+      "mascotas": [
+        {
+          "nombre": "Toby",
+          "edad": "2 años",
+          "especie": "Perro",
+          "raza": "Bulldog Francés"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Laura Sánchez",
+      "email": "laura@email.com",
+      "telefono": "38164445555",
+      "direccion": "Avenida Central 789",
+      "mascotas": [
+        {
+          "nombre": "Chloe",
+          "edad": "6 meses",
+          "especie": "Gato",
+          "raza": "Siamés"
+        }
+      ]
     }
   ]
 }

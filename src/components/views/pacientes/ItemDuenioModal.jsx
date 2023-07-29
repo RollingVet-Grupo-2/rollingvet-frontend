@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const ItemMascotaModal = ({ mascota }) => {
+const ItemDuenioModal = ({ paciente }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -11,44 +11,44 @@ const ItemMascotaModal = ({ mascota }) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow} className="mb-2 mx-md-2">
-        {mascota.nombre}
+      <Button variant="primary" onClick={handleShow} className="mb-2 mx-lg-2">
+        {paciente.nombre}
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Información de Mascota</Modal.Title>
+          <Modal.Title>Información de Dueño</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Row className="row-cols-1 row-cols-md-2">
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
                 Nombre
               </h5>
-              <p className="lead">{mascota.nombre}</p>
+              <p className="lead">{paciente.nombre}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
-                Edad
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
+                Email
               </h5>
-              <p className="lead">{mascota.edad}</p>
+              <p className="lead">{paciente.email}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
-                Especie
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
+                Telefono
               </h5>
-              <p className="lead">{mascota.especie}</p>
+              <p className="lead">{paciente.telefono}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
-                Raza
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
+                Direccion
               </h5>
-              <p className="lead">{mascota.raza}</p>
+              <p className="lead">{paciente.direccion}</p>
             </Col>
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-success" onClick={handleClose}>
+          <Button variant="outline-primary" onClick={handleClose}>
             OK
           </Button>
         </Modal.Footer>
@@ -57,4 +57,4 @@ const ItemMascotaModal = ({ mascota }) => {
   );
 };
 
-export default ItemMascotaModal;
+export default ItemDuenioModal;

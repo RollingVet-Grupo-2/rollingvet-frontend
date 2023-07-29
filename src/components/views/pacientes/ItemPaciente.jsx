@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import { eliminarPaciente, obtenerPacientes } from "../../helpers/queries";
 import ItemMascotaModal from "./ItemMascotaModal";
+import ItemDuenioModal from "./ItemDuenioModal";
 
 const ItemPaciente = ({ paciente, setPacientes }) => {
   const handleDelete = () => {
@@ -61,10 +62,12 @@ const ItemPaciente = ({ paciente, setPacientes }) => {
   };
   return (
     <tr>
-      <td>{paciente.nombre}</td>
+      {/* <td>{paciente.nombre}</td>
       <td>{paciente.email}</td>
       <td>{paciente.telefono}</td>
-      <td>{paciente.direccion}</td>
+      <td>{paciente.direccion}</td> */}
+
+      <td>{<ItemDuenioModal key={paciente.id} paciente={paciente} />}</td>
       <td>
         {paciente.mascotas.map((mascota, index) => (
           <ItemMascotaModal key={index} mascota={mascota} />

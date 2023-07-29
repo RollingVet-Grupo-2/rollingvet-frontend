@@ -120,9 +120,6 @@ const AdminPacientes = () => {
           <thead>
             <tr>
               <th>Dueño</th>
-              <th>Email</th>
-              <th>Teléfono</th>
-              <th>Dirección</th>
               <th>Mascotas</th>
               <th>Acciones</th>
             </tr>
