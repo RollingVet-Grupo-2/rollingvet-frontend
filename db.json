@@ -1,60 +1,10 @@
-{
-  "turnos": [
-    {
-      "id": 1,
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Luna",
-      "detalle_cita": "Vacunación",
-      "fecha": "2023-08-23",
-      "horario": "08:00 AM"
-    },
-    {
-      "id": 2,
-      "veterinario": "Dra. Ana González",
-      "mascota": "Rocco",
-      "detalle_cita": "Desparasitacion",
-      "fecha": "2023-08-25",
-      "horario": "10:00 AM"
-    },
-    {
-      "id": 3,
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Toby",
-      "detalle_cita": "Control de peso",
-      "fecha": "2023-08-25",
-      "horario": "11:00 AM"
-    },
-    {
-      "id": 4,
-      "veterinario": "Dra. Ana González",
-      "mascota": "Firulais",
-      "detalle_cita": "Corte y baño",
-      "fecha": "2023-08-25",
-      "horario": "12:00 AM"
-    },
-    {
-      "veterinario": "Dr. Juan Pérez",
-      "mascota": "Clifford",
-      "detalle_cita": "Consulta/Chequeo",
-      "fecha": "2023-08-26",
-      "horario": "10:00 AM",
-      "id": 5
-    },
-    {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Morita",
-      "detalle_cita": "Revision anual",
-      "fecha": "2023-08-29",
-      "horario": "18:00 PM",
-      "id": 6
-    },
-    {
-      "veterinario": "Dra. Ana González",
-      "mascota": "Romeo",
-      "detalle_cita": "Corte de pelo",
-      "fecha": "2023-08-30",
-      "horario": "20:00 PM",
-      "id": 7
-    }
-  ]
-}
+ {
+ "usuarios": [
+  {
+    "id": 1,
+    "nombreUsuario": "admin",
+    "email": "admin@rollingcode.com",
+    "password": "123456aA"
+  }
+]
+ }
