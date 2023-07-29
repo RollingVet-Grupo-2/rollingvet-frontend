@@ -37,3 +37,14 @@ export const validarEmailExistente = async (email) => {
     console.log(error);
   }
 };
+
+export const eliminarPaciente = async (id) => {
+  try {
+    const respuesta = await fetch(API_PACIENTES + "/" + id, {
+      method: "DELETE",
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};

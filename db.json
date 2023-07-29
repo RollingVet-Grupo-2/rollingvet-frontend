@@ -132,6 +132,21 @@
           "raza": "Labrador"
         }
       ]
+    },
+    {
+      "nombre": "Marcelo",
+      "email": "mailmarcelo@gmail.com",
+      "telefono": "3815132165",
+      "direccion": "Piedras 2150",
+      "mascotas": [
+        {
+          "nombre": "Hachi",
+          "edad": "3 años",
+          "especie": "Perro",
+          "raza": "Caniche"
+        }
+      ],
+      "id": 4
     }
   ]
 }
