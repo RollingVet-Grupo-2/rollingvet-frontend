@@ -34,7 +34,7 @@ const EditarTurno = () => {
   const setearValores = () => {
     obtenerTurnoPorId(8).then((respuesta) => {
       if (respuesta) {
-        setValue("mascota", respuesta.mascota);
+        setValue("mascota", respuesta.mascota ? respuesta.mascota : "Mascota");
         setValue("detalle_cita", respuesta.detalle_cita);
         setValue("veterinario", respuesta.veterinario);
         setValue("fecha", respuesta.fecha);
