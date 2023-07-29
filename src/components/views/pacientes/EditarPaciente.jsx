@@ -1,16 +1,41 @@
+import { useEffect } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { obtenerPacientePorId } from "../../helpers/queries";
 
 const EditarPaciente = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
 
   const onSubmit = (paciente) => {
     console.log(paciente);
   };
+
+  const setearValoresEnFormulario = (respuesta) => {
+    setValue("nombre", respuesta.nombre);
+    setValue("email", respuesta.email);
+    setValue("telefono", respuesta.telefono);
+    setValue("direccion", respuesta.direccion);
+    setValue("mascota", respuesta.mascotas[0].nombre);
+    setValue("edad", respuesta.mascotas[0].edad);
+    setValue("especie", respuesta.mascotas[0].especie);
+    setValue("raza", respuesta.mascotas[0].raza);
+  };
+
+  useEffect(() => {
+    obtenerPacientePorId(4).then((respuesta) => {
+      if (respuesta) {
+        console.log(respuesta);
+        setearValoresEnFormulario(respuesta);
+      } else {
+        console.log("No se pudo obtener datos del paciente.");
+      }
+    });
+  }, []);
   return (
     <section className="container my-3 py-3 card shadow">
       <h1 className="mb-0 text-center">Editar Paciente</h1>
@@ -21,7 +46,7 @@ const EditarPaciente = () => {
             <Form.Label>Dueño*</Form.Label>
             <Form.Control
               type="text"
-              {...register("dueño", {
+              {...register("nombre", {
                 required:
                   "Debes ingresar el nombre y apellido del dueño. Este campo es obligatorio.",
                 minLength: {
@@ -43,7 +68,7 @@ const EditarPaciente = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.dueño?.message}
+              {errors.nombre?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputEmail">

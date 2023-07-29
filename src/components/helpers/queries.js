@@ -25,6 +25,16 @@ export const obtenerPacientes = async () => {
   }
 };
 
+export const obtenerPacientePorId = async (id) => {
+  try {
+    const respuesta = await fetch(API_PACIENTES + "/" + id);
+    const paciente = await respuesta.json();
+    return paciente;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const validarEmailExistente = async (email) => {
   try {
     const respuesta = await fetch(API_PACIENTES);
