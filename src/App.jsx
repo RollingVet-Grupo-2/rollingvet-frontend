@@ -8,18 +8,23 @@ import FooterComponent from "./components/common/FooterComponent";
 import Error404 from "./components/views/Error404";
 import "./App.css";
 import PaginaContacto from "./components/views/PaginaContacto";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
-    <>
+    <BrowserRouter>
+      <NavbarPageComponent></NavbarPageComponent>
+      <Routes>
+        <Route exact path="/" element={<Inicio></Inicio>}></Route>
+        <Route exact path="/contacto" element={<PaginaContacto></PaginaContacto>}></Route>
 
-    
-    <NavbarPageComponent></NavbarPageComponent>
-    <AdminPrincipal />
-    {/* <Inicio></Inicio> */}
-    {/* <Error404></Error404> */}
+
+
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes>
+    {/* <AdminPrincipal /> */}
     {/* <PaginaContacto></PaginaContacto> */}
     <FooterComponent></FooterComponent>
-    </>
+    </BrowserRouter>
   );
 }
 
