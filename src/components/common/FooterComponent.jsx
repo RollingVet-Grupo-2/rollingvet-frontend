@@ -15,15 +15,21 @@ const FooterComponent = () => {
                             />
                         </Link>
                         <div className="d-flex gap-2">
-                            <div>
-                                <i className="bi bi-facebook icons fs-4"></i>
-                            </div>
-                            <div>
-                                <i className="bi bi-instagram icons fs-4"></i>
-                            </div>
-                            <div>
-                                <i className="bi bi-whatsapp icons fs-4"></i>
-                            </div>
+                            <Link to={"*"}>
+                                <div>
+                                    <i className="bi bi-facebook icons fs-4"></i>
+                                </div>
+                            </Link>
+                            <Link to={"*"}>
+                                <div>
+                                    <i className="bi bi-instagram icons fs-4"></i>
+                                </div>
+                            </Link>
+                            <Link to={"*"}>
+                                <div>
+                                    <i className="bi bi-whatsapp icons fs-4"></i>
+                                </div>
+                            </Link>
                         </div>
                     </article>
                     <article className="col-md-4 ps-md-4 pt-md-2">
@@ -33,7 +39,7 @@ const FooterComponent = () => {
                                 <li className="d-flex flex-column">
                                     <NavLink className="links_footer nav-link">Quiénes somos</NavLink>
                                     <NavLink className="links_footer nav-link">Servicios</NavLink>
-                                    <NavLink className="links_footer nav-link">Medios de pago</NavLink>
+                                    <NavLink className="links_footer nav-link" to={"*"}>Medios de pago</NavLink>
                                     <NavLink className="links_footer nav-link" to={"/contacto"}>Contacto</NavLink>
                                 </li>
                             </ul>
