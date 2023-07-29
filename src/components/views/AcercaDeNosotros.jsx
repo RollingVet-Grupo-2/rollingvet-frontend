@@ -498,6 +498,29 @@ const AcercaDeNosotros = () => {
 
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
+                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rodrigovizcarra9623@gmail.com"
+                                                    target="_blank"
+                                                    className="link nav-link"
+                                                >
+                                                    <div>
+                                                        <h4 className="d-flex align-items-center justify-content-between">
+                                                            {"Correo"}
+                                                            <Badge bg="">
+                                                                <img
+                                                                    className="logo"
+                                                                    src={
+                                                                        correoIcon
+                                                                    }
+                                                                    alt="Rodrigo Vizcarra Correo"
+                                                                />
+                                                            </Badge>
+                                                        </h4>
+                                                    </div>
+                                                </a>
+                                            </ListGroupItem>
+
+                                            <ListGroupItem className="border-0 shadow">
+                                                <a
                                                     href="https://www.linkedin.com/in/rodrigovizcarra96/"
                                                     target="_blank"
                                                     className="link nav-link"
