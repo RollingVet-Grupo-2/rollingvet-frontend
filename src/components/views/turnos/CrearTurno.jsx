@@ -34,7 +34,10 @@ const CrearTurno = () => {
     obtenerMascotas().then((respuesta) => {
       if (respuesta) {
         let arrayMascotas = respuesta.flatMap((paciente) =>
-          paciente.mascotas.map((mascota) => mascota.nombre)
+          paciente.mascotas.map((mascota) => ({
+            nombrePaciente: paciente.nombre,
+            nombreMascota: mascota.nombre,
+          }))
         );
         setMascotas(arrayMascotas);
       } else {
@@ -159,8 +162,8 @@ const CrearTurno = () => {
       >
         <option value={""}>Elegir mascota registrada</option>
         {mascotas.map((mascota, index) => (
-          <option key={mascota + index} value={mascota}>
-            {mascota}
+          <option key={mascota + index} value={mascota.nombreMascota}>
+            {mascota.nombreMascota} - Dueño: {mascota.nombrePaciente}
           </option>
         ))}
       </Form.Select>
