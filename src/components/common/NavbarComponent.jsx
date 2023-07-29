@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import "../../css/navbar.css";
 
 const NavbarPage = () => {
+    
     return (
         <Navbar expand="lg" className="nav">
             <Container>
@@ -18,9 +19,9 @@ const NavbarPage = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto gap-md-4">
-                        <NavLink end className={"navLinks nav-item nav-link"} to={"/"}>Inicio</NavLink>
-                        <NavLink className={"navLinks nav-item nav-link"} to={"/contacto"}>Contacto</NavLink>
-                        <NavLink className={"navLinks nav-item nav-link"}>Login</NavLink>
+                        <NavLink end className={({ isActive }) => isActive ? "navLinks nav-item nav-link" : "nav-item nav-link"} to={"/"}>Inicio</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "navLinks nav-item nav-link" : "nav-item nav-link"} to={"/contacto"}>Contacto</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "navLinks nav-item nav-link" : "nav-item nav-link"} to={"/login"}>Login</NavLink>
                         <Dropdown>
                             <Dropdown.Toggle
                                 variant="success"
