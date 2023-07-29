@@ -1,6 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
+import AdminTurnos from "./components/views/AdminTurnos";
+import CrearTurno from "./components/views/turnos/CrearTurno";
+import EditarTurno from "./components/views/turnos/EditarTurno";
 import AdminPrincipal from "./components/views/AdminPrincipal";
 import NavbarPageComponent from './components/common/NavbarComponent';
 import Inicio from './components/views/Inicio';
@@ -11,10 +14,11 @@ import PaginaContacto from "./components/views/PaginaContacto";
 function App() {
   return (
     <>
-
-    
     <NavbarPageComponent></NavbarPageComponent>
     <AdminPrincipal />
+    {/* <AdminTurnos /> */}
+    {/* <CrearTurno /> */}
+    {/* <EditarTurno /> */}
     {/* <Inicio></Inicio> */}
     {/* <Error404></Error404> */}
     {/* <PaginaContacto></PaginaContacto> */}
