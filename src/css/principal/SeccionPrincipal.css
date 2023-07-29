@@ -1,0 +1,29 @@
+.seccionHeroFondo {
+    background: radial-gradient(circle at 50% 6%, transparent 50%, #f4b693 96%) 94% 73%/151% 194%,
+        conic-gradient(from 120deg at 42% 89%, #6cd3a2 52%, #3e777a 100%) 54% 30%/129% 197%;
+    background-blend-mode: screen;
+}
+.contenedorBotonesHero{
+    margin-top: -2rem;
+}
+.imgSeccionHero{
+    filter: drop-shadow(0 0.4rem 0.5rem rgba(0,0,0,0.3)) ;
+}
+.imgForma1{
+    left:25%;
+    transform: rotate(110deg);
+}
+.imgForma7{
+    right:32%;
+    transform: rotate(150deg);
+}
+
+hr.dashed {
+    border-top: 0.2rem dashed var(--bs-dark);
+    margin-top: -0.08rem;
+    opacity: 50%;
+}
+.fromaSeparador{
+    transform: rotate(170deg);
+
+}
