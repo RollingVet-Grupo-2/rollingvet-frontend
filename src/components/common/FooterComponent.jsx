@@ -7,21 +7,11 @@ const FooterComponent = () => {
             <section className="container py-4 px-0">
                 <div className="row mx-0 gap-4 gap-md-0">
                     <article className="col-md-4">
-<<<<<<< HEAD
-                        <Link to={"/"}>
-                            <img
-                                src={Logo}
-                                alt="Logo RollingVet"
-                                className="logo"
-                            />
-                        </Link>
-=======
                         <img
                             src={Logo}
                             alt="Logo RollingVet"
                             
                         />
->>>>>>> dev
                         <div className="d-flex gap-2">
                             <Link to={"*"}>
                                 <div>
