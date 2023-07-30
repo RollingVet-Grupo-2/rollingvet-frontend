@@ -90,12 +90,7 @@ const AcercaDeNosotros = () => {
                                             }}
                                         />
                                         <Card.Body>
-                                            <Card.Title>Sol Perato</Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </Card.Text>
+                                            <Card.Title className="mb-3 fs-3">Sol Perato</Card.Title>
                                             <ListGroup className="d-flex flex-column gap-2">
                                                 <ListGroupItem className="border-0 shadow">
                                                     <a
@@ -157,12 +152,7 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>Sol Perato</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </Card.Text>
+                                        <Card.Title className="mb-3 fs-3">Sol Perato</Card.Title>
                                         <ListGroup className="d-flex flex-column gap-2">
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
@@ -235,14 +225,9 @@ const AcercaDeNosotros = () => {
                                             }}
                                         />
                                         <Card.Body>
-                                            <Card.Title>
+                                            <Card.Title className="mb-3 fs-3">
                                                 Luciano Angeleri
                                             </Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </Card.Text>
                                             <ListGroup className="d-flex flex-column gap-2">
                                                 <ListGroupItem className="border-0 shadow">
                                                     <a
@@ -327,14 +312,9 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>
+                                        <Card.Title className="mb-3 fs-3">
                                             Luciano Angeleri
                                         </Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </Card.Text>
                                         <ListGroup className="d-flex flex-column gap-2">
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
@@ -430,14 +410,9 @@ const AcercaDeNosotros = () => {
                                             }}
                                         />
                                         <Card.Body>
-                                            <Card.Title>
+                                            <Card.Title className="mb-3 fs-3">
                                                 Nicolás Herrera
                                             </Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </Card.Text>
                                             <ListGroup className="d-flex flex-column gap-2">
                                                 <ListGroupItem className="border-0 shadow">
                                                     <a
@@ -522,12 +497,7 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>Nicolás Herrera</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </Card.Text>
+                                        <Card.Title className="mb-3 fs-3">Nicolás Herrera</Card.Title>
                                         <ListGroup className="d-flex flex-column gap-2">
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
@@ -623,14 +593,9 @@ const AcercaDeNosotros = () => {
                                             }}
                                         />
                                         <Card.Body>
-                                            <Card.Title>
+                                            <Card.Title className="mb-3 fs-3">
                                                 Esteban Molina
                                             </Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </Card.Text>
                                             <ListGroup className="d-flex flex-column gap-2">
                                                 <ListGroupItem className="border-0 shadow">
                                                     <a
@@ -739,12 +704,7 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>Esteban Molina</Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </Card.Text>
+                                        <Card.Title className="mb-3 fs-3">Esteban Molina</Card.Title>
                                         <ListGroup className="d-flex flex-column gap-2">
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
@@ -863,14 +823,9 @@ const AcercaDeNosotros = () => {
                                             }}
                                         />
                                         <Card.Body>
-                                            <Card.Title>
+                                            <Card.Title className="mb-3 fs-3">
                                                 Rodrigo Vizcarra
                                             </Card.Title>
-                                            <Card.Text>
-                                                Some quick example text to build
-                                                on the card title and make up
-                                                the bulk of the card's content.
-                                            </Card.Text>
                                             <ListGroup className="d-flex flex-column gap-2">
                                                 <ListGroupItem className="border-0 shadow">
                                                     <a
@@ -1001,14 +956,9 @@ const AcercaDeNosotros = () => {
                                         }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>
+                                        <Card.Title className="mb-3 fs-3">
                                             Rodrigo Vizcarra
                                         </Card.Title>
-                                        <Card.Text>
-                                            Some quick example text to build on
-                                            the card title and make up the bulk
-                                            of the card's content.
-                                        </Card.Text>
                                         <ListGroup className="d-flex flex-column gap-2">
                                             <ListGroupItem className="border-0 shadow">
                                                 <a
