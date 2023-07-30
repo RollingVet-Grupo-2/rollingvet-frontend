@@ -6,25 +6,27 @@ import AdminTurnos from "./components/views/AdminTurnos";
 import CrearTurno from "./components/views/turnos/CrearTurno";
 import EditarTurno from "./components/views/turnos/EditarTurno";
 import AdminPrincipal from "./components/views/AdminPrincipal";
-import NavbarPageComponent from './components/common/NavbarComponent';
-import Inicio from './components/views/Inicio';
+import NavbarPageComponent from "./components/common/NavbarComponent";
+import Inicio from "./components/views/Inicio";
 import FooterComponent from "./components/common/FooterComponent";
 import AcercaDeNosotros from "./components/views/AcercaDeNosotros";
 import Error404 from "./components/views/Error404";
 import "./App.css";
 import PaginaContacto from "./components/views/PaginaContacto";
+import Login from "./components/views/Login";
 function App() {
   return (
     <>
-    <NavbarPageComponent></NavbarPageComponent>
-    <AcercaDeNosotros></AcercaDeNosotros>
+    {/*<NavbarPageComponent></NavbarPageComponent>*/}
+    <Login></Login>
+    {/*<AcercaDeNosotros></AcercaDeNosotros>*/}
     {/* <AdminTurnos /> */}
     {/* <CrearTurno /> */}
     {/* <EditarTurno /> */}
     {/* <Inicio></Inicio> */}
     {/* <Error404></Error404> */}
     {/* <PaginaContacto></PaginaContacto> */}
-    <FooterComponent></FooterComponent>
+    {/*<FooterComponent></FooterComponent>*/}
     </>
   );
 }

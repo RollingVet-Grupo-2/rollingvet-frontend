@@ -1,3 +1,4 @@
+const API_USUARIO = import.meta.env.VITE_API_USUARIO;
 const API_TURNOS = import.meta.env.VITE_API_TURNOS;
 const API_VETERINARIOS = import.meta.env.VITE_API_VETERINARIOS;
 const API_PACIENTES = import.meta.env.VITE_API_PACIENTES;
@@ -11,6 +12,29 @@ export const obtenerTurnos = async () => {
     console.log(error);
   }
 };
+
+export const iniciarSesion = async (usuario) => {
+  try {
+    const respuesta = await fetch(API_USUARIO);
+    const listausuario = await respuesta.json();
+    const usuarioBuscado = listausuario.find(
+      (itemUsuario) => itemUsuario.email === usuario.email
+    );
+
+    if (usuarioBuscado) {
+      if (usuarioBuscado.password === usuario.password) {
+        return usuarioBuscado;
+      } else {
+        return null;
+      }
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
 
 export const obtenerTurnoPorId = async (id) => {
   try {

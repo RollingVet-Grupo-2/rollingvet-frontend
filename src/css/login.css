@@ -1,0 +1,14 @@
+.contenedor_formulario{
+    position: relative;
+    background-color: #BDEAD8;
+}
+
+.fondo_huellas{
+    background-color: aliceblue;
+    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
