@@ -21,7 +21,7 @@ import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
 import FormPlan from "./principal/plan/FormPlan";
-
+import { Link } from "react-router-dom";
 const Inicio = () => {
   return (
     <>
@@ -44,7 +44,7 @@ const Inicio = () => {
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 rounded-4 bg-secondary contenedorBotonesHero">
             <Button variant="primary" className="px-4 py-3 rounded-4">Reservar Turno</Button>
-            <Button variant="outline-primary" className="px-4 py-3 rounded-4">Contactanos</Button>
+            <Button variant="outline-primary" className="px-4 py-3 rounded-4" as={Link} to={"/contacto"}>Contactanos</Button>
           </div>
         </Container>
       </Container>
