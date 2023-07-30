@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router";
 import AdminPrincipal from "../views/AdminPrincipal";
+import CrearTurno from "../views/turnos/CrearTurno";
+import EditarTurno from "../views/turnos/EditarTurno";
 const RutasAdministrador = () => {
     return (
         <>

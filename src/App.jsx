@@ -16,12 +16,16 @@ import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 function App() {
-    const usuarioLocalStorage = JSON.parse(localStorage.getItem("admin")) || {};
+    const usuarioLocalStorage =
+        JSON.parse(localStorage.getItem("usuario")) || {};
     const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioLocalStorage);
-
+    
     return (
         <BrowserRouter>
-            <NavbarPageComponent></NavbarPageComponent>
+            <NavbarPageComponent
+                usuarioLogueado={usuarioLogueado}
+                setUsuarioLogueado={setUsuarioLogueado}
+            ></NavbarPageComponent>
             <ScrollTop>
                 <Routes>
                     <Route exact path="/" element={<Inicio></Inicio>}></Route>
