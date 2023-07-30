@@ -3,9 +3,8 @@
     height: calc(100vh - 71.792px);
     background-size: cover;
     background-attachment: fixed;
-    max-width: 1400px;
     margin: 0 auto;
-    border-radius: 20px;
+    max-height: 1400px;
 }
 #app {
     background-color: rgb(34, 34, 34);

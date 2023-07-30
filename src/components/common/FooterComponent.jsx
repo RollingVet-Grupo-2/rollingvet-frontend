@@ -9,7 +9,7 @@ const FooterComponent = () => {
                         <img
                             src={Logo}
                             alt="Logo RollingVet"
-                            className="logo"
+                            
                         />
                         <div className="d-flex gap-2">
                             <div>
