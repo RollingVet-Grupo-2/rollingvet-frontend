@@ -59,9 +59,14 @@ const FooterComponent = () => {
                     </article>
                 </div>
             </section>
-            <section className="d-flex justify-content-center align-items-center py-3 copy_footer_section">
+            <section className="d-flex justify-content-center align-items-center py-4 copy_footer_section">
                 <h3 className="fs-6">
                     &copy;Todos los derechos reservados - RollingVet
+                </h3>
+            </section>
+            <section className="d-flex justify-content-center align-items-center py-3">
+                <h3 className="fs-6">
+                    <Link className="nav-link" to={"/acercaDeNosotros"}>Equipo que desarrolló RollingVet</Link>
                 </h3>
             </section>
         </footer>
