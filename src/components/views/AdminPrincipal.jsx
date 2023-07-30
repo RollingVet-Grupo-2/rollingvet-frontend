@@ -3,6 +3,7 @@ import trabajadores from "../../assets/img/administrador/co-workers.svg";
 import vets from "../../assets/img/administrador/vets.svg";
 import "../../css/AdminPrincipal.css";
 import { useEffect, useState } from "react";
+
 import {
   obtenerPacientes,
   obtenerTurnos,
@@ -157,6 +158,7 @@ const AdminPrincipal = () => {
                   ? veterinarios.length
                   : "No se pudo obtener datos"}
               </Card.Text>
+
             </Col>
           </Card.Body>
         </Card>

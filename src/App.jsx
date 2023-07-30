@@ -1,3 +1,4 @@
+import "./App.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
@@ -8,17 +9,26 @@ import AdminPrincipal from "./components/views/AdminPrincipal";
 import AdminTurnos from "./components/views/AdminTurnos";
 import CrearTurno from "./components/views/turnos/CrearTurno";
 import EditarTurno from "./components/views/turnos/EditarTurno";
-
+import AdminPrincipal from "./components/views/AdminPrincipal";
+import NavbarPageComponent from './components/common/NavbarComponent';
+import Inicio from './components/views/Inicio';
+import FooterComponent from "./components/common/FooterComponent";
+import AcercaDeNosotros from "./components/views/AcercaDeNosotros";
+import Error404 from "./components/views/Error404";
+import "./App.css";
+import PaginaContacto from "./components/views/PaginaContacto";
 function App() {
   return (
     <>
-      {/* <AdminPacientes /> */}
-      {/* <CrearPaciente /> */}
-      {/* <EditarPaciente /> */}
-      {/* <AdminTurnos /> */}
-      {/* <CrearTurno /> */}
-      {/* <EditarTurno /> */}
-      <AdminPrincipal />
+    <NavbarPageComponent></NavbarPageComponent>
+    <AcercaDeNosotros></AcercaDeNosotros>
+    {/* <AdminTurnos /> */}
+    {/* <CrearTurno /> */}
+    {/* <EditarTurno /> */}
+    {/* <Inicio></Inicio> */}
+    {/* <Error404></Error404> */}
+    {/* <PaginaContacto></PaginaContacto> */}
+    <FooterComponent></FooterComponent>
     </>
   );
 }
