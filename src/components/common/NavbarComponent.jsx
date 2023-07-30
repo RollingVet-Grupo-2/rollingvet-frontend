@@ -10,7 +10,7 @@ const NavbarPage = () => {
     return (
         <Navbar expand="lg" className="nav">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand >
                     <Link to={"/"}>
                         <picture>
                             <source className="logo"  media="(min-width:768px)" srcSet={Logo}/>

@@ -48,7 +48,7 @@ const AcercaDeNosotros = () => {
                     </Col>
                 </Row>
             </Container>
-            _
+            
             <section className="py-5 bg-light">
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
                 <Container>
