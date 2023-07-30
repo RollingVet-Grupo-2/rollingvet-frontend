@@ -19,6 +19,7 @@ import codeSlash from "../../../node_modules/bootstrap-icons/icons/code-slash.sv
 import Sol from "../../assets/acercaDeNosotros/Sol.jpeg";
 import Rodri from "../../assets/acercaDeNosotros/Rodri.jpg";
 import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
+import Esteban from "../../assets/acercaDeNosotros/Esteban.jpeg";
 import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 import Atropos from "atropos/react";
 import "atropos/css";
@@ -66,11 +67,11 @@ const AcercaDeNosotros = () => {
 
             <section className="py-5 bg-light">
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
-                <Container>
+                <Container className="p-md-5">
                     <Row>
                         {/* SOL */}
 
-                        <Col md={4} xl={3} className="mb-4">
+                        <Col md={6} xl={4} className="mb-4">
                             {tamanoPantalla > 991 ? (
                                 <Atropos
                                     activeOffset={40}
@@ -126,7 +127,7 @@ const AcercaDeNosotros = () => {
                                                         className="link nav-link"
                                                     >
                                                         <div>
-                                                            <h4 className="d-flex align-items-center gap-2">
+                                                            <h4 className="d-flex align-items-center justify-content-between gap-2">
                                                                 {"Correo"}
                                                                 <Badge bg="">
                                                                     <img
@@ -193,11 +194,11 @@ const AcercaDeNosotros = () => {
                                                     className="link nav-link"
                                                 >
                                                     <div>
-                                                        <h4 className="d-flex align-items-center gap-2">
+                                                        <h4 className="d-flex align-items-center justify-content-between gap-2">
                                                             {"Correo"}
                                                             <Badge bg="">
                                                                 <img
-                                                                    className="logo linkedinLogo"
+                                                                    className="logo"
                                                                     src={
                                                                         correoIcon
                                                                     }
@@ -215,7 +216,7 @@ const AcercaDeNosotros = () => {
                         </Col>
 
                         {/* LUCIANO */}
-                        <Col md={4} xl={3} className="mb-4">
+                        <Col md={6} xl={4} className="mb-4">
                             {tamanoPantalla > 991 ? (
                                 <Atropos
                                     activeOffset={40}
@@ -410,7 +411,7 @@ const AcercaDeNosotros = () => {
                         </Col>
 
                         {/* NICOLAS */}
-                        <Col md={4} xl={3} className="mb-4">
+                        <Col md={6} xl={4} className="mb-4">
                             {tamanoPantalla > 991 ? (
                                 <Atropos
                                     activeOffset={40}
@@ -603,7 +604,7 @@ const AcercaDeNosotros = () => {
                         </Col>
 
                         {/* ESTEBAN */}
-                        <Col md={4} xl={3} className="mb-4">
+                        <Col md={6} xl={4} className="mb-4">
                             {tamanoPantalla > 991 ? (
                                 <Atropos
                                     activeOffset={40}
@@ -730,10 +731,11 @@ const AcercaDeNosotros = () => {
                                 <Card className="border-0">
                                     <Card.Img
                                         variant="top"
-                                        src={Luciano}
+                                        src={Esteban}
                                         style={{
                                             height: "350px",
                                             objectFit: "cover",
+                                            objectPosition:"left"
                                         }}
                                     />
                                     <Card.Body>
@@ -842,7 +844,7 @@ const AcercaDeNosotros = () => {
                         </Col>
 
                         {/* RODRI */}
-                        <Col md={4} xl={3} className="mb-4">
+                        <Col md={6} xl={4} className="mb-4">
                             {tamanoPantalla > 991 ? (
                                 <Atropos
                                     activeOffset={40}
