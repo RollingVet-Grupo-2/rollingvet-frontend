@@ -4,14 +4,16 @@ import "../../css/login.css";
 import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { Button, Container } from "react-bootstrap";
-
-const Login = () => {
+import { useNavigate } from "react-router-dom";
+const Login = ({setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+
+  const navegacion = useNavigate();
 
   const onSubmit = (usuario) => {
     iniciarSesion(usuario).then((respuesta) => {
@@ -20,6 +22,9 @@ const Login = () => {
           "usuario",
           JSON.stringify(respuesta.nombreUsuario)
         );
+        setUsuarioLogueado(respuesta);
+        reset();
+        navegacion("/administrador")
         Swal.fire({
           title: "¡Bienvenido!",
           text: "Has iniciado sesión correctamente.",
