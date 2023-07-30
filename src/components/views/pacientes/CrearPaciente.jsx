@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearPaciente, validarEmailExistente } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearPaciente = () => {
   const {
@@ -113,7 +114,6 @@ const CrearPaciente = () => {
           confirmButtonColor: "#41e9a6",
         });
         reset();
-        setPaso(1);
       }
     });
   };

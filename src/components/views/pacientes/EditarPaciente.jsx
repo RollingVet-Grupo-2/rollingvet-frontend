@@ -70,7 +70,7 @@ const EditarPaciente = () => {
   };
 
   useEffect(() => {
-    obtenerPacientePorId(4).then((respuesta) => {
+    obtenerPacientePorId(7).then((respuesta) => {
       if (respuesta) {
         setearValoresEnFormulario(respuesta);
       } else {
