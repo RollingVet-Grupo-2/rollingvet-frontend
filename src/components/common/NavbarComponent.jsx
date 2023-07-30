@@ -1,7 +1,6 @@
 import { Navbar, Nav, Container, Dropdown } from "react-bootstrap";
 import Logo from "../../assets/rollingVetLogo.svg";
 import LogoMobile from "../../assets/rollingVetLogoMobile.svg";
-import { useNavigate } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 import "../../css/navbar.css";
 
@@ -33,6 +32,9 @@ const NavbarPage = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu variant="dark">
+                                <Dropdown.Item href="#/action-1">
+                                    Administrar principal
+                                </Dropdown.Item>
                                 <Dropdown.Item href="#/action-1">
                                     Administrar pacientes
                                 </Dropdown.Item>
