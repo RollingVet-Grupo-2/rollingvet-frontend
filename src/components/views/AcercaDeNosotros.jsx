@@ -616,7 +616,7 @@ const AcercaDeNosotros = () => {
                                     <Card className="border-0">
                                         <Card.Img
                                             variant="top"
-                                            src={Luciano}
+                                            src={Esteban}
                                             style={{
                                                 height: "350px",
                                                 objectFit: "cover",
