@@ -14,16 +14,19 @@ import Error404 from "./components/views/Error404";
 import "./App.css";
 import PaginaContacto from "./components/views/PaginaContacto";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ScrollTop from "./components/common/ScrollTop";
 function App() {
   return (
     <BrowserRouter>
       <NavbarPageComponent></NavbarPageComponent>
-      <Routes>
-        <Route exact path="/" element={<Inicio></Inicio>}></Route>
-        <Route exact path="/contacto" element={<PaginaContacto></PaginaContacto>}></Route>
-        <Route exact path="/acercaDeNosotros" element={<AcercaDeNosotros></AcercaDeNosotros>}></Route>
-        <Route path="*" element={<Error404></Error404>}></Route>
-      </Routes>
+      <ScrollTop>
+        <Routes>
+          <Route exact path="/" element={<Inicio></Inicio>}></Route>
+          <Route exact path="/contacto" element={<PaginaContacto></PaginaContacto>}></Route>
+          <Route exact path="/acercaDeNosotros" element={<AcercaDeNosotros></AcercaDeNosotros>}></Route>
+          <Route path="*" element={<Error404></Error404>}></Route>
+        </Routes>
+      </ScrollTop>
     <FooterComponent></FooterComponent>
     </BrowserRouter>
   );
