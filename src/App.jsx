@@ -57,7 +57,7 @@ function App() {
                             </RutasProtegidas>
                         }
                     ></Route>
-                    <Route path="*" element={<Error404></Error404>}></Route>
+                    <Route path={"*"} element={<Error404></Error404>}></Route>
                 </Routes>
             </ScrollTop>
             <FooterComponent></FooterComponent>
