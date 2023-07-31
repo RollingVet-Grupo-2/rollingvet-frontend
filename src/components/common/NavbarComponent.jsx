@@ -7,7 +7,6 @@ import "../../css/navbar.css";
 const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
     // determinaremos si el objeto esta vacio
     const longitudObjeto = Object.entries(usuarioLogueado).length;
-    console.log(Object.entries(usuarioLogueado).length);
     const navegacion = useNavigate();
     const cerrarSesion = () => {
         localStorage.removeItem("usuario");

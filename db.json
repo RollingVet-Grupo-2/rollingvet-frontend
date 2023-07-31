@@ -192,6 +192,21 @@
           "raza": "Siamés"
         }
       ]
+    },
+    {
+      "nombre": "Luciano",
+      "email": "luciano@mail.com",
+      "telefono": "3815254623",
+      "direccion": "Calle 123",
+      "mascotas": [
+        {
+          "nombre": "MascotaLuciano",
+          "edad": "4 años",
+          "especie": "Perro",
+          "raza": "Labrador"
+        }
+      ],
+      "id": 7
     }
   ],
   "usuario": [
