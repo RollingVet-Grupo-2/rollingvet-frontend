@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { obtenerTurnos } from "../helpers/queries";
 import ItemTurno from "./turnos/ItemTurno";
 import Swal from "sweetalert2";
-
+import { Link } from "react-router-dom";
 const AdminTurnos = () => {
   const [turnos, setTurnos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
@@ -76,9 +76,9 @@ const AdminTurnos = () => {
         <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
           <Col className="mb-3 mb-md-0">
             <h1>Administrar Turnos</h1>
-            <Button variant="success" size="lg">
+            <Link className="btn btn-success" size="lg" to={"/administrador/crear-turno"}>
               Agregar turno
-            </Button>
+            </Link>
           </Col>
           <Col style={{ height: "10rem" }}>
             <img src={calendario} alt="Turno" className="img-fluid h-100" />
