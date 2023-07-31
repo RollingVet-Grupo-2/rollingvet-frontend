@@ -3,7 +3,7 @@ import trabajadores from "../../assets/img/administrador/co-workers.svg";
 import vets from "../../assets/img/administrador/vets.svg";
 import "../../css/AdminPrincipal.css";
 import { useEffect, useState } from "react";
-
+import { Link } from "react-router-dom";
 import {
   obtenerPacientes,
   obtenerTurnos,
@@ -101,16 +101,20 @@ const AdminPrincipal = () => {
             <h2>
               Administrá fichas de pacientes y turnos desde cualquier lugar.
             </h2>
-            <Button
-              variant="success"
-              size="lg"
-              className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
-            >
-              Administrar Pacientes
-            </Button>
-            <Button variant="success" size="lg" className="p-3">
-              Administrar Turnos
-            </Button>
+              <Link to={"pacientes"}>
+                <Button
+                  variant="success"
+                  size="lg"
+                  className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
+                >
+                  Administrar Pacientes
+                </Button>
+              </Link>
+              <Link to={"turnos"}>
+                <Button variant="success" size="lg" className="p-3">
+                  Administrar Turnos
+                </Button>
+              </Link>
           </Col>
         </Row>
       </section>

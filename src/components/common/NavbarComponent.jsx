@@ -80,15 +80,15 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu variant="dark">
-                                        <Dropdown.Item href="#/action-1">
+                                        <Link className="dropdown-item" to={"/administrador"}>
                                             Administrar principal
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#/action-1">
+                                        </Link>
+                                        <Link className="dropdown-item" to={"/administrador/pacientes"}>
                                             Administrar pacientes
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">
+                                        </Link>
+                                        <Link className="dropdown-item" to={"/administrador/turnos"}>
                                             Administrar turnos
-                                        </Dropdown.Item>
+                                        </Link>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <Button variant="secondary" onClick={cerrarSesion}>
