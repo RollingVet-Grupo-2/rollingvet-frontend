@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearPaciente, validarEmailExistente } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const CrearPaciente = () => {
   const {
@@ -17,6 +18,7 @@ const CrearPaciente = () => {
 
   const [paso, setPaso] = useState(1);
   const [paciente, setPaciente] = useState({});
+  const navegacion = useNavigate();
 
   const pasosMaximos = 2;
 
@@ -114,6 +116,7 @@ const CrearPaciente = () => {
           confirmButtonColor: "#41e9a6",
         });
         reset();
+        navegacion("/administrador/pacientes");
       }
     });
   };

@@ -5,7 +5,7 @@ import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-const Login = ({setUsuarioLogueado}) => {
+const Login = ({ setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -17,14 +17,11 @@ const Login = ({setUsuarioLogueado}) => {
 
   const onSubmit = (usuario) => {
     iniciarSesion(usuario).then((respuesta) => {
-      if (respuesta) {
-        localStorage.setItem(
-          "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
-        );
+      if (respuesta && respuesta.status === 200) {
+        localStorage.setItem("usuario", JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
         reset();
-        navegacion("/administrador")
+        navegacion("/administrador");
         Swal.fire({
           title: "¡Bienvenido!",
           text: "Has iniciado sesión correctamente.",

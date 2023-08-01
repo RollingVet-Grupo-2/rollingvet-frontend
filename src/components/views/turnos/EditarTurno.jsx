@@ -8,6 +8,7 @@ import {
   obtenerVeterinarios,
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
 
 const EditarTurno = () => {
   const {
@@ -31,10 +32,13 @@ const EditarTurno = () => {
     setearValores();
   }, []);
 
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
   const setearValores = () => {
-    obtenerTurnoPorId(8).then((respuesta) => {
+    obtenerTurnoPorId(id).then((respuesta) => {
       if (respuesta) {
-        setValue("mascota", respuesta.mascota ? respuesta.mascota : "Mascota");
+        setValue("mascota", respuesta.mascota);
         setValue("detalle_cita", respuesta.detalle_cita);
         setValue("veterinario", respuesta.veterinario);
         setValue("fecha", respuesta.fecha);
@@ -107,7 +111,7 @@ const EditarTurno = () => {
   };
 
   const onSubmit = (turnoEditado) => {
-    editarTurno(turnoEditado, 8).then((respuesta) => {
+    editarTurno(turnoEditado, id).then((respuesta) => {
       if (!respuesta || respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -130,6 +134,7 @@ const EditarTurno = () => {
           color: "#41e9a6",
           confirmButtonColor: "#a75ef0a4",
         });
+        navegacion("/administrador/turnos");
       }
     });
   };

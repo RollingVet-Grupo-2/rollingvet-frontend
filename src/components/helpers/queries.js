@@ -98,26 +98,18 @@ export const obtenerVeterinarios = async () => {
 
 export const iniciarSesion = async (usuario) => {
   try {
-    const respuesta = await fetch(API_USUARIO);
-    const listausuario = await respuesta.json();
-    const usuarioBuscado = listausuario.find(
-      (itemUsuario) => itemUsuario.email === usuario.email
-    );
-
-    if (usuarioBuscado) {
-      if (usuarioBuscado.password === usuario.password) {
-        return usuarioBuscado;
-      } else {
-        return null;
-      }
-    } else {
-      return null;
-    }
+    const respuesta = await fetch(API_USUARIO, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(usuario),
+    });
+    const datos = await respuesta.json();
+    return { status: respuesta.status, nombreUsuario: datos.nombreUsuario };
   } catch (error) {
     console.log(error);
     return null;
   }
-}
+};
 
 export const obtenerTurnoPorId = async (id) => {
   try {

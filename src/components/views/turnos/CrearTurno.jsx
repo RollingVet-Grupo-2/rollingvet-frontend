@@ -8,6 +8,7 @@ import {
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const CrearTurno = () => {
   const {
@@ -25,6 +26,8 @@ const CrearTurno = () => {
   const [veterinarioElegido, setVeterinarioElegido] = useState([]);
   const [horarioVeterinario, setHorarioVeterinario] = useState([]);
 
+  const navegacion = useNavigate();
+
   useEffect(() => {
     fetchMascotas();
     fetchVeterinarios();
@@ -35,6 +38,7 @@ const CrearTurno = () => {
       if (respuesta) {
         let arrayMascotas = respuesta.flatMap((paciente) =>
           paciente.mascotas.map((mascota) => ({
+            _id: mascota._id,
             nombrePaciente: paciente.nombre,
             nombreMascota: mascota.nombre,
           }))
@@ -136,6 +140,7 @@ const CrearTurno = () => {
           confirmButtonColor: "#a75ef0a4",
         });
         reset();
+        navegacion("/administrador/turnos");
       }
     });
   };
@@ -161,8 +166,8 @@ const CrearTurno = () => {
         })}
       >
         <option value={""}>Elegir mascota registrada</option>
-        {mascotas.map((mascota, index) => (
-          <option key={mascota + index} value={mascota.nombreMascota}>
+        {mascotas.map((mascota) => (
+          <option key={mascota._id} value={mascota.nombreMascota}>
             {mascota.nombreMascota} - Dueño: {mascota.nombrePaciente}
           </option>
         ))}
@@ -217,7 +222,7 @@ const CrearTurno = () => {
             >
               <option value="">Elegir veterinario</option>
               {veterinarioElegido.map((veterinario) => (
-                <option key={veterinario.id} value={veterinario.nombre}>
+                <option key={veterinario._id} value={veterinario.nombre}>
                   {veterinario.nombre}
                 </option>
               ))}

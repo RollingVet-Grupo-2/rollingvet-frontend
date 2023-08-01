@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { editarPaciente, obtenerPacientePorId } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
 
 const EditarPaciente = () => {
   const {
@@ -11,6 +12,9 @@ const EditarPaciente = () => {
     formState: { errors },
     setValue,
   } = useForm();
+
+  const { id } = useParams();
+  const navegacion = useNavigate();
 
   const darFormatoPaciente = (paciente) => {
     const pacienteFormateado = {
@@ -32,7 +36,7 @@ const EditarPaciente = () => {
 
   const onSubmit = (paciente) => {
     let pacienteFormateado = darFormatoPaciente(paciente);
-    editarPaciente(pacienteFormateado, 4).then((respuesta) => {
+    editarPaciente(pacienteFormateado, id).then((respuesta) => {
       if (respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -54,6 +58,7 @@ const EditarPaciente = () => {
           color: "#41e9a6",
           confirmButtonColor: "#41e9a6",
         });
+        navegacion("/administrador/pacientes");
       }
     });
   };
@@ -70,7 +75,7 @@ const EditarPaciente = () => {
   };
 
   useEffect(() => {
-    obtenerPacientePorId(7).then((respuesta) => {
+    obtenerPacientePorId(id).then((respuesta) => {
       if (respuesta) {
         setearValoresEnFormulario(respuesta);
       } else {

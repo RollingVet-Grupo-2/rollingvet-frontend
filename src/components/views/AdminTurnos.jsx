@@ -48,7 +48,7 @@ const AdminTurnos = () => {
     }
 
     return resultados.map((turno) => (
-      <ItemTurno key={turno.id} turno={turno} setTurnos={setTurnos} />
+      <ItemTurno key={turno._id} turno={turno} setTurnos={setTurnos} />
     ));
   };
 
@@ -76,7 +76,10 @@ const AdminTurnos = () => {
         <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
           <Col className="mb-3 mb-md-0">
             <h1>Administrar Turnos</h1>
-            <Link className="btn btn-success" size="lg" to={"/administrador/crear-turno"}>
+            <Link
+              className="btn btn-success btn-lg"
+              to={"/administrador/crear-turno"}
+            >
               Agregar turno
             </Link>
           </Col>

@@ -51,7 +51,7 @@ const AdminPacientes = () => {
 
     return resultados.map((paciente) => (
       <ItemPaciente
-        key={paciente.id}
+        key={paciente._id}
         paciente={paciente}
         setPacientes={setPacientes}
       />
@@ -82,7 +82,10 @@ const AdminPacientes = () => {
         <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
           <Col className="mb-3 mb-md-0">
             <h1>Administrar Pacientes</h1>
-            <Link className="btn btn-success" size="lg" to={"/administrador/crear-paciente"}>
+            <Link
+              className="btn btn-success btn-lg"
+              to={"/administrador/crear-paciente"}
+            >
               Agregar paciente
             </Link>
           </Col>

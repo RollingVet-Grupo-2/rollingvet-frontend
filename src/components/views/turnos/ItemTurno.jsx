@@ -5,6 +5,7 @@ import {
   obtenerTurnos,
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ItemTurno = ({ turno, setTurnos }) => {
   const handleDelete = () => {
@@ -22,7 +23,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
       color: "#41e9a6",
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarTurno(turno.id).then((respuesta) => {
+        borrarTurno(turno._id).then((respuesta) => {
           if (respuesta.status === 200) {
             obtenerTurnos().then((respuesta) => {
               if (respuesta) {
@@ -65,6 +66,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
           title: "¡Operación cancelada!",
           text: "El turno no fue eliminado.",
           icon: "error",
+          iconColor: "#a75ef0a4",
           background: "#062e32",
           color: "#41e9a6",
           confirmButtonColor: "#a75ef0a4",
@@ -90,9 +92,12 @@ const ItemTurno = ({ turno, setTurnos }) => {
         </td>
         <td>
           <div className="d-flex gap-2 justify-content-center">
-            <a className="btn btn-warning btn btn-primary">
+            <Link
+              className="btn btn-warning btn btn-primary"
+              to={`/administrador/editar-turno/${turno._id}`}
+            >
               <i className="bi bi-pencil-square"></i>
-            </a>
+            </Link>
             <Button className="btn btn-danger" onClick={handleDelete}>
               <i className="bi bi-trash"></i>
             </Button>

@@ -101,20 +101,20 @@ const AdminPrincipal = () => {
             <h2>
               Administrá fichas de pacientes y turnos desde cualquier lugar.
             </h2>
-              <Link to={"pacientes"}>
-                <Button
-                  variant="success"
-                  size="lg"
-                  className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
-                >
-                  Administrar Pacientes
-                </Button>
-              </Link>
-              <Link to={"turnos"}>
-                <Button variant="success" size="lg" className="p-3">
-                  Administrar Turnos
-                </Button>
-              </Link>
+            <Link to={"pacientes"}>
+              <Button
+                variant="success"
+                size="lg"
+                className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
+              >
+                Administrar Pacientes
+              </Button>
+            </Link>
+            <Link to={"turnos"}>
+              <Button variant="success" size="lg" className="p-3">
+                Administrar Turnos
+              </Button>
+            </Link>
           </Col>
         </Row>
       </section>
@@ -162,7 +162,6 @@ const AdminPrincipal = () => {
                   ? veterinarios.length
                   : "No se pudo obtener datos"}
               </Card.Text>
-
             </Col>
           </Card.Body>
         </Card>
@@ -240,7 +239,7 @@ const AdminPrincipal = () => {
               </tr>
             ) : (
               turnos.map((turno) => (
-                <TurnosAsignados key={turno.id} turno={turno} />
+                <TurnosAsignados key={turno._id} turno={turno} />
               ))
             )}
           </tbody>
