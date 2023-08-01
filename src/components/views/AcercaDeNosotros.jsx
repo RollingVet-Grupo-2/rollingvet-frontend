@@ -24,6 +24,7 @@ import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 import { useEffect, useState } from "react";
 import ColumnaSol from "./acercaDeNosotros/ColumnaSol";
 import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
+import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
 const AcercaDeNosotros = () => {
     const textTitleSectionAboutUs = "{Acerca de nosotros}";
     const [tamanoPantalla, setTamanoPantalla] = useState(900);
@@ -190,7 +191,14 @@ const AcercaDeNosotros = () => {
                             linkedinIcon={linkedinIcon}
                         ></ColumnaLuciano>
 
-                        
+                        <ColumnaNicolas
+                            infoNicolas={infoNicolas}
+                            tamanoPantalla={tamanoPantalla}
+                            nicolasImg={Nicolas}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                        ></ColumnaNicolas>
                     </Row>
                 </Container>
             </section>
