@@ -13,7 +13,7 @@ import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
 import Esteban from "../../assets/acercaDeNosotros/Esteban.jpeg";
 import Nicolas from "../../assets/acercaDeNosotros/Nicolas.jpg";
 import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ColumnaSol from "./acercaDeNosotros/ColumnaSol";
 import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
 import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
@@ -122,7 +122,6 @@ const AcercaDeNosotros = () => {
             },
         },
     ];
-    const infoDesaroladores = infoDesarrolladores;
     const [infoSol, setInfoSol] = useState(infoDesarrolladores[0]);
     const [infoLuciano, setInfoLuciano] = useState(infoDesarrolladores[1]);
     const [infoNicolas, setInfoNicolas] = useState(infoDesarrolladores[2]);
