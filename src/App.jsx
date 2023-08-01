@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/style.scss";
 import NavbarPageComponent from './components/common/NavbarComponent';
 import Inicio from './components/views/Inicio';
 

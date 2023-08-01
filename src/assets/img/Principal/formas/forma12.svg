@@ -3,11 +3,11 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #8c517b;
+        fill: #6CD3A2;
       }
 
       .cls-2 {
-        fill: #fac9a9;
+        fill: #F4B693;
       }
 
       .cls-3 {
@@ -19,7 +19,7 @@
       }
 
       .cls-5 {
-        fill: #f7f7f7;
+        fill: #FFFFFF;
       }
     </style>
     <clipPath id="clippath">

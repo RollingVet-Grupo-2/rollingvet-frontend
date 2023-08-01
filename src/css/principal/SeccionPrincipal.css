@@ -1,10 +1,10 @@
-body{
+/* body{
     background-image: url("../../assets/img/Principal/wesley-tingey-_0sEjWfAK3Q-unsplash.jpg");
     background-color: white;
     background-blend-mode: multiply;
     background-size: contain;
     backdrop-filter: brightness(145%) saturate(60%) blur(1.1px);
-}
+} */
 .seccionHeroFondo {
   background: radial-gradient(circle at 50% 6%, transparent 50%, #f4b693 96%) 94% 73%/151% 194%,
     conic-gradient(from 120deg at 42% 89%, #6cd3a2 52%, #3e777a 100%) 54% 30%/129% 197%;
@@ -19,9 +19,6 @@ body{
 .formaBotonesHero{
     top: 5rem!important;
     width: 250vw;
-}
-.formaBotonesHero>img{
-    backdrop-filter: drop-shadow(0 9px 0 red );
 }
 .imgSeccionHero {
   filter: drop-shadow(0 0.4rem 0.5rem rgba(0, 0, 0, 0.3));

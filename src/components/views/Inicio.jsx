@@ -47,41 +47,41 @@ const Inicio = () => {
                 <img src={forma11} alt="Froma 11"/>
             </div>
             <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 botonesHero">
-            <Button variant="primary" className="px-4 py-3 rounded-4">Reservar Turno</Button>
-            <Button variant="outline-primary" className="px-4 py-3 rounded-4">Contactanos</Button>
+            <Button variant="primary" className="px-4 py-3 rounded-4 border-dark">Reservar Turno</Button>
+            <Button variant="outline-dark" className="px-4 py-3 rounded-4">Contactanos</Button>
             </div>
           </div>
         </Container>
       </Container>
       <Container className="py-3">
-        <h2 className="display-2 px-3 px-md-5 py-2">Nuestros Servicios</h2>
+        <h2 className="display-3 px-3 px-md-5 py-2">Nuestros Servicios</h2>
         <ContainerServicios></ContainerServicios>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro} forma={forma3}></SeparadorCustom>
       <Container className="py-3">
-        <h2 className="display-2 px-3 px-md-5 py-2">Productos Destacados</h2>
+        <h2 className="display-3 px-3 px-md-5 py-2">Productos Destacados</h2>
         <SliderProducto></SliderProducto>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorGato} forma={forma10}></SeparadorCustom>
       <Container fluid className="py-3 degradadoFondo">
         <BannerMarca></BannerMarca>
         <Container>
-          <h2 className="display-2 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
+          <h2 className="display-3 px-3 px-md-5 py-2">Las Marcas que ofrecemos</h2>
           <SliderMarcas></SliderMarcas>
         </Container>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro2} forma={forma6}></SeparadorCustom>
       <Container className="py-3">
-        <h2 className="display-2 px-3 px-md-5 py-2">Clientes felices, Mascotas saludables</h2>
+        <h2 className="display-3 px-3 px-md-5 py-2">Clientes felices, Mascotas saludables</h2>
         <SliderClientes></SliderClientes>
       </Container>
       <Container className="py-3">
-        <h2 className="display-2 px-3 px-md-5 py-2">Contamos con los mejores Profesionales</h2>
+        <h2 className="display-3 px-3 px-md-5 py-2">Contamos con los mejores Profesionales</h2>
         <ContenedorVeterinario></ContenedorVeterinario>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro3} forma={forma3}></SeparadorCustom>
       <Container className="py-3">
-        <h2 className="display-2 px-3 px-md-5 py-2">Descubre nuestros planes especiales</h2>
+        <h2 className="display-3 px-3 px-md-5 py-2">Descubre nuestros planes especiales</h2>
         <p className="lead px-3 px-md-5 py-2">Ofrecemos planes especiales de cuidado para tus mascotas, adaptados a sus diferentes etapas de vida. Elige el plan que corresponda a la edad de tu compañero  y accede a un formulario para obtener más información sobre los servicios y beneficios incluidos en cada plan. ¡Brindamos la atención que tus mascotas merecen en cada etapa de su vida!</p>
         <SliderPlanes></SliderPlanes>
       </Container>

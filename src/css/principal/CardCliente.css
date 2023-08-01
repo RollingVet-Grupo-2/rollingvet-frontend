@@ -3,6 +3,7 @@
 }
 .avatarMascota{
     border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    height: 24rem;
 }
 @media screen and (min-width: 768px){
     .avatarCliente{

@@ -1,0 +1,12 @@
+.imgServicio{
+    filter: grayscale(100%);
+    transition:all 400ms ease-in-out;
+}
+.imgServicio::after{
+    background-color: var(--bs-body);
+}
+.cardServicio:hover > .imgServicio{
+    filter: grayscale(0%);
+    transform: scale(100.5%);
+
+}
