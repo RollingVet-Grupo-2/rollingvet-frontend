@@ -1,19 +1,20 @@
 import { Card, Col, ListGroup } from "react-bootstrap";
 import ItemRedSocial from "./ItemRedSocial";
 
-const ColumnaNicolas = ({
-    infoNicolas,
-    nicolasImg,
+const ColumnaEsteban = ({
+    infoEsteban,
+    estebanImg,
     gitHubIcon,
     correoIcon,
     linkedinIcon,
+    portfolioIcon
 }) => {
     return (
         <Col md={6} xl={4} className="mb-4">
             <Card className="border-0">
                 <Card.Img
                     variant="top"
-                    src={nicolasImg}
+                    src={estebanImg}
                     style={{
                         height: "350px",
                         objectFit: "cover",
@@ -21,34 +22,44 @@ const ColumnaNicolas = ({
                 />
                 <Card.Body>
                     <Card.Title className="mb-3 fs-3">
-                        {infoNicolas.nombre}
+                        {infoEsteban.nombre}
                     </Card.Title>
                     <ListGroup className="d-flex flex-column gap-2">
                         <ItemRedSocial
                             iconoRedSocial={gitHubIcon}
                             nombreRedSocial={
-                                infoNicolas.redesSociales.github.nombre
+                                infoEsteban.redesSociales.github.nombre
                             }
-                            urlRedSocial={infoNicolas.redesSociales.github.url}
-                            nombreDesarrollador={infoNicolas.nombre}
+                            urlRedSocial={infoEsteban.redesSociales.github.url}
+                            nombreDesarrollador={infoEsteban.nombre}
                         ></ItemRedSocial>
                         <ItemRedSocial
                             iconoRedSocial={correoIcon}
                             nombreRedSocial={
-                                infoNicolas.redesSociales.correo.nombre
+                                infoEsteban.redesSociales.correo.nombre
                             }
-                            urlRedSocial={infoNicolas.redesSociales.correo.url}
-                            nombreDesarrollador={infoNicolas.nombre}
+                            urlRedSocial={infoEsteban.redesSociales.correo.url}
+                            nombreDesarrollador={infoEsteban.nombre}
                         ></ItemRedSocial>
                         <ItemRedSocial
                             iconoRedSocial={linkedinIcon}
                             nombreRedSocial={
-                                infoNicolas.redesSociales.linkedin.nombre
+                                infoEsteban.redesSociales.linkedin.nombre
                             }
                             urlRedSocial={
-                                infoNicolas.redesSociales.linkedin.url
+                                infoEsteban.redesSociales.linkedin.url
                             }
-                            nombreDesarrollador={infoNicolas.nombre}
+                            nombreDesarrollador={infoEsteban.nombre}
+                        ></ItemRedSocial>
+                        <ItemRedSocial
+                            iconoRedSocial={portfolioIcon}
+                            nombreRedSocial={
+                                infoEsteban.redesSociales.portfolio.nombre
+                            }
+                            urlRedSocial={
+                                infoEsteban.redesSociales.portfolio.url
+                            }
+                            nombreDesarrollador={infoEsteban.nombre}
                         ></ItemRedSocial>
                     </ListGroup>
                 </Card.Body>
@@ -57,4 +68,4 @@ const ColumnaNicolas = ({
     );
 };
 
-export default ColumnaNicolas;
+export default ColumnaEsteban;

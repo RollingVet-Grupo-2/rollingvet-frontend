@@ -1,9 +1,5 @@
 import "../../css/AcercaDeNosotros.css";
-import {
-    Container,
-    Col,
-    Row,
-} from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import sobreNosotrosImg from "../../assets/acercaDeNosotros/sobreNosotros.svg";
 import gitHubIcon from "../../../node_modules/bootstrap-icons/icons/github.svg";
 import correoIcon from "../../../node_modules/bootstrap-icons/icons/envelope.svg";
@@ -21,9 +17,11 @@ import { useEffect, useState } from "react";
 import ColumnaSol from "./acercaDeNosotros/ColumnaSol";
 import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
 import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
+import ColumnaEsteban from "./acercaDeNosotros/ColumnaEsteban";
+import ColumnaRodrigo from "./acercaDeNosotros/ColumnaRodrigo";
 const AcercaDeNosotros = () => {
     const textTitleSectionAboutUs = "{Acerca de nosotros}";
-    
+
     const infoDesarrolladores = [
         {
             nombre: "Sol Perato",
@@ -187,6 +185,25 @@ const AcercaDeNosotros = () => {
                             correoIcon={correoIcon}
                             linkedinIcon={linkedinIcon}
                         ></ColumnaNicolas>
+
+                        <ColumnaEsteban
+                            infoEsteban={infoEsteban}
+                            estebanImg={Esteban}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                            portfolioIcon={codeSlash}
+                        ></ColumnaEsteban>
+
+                        <ColumnaRodrigo
+                            infoRodri={infoRodri}
+                            rodriImg={Rodri}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                            youtubeIcon={youtubeIcon}
+                            tiktokIcon={tiktokIcon}
+                        ></ColumnaRodrigo>
                     </Row>
                 </Container>
             </section>
