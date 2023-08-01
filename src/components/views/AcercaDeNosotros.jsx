@@ -1,12 +1,8 @@
 import "../../css/AcercaDeNosotros.css";
 import {
-    Card,
     Container,
     Col,
     Row,
-    Badge,
-    ListGroup,
-    ListGroupItem,
 } from "react-bootstrap";
 import sobreNosotrosImg from "../../assets/acercaDeNosotros/sobreNosotros.svg";
 import gitHubIcon from "../../../node_modules/bootstrap-icons/icons/github.svg";
@@ -27,12 +23,7 @@ import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
 import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
 const AcercaDeNosotros = () => {
     const textTitleSectionAboutUs = "{Acerca de nosotros}";
-    const [tamanoPantalla, setTamanoPantalla] = useState(900);
-
-    useEffect(() => {
-        const tamaño = window.innerWidth;
-        setTamanoPantalla(tamaño);
-    }, []);
+    
     const infoDesarrolladores = [
         {
             nombre: "Sol Perato",
@@ -176,7 +167,6 @@ const AcercaDeNosotros = () => {
                         {/* SOL */}
                         <ColumnaSol
                             infoSol={infoSol}
-                            tamanoPantalla={tamanoPantalla}
                             solImg={Sol}
                             gitHubIcon={gitHubIcon}
                             correoIcon={correoIcon}
@@ -184,7 +174,6 @@ const AcercaDeNosotros = () => {
 
                         <ColumnaLuciano
                             infoLuciano={infoLuciano}
-                            tamanoPantalla={tamanoPantalla}
                             lucianoImg={Luciano}
                             gitHubIcon={gitHubIcon}
                             correoIcon={correoIcon}
@@ -193,7 +182,6 @@ const AcercaDeNosotros = () => {
 
                         <ColumnaNicolas
                             infoNicolas={infoNicolas}
-                            tamanoPantalla={tamanoPantalla}
                             nicolasImg={Nicolas}
                             gitHubIcon={gitHubIcon}
                             correoIcon={correoIcon}

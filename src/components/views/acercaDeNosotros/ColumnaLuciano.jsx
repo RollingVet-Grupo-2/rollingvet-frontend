@@ -3,7 +3,6 @@ import ItemRedSocial from "./ItemRedSocial";
 
 const ColumnaSol = ({
     infoLuciano,
-    tamanoPantalla,
     lucianoImg,
     gitHubIcon,
     correoIcon,

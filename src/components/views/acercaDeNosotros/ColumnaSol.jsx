@@ -3,7 +3,6 @@ import { Card, Col, ListGroup } from "react-bootstrap";
 import ItemRedSocial from "./ItemRedSocial";
 
 const ColumnaSol = ({
-    tamanoPantalla,
     infoSol,
     solImg,
     gitHubIcon,
