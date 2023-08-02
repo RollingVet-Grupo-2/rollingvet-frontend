@@ -43,7 +43,7 @@ const Inicio = () => {
             <img src={imgHero} alt="Perro y Gato" className="w-50 h-50" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 rounded-4 bg-secondary contenedorBotonesHero">
-            <Button variant="primary" className="px-4 py-3 rounded-4">Reservar Turno</Button>
+            <Button variant="primary" className="px-4 py-3 rounded-4" as={Link} to={"/login"}>Reservar Turno</Button>
             <Button variant="outline-primary" className="px-4 py-3 rounded-4" as={Link} to={"/contacto"}>Contactanos</Button>
           </div>
         </Container>

@@ -3,7 +3,7 @@ import Logo from "../../assets/rollingVetLogo.svg";
 import LogoMobile from "../../assets/rollingVetLogoMobile.svg";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../css/navbar.css";
-
+import Swal from "sweetalert2";
 const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
     // determinaremos si el objeto esta vacio
     const longitudObjeto = Object.entries(usuarioLogueado).length;
@@ -11,6 +11,15 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
     const cerrarSesion = () => {
         localStorage.removeItem("usuario");
         setUsuarioLogueado({});
+        Swal.fire({
+            title: "Sesión cerrada",
+            text: "Inicia sesión nuevamente para poder ingresar al admin",
+            icon: "success",
+            iconColor: "#a75ef0a4",
+            background: "#062e32",
+            color: "#41e9a6",
+            confirmButtonColor: "#a75ef0a4",
+          });
         navegacion("/");
     };
 
