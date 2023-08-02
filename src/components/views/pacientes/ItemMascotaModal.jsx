@@ -11,8 +11,8 @@ const ItemMascotaModal = ({ mascota }) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow} className="mb-2 mx-md-2">
-        {mascota.nombre}
+      <Button variant="success" onClick={handleShow} className="mx-md-2">
+        {mascota.nombreMascota}
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -25,13 +25,13 @@ const ItemMascotaModal = ({ mascota }) => {
               <h5 className="text-success-emphasis fw-bold text-decoration-underline">
                 Nombre
               </h5>
-              <p className="lead">{mascota.nombre}</p>
+              <p className="lead">{mascota.nombreMascota}</p>
             </Col>
             <Col className="text-center">
               <h5 className="text-success-emphasis fw-bold text-decoration-underline">
                 Edad
               </h5>
-              <p className="lead">{mascota.edad}</p>
+              <p className="lead">{mascota.edadMascota}</p>
             </Col>
             <Col className="text-center">
               <h5 className="text-success-emphasis fw-bold text-decoration-underline">

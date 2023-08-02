@@ -75,11 +75,7 @@ const ItemPaciente = ({ paciente, setPacientes }) => {
   return (
     <tr>
       <td>{<ItemDuenioModal key={paciente._id} paciente={paciente} />}</td>
-      <td>
-        {paciente.mascotas.map((mascota, index) => (
-          <ItemMascotaModal key={index} mascota={mascota} />
-        ))}
-      </td>
+      <td>{<ItemMascotaModal key={paciente._id} mascota={paciente} />}</td>
       <td>
         <div className="d-flex gap-2 justify-content-center">
           <Link

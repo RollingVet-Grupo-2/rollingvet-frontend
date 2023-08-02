@@ -179,15 +179,9 @@ const AdminPrincipal = () => {
               </span>
             </Col>
             <Col xs={10}>
-              <Card.Title>
-                Pacientes: <span className="fw-bold">{pacientes.length}</span>
-              </Card.Title>
-              <Card.Text className="h5">
-                Mascotas:{" "}
-                <span className="fw-bold">
-                  {" "}
-                  {pacientes.flatMap((paciente) => paciente.mascotas).length}
-                </span>
+              <Card.Title>Pacientes:</Card.Title>
+              <Card.Text className="fw-bold">
+                <span>{pacientes.length}</span>
               </Card.Text>
             </Col>
           </Card.Body>

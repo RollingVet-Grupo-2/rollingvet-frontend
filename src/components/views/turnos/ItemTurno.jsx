@@ -79,7 +79,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
     <>
       <tr>
         <td>{turno.veterinario}</td>
-        <td>{turno.mascota}</td>
+        <td>{turno.paciente.nombreMascota}</td>
         <td>{turno.detalle_cita}</td>
         <td className="text-capitalize">
           {new Date(turno.fecha).toLocaleDateString("es-ES", {
