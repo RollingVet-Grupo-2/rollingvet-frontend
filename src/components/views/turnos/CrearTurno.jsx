@@ -109,6 +109,7 @@ const CrearTurno = () => {
   };
 
   const onSubmit = (turno) => {
+    console.log(turno);
     crearTurno(turno).then((respuesta) => {
       if (!respuesta) {
         Swal.fire({

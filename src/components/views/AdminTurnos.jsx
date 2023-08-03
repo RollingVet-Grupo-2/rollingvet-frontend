@@ -17,7 +17,9 @@ const AdminTurnos = () => {
   const resultados = !busqueda
     ? turnos
     : turnos.filter((turno) =>
-        turno.mascota.toLowerCase().includes(busqueda.toLowerCase())
+        turno.paciente.nombreMascota
+          .toLowerCase()
+          .includes(busqueda.toLowerCase())
       ) || (
         <tr>
           <td className="lead" colSpan={5}>

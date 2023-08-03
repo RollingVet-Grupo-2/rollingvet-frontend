@@ -82,7 +82,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
         <td>{turno.paciente.nombreMascota}</td>
         <td>{turno.detalle_cita}</td>
         <td className="text-capitalize">
-          {new Date(turno.fecha).toLocaleDateString("es-ES", {
+          {new Date(`${turno.fecha}T00:00:00`).toLocaleDateString("es-AR", {
             weekday: "long",
             year: "numeric",
             month: "long",

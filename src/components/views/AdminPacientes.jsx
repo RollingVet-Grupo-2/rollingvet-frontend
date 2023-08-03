@@ -17,9 +17,7 @@ const AdminPacientes = () => {
   const resultados = !busqueda
     ? pacientes
     : pacientes.filter((paciente) =>
-        paciente.mascotas.some((mascota) =>
-          mascota.nombre.toLowerCase().includes(busqueda.toLowerCase())
-        )
+        paciente.nombreMascota.toLowerCase().includes(busqueda.toLowerCase())
       ) || (
         <tr>
           <td className="lead" colSpan={6}>
