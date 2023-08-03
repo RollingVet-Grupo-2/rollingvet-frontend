@@ -9,7 +9,7 @@ const ItemPaciente = ({ paciente, setPacientes }) => {
   const handleDelete = () => {
     Swal.fire({
       title: "¿Estas seguro de borrar el paciente?",
-      text: "¡No podrás revertir este cambio!",
+      text: "¡No podrás revertir este cambio, si el paciente tiene turnos los mismos tambien serán borrados!",
       icon: "warning",
       iconColor: "a75ef0a4",
       showCancelButton: true,

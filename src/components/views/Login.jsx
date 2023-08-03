@@ -47,7 +47,7 @@ const Login = ({ setUsuarioLogueado }) => {
   };
 
   return (
-    <section className="container-fluid contenedor_formulario seccionPrincipal d-flex">
+    <section className="container-fluid contenedor_formulario seccionPrincipal py-5 d-flex">
       <Container className="d-flex justify-content-center align-items-center">
         <aside className="col-12 col-md-6 rounded fondo_huellas mx-auto pt-3">
           <h1 className="text-center">Iniciar sesion</h1>
