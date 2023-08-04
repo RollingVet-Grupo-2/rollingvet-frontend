@@ -80,7 +80,7 @@ const Inicio = () => {
         <ContenedorVeterinario></ContenedorVeterinario>
       </Container>
       <SeparadorCustom imgSeparador={imgSeparadorPerro3} forma={forma3}></SeparadorCustom>
-      <Container className="py-3">
+      <Container className="py-3 mb-5">
         <h2 className="display-3 px-3 px-md-5 py-2">Descubre nuestros planes especiales</h2>
         <p className="lead px-3 px-md-5 py-2">Ofrecemos planes especiales de cuidado para tus mascotas, adaptados a sus diferentes etapas de vida. Elige el plan que corresponda a la edad de tu compañero  y accede a un formulario para obtener más información sobre los servicios y beneficios incluidos en cada plan. ¡Brindamos la atención que tus mascotas merecen en cada etapa de su vida!</p>
         <SliderPlanes></SliderPlanes>

@@ -22,8 +22,8 @@ const CardCliente = ({
                     </Badge>
                 </div>
             </div>
-            <div>
-                <Card.Header className="pt-5 pt-md-3 position-relative">
+            <div className="bg-primary">
+                <Card.Header className="pt-5 pt-md-3 position-relative bg-secondary">
                     <div className="position-absolute start-0 w-100 text-center avatarCliente" >
                         <img alt={nombreCliente} src={imgCliente} className="border border-3 border-dark text-dark rounded-circle" style={{ height: "6rem" }} />
                     </div>

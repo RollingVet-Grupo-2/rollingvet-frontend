@@ -13,7 +13,7 @@ const CardServicio = ({imgServicio,nombreServicio}) => {
               <Card.Text>
                 Obtén acceso a consultas veterinarias de calidad con profesionales altamente capacitados.
               </Card.Text>
-              <Button variant="outline-light border border-2">Ver Más</Button>
+              <Button variant="outline-light">Ver Más</Button>
             </Card.Body>
           </div>
         </Card.ImgOverlay>

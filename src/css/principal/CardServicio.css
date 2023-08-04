@@ -1,12 +1,8 @@
 .imgServicio{
-    filter: grayscale(100%);
+    filter: sepia(100%) hue-rotate(95deg) contrast(80%) brightness(90%) saturate(80%);
     transition:all 400ms ease-in-out;
 }
-.imgServicio::after{
-    background-color: var(--bs-body);
-}
 .cardServicio:hover > .imgServicio{
-    filter: grayscale(0%);
+    filter: sepia(0%) hue-rotate(0deg);
     transform: scale(100.5%);
-
 }

@@ -6,8 +6,8 @@
     backdrop-filter: brightness(145%) saturate(60%) blur(1.1px);
 } */
 .seccionHeroFondo {
-  background: radial-gradient(circle at 50% 6%, transparent 50%, #f4b693 96%) 94% 73%/151% 194%,
-    conic-gradient(from 120deg at 42% 89%, #6cd3a2 52%, #3e777a 100%) 54% 30%/129% 197%;
+  background: radial-gradient(circle at 50% 6%, transparent 50%, var(--bs-secondary) 96%) 94% 73%/151% 194%,
+    conic-gradient(from 120deg at 42% 89%, var(--bs-primary) 52%, #3e777a 100%) 54% 30%/129% 197%;
   background-blend-mode: screen;
 }
 .textoHero{
@@ -28,6 +28,7 @@
 }
 .imgForma1 {
   left: 25%;
+  top: 0%;
   transform: rotate(110deg);
 }
 .imgForma7 {
