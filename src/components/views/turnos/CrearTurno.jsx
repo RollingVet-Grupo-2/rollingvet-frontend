@@ -8,6 +8,7 @@ import {
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 const CrearTurno = () => {
   const {
@@ -25,6 +26,8 @@ const CrearTurno = () => {
   const [veterinarioElegido, setVeterinarioElegido] = useState([]);
   const [horarioVeterinario, setHorarioVeterinario] = useState([]);
 
+  const navegacion = useNavigate();
+
   useEffect(() => {
     fetchMascotas();
     fetchVeterinarios();
@@ -33,13 +36,7 @@ const CrearTurno = () => {
   const fetchMascotas = () => {
     obtenerMascotas().then((respuesta) => {
       if (respuesta) {
-        let arrayMascotas = respuesta.flatMap((paciente) =>
-          paciente.mascotas.map((mascota) => ({
-            nombrePaciente: paciente.nombre,
-            nombreMascota: mascota.nombre,
-          }))
-        );
-        setMascotas(arrayMascotas);
+        setMascotas(respuesta);
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -136,6 +133,7 @@ const CrearTurno = () => {
           confirmButtonColor: "#a75ef0a4",
         });
         reset();
+        navegacion("/administrador/turnos");
       }
     });
   };
@@ -145,7 +143,7 @@ const CrearTurno = () => {
       return (
         <Form.Select
           aria-label="Select mascotas"
-          {...register("mascota", {
+          {...register("paciente", {
             required: "Debes elegir una mascota. Este campo es obligatorio.",
           })}
         >
@@ -156,14 +154,14 @@ const CrearTurno = () => {
     return (
       <Form.Select
         aria-label="Select mascotas"
-        {...register("mascota", {
+        {...register("paciente", {
           required: "Debes elegir la mascota. Este campo es obligatorio.",
         })}
       >
         <option value={""}>Elegir mascota registrada</option>
-        {mascotas.map((mascota, index) => (
-          <option key={mascota + index} value={mascota.nombreMascota}>
-            {mascota.nombreMascota} - Dueño: {mascota.nombrePaciente}
+        {mascotas.map((paciente) => (
+          <option key={paciente._id} value={paciente._id}>
+            {paciente.nombreMascota} - Dueño: {paciente.nombre}
           </option>
         ))}
       </Form.Select>
@@ -176,10 +174,10 @@ const CrearTurno = () => {
       <Container className="row justify-content-center align-items-center px-0 mx-0 fs-5">
         <Form onSubmit={handleSubmit(onSubmit)}>
           <Form.Group className="mb-3" controlId="inputVeterinario">
-            <Form.Label>Mascota*</Form.Label>
+            <Form.Label>Paciente*</Form.Label>
             {mostrarMascotas()}
             <Form.Text className="text-danger">
-              {errors.mascota?.message}
+              {errors.paciente?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputDetalle">
@@ -217,7 +215,7 @@ const CrearTurno = () => {
             >
               <option value="">Elegir veterinario</option>
               {veterinarioElegido.map((veterinario) => (
-                <option key={veterinario.id} value={veterinario.nombre}>
+                <option key={veterinario._id} value={veterinario.nombre}>
                   {veterinario.nombre}
                 </option>
               ))}

@@ -35,7 +35,7 @@ const FooterComponent = () => {
                         <nav className="">
                             <ul className="ps-0">
                                 <li className="d-flex flex-column">
-                                    <NavLink className="links_footer nav-link" to={"*"}>Quiénes somos</NavLink>
+                                    <NavLink className="links_footer nav-link" to={"/acercaDeNosotros"}>Quiénes somos</NavLink>
                                     <NavLink className="links_footer nav-link" to={"*"}>Servicios</NavLink>
                                     <NavLink className="links_footer nav-link" to={"*"}>Medios de pago</NavLink>
                                     <NavLink className="links_footer nav-link" to={"/contacto"}>Contacto</NavLink>

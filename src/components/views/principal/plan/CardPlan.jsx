@@ -2,7 +2,6 @@ import { Button, Card } from "react-bootstrap";
 import "../../../../css/principal/CardPlan.css";
 import { useState } from "react";
 import ModalFormPlan from "./ModalFormPlan";
-import { Link } from "react-router-dom";
 const CardPlan = ({ tituloPlan, descripcionPlan, imgPlan }) => {
   const [modalMostrar, setModalMostrar] = useState(false);
   const handleModalCerrar = () => setModalMostrar(false);
@@ -23,9 +22,7 @@ const CardPlan = ({ tituloPlan, descripcionPlan, imgPlan }) => {
                 <Button
                   variant="outline-light"
                   className="w-100 rounded-4 border border-2"
-                  onClick={handleModalMostrar}
-                  as={Link}
-                  to="*"
+                  onClick={handleModalMostrar}    
                   >
                   + Info
                 </Button>

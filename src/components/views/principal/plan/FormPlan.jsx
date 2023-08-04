@@ -1,7 +1,7 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-
+import { Link } from "react-router-dom";
 const FormPlan = ({onHide}) => {
   const {
     register,
@@ -145,9 +145,9 @@ const FormPlan = ({onHide}) => {
         />
         <Form.Control.Feedback type="invalid">{errors.info?.message}</Form.Control.Feedback>
       </Form.Group>
-      <Button variant="primary" type="submit" className="w-100 rounded-4">
+      <Link  type="submit" className="w-100 rounded-4 btn btn-primary" to={"*"}>
         Enviar
-      </Button>
+      </Link>
     </Form>
   );
 };

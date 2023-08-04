@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearPaciente, validarEmailExistente } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const CrearPaciente = () => {
   const {
@@ -16,7 +17,7 @@ const CrearPaciente = () => {
   });
 
   const [paso, setPaso] = useState(1);
-  const [paciente, setPaciente] = useState({});
+  const navegacion = useNavigate();
 
   const pasosMaximos = 2;
 
@@ -70,28 +71,8 @@ const CrearPaciente = () => {
     setPaso((pasoActual) => pasoActual - 1);
   };
 
-  const darFormatoPaciente = (paciente) => {
-    const pacienteFormateado = {
-      nombre: paciente.nombre,
-      email: paciente.email,
-      telefono: paciente.telefono,
-      direccion: paciente.direccion,
-      mascotas: [
-        {
-          nombre: paciente.mascota,
-          edad: paciente.edad,
-          especie: paciente.especie,
-          raza: paciente.raza,
-        },
-      ],
-    };
-    return pacienteFormateado;
-  };
-
   const onSubmit = (paciente) => {
-    let pacienteFormateado = darFormatoPaciente(paciente);
-    setPaciente(pacienteFormateado);
-    crearPaciente(pacienteFormateado).then((respuesta) => {
+    crearPaciente(paciente).then((respuesta) => {
       if (respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -114,6 +95,7 @@ const CrearPaciente = () => {
           confirmButtonColor: "#41e9a6",
         });
         reset();
+        navegacion("/administrador/pacientes");
       }
     });
   };
@@ -262,7 +244,7 @@ const CrearPaciente = () => {
                 <Form.Control
                   type="text"
                   placeholder="Ej: Luna"
-                  {...register("mascota", {
+                  {...register("nombreMascota", {
                     required:
                       "Debes ingresar el nombre de la mascota. Este campo es obligatorio.",
                     minLength: {
@@ -286,14 +268,14 @@ const CrearPaciente = () => {
                   })}
                 />
                 <Form.Text className="text-danger">
-                  {errors.mascota?.message}
+                  {errors.nombreMascota?.message}
                 </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="inputEdad">
                 <Form.Label>Edad*</Form.Label>
                 <Form.Select
                   aria-label="Select edad"
-                  {...register("edad", {
+                  {...register("edadMascota", {
                     required:
                       "Debes indicar la edad de la mascota. Este campo es obligatorio.",
                   })}
@@ -313,7 +295,7 @@ const CrearPaciente = () => {
                   <option value="Mayor a 10 años">Mayor a 10 años</option>
                 </Form.Select>
                 <Form.Text className="text-danger">
-                  {errors.edad?.message}
+                  {errors.edadMascota?.message}
                 </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="inputEspecie">

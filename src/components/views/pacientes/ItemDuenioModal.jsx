@@ -11,7 +11,7 @@ const ItemDuenioModal = ({ paciente }) => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="mb-2 mx-lg-2">
+      <Button variant="primary" onClick={handleShow} className="mx-lg-2">
         {paciente.nombre}
       </Button>
 

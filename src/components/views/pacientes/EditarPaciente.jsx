@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { editarPaciente, obtenerPacientePorId } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
 
 const EditarPaciente = () => {
   const {
@@ -12,27 +13,11 @@ const EditarPaciente = () => {
     setValue,
   } = useForm();
 
-  const darFormatoPaciente = (paciente) => {
-    const pacienteFormateado = {
-      nombre: paciente.nombre,
-      email: paciente.email,
-      telefono: paciente.telefono,
-      direccion: paciente.direccion,
-      mascotas: [
-        {
-          nombre: paciente.mascota,
-          edad: paciente.edad,
-          especie: paciente.especie,
-          raza: paciente.raza,
-        },
-      ],
-    };
-    return pacienteFormateado;
-  };
+  const { id } = useParams();
+  const navegacion = useNavigate();
 
   const onSubmit = (paciente) => {
-    let pacienteFormateado = darFormatoPaciente(paciente);
-    editarPaciente(pacienteFormateado, 4).then((respuesta) => {
+    editarPaciente(paciente, id).then((respuesta) => {
       if (respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -54,6 +39,7 @@ const EditarPaciente = () => {
           color: "#41e9a6",
           confirmButtonColor: "#41e9a6",
         });
+        navegacion("/administrador/pacientes");
       }
     });
   };
@@ -63,14 +49,14 @@ const EditarPaciente = () => {
     setValue("email", respuesta.email);
     setValue("telefono", respuesta.telefono);
     setValue("direccion", respuesta.direccion);
-    setValue("mascota", respuesta.mascotas[0].nombre);
-    setValue("edad", respuesta.mascotas[0].edad);
-    setValue("especie", respuesta.mascotas[0].especie);
-    setValue("raza", respuesta.mascotas[0].raza);
+    setValue("nombreMascota", respuesta.nombreMascota);
+    setValue("edadMascota", respuesta.edadMascota);
+    setValue("especie", respuesta.especie);
+    setValue("raza", respuesta.raza);
   };
 
   useEffect(() => {
-    obtenerPacientePorId(7).then((respuesta) => {
+    obtenerPacientePorId(id).then((respuesta) => {
       if (respuesta) {
         setearValoresEnFormulario(respuesta);
       } else {
@@ -203,7 +189,7 @@ const EditarPaciente = () => {
             <Form.Label>Mascota*</Form.Label>
             <Form.Control
               type="text"
-              {...register("mascota", {
+              {...register("nombreMascota", {
                 required:
                   "Debes ingresar el nombre de la mascota. Este campo es obligatorio.",
                 minLength: {
@@ -227,14 +213,14 @@ const EditarPaciente = () => {
               })}
             />
             <Form.Text className="text-danger">
-              {errors.mascota?.message}
+              {errors.nombreMascota?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputEdad">
             <Form.Label>Edad*</Form.Label>
             <Form.Select
               aria-label="Select edad"
-              {...register("edad", {
+              {...register("edadMascota", {
                 required:
                   "Debes indicar la edad de la mascota. Este campo es obligatorio.",
               })}
@@ -254,7 +240,7 @@ const EditarPaciente = () => {
               <option value="Mayor a 10 años">Mayor a 10 años</option>
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.edad?.message}
+              {errors.edadMascota?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputEspecie">
