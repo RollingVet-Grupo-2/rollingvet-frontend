@@ -1,7 +1,6 @@
 import "../../css/AcercaDeNosotros.css";
 import {
     Card,
-    Button,
     Container,
     Col,
     Row,
@@ -20,6 +19,7 @@ import Sol from "../../assets/acercaDeNosotros/Sol.jpeg";
 import Rodri from "../../assets/acercaDeNosotros/Rodri.jpg";
 import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
 import Esteban from "../../assets/acercaDeNosotros/Esteban.jpeg";
+import Nicolas from "../../assets/acercaDeNosotros/Nicolas.jpg"
 import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
 import Atropos from "atropos/react";
 import "atropos/css";
@@ -64,7 +64,6 @@ const AcercaDeNosotros = () => {
                     </Col>
                 </Row>
             </Container>
-
             <section className="py-5 bg-light">
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
                 <Container className="p-md-5">
@@ -403,7 +402,7 @@ const AcercaDeNosotros = () => {
                                     <Card className="border-0">
                                         <Card.Img
                                             variant="top"
-                                            src={Luciano}
+                                            src={Nicolas}
                                             style={{
                                                 height: "350px",
                                                 objectFit: "cover",
@@ -490,7 +489,7 @@ const AcercaDeNosotros = () => {
                                 <Card className="border-0">
                                     <Card.Img
                                         variant="top"
-                                        src={Luciano}
+                                        src={Nicolas}
                                         style={{
                                             height: "350px",
                                             objectFit: "cover",

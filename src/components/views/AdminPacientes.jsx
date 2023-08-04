@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { obtenerPacientes } from "../helpers/queries";
 import ItemPaciente from "./pacientes/ItemPaciente";
 import Swal from "sweetalert2";
-
+import { Link } from "react-router-dom";
 const AdminPacientes = () => {
   const [pacientes, setPacientes] = useState([]);
   const [busqueda, setBusqueda] = useState("");
@@ -17,9 +17,7 @@ const AdminPacientes = () => {
   const resultados = !busqueda
     ? pacientes
     : pacientes.filter((paciente) =>
-        paciente.mascotas.some((mascota) =>
-          mascota.nombre.toLowerCase().includes(busqueda.toLowerCase())
-        )
+        paciente.nombreMascota.toLowerCase().includes(busqueda.toLowerCase())
       ) || (
         <tr>
           <td className="lead" colSpan={6}>
@@ -51,7 +49,7 @@ const AdminPacientes = () => {
 
     return resultados.map((paciente) => (
       <ItemPaciente
-        key={paciente.id}
+        key={paciente._id}
         paciente={paciente}
         setPacientes={setPacientes}
       />
@@ -82,9 +80,12 @@ const AdminPacientes = () => {
         <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
           <Col className="mb-3 mb-md-0">
             <h1>Administrar Pacientes</h1>
-            <Button variant="success" size="lg">
+            <Link
+              className="btn btn-success btn-lg"
+              to={"/administrador/crear-paciente"}
+            >
               Agregar paciente
-            </Button>
+            </Link>
           </Col>
           <Col style={{ height: "10rem" }}>
             <img src={paciente} alt="Paciente" className="img-fluid h-100" />

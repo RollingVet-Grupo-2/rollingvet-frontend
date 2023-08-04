@@ -3,11 +3,13 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
   editarTurno,
+  obtenerMascotas,
   obtenerTurnoPorId,
   obtenerTurnos,
   obtenerVeterinarios,
 } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
 
 const EditarTurno = () => {
   const {
@@ -20,7 +22,7 @@ const EditarTurno = () => {
     getValues,
   } = useForm();
 
-  const [mascota, setMascota] = useState("");
+  const [mascota, setMascota] = useState({});
   const [veterinarios, setVeterinarios] = useState([]);
   const [servicioElegido, setServicioElegido] = useState("");
   const [veterinarioElegido, setVeterinarioElegido] = useState([]);
@@ -31,15 +33,22 @@ const EditarTurno = () => {
     setearValores();
   }, []);
 
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
   const setearValores = () => {
-    obtenerTurnoPorId(8).then((respuesta) => {
+    obtenerTurnoPorId(id).then((respuesta) => {
       if (respuesta) {
-        setValue("mascota", respuesta.mascota ? respuesta.mascota : "Mascota");
+        setValue("paciente", respuesta.paciente._id);
         setValue("detalle_cita", respuesta.detalle_cita);
         setValue("veterinario", respuesta.veterinario);
         setValue("fecha", respuesta.fecha);
         setValue("horario", respuesta.horario);
-        setMascota(respuesta.mascota);
+        setMascota({
+          _id: respuesta.paciente._id,
+          nombreMascota: respuesta.paciente.nombreMascota,
+          nombrePaciente: respuesta.paciente.nombre,
+        });
         setServicioElegido([respuesta.detalle_cita]);
         setVeterinarioElegido([respuesta.veterinario]);
         setHorarioVeterinario([respuesta.horario]);
@@ -107,7 +116,7 @@ const EditarTurno = () => {
   };
 
   const onSubmit = (turnoEditado) => {
-    editarTurno(turnoEditado, 8).then((respuesta) => {
+    editarTurno(turnoEditado, id).then((respuesta) => {
       if (!respuesta || respuesta.status === 404) {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -130,6 +139,7 @@ const EditarTurno = () => {
           color: "#41e9a6",
           confirmButtonColor: "#a75ef0a4",
         });
+        navegacion("/administrador/turnos");
       }
     });
   };
@@ -144,17 +154,16 @@ const EditarTurno = () => {
             <Form.Label>Mascota*</Form.Label>
             <Form.Select
               aria-label="Select mascota"
-              {...register("mascota", {
+              {...register("paciente", {
                 required: "Debes elegir la mascota. Este campo es obligatorio.",
               })}
+              value={mascota._id}
               disabled
             >
-              <option value={mascota} disabled>
-                {mascota}
-              </option>
+              <option value={mascota._id}>{mascota.nombreMascota}</option>
             </Form.Select>
             <Form.Text className="text-danger">
-              {errors.mascota?.message}
+              {errors.paciente?.message}
             </Form.Text>
           </Form.Group>
           <Form.Group className="mb-3" controlId="inputDetalle">

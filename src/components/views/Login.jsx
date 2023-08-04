@@ -4,8 +4,8 @@ import "../../css/login.css";
 import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { Button, Container } from "react-bootstrap";
-
-const Login = () => {
+import { useNavigate } from "react-router-dom";
+const Login = ({ setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -13,17 +13,19 @@ const Login = () => {
     reset,
   } = useForm();
 
+  const navegacion = useNavigate();
+
   const onSubmit = (usuario) => {
     iniciarSesion(usuario).then((respuesta) => {
-      if (respuesta) {
-        localStorage.setItem(
-          "usuario",
-          JSON.stringify(respuesta.nombreUsuario)
-        );
+      if (respuesta && respuesta.status === 200) {
+        localStorage.setItem("usuario", JSON.stringify(respuesta));
+        setUsuarioLogueado(respuesta);
+        reset();
+        navegacion("/administrador");
         Swal.fire({
           title: "¡Bienvenido!",
           text: "Has iniciado sesión correctamente.",
-          icon: "error",
+          icon: "success",
           iconColor: "#a75ef0a4",
           background: "#062e32",
           color: "#41e9a6",
@@ -45,7 +47,7 @@ const Login = () => {
   };
 
   return (
-    <section className="container-fluid contenedor_formulario seccionPrincipal d-flex">
+    <section className="container-fluid contenedor_formulario seccionPrincipal py-5 d-flex">
       <Container className="d-flex justify-content-center align-items-center">
         <aside className="col-12 col-md-6 rounded fondo_huellas mx-auto pt-3">
           <h1 className="text-center">Iniciar sesion</h1>
