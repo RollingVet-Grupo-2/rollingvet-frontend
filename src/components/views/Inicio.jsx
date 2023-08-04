@@ -21,7 +21,7 @@ import SliderClientes from "./principal/clientes/SliderClientes";
 import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
-
+import { Link } from "react-router-dom";
 const Inicio = () => {
   return (
     <>
@@ -32,7 +32,7 @@ const Inicio = () => {
         </p>
         <div className="w-100 h-100 position-relative z-n1">
           <div className="w-100 position-absolute imgForma1" >
-            <img src={forma1} alt="Froma 1" className="w-75" />
+            <img src={forma1} alt="Froma 1" />
           </div>
           <div className="w-100 position-absolute imgForma7" >
             <img src={forma7} alt="Froma 7" className="w-50" />
@@ -47,8 +47,8 @@ const Inicio = () => {
                 <img src={forma11} alt="Froma 11"/>
             </div>
             <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 botonesHero">
-            <Button variant="primary" className="px-4 py-3 rounded-4 border-dark">Reservar Turno</Button>
-            <Button variant="outline-dark" className="px-4 py-3 rounded-4">Contactanos</Button>
+            <Button variant="primary" className="px-4 py-3 rounded-4 border-dark" as={Link} to={"/login"}>Reservar Turno</Button>
+            <Button variant="outline-dark" className="px-4 py-3 rounded-4" as={Link} to={"/contacto"}>Contactanos</Button>
             </div>
           </div>
         </Container>
@@ -82,7 +82,7 @@ const Inicio = () => {
       <SeparadorCustom imgSeparador={imgSeparadorPerro3} forma={forma3}></SeparadorCustom>
       <Container className="py-3 mb-5">
         <h2 className="display-3 px-3 px-md-5 py-2">Descubre nuestros planes especiales</h2>
-        <p className="lead px-3 px-md-5 py-2">Ofrecemos planes especiales de cuidado para tus mascotas, adaptados a sus diferentes etapas de vida. Elige el plan que corresponda a la edad de tu compañero  y accede a un formulario para obtener más información sobre los servicios y beneficios incluidos en cada plan. ¡Brindamos la atención que tus mascotas merecen en cada etapa de su vida!</p>
+        <p className="lead px-3 px-md-5 py-2">Ofrecemos <strong>planes especiales</strong> de cuidado para tus mascotas, <strong>adaptados a sus diferentes etapas de vida</strong>. Elige el plan que corresponda a la edad de tu compañero  y <strong>accede a un formulario para obtener más información sobre los servicios y beneficios</strong> incluidos en cada plan.<strong> ¡Brindamos la atención que tus mascotas merecen en cada etapa de su vida!</strong></p>
         <SliderPlanes></SliderPlanes>
       </Container>
     </>

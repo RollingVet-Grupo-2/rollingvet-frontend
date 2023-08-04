@@ -1,5 +1,5 @@
 import { Card, Button, Badge, Row, Col } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 const CardVeterinario = ({ nombreVeterinario, servicioVeterinario1, servicioVeterinario2, experienciaVeterinario,
     descripcionVeterinario, imgVeterinario }) => {
     return (
@@ -23,7 +23,7 @@ const CardVeterinario = ({ nombreVeterinario, servicioVeterinario1, servicioVete
                 <Card.Text className="p-3">{descripcionVeterinario}</Card.Text>
             </Card.Body>
                 <div className="p-3 w-100 text-end">
-                    <Button variant="primary" className="">Contactar</Button>
+                    <Button variant="primary"  as={Link} to="*">Contactar</Button>
                 </div>
         </Card>
     );

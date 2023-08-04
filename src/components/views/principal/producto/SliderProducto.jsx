@@ -13,8 +13,12 @@ import imgProducto5 from "../../../../assets/img/Principal/CardProducto/producto
 import imgProducto6 from "../../../../assets/img/Principal/CardProducto/producto_Plato.png";
 import imgProducto7 from "../../../../assets/img/Principal/CardProducto/producto_AlimentoGato.png";
 import { ChevronDoubleRight } from "react-bootstrap-icons";
-
+import { useNavigate } from "react-router-dom";
 const SliderProducto = () => {
+  const navegacion = useNavigate();
+  const verTodosNavegacion = () =>{
+    navegacion("*")
+  }
   return (
     <Container>
       <Swiper
@@ -40,7 +44,7 @@ const SliderProducto = () => {
           },
         }}>
         <div slot="container-start" className="w-100 d-flex gap-2 justify-content-between align-items-center py-3">
-          <Button variant="outline-dark" className="px-3 py-2 rounded-4 fw-bold">Ver Todos<ChevronDoubleRight className="ms-2 fs-4"/></Button>
+          <Button variant="outline-dark" className="px-3 py-2 rounded-4 fw-bold" onClick={verTodosNavegacion}>Ver Todos<ChevronDoubleRight className="ms-2 fs-4"/></Button>
           <NavegacionSlider></NavegacionSlider>
         </div>
         <SwiperSlide>

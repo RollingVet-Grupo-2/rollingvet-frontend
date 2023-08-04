@@ -1,5 +1,6 @@
 import { Card, Col, Button } from "react-bootstrap";
 import "../../../../css/principal/CardServicio.css";
+import { Link } from "react-router-dom";
 
 const CardServicio = ({imgServicio,nombreServicio}) => {
   return (
@@ -13,7 +14,7 @@ const CardServicio = ({imgServicio,nombreServicio}) => {
               <Card.Text>
                 Obtén acceso a consultas veterinarias de calidad con profesionales altamente capacitados.
               </Card.Text>
-              <Button variant="outline-light">Ver Más</Button>
+              <Button variant="outline-light" as={Link} to={"*"}>Ver Más</Button>
             </Card.Body>
           </div>
         </Card.ImgOverlay>

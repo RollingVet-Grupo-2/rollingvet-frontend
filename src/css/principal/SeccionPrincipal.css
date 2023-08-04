@@ -27,8 +27,10 @@
   height: 70vw;
 }
 .imgForma1 {
-  left: 25%;
-  top: 0%;
+  left: 50%;
+}
+.imgForma1 > img {
+  width: 40%;
   transform: rotate(110deg);
 }
 .imgForma7 {

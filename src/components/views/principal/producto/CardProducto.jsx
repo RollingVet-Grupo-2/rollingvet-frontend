@@ -1,7 +1,7 @@
 import { Card, Col, Button, Badge } from "react-bootstrap";
 import "../../../../css/principal/CardProducto.css"
 import { PlusLg } from "react-bootstrap-icons";
-
+import { Link } from "react-router-dom";
 const CardProducto = ({nombreProducto, precioProducto, imgProducto, categoriaProducto}) => {
     return (
         <Col>
@@ -15,7 +15,7 @@ const CardProducto = ({nombreProducto, precioProducto, imgProducto, categoriaPro
                             <Card.Text className="small">{categoriaProducto}</Card.Text>
                             <Badge bg="secondary" className="text-dark lead border border-2 border-dark rounded-4 fs-5"><strong>$ {precioProducto}</strong></Badge>
                             </div>
-                            <Button variant="primary" className="rounded-4 p-2 lh-1"><PlusLg size={24}></PlusLg>Añadir</Button>
+                            <Button variant="primary" className="rounded-4 p-2 lh-1" as={Link} to="*"><PlusLg size={24}></PlusLg>Añadir</Button>
                         </div>
                     </div>
                 </Card.ImgOverlay>
