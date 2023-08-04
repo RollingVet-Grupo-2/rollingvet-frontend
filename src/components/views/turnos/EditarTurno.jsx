@@ -3,6 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
   editarTurno,
+  obtenerMascotas,
   obtenerTurnoPorId,
   obtenerTurnos,
   obtenerVeterinarios,
@@ -38,12 +39,12 @@ const EditarTurno = () => {
   const setearValores = () => {
     obtenerTurnoPorId(id).then((respuesta) => {
       if (respuesta) {
-        setValue("mascota", respuesta.mascota);
+        setValue("mascota", respuesta.paciente.nombreMascota);
         setValue("detalle_cita", respuesta.detalle_cita);
         setValue("veterinario", respuesta.veterinario);
         setValue("fecha", respuesta.fecha);
         setValue("horario", respuesta.horario);
-        setMascota(respuesta.mascota);
+        setMascota(respuesta.paciente.nombreMascota);
         setServicioElegido([respuesta.detalle_cita]);
         setVeterinarioElegido([respuesta.veterinario]);
         setHorarioVeterinario([respuesta.horario]);
