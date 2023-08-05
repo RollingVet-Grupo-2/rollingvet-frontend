@@ -23,6 +23,9 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
         navegacion("/");
     };
 
+    const handleNaegacionAdminPrincipal = () => navegacion("/administrador");
+    const handleNavegacionAdministrarPacientes = () => navegacion("/administrador/pacientes");
+    const handleNavegacionAdministrarTurnos = () => navegacion("/administrador/turnos");
     return (
         <Navbar expand="lg" className="nav">
             <Container>
@@ -44,13 +47,13 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto gap-md-4">
+                    <Nav className="ms-auto gap-1 gap-md-3 gap-xl-4">
                         <NavLink
                             end
                             className={({ isActive }) =>
                                 isActive
-                                    ? "navLinks nav-item nav-link"
-                                    : "nav-item nav-link"
+                                    ? "navLinks nav-item nav-link h-100"
+                                    : "nav-item nav-link h-100"
                             }
                             to={"/"}
                         >
@@ -59,8 +62,8 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                         <NavLink
                             className={({ isActive }) =>
                                 isActive
-                                    ? "navLinks nav-item nav-link"
-                                    : "nav-item nav-link"
+                                    ? "navLinks nav-item nav-link h-100"
+                                    : "nav-item nav-link h-100"
                             }
                             to={"/contacto"}
                         >
@@ -80,24 +83,24 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                             </NavLink>
                         ) : (
                             <>
-                                <Dropdown className="mb-2">
+                                <Dropdown className="my-3 my-md-0">
                                     <Dropdown.Toggle
                                         variant="success"
-                                        id="dropdown-basic"
+                                        id="dropdown-autoclose-true"
                                     >
                                         Administrar
                                     </Dropdown.Toggle>
 
-                                    <Dropdown.Menu variant="dark">
-                                        <Link className="dropdown-item" to={"/administrador"}>
+                                    <Dropdown.Menu variant="dark" className="position-absolute">
+                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNaegacionAdminPrincipal}>
                                             Administrar principal
-                                        </Link>
-                                        <Link className="dropdown-item" to={"/administrador/pacientes"}>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNavegacionAdministrarPacientes}>
                                             Administrar pacientes
-                                        </Link>
-                                        <Link className="dropdown-item" to={"/administrador/turnos"}>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNavegacionAdministrarTurnos}>
                                             Administrar turnos
-                                        </Link>
+                                        </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <div>
