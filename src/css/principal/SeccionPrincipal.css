@@ -1,29 +1,63 @@
+/* body{
+    background-image: url("../../assets/img/Principal/wesley-tingey-_0sEjWfAK3Q-unsplash.jpg");
+    background-color: white;
+    background-blend-mode: multiply;
+    background-size: contain;
+    backdrop-filter: brightness(145%) saturate(60%) blur(1.1px);
+} */
 .seccionHeroFondo {
-    background: radial-gradient(circle at 50% 6%, transparent 50%, #f4b693 96%) 94% 73%/151% 194%,
-        conic-gradient(from 120deg at 42% 89%, #6cd3a2 52%, #3e777a 100%) 54% 30%/129% 197%;
-    background-blend-mode: screen;
+  background: radial-gradient(circle at 50% 6%, transparent 50%, var(--bs-secondary) 96%) 94% 73%/151% 194%,
+    conic-gradient(from 120deg at 42% 89%, var(--bs-primary) 52%, #3e777a 100%) 54% 30%/129% 197%;
+  background-blend-mode: screen;
 }
-.contenedorBotonesHero{
-    margin-top: -2rem;
+.textoHero{
+    max-width: 42rem;
 }
-.imgSeccionHero{
-    filter: drop-shadow(0 0.4rem 0.5rem rgba(0,0,0,0.3)) ;
+.contenedorBotonesHero {
+  margin-top: -2rem;
 }
-.imgForma1{
-    left:25%;
-    transform: rotate(110deg);
+.formaBotonesHero{
+    top: 5rem!important;
+    width: 250vw;
 }
-.imgForma7{
-    right:32%;
-    transform: rotate(150deg);
+.imgSeccionHero {
+  filter: drop-shadow(0 0.4rem 0.5rem rgba(0, 0, 0, 0.3));
 }
-
+.imgSeccionHero > img {
+  height: 70vw;
+}
+.imgForma1 {
+  left: 50%;
+}
+.imgForma1 > img {
+  width: 40%;
+  transform: rotate(110deg);
+}
+.imgForma7 {
+  right: 32%;
+  transform: rotate(150deg);
+}
 hr.dashed {
-    border-top: 0.2rem dashed var(--bs-dark);
-    margin-top: -0.08rem;
-    opacity: 50%;
+  border-top: 0.2rem dashed var(--bs-dark);
+  margin-top: -0.08rem;
+  opacity: 50%;
 }
-.fromaSeparador{
-    transform: rotate(170deg);
+.fromaSeparador {
+  transform: rotate(170deg);
+}
 
-}
+@media screen and (min-width: 768px) {
+    .imgSeccionHero > img {
+        height: 30vw;
+      }
+      .formaBotonesHero{
+        top:50%;
+        width: 80vw;
+    }
+  }
+@media screen and (min-width: 992px) {
+     .formaBotonesHero{
+        top:50%;
+        width: 60vw;
+    }
+  }

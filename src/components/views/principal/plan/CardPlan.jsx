@@ -21,7 +21,7 @@ const CardPlan = ({ tituloPlan, descripcionPlan, imgPlan }) => {
               <Card.Footer>
                 <Button
                   variant="outline-light"
-                  className="w-100 rounded-4 border border-2"
+                  className="w-100"
                   onClick={handleModalMostrar}    
                   >
                   + Info

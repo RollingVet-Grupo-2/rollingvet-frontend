@@ -1,0 +1,8 @@
+.imgServicio{
+    filter: sepia(100%) hue-rotate(95deg) contrast(80%) brightness(90%) saturate(80%);
+    transition:all 400ms ease-in-out;
+}
+.cardServicio:hover > .imgServicio{
+    filter: sepia(0%) hue-rotate(0deg);
+    transform: scale(100.5%);
+}

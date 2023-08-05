@@ -145,9 +145,9 @@ const FormPlan = ({onHide}) => {
         />
         <Form.Control.Feedback type="invalid">{errors.info?.message}</Form.Control.Feedback>
       </Form.Group>
-      <Link  type="submit" className="w-100 rounded-4 btn btn-primary" to={"*"}>
+      <Button  type="submit" variant="primary" className="w-100">
         Enviar
-      </Link>
+      </Button>
     </Form>
   );
 };
