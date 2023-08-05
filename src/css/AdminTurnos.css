@@ -1,0 +1,5 @@
+.table.table-center th,
+.table.table-center td {
+  padding: 1rem;
+  vertical-align: middle;
+}

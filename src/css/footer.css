@@ -20,6 +20,7 @@
 .links_footer:hover{
     color: #6CD3A2;
     transform: translate(10px);
+    font-weight: bold;
 }
 .text_contactanos_footer{
     color: #3d9068;
