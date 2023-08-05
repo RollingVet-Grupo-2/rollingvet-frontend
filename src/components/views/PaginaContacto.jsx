@@ -14,7 +14,7 @@ const PaginaContacto = () => {
                 </div>
                 <article className="row justify-content-center contenedor_bienvenida py-5">
                     <aside className="col-lg-12 text-center py-4">
-                        <div className="card_texto py-lg-5 mt-md-4 px-3 animate__animated animate__fadeInUp">
+                        <div className="card_texto py-lg-5 mt-md-5 px-3 animate__animated animate__fadeInUp">
                             <h2>Aquí encontraras diferentes medios para poder contactarte con nosotros</h2>
                             <hr />
                             <p className="fs-4 fw-semibold">En nuestra veterinaria, nos apasiona el cuidado y bienestar de todas las mascotas. Nuestras instalaciones están equipadas con tecnología de vanguardia para diagnosticar y tratar diversas condiciones de salud. En nuestra veterinaria, su compañero peludo será tratado con el mismo cariño y dedicación que brindaríamos a nuestros propios animales.</p>
