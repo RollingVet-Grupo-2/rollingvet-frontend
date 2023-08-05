@@ -1,4 +1,4 @@
-import "../../css/AcercaDeNosotros.css";
+import "../../css/acercaDeNosotros/acercaDeNosotros.css";
 import { Container, Col, Row } from "react-bootstrap";
 import sobreNosotrosImg from "../../assets/acercaDeNosotros/sobreNosotros.svg";
 import gitHubIcon from "../../../node_modules/bootstrap-icons/icons/github.svg";
