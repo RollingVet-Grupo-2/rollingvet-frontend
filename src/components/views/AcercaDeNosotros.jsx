@@ -1,13 +1,5 @@
-import "../../css/AcercaDeNosotros.css";
-import {
-    Card,
-    Container,
-    Col,
-    Row,
-    Badge,
-    ListGroup,
-    ListGroupItem,
-} from "react-bootstrap";
+import "../../css/acercaDeNosotros/acercaDeNosotros.css";
+import { Container, Col, Row } from "react-bootstrap";
 import sobreNosotrosImg from "../../assets/acercaDeNosotros/sobreNosotros.svg";
 import gitHubIcon from "../../../node_modules/bootstrap-icons/icons/github.svg";
 import correoIcon from "../../../node_modules/bootstrap-icons/icons/envelope.svg";
@@ -19,21 +11,122 @@ import Sol from "../../assets/acercaDeNosotros/Sol.jpeg";
 import Rodri from "../../assets/acercaDeNosotros/Rodri.jpg";
 import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
 import Esteban from "../../assets/acercaDeNosotros/Esteban.jpeg";
-import Nicolas from "../../assets/acercaDeNosotros/Nicolas.jpg"
+import Nicolas from "../../assets/acercaDeNosotros/Nicolas.jpg";
 import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
-import Atropos from "atropos/react";
-import "atropos/css";
-import { useEffect, useState } from "react";
-
+import { useState } from "react";
+import ColumnaSol from "./acercaDeNosotros/ColumnaSol";
+import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
+import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
+import ColumnaEsteban from "./acercaDeNosotros/ColumnaEsteban";
+import ColumnaRodrigo from "./acercaDeNosotros/ColumnaRodrigo";
 const AcercaDeNosotros = () => {
     const textTitleSectionAboutUs = "{Acerca de nosotros}";
-    const [tamanoPantalla, setTamanoPantalla] = useState(900);
 
-    useEffect(() => {
-        const tamaño = window.innerWidth;
-        setTamanoPantalla(tamaño);
-    }, []);
-
+    const infoDesarrolladores = [
+        {
+            nombre: "Sol Perato",
+            imagen: Sol,
+            redesSociales: {
+                github: {
+                    nombre: "GitHub",
+                    url: "https://github.com/SolPerato",
+                },
+                correo: {
+                    nombre: "Correo",
+                    url: "https://mail.google.com/mail/?view=cm&fs=1&to=Solperato27@gmail.com",
+                },
+            },
+        },
+        {
+            nombre: "Luciano Angeleri",
+            imagen: Luciano,
+            redesSociales: {
+                github: {
+                    nombre: "GitHub",
+                    url: "https://github.com/LucianoAngeleri",
+                },
+                correo: {
+                    nombre: "Correo",
+                    url: "https://mail.google.com/mail/?view=cm&fs=1&to=lcnang@gmail.com",
+                },
+                linkedin: {
+                    nombre: "Linkedin",
+                    url: "https://www.linkedin.com/in/cesar-luciano-angeleri/",
+                },
+            },
+        },
+        {
+            nombre: "Nicolás Herrera",
+            imagen: Nicolas,
+            redesSociales: {
+                github: {
+                    nombre: "GitHub",
+                    url: "https://github.com/herreranicolas",
+                },
+                correo: {
+                    nombre: "Correo",
+                    url: "https://mail.google.com/mail/?view=cm&fs=1&to=herreranicoo17@gmail.com",
+                },
+                linkedin: {
+                    nombre: "Linkedin",
+                    url: "https://www.linkedin.com/in/nicolasherrera95/",
+                },
+            },
+        },
+        {
+            nombre: "Esteban Molina",
+            imagen: Esteban,
+            redesSociales: {
+                github: {
+                    nombre: "GitHub",
+                    url: "https://github.com/estebanrm1",
+                },
+                correo: {
+                    nombre: "Correo",
+                    url: "https://mail.google.com/mail/?view=cm&fs=1&to=solsel90@gmail.com",
+                },
+                linkedin: {
+                    nombre: "Linkedin",
+                    url: "https://www.linkedin.com/in/esteban-molina-b318a517a/",
+                },
+                portfolio: {
+                    nombre: "Portfolio",
+                    url: "https://estebanrm1.github.io/sitio-personal/Pagina_personal/",
+                },
+            },
+        },
+        {
+            nombre: "Rodrigo Vizcarra",
+            imagen: Rodri,
+            redesSociales: {
+                github: {
+                    nombre: "GitHub",
+                    url: "https://github.com/RodrigoVizcarraDev",
+                },
+                correo: {
+                    nombre: "Correo",
+                    url: "https://mail.google.com/mail/?view=cm&fs=1&to=rodrigovizcarra9623@gmail.com",
+                },
+                linkedin: {
+                    nombre: "Linkedin",
+                    url: "https://www.linkedin.com/in/rodrigovizcarra96/",
+                },
+                youtube: {
+                    nombre: "Youtube",
+                    url: "https://www.youtube.com/channel/UCXiPc95_Dq_EsiCmHy51hfQ",
+                },
+                tiktok: {
+                    nombre: "TikTok",
+                    url: "https://www.tiktok.com/@rodriidev",
+                },
+            },
+        },
+    ];
+    const [infoSol, setInfoSol] = useState(infoDesarrolladores[0]);
+    const [infoLuciano, setInfoLuciano] = useState(infoDesarrolladores[1]);
+    const [infoNicolas, setInfoNicolas] = useState(infoDesarrolladores[2]);
+    const [infoEsteban, setInfoEsteban] = useState(infoDesarrolladores[3]);
+    const [infoRodri, setInfoRodri] = useState(infoDesarrolladores[4]);
     return (
         <section>
             <div id="app">
@@ -69,1015 +162,47 @@ const AcercaDeNosotros = () => {
                 <Container className="p-md-5">
                     <Row>
                         {/* SOL */}
+                        <ColumnaSol
+                            infoSol={infoSol}
+                            solImg={Sol}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                        ></ColumnaSol>
 
-                        <Col md={6} xl={4} className="mb-4">
-                            {tamanoPantalla > 991 ? (
-                                <Atropos
-                                    activeOffset={40}
-                                    shadow={0.5}
-                                    shadowScale={0.9}
-                                    rotateXMax={5}
-                                    rotateYMax={5}
-                                >
-                                    <Card className="border-0">
-                                        <Card.Img
-                                            variant="top"
-                                            src={Sol}
-                                            style={{
-                                                height: "350px",
-                                                objectFit: "cover",
-                                            }}
-                                        />
-                                        <Card.Body>
-                                            <Card.Title className="mb-3 fs-3">Sol Perato</Card.Title>
-                                            <ListGroup className="d-flex flex-column gap-2">
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://github.com/SolPerato"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Github"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            gitHubIcon
-                                                                        }
-                                                                        alt="Sol Perato Github"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
+                        <ColumnaLuciano
+                            infoLuciano={infoLuciano}
+                            lucianoImg={Luciano}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                        ></ColumnaLuciano>
 
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=Solperato27@gmail.com"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2">
-                                                                {"Correo"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo linkedinLogo"
-                                                                        src={
-                                                                            correoIcon
-                                                                        }
-                                                                        alt="Sol Perato Correo"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Atropos>
-                            ) : (
-                                <Card className="border-0">
-                                    <Card.Img
-                                        variant="top"
-                                        src={Sol}
-                                        style={{
-                                            height: "350px",
-                                            objectFit: "cover",
-                                        }}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="mb-3 fs-3">Sol Perato</Card.Title>
-                                        <ListGroup className="d-flex flex-column gap-2">
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://github.com/SolPerato"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Github"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        gitHubIcon
-                                                                    }
-                                                                    alt="Sol Perato Github"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
+                        <ColumnaNicolas
+                            infoNicolas={infoNicolas}
+                            nicolasImg={Nicolas}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                        ></ColumnaNicolas>
 
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=Solperato27@gmail.com"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2">
-                                                            {"Correo"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        correoIcon
-                                                                    }
-                                                                    alt="Sol Perato Correo"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-                                        </ListGroup>
-                                    </Card.Body>
-                                </Card>
-                            )}
-                        </Col>
+                        <ColumnaEsteban
+                            infoEsteban={infoEsteban}
+                            estebanImg={Esteban}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                            portfolioIcon={codeSlash}
+                        ></ColumnaEsteban>
 
-                        {/* LUCIANO */}
-                        <Col md={6} xl={4} className="mb-4">
-                            {tamanoPantalla > 991 ? (
-                                <Atropos
-                                    activeOffset={40}
-                                    shadow={0.5}
-                                    shadowScale={0.9}
-                                    rotateXMax={5}
-                                    rotateYMax={5}
-                                >
-                                    <Card className="border-0">
-                                        <Card.Img
-                                            variant="top"
-                                            src={Luciano}
-                                            style={{
-                                                height: "350px",
-                                                objectFit: "cover",
-                                            }}
-                                        />
-                                        <Card.Body>
-                                            <Card.Title className="mb-3 fs-3">
-                                                Luciano Angeleri
-                                            </Card.Title>
-                                            <ListGroup className="d-flex flex-column gap-2">
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.linkedin.com/in/cesar-luciano-angeleri/"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Linkedin"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            linkedinIcon
-                                                                        }
-                                                                        alt="Luciano Angeleri Linkedin"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=lcnang@gmail.com"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"Correo"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            correoIcon
-                                                                        }
-                                                                        alt="Luciano Angeleri Correo"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://github.com/LucianoAngeleri"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"GitHub"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            gitHubIcon
-                                                                        }
-                                                                        alt="Luciano Angeleri GitHub"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Atropos>
-                            ) : (
-                                <Card className="border-0">
-                                    <Card.Img
-                                        variant="top"
-                                        src={Luciano}
-                                        style={{
-                                            height: "350px",
-                                            objectFit: "cover",
-                                        }}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="mb-3 fs-3">
-                                            Luciano Angeleri
-                                        </Card.Title>
-                                        <ListGroup className="d-flex flex-column gap-2">
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.linkedin.com/in/cesar-luciano-angeleri/"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Linkedin"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        linkedinIcon
-                                                                    }
-                                                                    alt="Luciano Angeleri Linkedin"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=lcnang@gmail.com"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"Correo"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        correoIcon
-                                                                    }
-                                                                    alt="Luciano Angeleri Correo"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://github.com/LucianoAngeleri"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"GitHub"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        gitHubIcon
-                                                                    }
-                                                                    alt="Luciano Angeleri GitHub"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-                                        </ListGroup>
-                                    </Card.Body>
-                                </Card>
-                            )}
-                        </Col>
-
-                        {/* NICOLAS */}
-                        <Col md={6} xl={4} className="mb-4">
-                            {tamanoPantalla > 991 ? (
-                                <Atropos
-                                    activeOffset={40}
-                                    shadow={0.5}
-                                    shadowScale={0.9}
-                                    rotateXMax={5}
-                                    rotateYMax={5}
-                                >
-                                    <Card className="border-0">
-                                        <Card.Img
-                                            variant="top"
-                                            src={Nicolas}
-                                            style={{
-                                                height: "350px",
-                                                objectFit: "cover",
-                                            }}
-                                        />
-                                        <Card.Body>
-                                            <Card.Title className="mb-3 fs-3">
-                                                Nicolás Herrera
-                                            </Card.Title>
-                                            <ListGroup className="d-flex flex-column gap-2">
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.linkedin.com/in/nicolasherrera95/"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Linkedin"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            linkedinIcon
-                                                                        }
-                                                                        alt="Nicolás Herrera Linkedin"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=herreranicoo17@gmail.com"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"Correo"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            correoIcon
-                                                                        }
-                                                                        alt="Nicolás Herrera Correo"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://github.com/herreranicolas"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"GitHub"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            gitHubIcon
-                                                                        }
-                                                                        alt="Nicolás Herrera GitHub"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Atropos>
-                            ) : (
-                                <Card className="border-0">
-                                    <Card.Img
-                                        variant="top"
-                                        src={Nicolas}
-                                        style={{
-                                            height: "350px",
-                                            objectFit: "cover",
-                                        }}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="mb-3 fs-3">Nicolás Herrera</Card.Title>
-                                        <ListGroup className="d-flex flex-column gap-2">
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.linkedin.com/in/nicolasherrera95/"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Linkedin"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        linkedinIcon
-                                                                    }
-                                                                    alt="Nicolás Herrera Linkedin"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=herreranicoo17@gmail.com"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"Correo"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        correoIcon
-                                                                    }
-                                                                    alt="Nicolás Herrera Correo"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://github.com/herreranicolas"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"GitHub"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        gitHubIcon
-                                                                    }
-                                                                    alt="Nicolás Herrera GitHub"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-                                        </ListGroup>
-                                    </Card.Body>
-                                </Card>
-                            )}
-                        </Col>
-
-                        {/* ESTEBAN */}
-                        <Col md={6} xl={4} className="mb-4">
-                            {tamanoPantalla > 991 ? (
-                                <Atropos
-                                    activeOffset={40}
-                                    shadow={0.5}
-                                    shadowScale={0.9}
-                                    rotateXMax={5}
-                                    rotateYMax={5}
-                                >
-                                    <Card className="border-0">
-                                        <Card.Img
-                                            variant="top"
-                                            src={Esteban}
-                                            style={{
-                                                height: "350px",
-                                                objectFit: "cover",
-                                            }}
-                                        />
-                                        <Card.Body>
-                                            <Card.Title className="mb-3 fs-3">
-                                                Esteban Molina
-                                            </Card.Title>
-                                            <ListGroup className="d-flex flex-column gap-2">
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.linkedin.com/in/esteban-molina-b318a517a/"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Linkedin"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            linkedinIcon
-                                                                        }
-                                                                        alt="Esteban Molina Linkedin"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=solsel90@gmail.com"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"Correo"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            correoIcon
-                                                                        }
-                                                                        alt="Esteban Molina Correo"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://github.com/estebanrm1"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"GitHub"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            gitHubIcon
-                                                                        }
-                                                                        alt="Esteban Molina GitHub"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://estebanrm1.github.io/sitio-personal/Pagina_personal/"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                                {"Portfolio"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            codeSlash
-                                                                        }
-                                                                        alt="Esteban Molina Portfolio"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Atropos>
-                            ) : (
-                                <Card className="border-0">
-                                    <Card.Img
-                                        variant="top"
-                                        src={Esteban}
-                                        style={{
-                                            height: "350px",
-                                            objectFit: "cover",
-                                            objectPosition:"left"
-                                        }}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="mb-3 fs-3">Esteban Molina</Card.Title>
-                                        <ListGroup className="d-flex flex-column gap-2">
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.linkedin.com/in/esteban-molina-b318a517a/"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Linkedin"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        linkedinIcon
-                                                                    }
-                                                                    alt="Esteban Molina Linkedin"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=solsel90@gmail.com"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"Correo"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        correoIcon
-                                                                    }
-                                                                    alt="Esteban Molina Correo"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://github.com/estebanrm1"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"GitHub"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        gitHubIcon
-                                                                    }
-                                                                    alt="Esteban Molina GitHub"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://estebanrm1.github.io/sitio-personal/Pagina_personal/"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between gap-2 fs-5">
-                                                            {"Portfolio"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        codeSlash
-                                                                    }
-                                                                    alt="Esteban Molina Portfolio"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-                                        </ListGroup>
-                                    </Card.Body>
-                                </Card>
-                            )}
-                        </Col>
-
-                        {/* RODRI */}
-                        <Col md={6} xl={4} className="mb-4">
-                            {tamanoPantalla > 991 ? (
-                                <Atropos
-                                    activeOffset={40}
-                                    shadow={0.5}
-                                    shadowScale={0.9}
-                                    rotateXMax={5}
-                                    rotateYMax={5}
-                                >
-                                    <Card className="border-0">
-                                        <Card.Img
-                                            variant="top"
-                                            src={Rodri}
-                                            style={{
-                                                height: "350px",
-                                                objectFit: "cover",
-                                            }}
-                                        />
-                                        <Card.Body>
-                                            <Card.Title className="mb-3 fs-3">
-                                                Rodrigo Vizcarra
-                                            </Card.Title>
-                                            <ListGroup className="d-flex flex-column gap-2">
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://github.com/RodrigoVizcarraDev"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Github"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            gitHubIcon
-                                                                        }
-                                                                        alt="Rodrigo Vizcarra Github"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=rodrigovizcarra9623@gmail.com"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Correo"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            correoIcon
-                                                                        }
-                                                                        alt="Rodrigo Vizcarra Correo"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.linkedin.com/in/rodrigovizcarra96/"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Linkedin"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            linkedinIcon
-                                                                        }
-                                                                        alt="Rodrigo Vizcarra Linkedin"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.youtube.com/channel/UCXiPc95_Dq_EsiCmHy51hfQ"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"Youtube"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            youtubeIcon
-                                                                        }
-                                                                        alt="Rodrigo Vizcarra canal de Youtube"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-
-                                                <ListGroupItem className="border-0 shadow">
-                                                    <a
-                                                        href="https://www.tiktok.com/@rodriidev"
-                                                        target="_blank"
-                                                        className="link nav-link"
-                                                    >
-                                                        <div>
-                                                            <h4 className="d-flex align-items-center justify-content-between">
-                                                                {"TikTok"}
-                                                                <Badge bg="">
-                                                                    <img
-                                                                        className="logo"
-                                                                        src={
-                                                                            tiktokIcon
-                                                                        }
-                                                                        alt="Rodrigo Vizcarra canal de TikTok"
-                                                                    />
-                                                                </Badge>
-                                                            </h4>
-                                                        </div>
-                                                    </a>
-                                                </ListGroupItem>
-                                            </ListGroup>
-                                        </Card.Body>
-                                    </Card>
-                                </Atropos>
-                            ) : (
-                                <Card className="border-0">
-                                    <Card.Img
-                                        variant="top"
-                                        src={Rodri}
-                                        style={{
-                                            height: "350px",
-                                            objectFit: "cover",
-                                        }}
-                                    />
-                                    <Card.Body>
-                                        <Card.Title className="mb-3 fs-3">
-                                            Rodrigo Vizcarra
-                                        </Card.Title>
-                                        <ListGroup className="d-flex flex-column gap-2">
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://github.com/RodrigoVizcarraDev"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Github"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        gitHubIcon
-                                                                    }
-                                                                    alt="Rodrigo Vizcarra Github"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=rodrigovizcarra9623@gmail.com"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Correo"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        correoIcon
-                                                                    }
-                                                                    alt="Rodrigo Vizcarra Correo"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.linkedin.com/in/rodrigovizcarra96/"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Linkedin"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        linkedinIcon
-                                                                    }
-                                                                    alt="Rodrigo Vizcarra Linkedin"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.youtube.com/channel/UCXiPc95_Dq_EsiCmHy51hfQ"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"Youtube"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        youtubeIcon
-                                                                    }
-                                                                    alt="Rodrigo Vizcarra canal de Youtube"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-
-                                            <ListGroupItem className="border-0 shadow">
-                                                <a
-                                                    href="https://www.tiktok.com/@rodriidev"
-                                                    target="_blank"
-                                                    className="link nav-link"
-                                                >
-                                                    <div>
-                                                        <h4 className="d-flex align-items-center justify-content-between">
-                                                            {"TikTok"}
-                                                            <Badge bg="">
-                                                                <img
-                                                                    className="logo"
-                                                                    src={
-                                                                        tiktokIcon
-                                                                    }
-                                                                    alt="Rodrigo Vizcarra canal de TikTok"
-                                                                />
-                                                            </Badge>
-                                                        </h4>
-                                                    </div>
-                                                </a>
-                                            </ListGroupItem>
-                                        </ListGroup>
-                                    </Card.Body>
-                                </Card>
-                            )}
-                        </Col>
+                        <ColumnaRodrigo
+                            infoRodri={infoRodri}
+                            rodriImg={Rodri}
+                            gitHubIcon={gitHubIcon}
+                            correoIcon={correoIcon}
+                            linkedinIcon={linkedinIcon}
+                            youtubeIcon={youtubeIcon}
+                            tiktokIcon={tiktokIcon}
+                        ></ColumnaRodrigo>
                     </Row>
                 </Container>
             </section>
