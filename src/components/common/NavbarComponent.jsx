@@ -76,11 +76,11 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                 }
                                 to={"/login"}
                             >
-                                Login
+                                Iniciar sesión
                             </NavLink>
                         ) : (
                             <>
-                                <Dropdown>
+                                <Dropdown className="mb-2">
                                     <Dropdown.Toggle
                                         variant="success"
                                         id="dropdown-basic"
@@ -100,9 +100,11 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                         </Link>
                                     </Dropdown.Menu>
                                 </Dropdown>
-                                <Button variant="secondary" onClick={cerrarSesion}>
-                                    Logout
-                                </Button>
+                                <div>
+                                    <Button variant="secondary" onClick={cerrarSesion}>
+                                        Cerrar sesión
+                                    </Button>
+                                </div>
                             </>
                         )}
                     </Nav>
