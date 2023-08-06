@@ -46,9 +46,9 @@ const Inicio = () => {
             <div className="z-n1 formaBotonesHero position-absolute start-50 translate-middle">
                 <img src={forma11} alt="Froma 11"/>
             </div>
-            <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 botonesHero">
-            <Button variant="primary" className="px-4 py-3 rounded-4 border-dark" as={Link} to={"/login"}>Reservar Turno</Button>
-            <Button variant="outline-dark" className="px-4 py-3 rounded-4" as={Link} to={"/contacto"}>Contactanos</Button>
+            <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-2 p-md-5 botonesHero">
+            <Button variant="primary" className="px-4 py-3 rounded-4 fw-bolder" as={Link} to={"/login"}>Reservar Turno</Button>
+            <Button variant="primary" className="px-4 py-3 rounded-4 bg-primary-subtle" as={Link} to={"/contacto"}>Contactanos</Button>
             </div>
           </div>
         </Container>
