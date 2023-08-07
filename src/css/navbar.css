@@ -6,7 +6,3 @@
     border-bottom: 3px solid var(--bs-primary);
     font-weight: bold;
 }
-.dropdown-active{
-    color: red;
-    padding: 2rem;
-}

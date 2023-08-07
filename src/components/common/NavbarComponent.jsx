@@ -19,13 +19,15 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
             background: "#062e32",
             color: "#41e9a6",
             confirmButtonColor: "#a75ef0a4",
-          });
+        });
         navegacion("/");
     };
 
     const handleNaegacionAdminPrincipal = () => navegacion("/administrador");
-    const handleNavegacionAdministrarPacientes = () => navegacion("/administrador/pacientes");
-    const handleNavegacionAdministrarTurnos = () => navegacion("/administrador/turnos");
+    const handleNavegacionAdministrarPacientes = () =>
+        navegacion("/administrador/pacientes");
+    const handleNavegacionAdministrarTurnos = () =>
+        navegacion("/administrador/turnos");
     return (
         <Navbar expand="lg" className="nav">
             <Container>
@@ -91,20 +93,41 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                         Administrar
                                     </Dropdown.Toggle>
 
-                                    <Dropdown.Menu variant="dark" className="position-absolute">
-                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNaegacionAdminPrincipal}>
+                                    <Dropdown.Menu
+                                        variant="dark"
+                                        className="position-absolute"
+                                    >
+                                        <Dropdown.Item
+                                            className="dropdown-item p-3"
+                                            onClick={
+                                                handleNaegacionAdminPrincipal
+                                            }
+                                        >
                                             Administrar principal
                                         </Dropdown.Item>
-                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNavegacionAdministrarPacientes}>
+                                        <Dropdown.Item
+                                            className="dropdown-item p-3"
+                                            onClick={
+                                                handleNavegacionAdministrarPacientes
+                                            }
+                                        >
                                             Administrar pacientes
                                         </Dropdown.Item>
-                                        <Dropdown.Item className="dropdown-item p-3" onClick={handleNavegacionAdministrarTurnos}>
+                                        <Dropdown.Item
+                                            className="dropdown-item p-3"
+                                            onClick={
+                                                handleNavegacionAdministrarTurnos
+                                            }
+                                        >
                                             Administrar turnos
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <div>
-                                    <Button variant="secondary" onClick={cerrarSesion}>
+                                    <Button
+                                        variant="secondary"
+                                        onClick={cerrarSesion}
+                                    >
                                         Cerrar sesión
                                     </Button>
                                 </div>
