@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const FormularioContacto = () => {
     const form = useRef();
 
-    const sendEmail = () => {
+    const enviarEmail = () => {
         const serviceId = "service_7tk1r0f",
             templateId = "template_yxbj6um",
             apikey = "VRpn3E_3VKSTYBneL";
@@ -20,10 +20,10 @@ const FormularioContacto = () => {
                     title: "¡Consulta enviada!",
                     text: " Su consulta fue enviada con exito. Pronto nos contactaremos.",
                     icon: "success",
-                    iconColor: "#a75ef0a4",
+                    iconColor: "#f4b693",
                     background: "#062e32",
                     color: "#41e9a6",
-                    confirmButtonColor: "#a75ef0a4",
+                    confirmButtonColor: "#f4b693",
                 })
                 reset();
             })
@@ -32,10 +32,10 @@ const FormularioContacto = () => {
                     title: "Oops! Lo siento!",
                     text: "No se pudo enviar su consulta. Intente nuevamente más tarde",
                     icon: "error",
-                    iconColor: "#a75ef0a4",
+                    iconColor: "#f4b693",
                     background: "#062e32",
                     color: "#41e9a6",
-                    confirmButtonColor: "#a75ef0a4",
+                    confirmButtonColor: "#f4b693",
                 }),
                 console.log(error)
             }
@@ -51,7 +51,7 @@ const FormularioContacto = () => {
 
 
     const onSubmit = () => {
-        sendEmail();
+        enviarEmail();
     }
 
 
