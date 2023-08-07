@@ -13,120 +13,127 @@ import Luciano from "../../assets/acercaDeNosotros/Luciano.jpg";
 import Esteban from "../../assets/acercaDeNosotros/Esteban.jpeg";
 import Nicolas from "../../assets/acercaDeNosotros/Nicolas.jpg";
 import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
-import { useState } from "react";
-import ColumnaSol from "./acercaDeNosotros/ColumnaSol";
-import ColumnaLuciano from "./acercaDeNosotros/ColumnaLuciano";
-import ColumnaNicolas from "./acercaDeNosotros/ColumnaNicolas";
-import ColumnaEsteban from "./acercaDeNosotros/ColumnaEsteban";
-import ColumnaRodrigo from "./acercaDeNosotros/ColumnaRodrigo";
+import ColumnaDesarrollador from "./acercaDeNosotros/ColumnaDesarrollador";
 const AcercaDeNosotros = () => {
     const textTitleSectionAboutUs = "{Acerca de nosotros}";
-
     const infoDesarrolladores = [
         {
             nombre: "Sol Perato",
             imagen: Sol,
-            redesSociales: {
-                github: {
+            redesSociales: [
+                {
                     nombre: "GitHub",
                     url: "https://github.com/SolPerato",
+                    logo: gitHubIcon,
                 },
-                correo: {
+                {
                     nombre: "Correo",
                     url: "https://mail.google.com/mail/?view=cm&fs=1&to=Solperato27@gmail.com",
+                    logo: correoIcon,
                 },
-            },
+            ],
         },
         {
             nombre: "Luciano Angeleri",
             imagen: Luciano,
-            redesSociales: {
-                github: {
+            redesSociales: [
+                {
                     nombre: "GitHub",
                     url: "https://github.com/LucianoAngeleri",
+                    logo: gitHubIcon,
                 },
-                correo: {
+                {
                     nombre: "Correo",
                     url: "https://mail.google.com/mail/?view=cm&fs=1&to=lcnang@gmail.com",
+                    logo: correoIcon,
                 },
-                linkedin: {
+                {
                     nombre: "Linkedin",
                     url: "https://www.linkedin.com/in/cesar-luciano-angeleri/",
+                    logo: linkedinIcon,
                 },
-            },
+            ],
         },
         {
             nombre: "Nicolás Herrera",
             imagen: Nicolas,
-            redesSociales: {
-                github: {
+            redesSociales: [
+                {
                     nombre: "GitHub",
                     url: "https://github.com/herreranicolas",
+                    logo: gitHubIcon,
                 },
-                correo: {
+                {
                     nombre: "Correo",
                     url: "https://mail.google.com/mail/?view=cm&fs=1&to=herreranicoo17@gmail.com",
+                    logo: correoIcon,
                 },
-                linkedin: {
+                {
                     nombre: "Linkedin",
                     url: "https://www.linkedin.com/in/nicolasherrera95/",
+                    logo: linkedinIcon,
                 },
-            },
+            ],
         },
         {
             nombre: "Esteban Molina",
             imagen: Esteban,
-            redesSociales: {
-                github: {
+            redesSociales: [
+                {
                     nombre: "GitHub",
                     url: "https://github.com/estebanrm1",
+                    logo: gitHubIcon,
                 },
-                correo: {
+                {
                     nombre: "Correo",
                     url: "https://mail.google.com/mail/?view=cm&fs=1&to=solsel90@gmail.com",
+                    logo: correoIcon,
                 },
-                linkedin: {
+                {
                     nombre: "Linkedin",
                     url: "https://www.linkedin.com/in/esteban-molina-b318a517a/",
+                    logo: linkedinIcon,
                 },
-                portfolio: {
+                {
                     nombre: "Portfolio",
                     url: "https://estebanrm1.github.io/sitio-personal/Pagina_personal/",
+                    logo: codeSlash,
                 },
-            },
+            ],
         },
         {
             nombre: "Rodrigo Vizcarra",
             imagen: Rodri,
-            redesSociales: {
-                github: {
+            redesSociales: [
+                {
                     nombre: "GitHub",
                     url: "https://github.com/RodrigoVizcarraDev",
+                    logo: gitHubIcon,
                 },
-                correo: {
+                {
                     nombre: "Correo",
                     url: "https://mail.google.com/mail/?view=cm&fs=1&to=rodrigovizcarra9623@gmail.com",
+                    logo: correoIcon,
                 },
-                linkedin: {
+                {
                     nombre: "Linkedin",
                     url: "https://www.linkedin.com/in/rodrigovizcarra96/",
+                    logo: linkedinIcon,
                 },
-                youtube: {
+                {
                     nombre: "Youtube",
                     url: "https://www.youtube.com/channel/UCXiPc95_Dq_EsiCmHy51hfQ",
+                    logo: youtubeIcon,
                 },
-                tiktok: {
+                {
                     nombre: "TikTok",
                     url: "https://www.tiktok.com/@rodriidev",
+                    logo: tiktokIcon,
                 },
-            },
+            ],
         },
     ];
-    const [infoSol, setInfoSol] = useState(infoDesarrolladores[0]);
-    const [infoLuciano, setInfoLuciano] = useState(infoDesarrolladores[1]);
-    const [infoNicolas, setInfoNicolas] = useState(infoDesarrolladores[2]);
-    const [infoEsteban, setInfoEsteban] = useState(infoDesarrolladores[3]);
-    const [infoRodri, setInfoRodri] = useState(infoDesarrolladores[4]);
+
     return (
         <section>
             <div id="app">
@@ -161,48 +168,16 @@ const AcercaDeNosotros = () => {
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
                 <Container className="p-md-5">
                     <Row>
-                        {/* SOL */}
-                        <ColumnaSol
-                            infoSol={infoSol}
-                            solImg={Sol}
-                            gitHubIcon={gitHubIcon}
-                            correoIcon={correoIcon}
-                        ></ColumnaSol>
-
-                        <ColumnaLuciano
-                            infoLuciano={infoLuciano}
-                            lucianoImg={Luciano}
-                            gitHubIcon={gitHubIcon}
-                            correoIcon={correoIcon}
-                            linkedinIcon={linkedinIcon}
-                        ></ColumnaLuciano>
-
-                        <ColumnaNicolas
-                            infoNicolas={infoNicolas}
-                            nicolasImg={Nicolas}
-                            gitHubIcon={gitHubIcon}
-                            correoIcon={correoIcon}
-                            linkedinIcon={linkedinIcon}
-                        ></ColumnaNicolas>
-
-                        <ColumnaEsteban
-                            infoEsteban={infoEsteban}
-                            estebanImg={Esteban}
-                            gitHubIcon={gitHubIcon}
-                            correoIcon={correoIcon}
-                            linkedinIcon={linkedinIcon}
-                            portfolioIcon={codeSlash}
-                        ></ColumnaEsteban>
-
-                        <ColumnaRodrigo
-                            infoRodri={infoRodri}
-                            rodriImg={Rodri}
-                            gitHubIcon={gitHubIcon}
-                            correoIcon={correoIcon}
-                            linkedinIcon={linkedinIcon}
-                            youtubeIcon={youtubeIcon}
-                            tiktokIcon={tiktokIcon}
-                        ></ColumnaRodrigo>
+                        {infoDesarrolladores.map((desarrollador, indice) => (
+                            <ColumnaDesarrollador
+                                key={indice}
+                                nombreDesarrollador={desarrollador.nombre}
+                                imagenDesarrollador={desarrollador.imagen}
+                                redesSocialesDesarrollador={
+                                    desarrollador.redesSociales
+                                }
+                            ></ColumnaDesarrollador>
+                        ))}
                     </Row>
                 </Container>
             </section>
