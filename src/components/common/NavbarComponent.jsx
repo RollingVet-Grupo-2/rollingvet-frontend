@@ -30,7 +30,7 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
         navegacion("/administrador/turnos");
     return (
         <Navbar expand="lg" className="nav">
-            <Container>
+            <Container className="py-3">
                 <Navbar.Brand>
                     <Link to={"/"}>
                         <picture>
