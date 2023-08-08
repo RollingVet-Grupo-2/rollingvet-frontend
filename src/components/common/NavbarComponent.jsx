@@ -98,7 +98,7 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                         className="position-absolute"
                                     >
                                         <Dropdown.Item
-                                            className="dropdown-item p-3"
+                                            className="dropdown-item  text-light fw-bold border-bottom border-success py-3"
                                             onClick={
                                                 handleNaegacionAdminPrincipal
                                             }
@@ -106,19 +106,21 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                             Administrar principal
                                         </Dropdown.Item>
                                         <Dropdown.Item
-                                            className="dropdown-item p-3"
+                                            className="dropdown-item  text-light fw-bold border-success py-3"
                                             onClick={
                                                 handleNavegacionAdministrarPacientes
                                             }
                                         >
+                                            <i className="bi bi-arrow-return-right me-2 fs-4 text-success"></i>
                                             Administrar pacientes
                                         </Dropdown.Item>
                                         <Dropdown.Item
-                                            className="dropdown-item p-3"
+                                            className="dropdown-item  text-light fw-bold border-success py-3"
                                             onClick={
                                                 handleNavegacionAdministrarTurnos
                                             }
                                         >
+                                            <i className="bi bi-arrow-return-right me-2 fs-4 text-success"></i>
                                             Administrar turnos
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
