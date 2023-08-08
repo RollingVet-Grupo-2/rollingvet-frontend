@@ -63,9 +63,9 @@ const FormularioContacto = () => {
                     src={perroFormulario}
                     alt="Imagen perro"
                 />
-                <div className="pt-4 py-xxl-5 bordeSuperior">
-                    <h3>Nos contactamos con vos!</h3>
-                    <p>
+                <div className="p-4 pb-0 py-xxl-5 bordeSuperior">
+                    <h2>Nos contactamos con vos!</h2>
+                    <p className="fs-3">
                         Completa el formulario y un agente de atencion al cliente se pondra
                         en contacto con vos para poder atender tu consulta.
                     </p>
