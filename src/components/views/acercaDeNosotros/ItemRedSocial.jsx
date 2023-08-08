@@ -2,7 +2,7 @@ import { ListGroupItem, Badge } from "react-bootstrap";
 
 const ItemRedSocial = ({redSocialNombre, redSocialUrl, redSocialLogo, nombreDesarrollador}) => {
     return (
-        <ListGroupItem className="border-0 shadow">
+        <ListGroupItem className="border-0 shadow itemRedSocial">
             <a
                 href={redSocialUrl}
                 target="_blank"
