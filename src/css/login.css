@@ -1,7 +1,9 @@
 .contenedor_login{
     position: relative;
     background-color: #BDEAD8;
-    background-image: url("../assets/img/login/fondo2.png");
+    background-image: url("../assets/img/login/fonfo4.png");
+    background-position: center;
+  
 }
 
 .fondo_huellas{
