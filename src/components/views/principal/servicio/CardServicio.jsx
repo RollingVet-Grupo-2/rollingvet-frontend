@@ -2,10 +2,10 @@ import { Card, Col, Button } from "react-bootstrap";
 import "../../../../css/principal/CardServicio.css";
 import { Link } from "react-router-dom";
 
-const CardServicio = ({imgServicio,nombreServicio}) => {
+const CardServicio = ({ imgServicio, nombreServicio }) => {
   return (
     <Col>
-      <Card className="rounded-4 overflow-hidden border border-2 border-dark cardServicio" style={{ height: "28rem"}}>
+      <Card className="rounded-4 overflow-hidden border border-2 border-dark cardServicio" style={{ height: "28rem" }}>
         <Card.Img src={imgServicio} alt={nombreServicio} className="w-100 h-100 object-fit-cover imgServicio" />
         <Card.ImgOverlay className="d-flex flex-column justify-content-end p-2">
           <div className="w-100 mt-auto">

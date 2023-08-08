@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 const CardProducto = ({nombreProducto, precioProducto, imgProducto, categoriaProducto}) => {
     return (
         <Col>
-            <Card className="rounded-4 overflow-hidden fondoCardProducto border-0">
+            <Card className="rounded-4 overflow-hidden cardProducto">
                 <Card.Img src={imgProducto} alt={nombreProducto} className="rounded-4 py-4 px-3 px-md-5 object-fit-contain imgProducto" />
                 <Card.ImgOverlay className="d-flex flex-column justify-content-end p-2">
                     <div className="w-100 rounded-4 p-2 text-dark border border-2 border-dark bg-body">
-                        <Card.Title classname="text-truncate">{nombreProducto}</Card.Title>
+                        <Card.Title className="text-truncate">{nombreProducto}</Card.Title>
                         <Card.Text className="small text-truncate">{categoriaProducto}</Card.Text>
                         <div className="d-flex justify-content-between align-items-end">
                             <div>
