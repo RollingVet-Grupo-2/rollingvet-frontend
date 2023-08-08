@@ -17,10 +17,9 @@
 
 .boton_login {
     background: #fff;
-    color: darkslategrey;
-    border: 2px solid darkslategrey;
-    margin: 5px 0px;
-    padding: 7px 12px;
+    color: #7d1ddda4;
+    border: 2px solid #a75ef0a4;
+    padding: 6px 10px;
     border-radius: 3px;
     position: relative;
     z-index: 1;
@@ -30,13 +29,13 @@
 
 .boton_login:hover {
     color: #fff;
-    background: darkslategrey;
-    border-color: darkslategrey;
+    background: #a75ef0a4;
+    border-color: #a75ef0a4;
 }
 
 .boton_login::after {
     content: "";
-    background: darkslategrey;
+    background: #a75ef0a4;
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -48,7 +47,6 @@
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.3s ease;
 }
-
 .boton_login:hover::after {
     transition: all 0.3s ease-out;
     transform: skewX(-45deg) scale(1, 1);
