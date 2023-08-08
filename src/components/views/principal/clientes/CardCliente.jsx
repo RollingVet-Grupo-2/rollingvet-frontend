@@ -29,8 +29,8 @@ const CardCliente = ({
                     </div>
                     <Card.Title className="py-2 ps-md-5 tituloCardCliente">{nombreCliente}</Card.Title>
                 </Card.Header>
-                <Card.Body className="p-4 ps-md-5 h-100">
-                    <Card.Text className="h-100"><strong className="fs-1 fw-bolder lh-1 pe-3">"</strong>{comentarioCliente}</Card.Text>
+                <Card.Body className="p-4 ps-md-5">
+                    <Card.Text><strong className="fs-1 fw-bolder lh-1 pe-3">"</strong>{comentarioCliente}</Card.Text>
                 </Card.Body>
             </div>
         </Card>

@@ -8,7 +8,7 @@
 .seccionHeroFondo {
   background: radial-gradient(circle at 50% 6%, transparent 50%, var(--bs-secondary) 96%) 94% 73%/151% 194%,
     conic-gradient(from 120deg at 42% 89%, var(--bs-primary) 52%, #3e777a 100%) 54% 30%/129% 197%;
-  background-blend-mode: screen;
+  background-blend-mode: screen;  
 }
 .textoHero{
     max-width: 42rem;
@@ -31,11 +31,18 @@
 }
 .imgForma1 > img {
   width: 40%;
-  transform: rotate(110deg);
+  transform: rotate(150deg)!important;
+    filter: drop-shadow(0 -1rem 1rem rgba(0, 0, 0, 0.3));
+
 }
 .imgForma7 {
-  right: 32%;
-  transform: rotate(150deg);
+  right: -10%;
+}
+.imgForma7 > img {
+  width: 50%;
+  transform: rotate(130deg)!important;
+    filter: drop-shadow(1rem -1rem 1rem rgba(0, 0, 0, 0.3));
+
 }
 hr.dashed {
   border-top: 0.2rem dashed var(--bs-dark);
