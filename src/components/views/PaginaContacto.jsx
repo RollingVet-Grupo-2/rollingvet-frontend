@@ -9,13 +9,12 @@ const PaginaContacto = () => {
     return (
         <>
             <section className="bg_contacto d-flex flex-column seccionPrincipal text-center">
-                            <h2 className="pt-5 margen_negativo">Aquí encontraras diferentes medios para poder contactarte con nosotros</h2>
+                            <h1 className="pt-5 margen_negativo">Aquí encontraras diferentes medios para poder contactarte con nosotros</h1>
                 <div className="row col-12 mascotas">
                     <img className="imagen_mascotas animate__animated animate__fadeInUp" src={mascotas} alt="Imagen mascotas" />
                 </div>
-                <article className="row justify-content-center contenedor_bienvenida py-5">
-                    <aside className="col-lg-12 text-center py-4">
-                        <div className="card_texto py-lg-5 mt-md-5 px-3 animate__animated animate__fadeInUp">
+                <article className="row justify-content-center contenedor_bienvenida py-5 col-lg-12 text-center">
+                        <div className="card_texto py-lg-5 animate__animated animate__fadeInUp">
                             <hr />
                             <p className="fs-4 fw-semibold">En nuestra veterinaria, nos apasiona el cuidado y bienestar de todas las mascotas. Nuestras instalaciones están equipadas con tecnología de vanguardia para diagnosticar y tratar diversas condiciones de salud. En nuestra veterinaria, su compañero peludo será tratado con el mismo cariño y dedicación que brindaríamos a nuestros propios animales.</p>
                             <hr/>
@@ -26,7 +25,6 @@ const PaginaContacto = () => {
                                     <br />San Miguel de Tucumán, Tucumán</b></p>
                             </div>
                         </div>
-                    </aside>
                 </article>
             </section>
             <FormularioContacto></FormularioContacto>

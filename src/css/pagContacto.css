@@ -37,6 +37,7 @@
 }
 
 .card_texto{
+    margin-top: 5%;
     background-image: url('../assets/img/paginaContacto/contactoFondo.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -44,18 +45,6 @@
     animation-duration: 4s;
 }
 
-.contenedor_gatito{
-    animation-duration: 3s;
-}
-
-
-.card_direccion{
-    background-color: #BDEAD8;
-    max-width: auto;
-    max-height: 200px;
-    border: solid 2px #454c5a;
-    animation-duration: 8s;
-}
 
 /****** Formulario de contacto ******/
 
