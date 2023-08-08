@@ -27,7 +27,7 @@ const Inicio = () => {
     <>
       <Container fluid className="seccionHeroFondo position-relative py-5 overflow-hidden z-0 text-light">
         <h1 className="display-1 p-3 text-center">Cuida a tus mascotas con <strong>RollingVet</strong></h1>
-        <p className="lead px-3 px-md-5 py-4 mx-auto text-center textoHero">
+        <p className="fs-2 lead px-3 px-md-5 py-4 mx-auto text-center textoHero text-dark">
           La forma más sencilla de cuidar a tus mascotas. Dales a tus compañeros el cuidado que merecen!
         </p>
         <div className="w-100 h-100 position-relative z-n1">
