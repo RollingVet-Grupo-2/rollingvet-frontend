@@ -8,16 +8,17 @@ const ColumnaDesarrollador = ({
 }) => {
     return (
         <Col md={6} xl={4} className="mb-4">
-            <Card className="border-0">
+            <Card className="border-0 my-2">
                 <Card.Img
                     variant="top"
                     src={imagenDesarrollador}
                     style={{
                         height: "350px",
                         objectFit: "cover",
+                        objectPosition:"center"
                     }}
                 />
-                <Card.Body>
+                <Card.Body className="py-4 px-0">
                     <Card.Title className="mb-3 fs-3">
                         {nombreDesarrollador}
                     </Card.Title>
