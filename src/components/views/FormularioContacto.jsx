@@ -56,8 +56,8 @@ const FormularioContacto = () => {
 
 
     return (
-        <section className="pt-5 d-flex flex-column-reverse flex-md-row contenedor_formulario justify-content-around">
-            <aside className="col-md-5 col-lg-6 text-center">
+        <section className="pt-5 d-flex flex-column flex-md-row contenedor_formulario justify-content-around">
+            <aside className="col-md-5 col-lg-6 text-center mb-5 mb-md-0">
                 <img
                     className="perro_formulario col-6 pt-4"
                     src={perroFormulario}
