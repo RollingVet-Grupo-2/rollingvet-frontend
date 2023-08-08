@@ -33,94 +33,13 @@ $btn-border-radius: 1rem;
 $btn-font-weight: 600;
 $btn-border-radius: 1rem;
 
-$btn-hover-bg-shade-amount:       20%;
-$btn-hover-bg-tint-amount:        20%;
-$btn-hover-border-shade-amount:   30%;
-$btn-hover-border-tint-amount:    15%;
-$btn-active-bg-shade-amount:      30%;
-$btn-active-bg-tint-amount:       30%;
-$btn-active-border-shade-amount:  35%;
-$btn-active-border-tint-amount:   15%;
-
 .btn-primary {
   color: var(--bs-dark) !important;
   border-color: var(--bs-dark) !important;
   border-bottom-width: 0.4rem !important;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
 }
-
-.btn-primary::after {
-  content: "";
-  background: var(--bs-btn-hover-bg);
-  position: absolute;
-  z-index: -1;
-  display: block;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover::after {
-  transition: all 0.3s ease-out;
-  transform: skewX(-45deg) scale(1, 1);
-}
-
-.btn-outline-light {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.btn-outline-light::after {
-  content: "";
-  background: var(--bs-btn-hover-bg);
-  position: absolute;
-  z-index: -1;
-  display: block;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s ease;
-}
-
-.btn-outline-light:hover::after {
-  transition: all 0.3s ease-out;
-  transform: skewX(-45deg) scale(1, 1);
-}
-.btn-outline-dark {
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.btn-outline-dark::after {
-  content: "";
-  background: var(--bs-btn-hover-bg);
-  position: absolute;
-  z-index: -1;
-  display: block;
-  left: -20%;
-  right: -20%;
-  top: 0;
-  bottom: 0;
-  transform: skewX(-45deg) scale(0, 1);
-  transition: all 0.3s ease;
-}
-
-.btn-outline-dark:hover::after {
-  transition: all 0.3s ease-out;
-  transform: skewX(-45deg) scale(1, 1);
-}
-
 .btn:active {
-  border-bottom-width: 0rem;
+  border-bottom-width: $btn-border-width;
 }
 .btn {
   border-bottom-width: 0.4rem !important;

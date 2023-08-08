@@ -1,6 +1,7 @@
 import { Container, Button } from "react-bootstrap";
 import "../../css/principal/seccionPrincipal.css"
 import "../../css/principal/Filtros.css"
+import logoRollingVet from "../../assets/rollingVetLogo.svg"
 import imgHero from "../../assets/img/Principal/principal_Hero.png";
 import forma1 from "../../assets/img/Principal/formas/forma1.svg";
 import forma3 from "../../assets/img/Principal/formas/forma3.svg";
@@ -20,27 +21,22 @@ import SliderClientes from "./principal/clientes/SliderClientes";
 import ContenedorVeterinario from "./principal/veterinario/ContenedorVeterinario";
 import SeparadorCustom from "../common/SeparadorCustom";
 import SliderPlanes from "./principal/plan/SliderPlanes";
-import { motion, useScroll, useTransform } from "framer-motion"
 import { Link } from "react-router-dom";
 const Inicio = () => {
-  const { scrollYProgress } = useScroll();
-  const yForma1 = useTransform(scrollYProgress, [0, 0.5], ["-10%", "200%"]);
-  const yForma7 = useTransform(scrollYProgress, [0, 0.5], ["-40%", "50%"]);
-
   return (
     <>
       <Container fluid className="seccionHeroFondo position-relative py-5 overflow-hidden z-0 text-light">
-        <h1 className="display-1 text-center">Cuida a tus mascotas con <strong>RollingVet</strong></h1>
-        <p className="fs-2 lead px-3 px-md-5 py-4 mx-auto text-center textoHero text-dark">
+        <h1 className="display-1 p-3 text-center">Cuida a tus mascotas con <strong>RollingVet</strong></h1>
+        <p className="lead px-3 px-md-5 py-4 mx-auto text-center textoHero">
           La forma más sencilla de cuidar a tus mascotas. Dales a tus compañeros el cuidado que merecen!
         </p>
         <div className="w-100 h-100 position-relative z-n1">
-          <motion.div className="w-100 position-absolute imgForma1" style={{ y: yForma1}}>
-            <img src={forma1} alt="Forma 1" />
-          </motion.div>
-          <motion.div className="w-100 position-absolute imgForma7" style={{ y: yForma7}}>
-            <img src={forma7} alt="Forma 7"/>
-          </motion.div>
+          <div className="w-100 position-absolute imgForma1" >
+            <img src={forma1} alt="Froma 1" />
+          </div>
+          <div className="w-100 position-absolute imgForma7" >
+            <img src={forma7} alt="Froma 7" className="w-50" />
+          </div>
         </div>
         <Container>
           <div className="w-100 text-center imgSeccionHero">
@@ -48,16 +44,16 @@ const Inicio = () => {
           </div>
           <div className="contenedorBotonesHero position-relative">
             <div className="z-n1 formaBotonesHero position-absolute start-50 translate-middle">
-                <img src={forma11} alt="Forma 11"/>
+                <img src={forma11} alt="Froma 11"/>
             </div>
-            <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-2 p-md-5 botonesHero">
-            <Button variant="primary" className="px-4 py-3 rounded-4 fw-bolder" as={Link} to={"/login"}>Reservar Turno</Button>
-            <Button variant="primary" className="px-4 py-3 rounded-4 bg-primary-subtle" as={Link} to={"/contacto"}>Contactanos</Button>
+            <div className="d-flex flex-column flex-md-row justify-content-center gap-2 gap-md-5 p-5 botonesHero">
+            <Button variant="primary" className="px-4 py-3 rounded-4 border-dark" as={Link} to={"/login"}>Reservar Turno</Button>
+            <Button variant="outline-dark" className="px-4 py-3 rounded-4" as={Link} to={"/contacto"}>Contactanos</Button>
             </div>
           </div>
         </Container>
       </Container>
-      <Container className="py-3 my-3">
+      <Container className="py-3">
         <h2 className="display-3 px-3 px-md-5 py-2">Nuestros Servicios</h2>
         <ContainerServicios></ContainerServicios>
       </Container>

@@ -1,31 +1,17 @@
+/* body{
+    background-image: url("../../assets/img/Principal/wesley-tingey-_0sEjWfAK3Q-unsplash.jpg");
+    background-color: white;
+    background-blend-mode: multiply;
+    background-size: contain;
+    backdrop-filter: brightness(145%) saturate(60%) blur(1.1px);
+} */
 .seccionHeroFondo {
   background: radial-gradient(circle at 50% 6%, transparent 50%, var(--bs-secondary) 96%) 94% 73%/151% 194%,
     conic-gradient(from 120deg at 42% 89%, var(--bs-primary) 52%, #3e777a 100%) 54% 30%/129% 197%;
   background-blend-mode: screen;
-  animation: animacionGradienteFondo 10s ease-in-out infinite alternate;
-}
-@keyframes animacionGradienteFondo {
-  0%{
-    background-position: 0% 0%;
-  }
-  50%{
-    background-position: 80% 50%;
-  }
-  100%{
-    background-position: 0% 100%;
-  }
-}
-.seccionHeroFondo::after {
-  content:"";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 102%;
-  background: linear-gradient(to bottom, transparent 90%, var(--bs-body-bg) 95%);
 }
 .textoHero{
-    max-width: 56rem;
+    max-width: 42rem;
 }
 .contenedorBotonesHero {
   margin-top: -2rem;
@@ -33,7 +19,6 @@
 .formaBotonesHero{
     top: 5rem!important;
     width: 250vw;
-    filter: drop-shadow(0 0 5rem rgba(0, 0, 0, 0.5));
 }
 .imgSeccionHero {
   filter: drop-shadow(0 0.4rem 0.5rem rgba(0, 0, 0, 0.3));
@@ -46,31 +31,24 @@
 }
 .imgForma1 > img {
   width: 40%;
-  transform: rotate(150deg)!important;
-    filter: drop-shadow(0 -1rem 1rem rgba(0, 0, 0, 0.3));
-
+  transform: rotate(110deg);
 }
 .imgForma7 {
-  right: -10%;
-}
-.imgForma7 > img {
-  width: 50%;
-  transform: rotate(130deg)!important;
-    filter: drop-shadow(1rem -1rem 1rem rgba(0, 0, 0, 0.3));
-
+  right: 32%;
+  transform: rotate(150deg);
 }
 hr.dashed {
   border-top: 0.2rem dashed var(--bs-dark);
   margin-top: -0.08rem;
   opacity: 50%;
 }
-.formaSeparador {
+.fromaSeparador {
   transform: rotate(170deg);
 }
 
 @media screen and (min-width: 768px) {
     .imgSeccionHero > img {
-        height: 20vw;
+        height: 30vw;
       }
       .formaBotonesHero{
         top:50%;
