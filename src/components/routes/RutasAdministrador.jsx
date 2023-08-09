@@ -7,6 +7,9 @@ import AdminTurnos from "../views/AdminTurnos";
 import Error404 from "../views/Error404";
 import CrearPaciente from "../views/pacientes/CrearPaciente";
 import EditarPaciente from "../views/pacientes/EditarPaciente";
+import AdminServicios from "../views/AdminServicios";
+import CrearServicio from "../views/servicios/CrearServicio";
+import EditarServicio from "../views/servicios/EditarServicio";
 const RutasAdministrador = () => {
   return (
     <>
@@ -40,6 +43,21 @@ const RutasAdministrador = () => {
           exact
           path="editar-turno/:id"
           element={<EditarTurno></EditarTurno>}
+        ></Route>
+        <Route
+          exact
+          path="servicios"
+          element={<AdminServicios></AdminServicios>}
+        ></Route>
+        <Route
+          exact
+          path="crear-servicio"
+          element={<CrearServicio></CrearServicio>}
+        ></Route>
+        <Route
+          exact
+          path="editar-servicio/:id"
+          element={<EditarServicio></EditarServicio>}
         ></Route>
         <Route
           exact
