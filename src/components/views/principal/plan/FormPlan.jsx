@@ -17,7 +17,7 @@ const FormPlan = ({onHide}) => {
                   title: "¡Solicitud enviada!",
                   text: " Gracias por enviar tu solicitud, nos contactaremos a la brevedad.",
                   icon: "success",
-                  iconColor: "#f4b693",
+                  iconColor: "#35d14c",
                   background: "#062e32",
                   color: "#41e9a6",
                   confirmButtonColor: "#f4b693",
@@ -26,7 +26,16 @@ const FormPlan = ({onHide}) => {
                 });
               reset();
             }, (error) => {
-                console.log(error.text);
+              Swal.fire({
+                title: "Oops! Lo siento!",
+                text: "No se pudo enviar su solicitud. Intente nuevamente más tarde",
+                icon: "error",
+                iconColor: "#fb3154",
+                background: "#062e32",
+                color: "#41e9a6",
+                confirmButtonColor: "#f4b693",
+            }),
+                console.log(error);
             });
   }
 
