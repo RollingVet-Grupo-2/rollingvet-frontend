@@ -58,9 +58,11 @@ const FormPlan = ({onHide}) => {
       <Row className="g-0 g-md-3" xs={1} md={2}>
         <Col>
           <Form.Group className="mb-3" controlId="formNombre">
-            <Form.Label>Nombre</Form.Label>
+            <Form.Label className="fw-bold">Nombre</Form.Label>
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
+              maxLength={30}
+              minLength={2}
               name="nombre_usuario"
               placeholder="Ingresa tu nombre"
               {...register("nombre_usuario", {
@@ -82,14 +84,16 @@ const FormPlan = ({onHide}) => {
               isInvalid={errors.nombre_usuario}
             />
             <Form.Control.Feedback type="valid">Correcto!</Form.Control.Feedback>
-            <Form.Control.Feedback type="invalid">{errors.nombre?.message}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.nombre_usuario?.message}</Form.Control.Feedback>
           </Form.Group>
         </Col>
         <Col>
           <Form.Group className="mb-3" controlId="formApellido">
-            <Form.Label>Apellido</Form.Label>
+            <Form.Label className="fw-bold">Apellido</Form.Label>
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
+              maxLength={30}
+              minLength={2}
               name="apellido_usuario"
               placeholder="Ingresa tu apellido"
               {...register("apellido_usuario", {
@@ -110,12 +114,12 @@ const FormPlan = ({onHide}) => {
               })}
               isInvalid={errors.apellido_usuario}
             />
-            <Form.Control.Feedback type="invalid">{errors.apellido?.message}</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">{errors.apellido_usuario?.message}</Form.Control.Feedback>
           </Form.Group>
         </Col>
       </Row>
       <Form.Group className="mb-3" controlId="formEmail">
-        <Form.Label>Email</Form.Label>
+        <Form.Label className="fw-bold">Email</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="email"
           name="email_usuario"
@@ -125,17 +129,19 @@ const FormPlan = ({onHide}) => {
             pattern: {
               value:
                 /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-              message: "El email debe tener el formato 'usuario@dominio.com'.",
+              message: "El email debe tener el formato 'usuario@dominio.com'",
             },
           })}
           isInvalid={errors.email_usuario}
         />
-        <Form.Control.Feedback type="invalid">{errors.email?.message}</Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">{errors.email_usuario?.message}</Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formTel">
-        <Form.Label>Teléfono</Form.Label>
+        <Form.Label className="fw-bold">Teléfono</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="tel"
+          maxLength={10}
+          minLength={10}
           name="tel_usuario"
           placeholder="Ej: 3817557733"
           {...register("tel_usuario", {
@@ -156,13 +162,15 @@ const FormPlan = ({onHide}) => {
           })}
           isInvalid={errors.tel_usuario}
         />
-        <Form.Control.Feedback type="invalid">{errors.tel?.message}</Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">{errors.tel_usuario?.message}</Form.Control.Feedback>
       </Form.Group>
       <Form.Group className="mb-3" controlId="formInfo">
-        <Form.Label>Información a solicitar</Form.Label>
+        <Form.Label className="fw-bold">Información a solicitar</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           as="textarea"
           rows={3}
+          maxLength={500}
+          minLength={10}
           name="solicitud_usuario"
           placeholder="Puedes escribir tu solicitud aquí..."
           {...register("solicitud_usuario", {
@@ -179,7 +187,7 @@ const FormPlan = ({onHide}) => {
           })}
           isInvalid={errors.solicitud_usuario}
         />
-        <Form.Control.Feedback type="invalid">{errors.info?.message}</Form.Control.Feedback>
+        <Form.Control.Feedback type="invalid">{errors.solicitud_usuario?.message}</Form.Control.Feedback>
       </Form.Group>
       <Button  type="submit" variant="primary" className="w-100">
         Enviar
