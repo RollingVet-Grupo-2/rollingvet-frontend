@@ -76,7 +76,7 @@ const FormPlan = ({onHide}) => {
                   message: "El nombre debe tener 2 caractéres como mínimo.",
                 },
                 pattern: {
-                  value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ]+$/,
+                  value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ\s]+$/,
                   message: "Ingresa un nombre válido.",
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
@@ -107,7 +107,7 @@ const FormPlan = ({onHide}) => {
                   message: "El apellido debe tener 2 caractéres como mínimo.",
                 },
                 pattern: {
-                  value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ]+$/,
+                  value: /^[A-Za-záéíóúüÁÉÍÓÚÜñÑ\s]+$/,
                   message: "Ingresa un apellido válido.",
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
