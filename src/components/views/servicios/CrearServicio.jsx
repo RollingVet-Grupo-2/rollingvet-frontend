@@ -1,18 +1,15 @@
 import { useEffect, useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearServicio, obtenerVeterinarios } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearServicio = () => {
-  const [veterinarios, setVeterinarios] = useState([
-    {
-      id: 1,
-      nombre: "Dr. Juan Pérez",
-    },
-    {
-      id: 2,
-      nombre: "Dr. Ana Martinez",
-    },
-  ]);
+  const [veterinarios, setVeterinarios] = useState([]);
+
+  useEffect(() => {
+    fetchVeterinarios();
+  }, []);
 
   const {
     register,
@@ -20,14 +17,51 @@ const CrearServicio = () => {
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (servicio) => {
-    console.log(servicio);
-    Swal.fire({
-      icon: "success",
-      title: "Servicio creado",
-      text: "El servicio se creó con éxtito.",
+
+  const onSubmit = (servicioNuevo) => {
+    console.log(servicioNuevo);
+    crearServicio(servicioNuevo).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "¡Servicio creado!",
+          text: `El servicio "${servicioNuevo.nombre_servicio}" se creo con éxito.`,
+          icon: "success",
+          iconColor: "#35d14c",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: `El servicio '${servicioNuevo.nombre}' no pudo ser creado. Intente nuevamente más tarde`,
+          icon: "error",
+          iconColor: "#fb3154",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
     });
-    reset();
+  };
+
+  const fetchVeterinarios = () => {
+    obtenerVeterinarios().then((respuesta) => {
+      if (respuesta) {
+        setVeterinarios(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener información de veterinarios. Intente nuevamente más tarde",
+          icon: "error",
+          iconColor: "#fb3154",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
   };
   return (
     <Container className="my-5">
@@ -35,8 +69,8 @@ const CrearServicio = () => {
       <p className="lead">Desde aqui puede crear un nuevo servicio.</p>
       <Container className="my-3 py-3 border border-3 rounded-4 border-dark shadow">
         <Form onSubmit={handleSubmit(onSubmit)} className="p-2 p-md-4">
-        <h2 className="h2 pb-3">Nuevo Servicio</h2>
-        <hr className="text-dark"/>
+          <h2 className="h2 pb-3">Nuevo Servicio</h2>
+          <hr className="text-dark" />
           <Form.Group className="mb-3" controlId="formNombreServicio">
             <Form.Label className="fw-bold fs-5">Nombre del Servicio*</Form.Label>
             <Form.Control
@@ -100,23 +134,23 @@ const CrearServicio = () => {
             <Form.Control.Feedback type="invalid">{errors.precio_servicio?.message}</Form.Control.Feedback>
           </Form.Group>
           <Form.Group className="mb-3" controlId="formImgServicio">
-          <Form.Label className="fw-bold fs-5">Imagen URL*</Form.Label>
-          <Form.Control
-          className="bg-primary-subtle bg-opacity-25"
-            type="text"
-            placeholder="Ej: https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg"
-            {...register("img_servicio", {
-              required: "La URL de la imagen del servicio es obligatoria",
-              pattern: {
-                value: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)$/,
-                message: "Ingrese un URL válido con imágen (extension .jpg, .png o .gif)",
-              },
-              validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
-            })}
-            isInvalid={errors.img_servicio}
-          />
-          <Form.Control.Feedback type="invalid">{errors.img_servicio?.message}</Form.Control.Feedback>
-        </Form.Group>
+            <Form.Label className="fw-bold fs-5">Imagen URL*</Form.Label>
+            <Form.Control
+              className="bg-primary-subtle bg-opacity-25"
+              type="text"
+              placeholder="Ej: https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg"
+              {...register("img_servicio", {
+                required: "La URL de la imagen del servicio es obligatoria",
+                pattern: {
+                  value: /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif)$/,
+                  message: "Ingrese un URL válido con imágen (extension .jpg, .png o .gif)",
+                },
+                validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
+              })}
+              isInvalid={errors.img_servicio}
+            />
+            <Form.Control.Feedback type="invalid">{errors.img_servicio?.message}</Form.Control.Feedback>
+          </Form.Group>
           <Form.Group className="mb-3" controlId="formDescripcionServicio">
             <Form.Label className="fw-bold fs-5">Descripción*</Form.Label>
             <Form.Control
