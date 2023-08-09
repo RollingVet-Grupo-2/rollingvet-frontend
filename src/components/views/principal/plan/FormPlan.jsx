@@ -1,8 +1,35 @@
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
 const FormPlan = ({onHide}) => {
+  const formularioSolicitud = useRef();
+  const enviarSolicitudEmail = () =>{
+    emailjs.sendForm(
+      'service_x2wivyc', 
+      'template_ik5sbvg', 
+      formularioSolicitud.current, 't5qJO3W7CH17k_5Rk')
+          .then((result) => {
+                console.log(result.text);
+                Swal.fire({
+                  title: "¡Solicitud enviada!",
+                  text: " Gracias por enviar tu solicitud, nos contactaremos a la brevedad.",
+                  icon: "success",
+                  iconColor: "#f4b693",
+                  background: "#062e32",
+                  color: "#41e9a6",
+                  confirmButtonColor: "#f4b693",
+              }).then(() => {
+                  onHide();
+                });
+              reset();
+            }, (error) => {
+                console.log(error.text);
+            });
+  }
+
   const {
     register,
     handleSubmit,
@@ -10,28 +37,21 @@ const FormPlan = ({onHide}) => {
     reset,
   } = useForm();
 
-  const onSubmit = (solicitud) => {
-    console.log(solicitud);
-    Swal.fire({
-        icon: 'success',
-        title: 'Solicitud enviada',
-        text: 'Gracias por enviar tu solicitud, nos contactaremos a la brevedad.',
-      }).then(() => {
-        onHide();
-      });
-    reset();
+  const onSubmit = () => {
+    enviarSolicitudEmail();
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <Form onSubmit={handleSubmit(onSubmit)} ref={formularioSolicitud}>
       <Row className="g-0 g-md-3" xs={1} md={2}>
         <Col>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
+              name="nombre_usuario"
               placeholder="Ingresa tu nombre"
-              {...register("nombre", {
+              {...register("nombre_usuario", {
                 required: "El nombre es obligatorio",
                 maxLength: {
                   value: 30,
@@ -58,8 +78,9 @@ const FormPlan = ({onHide}) => {
             <Form.Label>Apellido</Form.Label>
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
+              name="apellido_usuario"
               placeholder="Ingresa tu apellido"
-              {...register("apellido", {
+              {...register("apellido_usuario", {
                 required: "El apellido es obligatorio.",
                 maxLength: {
                   value: 30,
@@ -85,8 +106,9 @@ const FormPlan = ({onHide}) => {
         <Form.Label>Email</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="email"
+          name="email_usuario"
           placeholder="Ej: usuario@dominio.com."
-          {...register("email", {
+          {...register("email_usuario", {
             required: "El email es obligatorio.",
             pattern: {
               value:
@@ -102,8 +124,9 @@ const FormPlan = ({onHide}) => {
         <Form.Label>Teléfono</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="tel"
+          name="tel_usuario"
           placeholder="Ej: 3817557733"
-          {...register("tel", {
+          {...register("tel_usuario", {
             required: "El teléfono es obligatorio.",
             pattern: {
               value: /^[0-9]+$/,
@@ -128,8 +151,9 @@ const FormPlan = ({onHide}) => {
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           as="textarea"
           rows={3}
+          name="solicitud_usuario"
           placeholder="Puedes escribir tu solicitud aquí..."
-          {...register("info", {
+          {...register("solicitud_usuario", {
             required: "La solicitud es obligatoria.",
             maxLength: {
               value: 500,
