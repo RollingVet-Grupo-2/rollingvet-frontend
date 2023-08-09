@@ -48,7 +48,7 @@ const ItemDuenioModal = ({ paciente }) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClose}>
             OK
           </Button>
         </Modal.Footer>
