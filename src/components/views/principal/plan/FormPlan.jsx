@@ -7,10 +7,13 @@ import emailjs from '@emailjs/browser';
 const FormPlan = ({onHide}) => {
   const formularioSolicitud = useRef();
   const enviarSolicitudEmail = () =>{
+    const serviceID = 'service_x2wivyc', 
+          templateId ='template_ik5sbvg', 
+          apikey ='t5qJO3W7CH17k_5Rk';
     emailjs.sendForm(
-      'service_x2wivyc', 
-      'template_ik5sbvg', 
-      formularioSolicitud.current, 't5qJO3W7CH17k_5Rk')
+      serviceID, 
+      templateId, 
+      formularioSolicitud.current,apikey)
           .then((result) => {
                 console.log(result.text);
                 Swal.fire({
@@ -76,7 +79,7 @@ const FormPlan = ({onHide}) => {
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
               })}
-              isInvalid={errors.nombre}
+              isInvalid={errors.nombre_usuario}
             />
             <Form.Control.Feedback type="valid">Correcto!</Form.Control.Feedback>
             <Form.Control.Feedback type="invalid">{errors.nombre?.message}</Form.Control.Feedback>
@@ -105,7 +108,7 @@ const FormPlan = ({onHide}) => {
                 },
                 validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
               })}
-              isInvalid={errors.apellido}
+              isInvalid={errors.apellido_usuario}
             />
             <Form.Control.Feedback type="invalid">{errors.apellido?.message}</Form.Control.Feedback>
           </Form.Group>
@@ -125,7 +128,7 @@ const FormPlan = ({onHide}) => {
               message: "El email debe tener el formato 'usuario@dominio.com'.",
             },
           })}
-          isInvalid={errors.email}
+          isInvalid={errors.email_usuario}
         />
         <Form.Control.Feedback type="invalid">{errors.email?.message}</Form.Control.Feedback>
       </Form.Group>
@@ -151,7 +154,7 @@ const FormPlan = ({onHide}) => {
             },
             validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
           })}
-          isInvalid={errors.tel}
+          isInvalid={errors.tel_usuario}
         />
         <Form.Control.Feedback type="invalid">{errors.tel?.message}</Form.Control.Feedback>
       </Form.Group>
@@ -174,7 +177,7 @@ const FormPlan = ({onHide}) => {
             },
             validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
           })}
-          isInvalid={errors.info}
+          isInvalid={errors.solicitud_usuario}
         />
         <Form.Control.Feedback type="invalid">{errors.info?.message}</Form.Control.Feedback>
       </Form.Group>
