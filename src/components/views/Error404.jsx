@@ -11,7 +11,7 @@ const Error404 = () => {
     const irAlInicio = () => navigate("/");
 
     return (
-        <section className="text-center seccionPrincipal bg-secondary">
+        <section className="bg_huellas text-center seccionPrincipal">
             <div>
                 <div className='perrito'><img className='perrito_error404' src={perrito} alt="Error 404" /></div>
                 <div className='contenedor-404 p-5 card-error'>

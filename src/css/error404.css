@@ -1,3 +1,12 @@
+.bg_huellas{
+
+    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 /*****  Imagen Perrito  *****/
 
 .perrito_error404 {
