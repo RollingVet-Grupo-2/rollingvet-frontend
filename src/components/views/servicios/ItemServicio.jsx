@@ -13,7 +13,7 @@ const ItemServicio = ({ servicio }) => {
         <div className="d-flex gap-2 justify-content-center">
           <Link
             role="button"
-            to={`/administrador/editar-servicio/${servicio._id}`}
+            to={`/administrador/editar-servicio/${servicio.id}`}
             className="btn btn-warning btn btn-primary">
             <i className="bi bi-pencil-square"></i>
           </Link>

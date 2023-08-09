@@ -35,7 +35,7 @@ const CrearServicio = () => {
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
-          text: `El servicio '${servicioNuevo.nombre}' no pudo ser creado. Intente nuevamente más tarde`,
+          text: `El servicio '${servicioNuevo.nombre_servicio}' no pudo ser creado. Intente nuevamente más tarde`,
           icon: "error",
           iconColor: "#fb3154",
           background: "#062e32",
