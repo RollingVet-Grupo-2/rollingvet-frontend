@@ -8,7 +8,12 @@
         "Vacunación y control de enfermedades",
         "Desparasitación"
       ],
-      "horarios": ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 AM"],
+      "horarios": [
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 AM"
+      ],
       "experiencia": "10 años"
     },
     {
@@ -19,11 +24,15 @@
         "Consultas especializadas",
         "Baño, peluquería o corte de uñas"
       ],
-      "horarios": ["17:00 PM", "18:00 PM", "19:00 PM", "20:00 PM"],
+      "horarios": [
+        "17:00 PM",
+        "18:00 PM",
+        "19:00 PM",
+        "20:00 PM"
+      ],
       "experiencia": "12 años"
     }
   ],
-
   "turnos": [
     {
       "id": 1,
@@ -215,6 +224,48 @@
       "nombreUsuario": "admin",
       "email": "admin@rollingvet.com",
       "password": "123456aA"
+    }
+  ],
+  "servicios": [
+    {
+      "id": 1,
+      "nombre": "Alimentación y Asesoramiento Nutricional",
+      "veterinario": "Dr. Juan Pérez",
+      "precio": 3000,
+      "img": "https://images.pexels.com/photos/7310213/pexels-photo-7310213.jpeg",
+      "descripcion": "Ofrecemos asesoramiento nutricional personalizado para garantizar una alimentación saludable para tu mascota."
+    },
+    {
+      "id": 2,
+      "nombre": "Vacunación y Control de Enfermedades",
+      "veterinario": "Dr. Juan Pérez",
+      "precio": 3500,
+      "img": "https://images.pexels.com/photos/5863311/pexels-photo-5863311.jpeg",
+      "descripcion": "Mantenemos a tu mascota protegida con nuestro programa de vacunación y control de enfermedades."
+    },
+    {
+      "id": 3,
+      "nombre": "Cirugías y Procedimientos Quirúrgicos",
+      "veterinario": "Dra. Ana González",
+      "precio": 7300,
+      "img": "https://images.pexels.com/photos/4421494/pexels-photo-4421494.jpeg",
+      "descripcion": "Realizamos cirugías y procedimientos quirúrgicos con la máxima atención y cuidado para tu mascota."
+    },
+    {
+      "id": 4,
+      "nombre": "Baño, Peluquería o Corte de Uñas",
+      "veterinario": "Dra. Ana González",
+      "precio": 2500,
+      "img": "https://images.pexels.com/photos/6131152/pexels-photo-6131152.jpeg",
+      "descripcion": "Mantén a tu mascota con un aspecto impecable con nuestros servicios de baño, peluquería y corte de uñas."
+    },
+    {
+      "id": 5,
+      "nombre": "Consultas Especializadas",
+      "veterinario": "Dra. Ana González",
+      "precio": 60.0,
+      "img": "https://images.pexels.com/photos/7469233/pexels-photo-7469233.jpeg",
+      "descripcion": "Ofrecemos consultas especializadas para abordar problemas de salud específicos de tu mascota."
     }
   ]
 }
