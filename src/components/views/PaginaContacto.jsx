@@ -10,7 +10,7 @@ const PaginaContacto = () => {
     return (
         <>
             <section className="bg_contacto d-flex flex-column seccionPrincipal text-center">
-                            <h1 className="pt-5 margen_negativo">Aquí encontraras diferentes medios para poder contactarte con nosotros</h1>
+                            <h1 className="pt-5 px-1 margen_negativo">Aquí encontraras diferentes medios para poder contactarte con nosotros</h1>
                 <div className="row col-12 mascotas">
                     <img className="imagen_mascotas animate__animated animate__fadeInUp" src={mascotas} alt="Imagen mascotas" />
                 </div>
