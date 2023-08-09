@@ -6,8 +6,9 @@ const ItemServicio = ({ servicio }) => {
     <tr>
       <td>Consulta</td>
       <td>Dr. que ofrece el Servicio</td>
-      <td>Descripción del servicio</td>
+      <td>URL de la imágen del Servicio</td>
       <td>$ Precio</td>
+      <td>Descripción del servicio</td>
       <td>
         <div className="d-flex gap-2 justify-content-center">
           <Link

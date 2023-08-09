@@ -6,7 +6,7 @@ import ItemServicio from "./servicios/ItemServicio";
 
 const AdminServicios = () => {
     const [servicios, setServicios] = useState([]);
-    const [servicio, setServicio] = useState([]);
+    const [servicio, setServicio] = useState("");
   return (
     <Container className="my-5">
       <h1 className="display-3">Administrador de Servicios</h1>
@@ -36,8 +36,9 @@ const AdminServicios = () => {
               <tr>
                 <th>Nombre</th>
                 <th>Veterinario</th>
-                <th>Descripción</th>
+                <th>URL Imágen</th>
                 <th>Precio</th>
+                <th>Descripción</th>
                 <th>Acciones</th>
               </tr>
             </thead>
