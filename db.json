@@ -263,7 +263,7 @@
       "id": 5,
       "nombre": "Consultas Especializadas",
       "veterinario": "Dra. Ana González",
-      "precio": 60.0,
+      "precio": 60,
       "img": "https://images.pexels.com/photos/7469233/pexels-photo-7469233.jpeg",
       "descripcion": "Ofrecemos consultas especializadas para abordar problemas de salud específicos de tu mascota."
     }
