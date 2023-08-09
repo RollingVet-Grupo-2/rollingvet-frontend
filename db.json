@@ -237,8 +237,8 @@
     },
     {
       "nombre_servicio": "Vacunación y Control",
-      "veterinario_servicio": "Dra. Ana González",
-      "precio_servicio": 2500,
+      "veterinario_servicio": "Dr. Juan Pérez",
+      "precio_servicio": "2500",
       "img_servicio": "https://images.pexels.com/photos/5863311/pexels-photo-5863311.jpeg",
       "descripcion_servicio": "Mantenemos a tu mascota protegida con nuestro programa de vacunación y control de enfermedades.",
       "id": 2

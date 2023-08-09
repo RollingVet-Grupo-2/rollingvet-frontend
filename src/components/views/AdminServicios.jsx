@@ -7,26 +7,41 @@ import { obtenerServicios } from "../helpers/queries";
 import Swal from "sweetalert2";
 
 const AdminServicios = () => {
-    const [servicios, setServicios] = useState([]);
-    useEffect(()=>{
-      //consulta a la api
-      obtenerServicios().then((respuesta)=>{
-        if(respuesta){
-          setServicios(respuesta)
-        }else{
-          Swal.fire({
-            title: "Oops! Lo siento!",
-            text: "No se pudo obtener la lista de servicios. Intente nuevamente más tarde.",
-            icon: "error",
-            iconColor: "#fb3154",
-            background: "#062e32",
-            color: "#41e9a6",
-            confirmButtonColor: "#41e9a6",
-          });
-        }
-      })
-      //guardar en el state
-    },[])
+  const [servicios, setServicios] = useState([]);
+
+  useEffect(() => {
+    obtenerServicios().then((respuesta) => {
+      if (respuesta) {
+        setServicios(respuesta);
+      } else {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No se pudo obtener la lista de servicios. Intente nuevamente más tarde.",
+          icon: "error",
+          iconColor: "#fb3154",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
+    });
+  }, []);
+
+  const mostrarServicios = (servicios) => {
+    if (servicios.length === 0) {
+      return (
+        <tr>
+          <td className="lead" colSpan={6}>
+            No hay servicios registrados.
+          </td>
+        </tr>
+      );
+    }
+
+    return servicios.map((servicio) => (
+      <ItemServicio key={servicio.id} servicio={servicio} setServicios={setServicios} />
+    ));
+  };
 
   return (
     <Container className="my-5">
@@ -63,11 +78,7 @@ const AdminServicios = () => {
                 <th>Acciones</th>
               </tr>
             </thead>
-            <tbody>
-              {
-                servicios.map((servicio)=><ItemServicio key={servicio.id} servicio={servicio} setServicios={setServicios}/>)
-              }
-              </tbody>
+            <tbody>{mostrarServicios(servicios)}</tbody>
           </Table>
         </Row>
       </Container>
