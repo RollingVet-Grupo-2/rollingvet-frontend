@@ -11,7 +11,7 @@ const ItemMascotaModal = ({ mascota }) => {
 
   return (
     <>
-      <Button variant="success" onClick={handleShow} className="mx-md-2">
+      <Button variant="secondary" onClick={handleShow} className="mx-md-2">
         {mascota.nombreMascota}
       </Button>
 
@@ -22,25 +22,25 @@ const ItemMascotaModal = ({ mascota }) => {
         <Modal.Body>
           <Row className="row-cols-1 row-cols-md-2">
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
                 Nombre
               </h5>
               <p className="lead">{mascota.nombreMascota}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
                 Edad
               </h5>
               <p className="lead">{mascota.edadMascota}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
                 Especie
               </h5>
               <p className="lead">{mascota.especie}</p>
             </Col>
             <Col className="text-center">
-              <h5 className="text-success-emphasis fw-bold text-decoration-underline">
+              <h5 className="text-primary-emphasis fw-bold text-decoration-underline">
                 Raza
               </h5>
               <p className="lead">{mascota.raza}</p>
@@ -48,7 +48,11 @@ const ItemMascotaModal = ({ mascota }) => {
           </Row>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-success" onClick={handleClose}>
+          <Button
+            variant="secondary"
+            className="border border-dark border-2 "
+            onClick={handleClose}
+          >
             OK
           </Button>
         </Modal.Footer>
