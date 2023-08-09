@@ -21,6 +21,11 @@ const AdminServicios = () => {
                 Agregar <b>SERVICIO</b>
               </Button>
             </Link>
+            <Link to={"/administrador/editar-servicio"} className="w-100">
+              <Button variant="primary" size="lg" className="p-3 rounded-4 w-100">
+                Agregar <b>SERVICIO</b>
+              </Button>
+            </Link>
           </Col>
           <Col>
             <img src={imgAdminServicio} alt="Servicio" className="img-fluid" />
