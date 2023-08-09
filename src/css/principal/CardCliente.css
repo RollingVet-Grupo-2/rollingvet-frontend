@@ -5,6 +5,18 @@
     border-bottom: var(--bs-card-border-width) solid var(--bs-card-border-color);
     height: 24rem;
 }
+.tituloCardCliente{
+    text-align: start;
+}
+
+@media screen and (max-width: 767px){
+    .avatarMascota{
+        height: 16rem;
+    }
+    .tituloCardCliente{
+        text-align: center;
+    }
+}
 @media screen and (min-width: 768px){
     .avatarCliente{
         margin-top: 0;
@@ -12,6 +24,7 @@
     }
     .avatarMascota{
         width: 200%;
+        height: 24rem;
         border-bottom: none;
         border-right: var(--bs-card-border-width) solid var(--bs-card-border-color);
     }
