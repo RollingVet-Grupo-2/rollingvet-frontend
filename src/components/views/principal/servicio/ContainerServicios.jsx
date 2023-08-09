@@ -8,14 +8,28 @@ import imgVacuna from "../../../../assets/img/Principal/CardServicio/servicio_Va
 
 const ContainerServicios = () => {
   return (
-      <Row xs={1} md={2} className="g-3">
-        <CardServicio imgServicio={imgConsulta} nombreServicio={"Consultas veterinarias especializadas"}></CardServicio>
-        <CardServicio imgServicio={imgVacuna} nombreServicio={"Vacunación y control de enfermedades"}></CardServicio>
-        <CardServicio imgServicio={imgCirugia} nombreServicio={"Cirugías y procedimientos quirúrgicos"}></CardServicio>
-        <CardServicio
-          imgServicio={imgAlimentacion}
-          nombreServicio={"Alimentación y asesoramiento nutricional"}></CardServicio>
-      </Row>
+    <Row xs={1} md={2} className="g-3">
+      <CardServicio
+        imgServicio={imgConsulta}
+        nombreServicio={"Consultas veterinarias especializadas"}
+        descripcionServicio={"Recibe atención veterinaria personalizada y resuelve cualquier duda o problema que tenga tu mascota."}
+      />
+      <CardServicio
+        imgServicio={imgVacuna}
+        nombreServicio={"Vacunación y control de enfermedades"}
+        descripcionServicio={"Mantén a tu mascota protegida contra enfermedades con nuestro servicio de vacunación."}
+      />
+      <CardServicio
+        imgServicio={imgCirugia}
+        nombreServicio={"Cirugías y procedimientos quirúrgicos"}
+        descripcionServicio={"Realizamos cirugías con los más altos estándares de cuidado y seguridad."}
+      />
+      <CardServicio
+        imgServicio={imgAlimentacion}
+        nombreServicio={"Alimentación y asesoramiento nutricional"}
+        descripcionServicio={"Te proporcionamos recomendaciones personalizadas para mantener a tu compañero sano."}
+      />
+    </Row>
   );
 };
 
