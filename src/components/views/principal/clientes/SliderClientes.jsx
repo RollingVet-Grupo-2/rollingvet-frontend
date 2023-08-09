@@ -6,15 +6,14 @@ import imgCliente2 from "../../../../assets/img/Principal/CardCliente/clientes/c
 import imgMascotaCliente2 from "../../../../assets/img/Principal/CardCliente/mascotas/cliente_mascota_Gato1.jpg";
 import imgCliente3 from "../../../../assets/img/Principal/CardCliente/clientes/cliente3.png";
 import imgMascotaCliente3 from "../../../../assets/img/Principal/CardCliente/mascotas/cliente_mascota_Perro2.jpg";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import NavegacionSlider from "../producto/NavegacionSlider";
-import '../../../../css/principal/cardCliente.css'
+import "../../../../css/principal/CardCliente.css";
 
 const SliderClientes = () => {
-
   return (
     <Container className="py-3">
       <Swiper
@@ -29,8 +28,12 @@ const SliderClientes = () => {
           delay: 6000,
           disableOnInteraction: false,
         }}
-        modules={[Navigation, Autoplay]}>
-        <div slot="container-end" className="w-100 d-flex justify-content-center gap-2">
+        modules={[Navigation, Autoplay]}
+      >
+        <div
+          slot="container-end"
+          className="w-100 d-flex justify-content-center gap-2"
+        >
           <NavegacionSlider />
         </div>
         <SwiperSlide className="h-auto">
@@ -42,7 +45,8 @@ const SliderClientes = () => {
             imgMascotaCliente={imgMascotaCliente1}
             comentarioCliente={`Gracias a RollingVet, la salud de Luna ha mejorado significativamente. 
             La facilidad para reservar citas y la atención personalizada que recibimos han hecho que confiemos plenamente en este servicio.
-              ¡Recomendaría RollingVet a todos los dueños de mascotas sin dudarlo!`}></CardCliente>
+              ¡Recomendaría RollingVet a todos los dueños de mascotas sin dudarlo!`}
+          ></CardCliente>
         </SwiperSlide>
         <SwiperSlide className="h-auto">
           <CardCliente
@@ -54,7 +58,8 @@ const SliderClientes = () => {
             comentarioCliente={`RollingVet ha sido un verdadero salvavidas para el cuidado de Simba. 
             La comodidad de poder reservar citas desde casa y recibir atención veterinaria de calidad nos ha brindado tranquilidad. 
             Estamos agradecidos por el profesionalismo y el trato amable que siempre recibimos. 
-            Simba está más feliz y saludable que nunca`}></CardCliente>
+            Simba está más feliz y saludable que nunca`}
+          ></CardCliente>
         </SwiperSlide>
         <SwiperSlide className="h-auto">
           <CardCliente
@@ -66,7 +71,8 @@ const SliderClientes = () => {
             comentarioCliente={`RollingVet ha sido una excelente elección para el cuidado de Rocky. 
             Su servicio de consultas veterinarias especializadas fue fundamental para el diagnóstico y tratamiento preciso de mi perro. 
             Además, el programa de vacunación personalizado ha mantenido a Rocky protegido y saludable. 
-            ¡Recomiendo a todos los dueños de mascotas este servicio confiable y profesional`}></CardCliente>
+            ¡Recomiendo a todos los dueños de mascotas este servicio confiable y profesional`}
+          ></CardCliente>
         </SwiperSlide>
       </Swiper>
     </Container>

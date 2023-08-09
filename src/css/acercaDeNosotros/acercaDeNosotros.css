@@ -1,21 +1,22 @@
 .heroSection_container {
-    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
-    height: calc(100vh - 71.792px);
-    background-size: cover;
-    background-attachment: fixed;
-    margin: 0 auto;
-    max-height: 1400px;
+  background-image: url("../../assets/acercaDeNosotros/heroImageAboutUs.jpg");
+  height: calc(100vh - 71.792px);
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0 auto;
+  max-height: 1400px;
 }
 #app {
-    background-color: rgb(34, 34, 34);
+  background-color: rgb(34, 34, 34);
 }
 .titleAboutUs {
-    font-size: 5.5em;
-    animation: titleAnimation 1s alternate infinite;
+  font-size: 5.5em;
+  animation: titleAnimation 1s alternate infinite;
 }
-.logo{
-    width: 30px;
+.logo {
+  width: 30px;
 }
+
 .itemRedSocial{
     transition: all .3s ease;
 }
@@ -23,26 +24,26 @@
     transform: scale(1.06);
     background-color: rgb(239, 239, 239);
 }
-@media screen and (max-width:991px) {
-    .titleAboutUs {
-        font-size: 4em;
-    }
+@media screen and (max-width: 991px) {
+  .titleAboutUs {
+    font-size: 4em;
+  }
 }
-@media screen and (max-width:768px) {
-    .titleAboutUs {
-        font-size: 2.5em;
-    }
-    .heroSection_container {
-        background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
-        height: calc(70vh - 71.792px);
-    }
+@media screen and (max-width: 768px) {
+  .titleAboutUs {
+    font-size: 2.5em;
+  }
+  .heroSection_container {
+    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
+    height: calc(70vh - 71.792px);
+  }
 }
-@media screen and (max-width:576px) {
-    .titleAboutUs {
-        font-size: 1.5em;
-    }
-    .heroSection_container {
-        background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
-        height: calc(50vh - 71.792px);
-    }
+@media screen and (max-width: 576px) {
+  .titleAboutUs {
+    font-size: 1.5em;
+  }
+  .heroSection_container {
+    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
+    height: calc(50vh - 71.792px);
+  }
 }
