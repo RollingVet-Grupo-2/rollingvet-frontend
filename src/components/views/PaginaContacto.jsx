@@ -4,6 +4,7 @@ import logowsp from '../../assets/img/paginaContacto/wh38f34e-whatsapp-logo-file
 import '../../css/pagContacto.css';
 import mascotas from '../../assets/img/paginaContacto/pngegg (3).png';
 import FormularioContacto from "./FormularioContacto";
+import { Link } from "react-router-dom";
 
 const PaginaContacto = () => {
     return (
@@ -32,16 +33,22 @@ const PaginaContacto = () => {
                 <article className="container row">
                     <h3 className="mb-5 color_secundario">Estamos disponibles las 24 horas, todos los días.</h3>
                     <div className="col-md-4">
-                    <i className="fs-4 bi bi-envelope-at"></i>
+                    <Link to={"*"}>
+                    <i className="fs-4 bi bi-envelope-at text-secondary"></i>
                         <p>rolling_vet@rolling.com</p>
+                    </Link>
                     </div>
                     <div className="col-md-4 my-5 my-md-0">
-                    <i className="fs-4 bi bi-instagram"></i>
+                    <Link to={"*"}>
+                    <i className="fs-4 bi bi-instagram text-secondary"></i>
                         <p>@rolling_vet</p>
+                    </Link>
                     </div>
                     <div className="col-md-4">
-                    <i className="fs-4 bi bi-telephone-outbound"></i>
-                        <p>381-6543210</p>
+                    <Link to={"*"}>
+                    <i className="fs-4 bi bi-telephone-outbound text-secondary"></i>
+                    <p>381-6543210</p>
+                    </Link>
                     </div>
                 </article>
             </section>

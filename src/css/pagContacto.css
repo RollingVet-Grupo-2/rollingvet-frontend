@@ -49,7 +49,7 @@
 /****** Formulario de contacto ******/
 
 .bordeSuperior{
-    border-top: solid 5px #fff;
+    border-top: solid 5px var(--bs-secondary);
     border-radius: 5px;
 }
 
