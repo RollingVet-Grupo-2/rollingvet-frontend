@@ -2,6 +2,7 @@ const API_PACIENTES = import.meta.env.VITE_API_PACIENTES;
 const API_USUARIO = import.meta.env.VITE_API_USUARIO;
 const API_TURNOS = import.meta.env.VITE_API_TURNOS;
 const API_VETERINARIOS = import.meta.env.VITE_API_VETERINARIOS;
+const API_SERVICIOS = import.meta.env.VITE_API_SERVICIOS;
 
 export const crearPaciente = async (paciente) => {
   try {
@@ -167,6 +168,16 @@ export const obtenerMascotas = async () => {
     const respuesta = await fetch(API_PACIENTES);
     const listaDeMascotas = await respuesta.json();
     return listaDeMascotas;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const obtenerServicios = async () => {
+  try {
+    const respuesta = await fetch(API_SERVICIOS);
+    const listaDeServicios = await respuesta.json();
+    return listaDeServicios;
   } catch (error) {
     console.log(error);
   }

@@ -1,12 +1,33 @@
 import { Button, Col, Container, Row, Table } from "react-bootstrap";
 import imgAdminServicio from "../../assets/img/Principal/principal_Ilustracion1.svg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ItemServicio from "./servicios/ItemServicio";
+import { obtenerServicios } from "../helpers/queries";
+import Swal from "sweetalert2";
 
 const AdminServicios = () => {
     const [servicios, setServicios] = useState([]);
-    const [servicio, setServicio] = useState("");
+    useEffect(()=>{
+      //consulta a la api
+      obtenerServicios().then((respuesta)=>{
+        if(respuesta){
+          setServicios(respuesta)
+        }else{
+          Swal.fire({
+            title: "Oops! Lo siento!",
+            text: "No se pudo obtener la lista de servicios. Intente nuevamente más tarde.",
+            icon: "error",
+            iconColor: "#fb3154",
+            background: "#062e32",
+            color: "#41e9a6",
+            confirmButtonColor: "#41e9a6",
+          });
+        }
+      })
+      //guardar en el state
+    },[])
+
   return (
     <Container className="my-5">
       <h1 className="display-3">Administrador de Servicios</h1>
@@ -42,7 +63,11 @@ const AdminServicios = () => {
                 <th>Acciones</th>
               </tr>
             </thead>
-            <tbody><ItemServicio servicio={servicio}></ItemServicio></tbody>
+            <tbody>
+              {
+                servicios.map((servicio)=><ItemServicio key={servicio.id} servicio={servicio}/>)
+              }
+              </tbody>
           </Table>
         </Row>
       </Container>
