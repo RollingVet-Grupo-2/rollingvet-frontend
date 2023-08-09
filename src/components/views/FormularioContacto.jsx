@@ -87,6 +87,7 @@ const FormularioContacto = () => {
                                 </Form.Label>
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end mb-1 border-0"
+                                    maxLength={31}
                                     type="text"
                                     {...register("nombreContacto", {
                                         minLength: {
@@ -118,8 +119,13 @@ const FormularioContacto = () => {
                                 </Form.Label>
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end border-0"
+                                    maxLength={36}
                                     type="text"
                                     {...register("emailContacto", {
+                                        maxLength: {
+                                            value: 35,
+                                            message: "El correo electronico debe tener como maximo 35 caracteres",
+                                        },
                                         required:
                                             "Debes ingresar el correo electronico. Este campo es obligatorio.",
                                         pattern: {
@@ -141,7 +147,12 @@ const FormularioContacto = () => {
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end border-0"
                                     type="text"
+                                    maxLength={21}
                                     {...register("telefonoContacto", {
+                                        maxLength: {
+                                            value: 20,
+                                            message: "El numero de telefono debe tener como maximo 20 dígitos",
+                                        },
                                         required:
                                             "Debes ingresar un número de telefono. Este campo es obligatorio.",
                                         pattern: {
@@ -168,6 +179,7 @@ const FormularioContacto = () => {
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end"
                                     as="textarea"
                                     type="text"
+                                    maxLength={301}
                                     {...register("consultaContacto", {
                                         minLength: {
                                             value: 10,
