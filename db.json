@@ -236,9 +236,9 @@
       "descripcion_servicio": "Ofrecemos asesoramiento nutricional personalizado para garantizar una alimentación saludable para tu mascota."
     },
     {
-      "nombre_servicio": "Vacunación y Control  aaaaaaa",
+      "nombre_servicio": "Vacunación y Control",
       "veterinario_servicio": "Dra. Ana González",
-      "precio_servicio": "1561651",
+      "precio_servicio": 2500,
       "img_servicio": "https://images.pexels.com/photos/5863311/pexels-photo-5863311.jpeg",
       "descripcion_servicio": "Mantenemos a tu mascota protegida con nuestro programa de vacunación y control de enfermedades.",
       "id": 2
@@ -262,42 +262,10 @@
     {
       "nombre_servicio": "Consultas Especializadas",
       "veterinario_servicio": "Dra. Ana González",
-      "precio_servicio": "6000",
+      "precio_servicio": 6000,
       "img_servicio": "https://images.pexels.com/photos/7469233/pexels-photo-7469233.jpeg",
       "descripcion_servicio": "Ofrecemos consultas especializadas para abordar problemas de salud específicos de tu mascota.",
       "id": 5
-    },
-    {
-      "nombre_servicio": "Baño y peinado MODIFICADO",
-      "veterinario_servicio": "Dr. Juan Pérez",
-      "precio_servicio": "5000",
-      "img_servicio": "https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg",
-      "descripcion_servicio": "Una descripcion MODIFICADA",
-      "id": 6
-    },
-    {
-      "nombre_servicio": "Baño y peinado MODIFICADA",
-      "veterinario_servicio": "Dr. Juan Pérez",
-      "precio_servicio": "5000",
-      "img_servicio": "https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg",
-      "descripcion_servicio": "Una descripcion nueva MODIFICADAMODIFICADAMODIFICADA",
-      "id": 7
-    },
-    {
-      "nombre_servicio": "Baño y peinado",
-      "veterinario_servicio": "Dr. Juan Pérez",
-      "precio_servicio": "5000",
-      "img_servicio": "https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg",
-      "descripcion_servicio": "Una descripcion nueva",
-      "id": 8
-    },
-    {
-      "nombre_servicio": "Bañ",
-      "veterinario_servicio": "Dr. Juan Pérez",
-      "precio_servicio": "90000",
-      "img_servicio": "https://images.pexels.com/photos/485294/pexels-photo-485294.jpeg",
-      "descripcion_servicio": "jk.bjklbjk.",
-      "id": 9
     }
   ]
 }

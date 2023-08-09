@@ -3,8 +3,11 @@ import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearServicio, obtenerVeterinarios } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CrearServicio = () => {
+  const navegacion = useNavigate();
+
   const [veterinarios, setVeterinarios] = useState([]);
 
   useEffect(() => {
@@ -19,7 +22,6 @@ const CrearServicio = () => {
   } = useForm();
 
   const onSubmit = (servicioNuevo) => {
-    console.log(servicioNuevo);
     crearServicio(servicioNuevo).then((respuesta) => {
       if (respuesta.status === 201) {
         Swal.fire({
@@ -32,6 +34,7 @@ const CrearServicio = () => {
           confirmButtonColor: "#41e9a6",
         });
         reset();
+        navegacion("/administrador/servicios");
       } else {
         Swal.fire({
           title: "Oops! Lo siento!",
@@ -126,8 +129,7 @@ const CrearServicio = () => {
                 min: {
                   value: 0,
                   message: "El precio del servicio mínimo es de $0.",
-                },
-                validate: (value) => value.trim() !== "" || "No puedes ingresar solo espacios en blanco.",
+                }
               })}
               isInvalid={errors.precio_servicio}
             />

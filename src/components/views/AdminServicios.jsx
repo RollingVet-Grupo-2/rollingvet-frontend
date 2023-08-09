@@ -65,7 +65,7 @@ const AdminServicios = () => {
             </thead>
             <tbody>
               {
-                servicios.map((servicio)=><ItemServicio key={servicio.id} servicio={servicio}/>)
+                servicios.map((servicio)=><ItemServicio key={servicio.id} servicio={servicio} setServicios={setServicios}/>)
               }
               </tbody>
           </Table>

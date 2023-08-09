@@ -50,7 +50,6 @@ const EditarServicio = () => {
       };
      
       const onSubmit = (servicioEditado) => {
-        console.log(servicioEditado);
         editarServicio(servicioEditado,id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire({
