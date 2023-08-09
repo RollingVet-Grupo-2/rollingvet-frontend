@@ -28,7 +28,7 @@ const FormPlan = ({onHide}) => {
         <Col>
           <Form.Group className="mb-3" controlId="formNombre">
             <Form.Label>Nombre</Form.Label>
-            <Form.Control
+            <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
               placeholder="Ingresa tu nombre"
               {...register("nombre", {
@@ -56,7 +56,7 @@ const FormPlan = ({onHide}) => {
         <Col>
           <Form.Group className="mb-3" controlId="formApellido">
             <Form.Label>Apellido</Form.Label>
-            <Form.Control
+            <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
               placeholder="Ingresa tu apellido"
               {...register("apellido", {
@@ -83,7 +83,7 @@ const FormPlan = ({onHide}) => {
       </Row>
       <Form.Group className="mb-3" controlId="formEmail">
         <Form.Label>Email</Form.Label>
-        <Form.Control
+        <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="email"
           placeholder="Ej: usuario@dominio.com."
           {...register("email", {
@@ -100,7 +100,7 @@ const FormPlan = ({onHide}) => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formTel">
         <Form.Label>Teléfono</Form.Label>
-        <Form.Control
+        <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="tel"
           placeholder="Ej: 3817557733"
           {...register("tel", {
@@ -125,7 +125,7 @@ const FormPlan = ({onHide}) => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="formInfo">
         <Form.Label>Información a solicitar</Form.Label>
-        <Form.Control
+        <Form.Control className="bg-primary-subtle bg-opacity-25"
           as="textarea"
           rows={3}
           placeholder="Puedes escribir tu solicitud aquí..."
