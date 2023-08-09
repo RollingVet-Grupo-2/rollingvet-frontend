@@ -123,12 +123,12 @@ const FormPlan = ({onHide}) => {
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="email"
           name="email_usuario"
-          placeholder="Ej: usuario@dominio.com."
+          placeholder="Ej: usuario@dominio.com"
           {...register("email_usuario", {
             required: "El email es obligatorio.",
             pattern: {
               value:
-                /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+              /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
               message: "El email debe tener el formato 'usuario@dominio.com'",
             },
           })}
