@@ -4,6 +4,6 @@
     min-height: 100vh;
 }
 
-.SeccionPrincipal{
-    flex-grow: 1
+.seccionPrincipal{
+    flex-grow: 1;
 }
