@@ -1,14 +1,53 @@
-.contenedor_formulario{
+.contenedor_login{
     position: relative;
     background-color: #BDEAD8;
+    background-image: url("../assets/img/login/fonfo4.png");
+    background-position: center;
+  
 }
 
 .fondo_huellas{
     background-color: aliceblue;
-    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
+    background-image: url("../assets/img/login/huellasPatitas.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
 }
 
 
+.boton_login {
+    background: #fff;
+    color: #7d1ddda4;
+    border: 2px solid #a75ef0a4;
+    padding: 6px 10px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.boton_login:hover {
+    color: #fff;
+    background: #a75ef0a4;
+    border-color: #a75ef0a4;
+}
+
+.boton_login::after {
+    content: "";
+    background: #a75ef0a4;
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.3s ease;
+}
+.boton_login:hover::after {
+    transition: all 0.3s ease-out;
+    transform: skewX(-45deg) scale(1, 1);
+}
