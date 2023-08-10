@@ -1,17 +1,18 @@
-import { Row } from "react-bootstrap";
+import { Button, Row } from "react-bootstrap";
 import CardServicio from "./CardServicio";
-
-import imgConsulta from "../../../../assets/img/Principal/CardServicio/servicio_Consulta.jpg";
-import imgAlimentacion from "../../../../assets/img/Principal/CardServicio/servicio_Alimentacion.jpg";
-import imgCirugia from "../../../../assets/img/Principal/CardServicio/servicio_Cirugia.jpg";
-import imgVacuna from "../../../../assets/img/Principal/CardServicio/servicio_Vacuna.jpg";
 import { useEffect, useState } from "react";
 import { obtenerServicios } from "../../../helpers/queries";
+import {Swiper, SwiperSlide} from "swiper/react";
+import { Navigation, EffectCoverflow } from "swiper/modules";
+import "swiper/css";
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import NavegacionSlider from "../producto/NavegacionSlider";
 
 const ContainerServicios = () => {
   const [servicios, setServicios] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     obtenerServicios().then((respuesta) => {
       if (respuesta) {
         setServicios(respuesta);
@@ -27,36 +28,51 @@ const ContainerServicios = () => {
         });
       }
     });
-  },[])
+  }, []);
   return (
-    <Row xs={1} md={2} className="g-3">
-      {servicios.map((servicio) => (<CardServicio
-        key={servicio.id}
-        imgServicio={servicio.img_servicio}
-        nombreServicio={servicio.nombre_servicio}
-        descripcionServicio={servicio.descripcion_servicio}
-      />))}
-      {/* <CardServicio
-        imgServicio={imgConsulta}
-        nombreServicio={"Consultas veterinarias especializadas"}
-        descripcionServicio={"Recibe atención veterinaria personalizada y resuelve cualquier duda o problema que tenga tu mascota."}
-      />
-      <CardServicio
-        imgServicio={imgVacuna}
-        nombreServicio={"Vacunación y control de enfermedades"}
-        descripcionServicio={"Mantén a tu mascota protegida contra enfermedades con nuestro servicio de vacunación."}
-      />
-      <CardServicio
-        imgServicio={imgCirugia}
-        nombreServicio={"Cirugías y procedimientos quirúrgicos"}
-        descripcionServicio={"Realizamos cirugías con los más altos estándares de cuidado y seguridad."}
-      />
-      <CardServicio
-        imgServicio={imgAlimentacion}
-        nombreServicio={"Alimentación y asesoramiento nutricional"}
-        descripcionServicio={"Te proporcionamos recomendaciones personalizadas para mantener a tu compañero sano."}
-      /> */}
-    </Row>
+    <Swiper
+    effect={"coverflow"}
+    grabCursor={true}
+    autoplay={true}
+    loop={true}
+    centeredSlides={true}
+    slidesPerView={1}
+    spaceBetween={68}
+    initialSlide={0}
+    coverflowEffect={{
+      rotate: 0,
+      stretch: 50,
+      depth: 150,
+      modifier: 1,
+      slideShadows: true,
+    }}
+    navigation={{
+      nextEl: ".plan-swiper-button-next",
+      prevEl: ".plan-swiper-button-prev",
+    }}
+    modules={[EffectCoverflow,Navigation]}
+    breakpoints={{
+      576: {
+        slidesPerView: 1
+      },
+      768: {
+        slidesPerView: 2
+      }
+    }}>
+      <div slot="container-end" className="w-100 d-flex gap-2 justify-content-center align-items-center">
+        <NavegacionSlider></NavegacionSlider>
+      </div>
+      {servicios.map((servicio) => (
+        <SwiperSlide key={servicio.id}>
+          <CardServicio
+            key={servicio.id}
+            imgServicio={servicio.img_servicio}
+            nombreServicio={servicio.nombre_servicio}
+            descripcionServicio={servicio.descripcion_servicio}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
