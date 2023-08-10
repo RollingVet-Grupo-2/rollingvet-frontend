@@ -154,6 +154,9 @@ const AcercaDeNosotros = () => {
                             esperamos grandes cosas de cada uno de nosotros de
                             cara al futuro.
                         </p>
+                        <p className="fs-4">
+                            Este sitio se consiguió con mucho esfuerzo, dedicación e investigación, no quedan dudas de que cada unos de los miembros de este equipo va a ganarse su lugar a donde sea que vaya. 
+                        </p>
                     </Col>
                     <Col md={6}>
                         <img

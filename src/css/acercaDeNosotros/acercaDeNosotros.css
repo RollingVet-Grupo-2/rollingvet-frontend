@@ -49,4 +49,6 @@
         background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
         height: calc(50vh - 71.792px);
     }
+    .imgAcercaDeNosotros{
+    }
 }

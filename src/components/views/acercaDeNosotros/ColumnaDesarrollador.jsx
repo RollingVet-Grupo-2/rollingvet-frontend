@@ -13,7 +13,7 @@ const ColumnaDesarrollador = ({
                     variant="top"
                     src={imagenDesarrollador}
                     style={{
-                        height: "350px",
+                        height: "400px",
                         objectFit: "cover",
                         objectPosition:"center"
                     }}
