@@ -17,6 +17,17 @@
   width: 30px;
 }
 
+.itemRedSocial{
+    transition: all .3s ease;
+}
+.itemRedSocial:hover{
+    transform: scale(1.06);
+    background-color: var(--bs-primary);
+}
+.columnaDesarrollador {
+    /* background-image: url('../../../../assets/img/paginaContacto/huellasPatitas.png'); */
+    background-image: url("../../assets/img/paginaContacto/huellasPatitas.png");
+}
 @media screen and (max-width: 991px) {
   .titleAboutUs {
     font-size: 4em;
@@ -27,7 +38,6 @@
     font-size: 2.5em;
   }
   .heroSection_container {
-    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
     height: calc(70vh - 71.792px);
   }
 }
@@ -36,7 +46,7 @@
     font-size: 1.5em;
   }
   .heroSection_container {
-    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
     height: calc(50vh - 71.792px);
   }
 }
+
