@@ -4,21 +4,21 @@
 
 ## Características Destacadas
 
-- *Página Principal:* Explora nuestra página principal y descubre una gama de opciones, desde la información sobre nuestros planes y doctores hasta la posibilidad de comprar productos esenciales para tus mascotas.
-- *Planes de Cuidado:* Descubre nuestros planes de salud personalizables para tus mascotas, diseñados para mantenerlos felices y saludables durante toda su vida.
-- *Doctores Expertos:* Conoce a nuestros doctores altamente calificados y dedicados, listos para brindar el mejor cuidado médico a tus mascotas.
-- *Carrito de Compras:* Nuestra tienda en línea te permite explorar y seleccionar productos para tus mascotas y agregarlos a tu carrito de compras para una experiencia de compra conveniente.
-- *Página de Contacto:* ¿Tienes preguntas o inquietudes? Utiliza nuestra página de contacto para enviarnos tus dudas y consultas. ¡Estamos aquí para ayudarte!
+- ***Página Principal:*** Explora nuestra página principal y descubre una gama de opciones, desde la información sobre nuestros planes y doctores hasta la posibilidad de comprar productos esenciales para tus mascotas.
+- ***Planes de Cuidado:*** Descubre nuestros planes de salud personalizables para tus mascotas, diseñados para mantenerlos felices y saludables durante toda su vida.
+- ***Doctores Expertos:*** Conoce a nuestros doctores altamente calificados y dedicados, listos para brindar el mejor cuidado médico a tus mascotas.
+- ***Carrito de Compras:*** Nuestra tienda en línea te permite explorar y seleccionar productos para tus mascotas y agregarlos a tu carrito de compras para una experiencia de compra conveniente.
+- ***Página de Contacto:*** ¿Tienes preguntas o inquietudes? Utiliza nuestra página de contacto para enviarnos tus dudas y consultas. ¡Estamos aquí para ayudarte!
 
 ## Tecnologías Utilizadas
 
-- *Base de Datos:* Hemos utilizado JSON y MongoDB para almacenar datos relacionados con pacientes y turnos, asegurando un acceso rápido y confiable.
-- *Seguridad:* Implementamos autenticación mediante JSON Web Tokens (JWT) para garantizar la seguridad y privacidad de la información.
-- *Diseño y Estilo:* Nuestra interfaz moderna y atractiva se ha construido utilizando Bootstrap y Bootstrap Icons para una experiencia de usuario excepcional.
-- *Interacción Suave:* Hemos incorporado Framer Motion para crear transiciones y animaciones fluidas, brindando una experiencia más agradable al usuario.
-- *Gestión de Formularios:* Utilizamos React Hook Form para facilitar la validación y gestión de formularios, mejorando la interacción del usuario.
-- *Navegación:* React Router Dom nos ayuda a crear una navegación fluida y sin problemas en toda la plataforma.
-- *Experiencia de Compra Mejorada:* Hemos integrado Swiper para mejorar la navegación y visualización de productos en nuestra tienda en línea.
+- ***Base de Datos:*** Hemos utilizado JSON y MongoDB para almacenar datos relacionados con pacientes y turnos, asegurando un acceso rápido y confiable.
+- ***Seguridad:*** Implementamos autenticación mediante JSON Web Tokens (JWT) para garantizar la seguridad y privacidad de la información.
+- ***Diseño y Estilo:*** Nuestra interfaz moderna y atractiva se ha construido utilizando Bootstrap y Bootstrap Icons para una experiencia de usuario excepcional.
+- ***Interacción Suave:*** Hemos incorporado Framer Motion para crear transiciones y animaciones fluidas, brindando una experiencia más agradable al usuario.
+- ***Gestión de Formularios:*** Utilizamos React Hook Form para facilitar la validación y gestión de formularios, mejorando la interacción del usuario.
+- ***Navegación:*** React Router Dom nos ayuda a crear una navegación fluida y sin problemas en toda la plataforma.
+- ***Experiencia de Compra Mejorada:*** Hemos integrado Swiper para mejorar la navegación y visualización de productos en nuestra tienda en línea.
 
 ## Instalación y Uso
 
