@@ -48,19 +48,6 @@ const Login = ({ usuarioLogueado, setUsuarioLogueado }) => {
   };
 
   if (usuarioLogueado?.nombreUsuario === "admin") {
-    // Swal.fire({
-    //   title: "¡Ya estas logueado como Administrador!",
-    //   text: "Vamos a redirigirte a la pagina de administrador",
-    //   icon: "success",
-    //   iconColor: "#a75ef0a4",
-    //   background: "#062e32",
-    //   color: "#41e9a6",
-    //   confirmButtonColor: "#41e9a6",
-    // });
-    // setTimeout(() => {
-    //   navegacion("/administrador");
-    //   Swal.close();
-    // }, 5000);
     let timerInterval;
     Swal.fire({
       title: "¡Ya estas logueado como Administrador!",
@@ -75,6 +62,7 @@ const Login = ({ usuarioLogueado, setUsuarioLogueado }) => {
         }, 100);
       },
       willClose: () => {
+        navegacion("/administrador");
         clearInterval(timerInterval);
       },
     }).then((result) => {
