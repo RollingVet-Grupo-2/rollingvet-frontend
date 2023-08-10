@@ -7,11 +7,9 @@ const FooterComponent = () => {
             <section className="container py-4 px-0">
                 <div className="row mx-0 gap-4 gap-md-0">
                     <article className="col-md-4">
-                        <img
-                            src={Logo}
-                            alt="Logo RollingVet"
-                            
-                        />
+                        <Link to={"/"}>
+                            <img src={Logo} alt="Logo RollingVet" />
+                        </Link>
                         <div className="d-flex gap-2">
                             <Link to={"*"}>
                                 <div>
@@ -35,10 +33,30 @@ const FooterComponent = () => {
                         <nav className="">
                             <ul className="ps-0">
                                 <li className="d-flex flex-column">
-                                    <NavLink className="links_footer nav-link" to={"/acercaDeNosotros"}>Quiénes somos</NavLink>
-                                    <NavLink className="links_footer nav-link" to={"*"}>Servicios</NavLink>
-                                    <NavLink className="links_footer nav-link" to={"*"}>Medios de pago</NavLink>
-                                    <NavLink className="links_footer nav-link" to={"/contacto"}>Contacto</NavLink>
+                                    <NavLink
+                                        className="links_footer nav-link"
+                                        to={"/acercaDeNosotros"}
+                                    >
+                                        Quiénes somos
+                                    </NavLink>
+                                    <NavLink
+                                        className="links_footer nav-link"
+                                        to={"*"}
+                                    >
+                                        Servicios
+                                    </NavLink>
+                                    <NavLink
+                                        className="links_footer nav-link"
+                                        to={"*"}
+                                    >
+                                        Medios de pago
+                                    </NavLink>
+                                    <NavLink
+                                        className="links_footer nav-link"
+                                        to={"/contacto"}
+                                    >
+                                        Contacto
+                                    </NavLink>
                                 </li>
                             </ul>
                         </nav>
@@ -52,7 +70,7 @@ const FooterComponent = () => {
                             <span className="fs-6">
                                 Lunes a Viernes 8:30 a 13h | 16 a 21h
                             </span>
-                            <span className="fs-6">381 000 0000</span>
+                            <span className="fs-6">381 658035</span>
                         </div>
                     </article>
                 </div>
@@ -64,7 +82,9 @@ const FooterComponent = () => {
             </section>
             <section className="d-flex justify-content-center align-items-center py-3">
                 <h3 className="fs-6">
-                    <Link className="nav-link" to={"/acercaDeNosotros"}>Equipo que desarrolló RollingVet</Link>
+                    <Link className="nav-link" to={"/acercaDeNosotros"}>
+                        Equipo que desarrolló RollingVet
+                    </Link>
                 </h3>
             </section>
         </footer>
