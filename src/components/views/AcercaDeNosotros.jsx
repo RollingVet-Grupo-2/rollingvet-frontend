@@ -167,7 +167,7 @@ const AcercaDeNosotros = () => {
             <section className="py-5 bg-light">
                 <h2 className="pb-5 fs-1 fw-bold text-center">Developers</h2>
                 <Container className="p-md-5">
-                    <Row>
+                    <Row className="justify-content-center">
                         {infoDesarrolladores.map((desarrollador, indice) => (
                             <ColumnaDesarrollador
                                 key={indice}

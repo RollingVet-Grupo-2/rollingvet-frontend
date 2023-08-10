@@ -21,7 +21,11 @@
 }
 .itemRedSocial:hover{
     transform: scale(1.06);
-    background-color: rgb(239, 239, 239);
+    background-color: var(--bs-primary);
+}
+.columnaDesarrollador {
+    /* background-image: url('../../../../assets/img/paginaContacto/huellasPatitas.png'); */
+    background-image: url("../../assets/img/paginaContacto/huellasPatitas.png");
 }
 @media screen and (max-width:991px) {
     .titleAboutUs {
