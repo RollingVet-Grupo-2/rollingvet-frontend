@@ -33,5 +33,15 @@
    
 4. Abre tu navegador y visita `http://localhost:3000` para explorar y disfrutar de la experiencia PetCare.
 
+## Integrantes
+
+- [Luciano Angeleri](https://github.com/LucianoAngeleri)
+- [Nicolas Herrera](https://github.com/herreranicolas)
+- [Esteba Molina](https://github.com/estebanrm1)
+- [Rodrigo Vizcarra](https://github.com/RodrigoVizcarraDev)
+- [Sol Perato](https://github.com/SolPerato)
+
+
+
 ¡Gracias por confiar en RollingVet para el bienestar de tus mascotas! Si tienes preguntas, sugerencias o comentarios, no dudes en ponerte en contacto con nosotros a través de nuestra página de contacto. ¡Esperamos que disfrutes de cada aspecto de nuestra plataforma!
 
