@@ -4,8 +4,9 @@ import "../../css/login.css";
 import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { Button, Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-const Login = ({ setUsuarioLogueado }) => {
+import { useNavigate, useNavigation } from "react-router-dom";
+import { useEffect } from "react";
+const Login = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const {
     register,
     handleSubmit,
@@ -46,8 +47,42 @@ const Login = ({ setUsuarioLogueado }) => {
     });
   };
 
+  if (usuarioLogueado?.nombreUsuario === "admin") {
+    let timerInterval;
+    Swal.fire({
+      title: "¡Ya estas logueado como Administrador!",
+      html: "Seras redirigido a la pagina admnistrador en <b></b> milisegundos.",
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading();
+        const b = Swal.getHtmlContainer().querySelector("b");
+        timerInterval = setInterval(() => {
+          b.textContent = Swal.getTimerLeft();
+        }, 100);
+      },
+      willClose: () => {
+        navegacion("/administrador");
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      if (result.dismiss === Swal.DismissReason.timer) {
+        navegacion("/administrador");
+      }
+    });
+    return (
+      <Container className="seccionPrincipal d-flex flex-column justify-content-center align-items-center py-3">
+        <h1 className="lead display-1 text-center">Ya estas logueado.</h1>
+        <hr className="text-dark" />
+        <h2 className="text-center display-2">
+          Serás redirigido a la página de administrador.
+        </h2>
+      </Container>
+    );
+  }
+
   return (
-    <section className="container-fluid contenedor_login py-5 d-flex">
+    <section className="container-fluid contenedor_login seccionPrincipal py-5 d-flex">
       <Container className="d-flex justify-content-center align-items-center">
         <aside className="col-12 col-md-6 rounded fondo_huellas mx-auto pt-3">
           <h1 className="text-center">Iniciar sesion</h1>
