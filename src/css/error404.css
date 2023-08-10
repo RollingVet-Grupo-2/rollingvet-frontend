@@ -1,3 +1,11 @@
+.bg_huellas{
+    background-image: url('../assets/img/paginaContacto/huellasPatitas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
 /*****  Imagen Perrito  *****/
 
 .perrito_error404 {
@@ -21,16 +29,17 @@
 /*****  Botones  *****/
 
 .contenedor-404 {
-    background-color: #6CD3A2;
-    border-top: 3px solid #a75ef0a4;
+    background-color: var(--bs-primary);
+    border-top: 3px solid #a75ef0;
+    border-bottom: 3px solid #a75ef0;
 }
 
 .boton-error404 {
     background: #fff;
     /* color de fondo */
-    color: #7d1ddda4;
+    color: var(--bs-secondary);
     /* color de fuente */
-    border: 2px solid #a75ef0a4;
+    border: 2px solid #be8af3a4;
     /* tamaño y color de borde */
     padding: 16px 20px;
     border-radius: 3px;
@@ -43,14 +52,14 @@
 
 .boton-error404:hover {
     color: #fff;
-    background: #a75ef0a4;
-    border-color: #a75ef0a4;
+    background: #c797f7;
+    border-color:#c797f7;
     /* color de fuente hover */
 }
 
 .boton-error404::after {
     content: "";
-    background: #a75ef0a4;
+    background: #c797f78e;
     /* color de fondo hover */
     position: absolute;
     z-index: -1;

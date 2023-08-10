@@ -1,10 +1,8 @@
 .nav {
     background-color: #ddd;
 }
-
 .navLinks{
-    box-shadow: 0px 2px 0px #6CD3A2;
+    width: max-content;
+    border-bottom: 3px solid var(--bs-primary);
     font-weight: bold;
-}
-.navLinks:hover{
 }

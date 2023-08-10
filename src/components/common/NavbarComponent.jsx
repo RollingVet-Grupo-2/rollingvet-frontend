@@ -19,13 +19,18 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
             background: "#062e32",
             color: "#41e9a6",
             confirmButtonColor: "#a75ef0a4",
-          });
+        });
         navegacion("/");
     };
 
+    const handleNaegacionAdminPrincipal = () => navegacion("/administrador");
+    const handleNavegacionAdministrarPacientes = () =>
+        navegacion("/administrador/pacientes");
+    const handleNavegacionAdministrarTurnos = () =>
+        navegacion("/administrador/turnos");
     return (
         <Navbar expand="lg" className="nav">
-            <Container>
+            <Container className="py-3">
                 <Navbar.Brand>
                     <Link to={"/"}>
                         <picture>
@@ -44,13 +49,13 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto gap-md-4">
+                    <Nav className="ms-auto gap-1 gap-md-3 gap-xl-4">
                         <NavLink
                             end
                             className={({ isActive }) =>
                                 isActive
-                                    ? "navLinks nav-item nav-link"
-                                    : "nav-item nav-link"
+                                    ? "navLinks nav-item nav-link h-100"
+                                    : "nav-item nav-link h-100"
                             }
                             to={"/"}
                         >
@@ -59,8 +64,8 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                         <NavLink
                             className={({ isActive }) =>
                                 isActive
-                                    ? "navLinks nav-item nav-link"
-                                    : "nav-item nav-link"
+                                    ? "navLinks nav-item nav-link h-100"
+                                    : "nav-item nav-link h-100"
                             }
                             to={"/contacto"}
                         >
@@ -76,33 +81,58 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
                                 }
                                 to={"/login"}
                             >
-                                Login
+                                Iniciar sesión
                             </NavLink>
                         ) : (
                             <>
-                                <Dropdown>
+                                <Dropdown className="my-3 my-md-0">
                                     <Dropdown.Toggle
                                         variant="success"
-                                        id="dropdown-basic"
+                                        id="dropdown-autoclose-true"
                                     >
                                         Administrar
                                     </Dropdown.Toggle>
 
-                                    <Dropdown.Menu variant="dark">
-                                        <Link className="dropdown-item" to={"/administrador"}>
+                                    <Dropdown.Menu
+                                        variant="dark"
+                                        className="position-absolute"
+                                    >
+                                        <Dropdown.Item
+                                            className="dropdown-item  text-light fw-bold border-bottom border-success py-3"
+                                            onClick={
+                                                handleNaegacionAdminPrincipal
+                                            }
+                                        >
                                             Administrar principal
-                                        </Link>
-                                        <Link className="dropdown-item" to={"/administrador/pacientes"}>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item
+                                            className="dropdown-item  text-light fw-bold border-success py-3"
+                                            onClick={
+                                                handleNavegacionAdministrarPacientes
+                                            }
+                                        >
+                                            <i className="bi bi-arrow-return-right me-2 fs-4 text-success"></i>
                                             Administrar pacientes
-                                        </Link>
-                                        <Link className="dropdown-item" to={"/administrador/turnos"}>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item
+                                            className="dropdown-item  text-light fw-bold border-success py-3"
+                                            onClick={
+                                                handleNavegacionAdministrarTurnos
+                                            }
+                                        >
+                                            <i className="bi bi-arrow-return-right me-2 fs-4 text-success"></i>
                                             Administrar turnos
-                                        </Link>
+                                        </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
-                                <Button variant="secondary" onClick={cerrarSesion}>
-                                    Logout
-                                </Button>
+                                <div>
+                                    <Button
+                                        variant="secondary"
+                                        onClick={cerrarSesion}
+                                    >
+                                        Cerrar sesión
+                                    </Button>
+                                </div>
                             </>
                         )}
                     </Nav>
