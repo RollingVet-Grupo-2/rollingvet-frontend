@@ -1,0 +1,8 @@
+.nav {
+    background-color: #ddd;
+}
+.navLinks{
+    width: max-content;
+    border-bottom: 3px solid var(--bs-primary);
+    font-weight: bold;
+}

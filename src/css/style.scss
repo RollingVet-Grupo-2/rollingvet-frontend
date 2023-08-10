@@ -1,0 +1,137 @@
+$body-bg: #ffffff;
+$body-color: #062e32;
+$primary: #6cd3a2;
+$secondary: #f4b693;
+$info: #f2a5bb;
+$danger: #fb3154;
+$warning: #fed14e;
+$success: #35d14c;
+$dark: $body-color;
+$light: $body-bg;
+
+$body-color-dark:$light;
+$body-bg-dark:$dark;
+
+$font-family-base: "Rubik", sans-serif;
+$display-font-family: "Krona One", sans-serif;
+$headings-font-family: "Sora", sans-serif;
+$display-font-sizes: (
+  1: 4rem,
+  2: 3.5rem,
+  3: 2rem,
+  4: 1.5rem,
+  5: 1rem,
+  6: 1.5rem,
+) !default;
+$headings-color: $dark;
+$headings-font-weight: 700;
+
+$btn-border-width: 0.125rem;
+$btn-color: $dark;
+$btn-border-color: $dark;
+$btn-border-radius: 1rem;
+$btn-font-weight: 600;
+$btn-border-radius: 1rem;
+
+$btn-hover-bg-shade-amount:       20%;
+$btn-hover-bg-tint-amount:        20%;
+$btn-hover-border-shade-amount:   30%;
+$btn-hover-border-tint-amount:    15%;
+$btn-active-bg-shade-amount:      30%;
+$btn-active-bg-tint-amount:       30%;
+$btn-active-border-shade-amount:  35%;
+$btn-active-border-tint-amount:   15%;
+
+.btn-primary {
+  color: var(--bs-dark) !important;
+  border-color: var(--bs-dark) !important;
+  border-bottom-width: 0.4rem !important;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: "";
+  background: var(--bs-btn-hover-bg);
+  position: absolute;
+  z-index: -1;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+.btn-outline-light {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-outline-light::after {
+  content: "";
+  background: var(--bs-btn-hover-bg);
+  position: absolute;
+  z-index: -1;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
+}
+.btn-outline-dark {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-outline-dark::after {
+  content: "";
+  background: var(--bs-btn-hover-bg);
+  position: absolute;
+  z-index: -1;
+  display: block;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover::after {
+  transition: all 0.3s ease-out;
+  transform: skewX(-45deg) scale(1, 1);
+}
+
+.btn:active {
+  border-bottom-width: 0rem;
+}
+.btn {
+  border-bottom-width: 0.4rem !important;
+}
+
+$card-border-width: 0.125rem;
+$card-border-color: $dark;
+
+$input-border-color: $dark;
+$input-border-width: 0.125rem;
+$input-border-radius: 1rem;
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');

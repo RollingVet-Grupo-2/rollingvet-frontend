@@ -1,0 +1,36 @@
+.dropShadow{
+    filter: drop-shadow(0 0.4rem 0.3rem rgba(0,0,0,0.5));
+}
+.filtroGris {
+  filter: grayscale(100%);
+}
+.overlayColor::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bs-dark);
+    mix-blend-mode: screen;
+}
+.degradadoFondo{
+background: linear-gradient(to top, transparent 0%,var(--bs-secondary) 10%, var(--bs-secondary) 15%, transparent 100%); 
+}
+.desvanecer {
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 55%);
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 55%);
+}
+
+@media screen and (min-width: 768px) {
+  .desvanecer {
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 76%);
+    mask-image: radial-gradient(circle at 50% 50%, black 65%, transparent 76%);
+  }
+}
+@media screen and (min-width: 922px) {
+  .desvanecer {
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 80%, transparent 90%);
+    mask-image: radial-gradient(circle at 50% 50%, black 80%, transparent 90%);
+  }
+}

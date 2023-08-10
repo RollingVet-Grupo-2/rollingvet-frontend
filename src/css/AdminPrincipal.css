@@ -1,0 +1,9 @@
+.table.table-center th,
+.table.table-center td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+.bg-vets {
+  background: url(../assets/img/administrador/vets.svg);
+}

@@ -1,0 +1,30 @@
+.footer {
+    background-color: #ddd;
+}
+
+.logo {
+    width: 230px;
+}
+.icons {
+    color: #6CD3A2;
+}
+.icons:hover {
+    color: #3d9068;
+}
+.footerSectionTitle{
+    color: #6CD3A2;
+}
+.links_footer{
+    transition: .3s ease-in-out;
+}
+.links_footer:hover{
+    color: #6CD3A2;
+    transform: translate(10px);
+    font-weight: bold;
+}
+.text_contactanos_footer{
+    color: #3d9068;
+}
+.copy_footer_section {
+    background-color: #6CD3A2;
+}
