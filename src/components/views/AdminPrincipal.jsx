@@ -79,8 +79,8 @@ const AdminPrincipal = () => {
 
   return (
     <section className="container text-center py-3">
-      <section className="border border-3 rounded rounded-3 shadow mb-3">
-        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center">
+      <section className="border border-3 border-dark rounded rounded-3 shadow mb-3">
+        <Row className="row-cols-1 row-cols-md-2 justify-content-center align-items-center py-3">
           <Col>
             <h1 className="mb-0">¡Hola, Admin!</h1>
             <p className="lead mb-0">
@@ -103,22 +103,22 @@ const AdminPrincipal = () => {
             </h2>
             <Link to={"pacientes"}>
               <Button
-                variant="success"
+                variant="primary"
                 size="lg"
-                className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3"
+                className="mb-3 mb-md-3 mb-lg-0 me-lg-3 p-3 rounded-4"
               >
                 Administrar Pacientes
               </Button>
             </Link>
             <Link to={"turnos"}>
-              <Button variant="success" size="lg" className="p-3">
+              <Button variant="primary" size="lg" className="p-3 rounded-4">
                 Administrar Turnos
               </Button>
             </Link>
           </Col>
         </Row>
       </section>
-      <hr />
+      <hr className="dashed" />
       <section className="row justify-content-center align-items-center pt-3">
         <h2 className="py-3">
           Visualizá rapidamente y de forma sencilla la cantidad de veterinarios
