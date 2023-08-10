@@ -1,9 +1,21 @@
 #root{
-    color: #454c5a;
+    color: var(--bs-dark);
 }
 
 .row{
     margin:0;
+}
+
+.color_secundario{
+    color: var(--bs-secondary);
+}
+
+.bg_contacto{
+    background-color: #BDEAD8;
+}
+
+.margen_negativo{
+    margin-bottom: -5%;
 }
 
 /****** Imagen mascotas ******/
@@ -20,11 +32,12 @@
 /****** Bienvenida ******/
 
 .contenedor_bienvenida{
-    background-color: darkslategray;
+    background-color:var(--bs-dark);
     z-index: 1;
 }
 
 .card_texto{
+    margin-top: 5%;
     background-image: url('../assets/img/paginaContacto/contactoFondo.jpg');
     background-repeat: no-repeat;
     background-position: center center;
@@ -32,23 +45,11 @@
     animation-duration: 4s;
 }
 
-.contenedor_gatito{
-    animation-duration: 3s;
-}
-
-
-.card_direccion{
-    background-color: #BDEAD8;
-    max-width: auto;
-    max-height: 200px;
-    border: solid 2px #454c5a;
-    animation-duration: 8s;
-}
 
 /****** Formulario de contacto ******/
 
 .bordeSuperior{
-    border-top: solid 5px #fff;
+    border-top: solid 5px var(--bs-secondary);
     border-radius: 5px;
 }
 
@@ -68,13 +69,13 @@
 .boton_formContacto {
     background: #fff;
     /* color de fondo */
-    color: darkslategrey;
+    color: var(--bs-dark);
     /* color de fuente */
-    border: 2px solid darkslategrey;
+    border: 2px solid var(--bs-dark);
     /* tamaño y color de borde */
-    margin: 5px 0px;
-    padding: 7px 12px;
-    border-radius: 3px;
+    margin: 10px 0px;
+    padding: 3px 12px;
+    border-radius: 8px;
     /* redondear bordes */
     position: relative;
     z-index: 1;
@@ -84,14 +85,15 @@
 
 .boton_formContacto:hover {
     color: #fff;
-    background: darkslategrey;
-    border-color: darkslategrey;
+    background:var(--bs-dark);
+    border-color: var(--bs-dark);
     /* color de fuente hover */
 }
 
 .boton_formContacto::after {
     content: "";
-    background: darkslategrey;
+    color: #fff;
+    background: #BDEAD8;
     /* color de fondo hover */
     position: absolute;
     z-index: -1;

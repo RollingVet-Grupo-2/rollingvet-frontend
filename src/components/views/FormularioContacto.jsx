@@ -56,16 +56,16 @@ const FormularioContacto = () => {
 
 
     return (
-        <section className="my-5 pt-5 d-flex flex-column-reverse flex-md-row contenedor_formulario justify-content-around">
-            <aside className="col-md-5 col-lg-6 text-center">
+        <section className="pt-5 d-flex flex-column flex-md-row contenedor_formulario justify-content-around">
+            <aside className="col-md-5 col-lg-6 text-center mb-5 mb-md-0">
                 <img
                     className="perro_formulario col-6 pt-4"
                     src={perroFormulario}
                     alt="Imagen perro"
                 />
-                <div className="pt-4 py-xxl-5 bordeSuperior">
-                    <h3>Nos contactamos con vos!</h3>
-                    <p>
+                <div className="p-4 pb-0 py-xxl-5 bordeSuperior">
+                    <h2>Nos contactamos con vos!</h2>
+                    <p className="fs-3">
                         Completa el formulario y un agente de atencion al cliente se pondra
                         en contacto con vos para poder atender tu consulta.
                     </p>
@@ -87,6 +87,7 @@ const FormularioContacto = () => {
                                 </Form.Label>
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end mb-1 border-0"
+                                    maxLength={31}
                                     type="text"
                                     {...register("nombreContacto", {
                                         minLength: {
@@ -118,8 +119,13 @@ const FormularioContacto = () => {
                                 </Form.Label>
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end border-0"
+                                    maxLength={36}
                                     type="text"
                                     {...register("emailContacto", {
+                                        maxLength: {
+                                            value: 35,
+                                            message: "El correo electronico debe tener como maximo 35 caracteres",
+                                        },
                                         required:
                                             "Debes ingresar el correo electronico. Este campo es obligatorio.",
                                         pattern: {
@@ -141,7 +147,12 @@ const FormularioContacto = () => {
                                 <Form.Control
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end border-0"
                                     type="text"
+                                    maxLength={21}
                                     {...register("telefonoContacto", {
+                                        maxLength: {
+                                            value: 20,
+                                            message: "El numero de telefono debe tener como maximo 20 dígitos",
+                                        },
                                         required:
                                             "Debes ingresar un número de telefono. Este campo es obligatorio.",
                                         pattern: {
@@ -168,6 +179,7 @@ const FormularioContacto = () => {
                                     className="bg-secondary border-dark bg-opacity-25 border-bottom border-end"
                                     as="textarea"
                                     type="text"
+                                    maxLength={301}
                                     {...register("consultaContacto", {
                                         minLength: {
                                             value: 10,
