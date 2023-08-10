@@ -70,7 +70,7 @@ const FooterComponent = () => {
                             <span className="fs-6">
                                 Lunes a Viernes 8:30 a 13h | 16 a 21h
                             </span>
-                            <span className="fs-6">381 658035</span>
+                            <span className="fs-6">381 000 0000</span>
                         </div>
                     </article>
                 </div>

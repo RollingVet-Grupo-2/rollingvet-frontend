@@ -53,12 +53,11 @@ const PaginaContacto = () => {
                 </article>
             </section>
             <div className="whatsapp">
-                <a href="https://api.whatsapp.com/send/?phone=5493813658035" target="blank">
+                <a href="https://api.whatsapp.com/send/?phone=5493812157708" target="blank">
             <img className="logo_wsp" src={logowsp} alt="Logo de wsp" />
                 </a>
             </div>
         </>
     );
 };
-
 export default PaginaContacto;
