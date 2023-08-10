@@ -38,7 +38,6 @@
     font-size: 2.5em;
   }
   .heroSection_container {
-    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
     height: calc(70vh - 71.792px);
   }
 }
@@ -47,7 +46,6 @@
     font-size: 1.5em;
   }
   .heroSection_container {
-    background-image: url("../../src/assets/acercaDeNosotros/heroImageAboutUs.jpg");
     height: calc(50vh - 71.792px);
   }
 }
