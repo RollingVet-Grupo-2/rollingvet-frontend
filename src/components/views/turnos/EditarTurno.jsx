@@ -129,6 +129,18 @@ const EditarTurno = () => {
         });
       }
 
+      if (respuesta.status === 401) {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No tienes autorizacion para modificar el turno. Intente iniciando sesión nuevamente.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#a75ef0a4",
+        });
+      }
+
       if (respuesta.status === 200) {
         Swal.fire({
           title: "¡Turno editado!",

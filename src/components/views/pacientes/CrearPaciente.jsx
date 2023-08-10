@@ -84,6 +84,17 @@ const CrearPaciente = () => {
           confirmButtonColor: "#41e9a6",
         });
       }
+      if (respuesta.status === 401) {
+        Swal.fire({
+          title: "Oops! Lo siento!",
+          text: "No tienes autorización para crear pacientes. Intente iniciando sesión nuevamente.",
+          icon: "error",
+          iconColor: "#a75ef0a4",
+          background: "#062e32",
+          color: "#41e9a6",
+          confirmButtonColor: "#41e9a6",
+        });
+      }
       if (respuesta.status === 201) {
         Swal.fire({
           title: "¡Paciente creado!",

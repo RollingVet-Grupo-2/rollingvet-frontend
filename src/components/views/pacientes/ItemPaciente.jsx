@@ -22,7 +22,7 @@ const ItemPaciente = ({ paciente, setPacientes }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         eliminarPaciente(paciente._id).then((respuesta) => {
-          if (respuesta.status === 200) {
+          if (respuesta && respuesta.status === 200) {
             obtenerPacientes().then((respuesta) => {
               if (respuesta) {
                 setPacientes(respuesta);

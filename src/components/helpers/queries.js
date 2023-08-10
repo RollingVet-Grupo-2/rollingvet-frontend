@@ -9,6 +9,7 @@ export const crearPaciente = async (paciente) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
       },
       body: JSON.stringify(paciente),
     });
@@ -44,6 +45,7 @@ export const editarPaciente = async (paciente, id) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
       },
       body: JSON.stringify(paciente),
     });
@@ -57,6 +59,9 @@ export const eliminarPaciente = async (id) => {
   try {
     const respuesta = await fetch(API_PACIENTES + "/" + id, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
+      },
     });
     return respuesta;
   } catch (error) {
@@ -104,7 +109,11 @@ export const iniciarSesion = async (usuario) => {
       body: JSON.stringify(usuario),
     });
     const datos = await respuesta.json();
-    return { status: respuesta.status, nombreUsuario: datos.nombreUsuario };
+    return {
+      status: respuesta.status,
+      nombreUsuario: datos.nombreUsuario,
+      token: datos.token,
+    };
   } catch (error) {
     console.log(error);
     return null;
@@ -127,6 +136,7 @@ export const crearTurno = async (turno) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
       },
       body: JSON.stringify(turno),
     });
@@ -140,6 +150,9 @@ export const borrarTurno = async (id) => {
   try {
     const respuesta = await fetch(API_TURNOS + "/" + id, {
       method: "DELETE",
+      headers: {
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
+      },
     });
     return respuesta;
   } catch (error) {
@@ -153,6 +166,7 @@ export const editarTurno = async (turno, id) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        "x-token": JSON.parse(localStorage.getItem("usuario")).token,
       },
       body: JSON.stringify(turno),
     });

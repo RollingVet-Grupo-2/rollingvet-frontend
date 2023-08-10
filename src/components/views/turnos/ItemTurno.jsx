@@ -24,7 +24,7 @@ const ItemTurno = ({ turno, setTurnos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         borrarTurno(turno._id).then((respuesta) => {
-          if (respuesta.status === 200) {
+          if (respuesta && respuesta.status === 200) {
             obtenerTurnos().then((respuesta) => {
               if (respuesta) {
                 setTurnos(respuesta);
