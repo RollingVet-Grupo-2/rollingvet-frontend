@@ -43,6 +43,7 @@ function App() {
                         element={
                             <Login
                                 setUsuarioLogueado={setUsuarioLogueado}
+                                usuarioLogueado={usuarioLogueado}
                             ></Login>
                         }
                     ></Route>
