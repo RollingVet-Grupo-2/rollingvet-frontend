@@ -62,7 +62,6 @@ const FormPlan = ({onHide}) => {
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
               maxLength={30}
-              minLength={2}
               name="nombre_usuario"
               placeholder="Ingresa tu nombre"
               {...register("nombre_usuario", {
@@ -93,7 +92,6 @@ const FormPlan = ({onHide}) => {
             <Form.Control className="bg-primary-subtle bg-opacity-25"
               type="text"
               maxLength={30}
-              minLength={2}
               name="apellido_usuario"
               placeholder="Ingresa tu apellido"
               {...register("apellido_usuario", {
@@ -122,6 +120,7 @@ const FormPlan = ({onHide}) => {
         <Form.Label className="fw-bold">Email</Form.Label>
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="email"
+          maxLength={35}
           name="email_usuario"
           placeholder="Ej: usuario@dominio.com"
           {...register("email_usuario", {
@@ -141,7 +140,6 @@ const FormPlan = ({onHide}) => {
         <Form.Control className="bg-primary-subtle bg-opacity-25"
           type="tel"
           maxLength={10}
-          minLength={10}
           name="tel_usuario"
           placeholder="Ej: 3817557733"
           {...register("tel_usuario", {
@@ -170,7 +168,6 @@ const FormPlan = ({onHide}) => {
           as="textarea"
           rows={3}
           maxLength={500}
-          minLength={10}
           name="solicitud_usuario"
           placeholder="Puedes escribir tu solicitud aquí..."
           {...register("solicitud_usuario", {
