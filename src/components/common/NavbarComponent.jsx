@@ -29,7 +29,7 @@ const NavbarPage = ({ usuarioLogueado, setUsuarioLogueado }) => {
     const handleNavegacionAdministrarTurnos = () =>
         navegacion("/administrador/turnos");
     return (
-        <Navbar expand="lg" className="nav">
+        <Navbar expand="lg" className="nav fixed-top">
             <Container className="py-3">
                 <Navbar.Brand>
                     <Link to={"/"}>
