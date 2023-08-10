@@ -8,7 +8,7 @@ const ContenedorVeterinario = () => {
     <Row xs={1} md={1} lg={2} className="g-3">
       <Col>
         <CardVeterinario 
-          nombreVeterinario={"Dra. Ana Martínez"}
+          nombreVeterinario={"Dra. Ana González"}
           servicioVeterinario1={"Cirugía veterinaria"}
           servicioVeterinario2={"Consultas especializadas"}
           experienciaVeterinario={"12 años de práctica veterinaria"}
@@ -19,7 +19,7 @@ const ContenedorVeterinario = () => {
       </Col>
       <Col>
         <CardVeterinario
-          nombreVeterinario={"Dr. Pedro Ramírez"}
+          nombreVeterinario={"Dr. Juan Pérez"}
           servicioVeterinario1={"Vacunación y control"}
           servicioVeterinario2={"Asesoramiento nutricional"}
           experienciaVeterinario={"10 años de práctica veterinaria."}
