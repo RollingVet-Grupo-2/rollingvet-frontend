@@ -228,12 +228,12 @@
   ],
   "servicios": [
     {
-      "id": 1,
-      "nombre_servicio": "Alimentación y Asesoramiento Nutricional",
-      "veterinario_servicio": "Dr. Juan Pérez",
-      "precio_servicio": 3000,
+      "nombre_servicio": "Alimentación y Asesoramiento",
+      "veterinario_servicio": "Dra. Ana González",
+      "precio_servicio": "300",
       "img_servicio": "https://images.pexels.com/photos/7310213/pexels-photo-7310213.jpeg",
-      "descripcion_servicio": "Ofrecemos asesoramiento nutricional personalizado para garantizar una alimentación saludable para tu mascota."
+      "descripcion_servicio": "Ofrecemos asesoramiento nutricional personalizado para garantizar una alimentación saludable para tu mascota.",
+      "id": 1
     },
     {
       "nombre_servicio": "Vacunación y Control",
@@ -266,6 +266,14 @@
       "img_servicio": "https://images.pexels.com/photos/7469233/pexels-photo-7469233.jpeg",
       "descripcion_servicio": "Ofrecemos consultas especializadas para abordar problemas de salud específicos de tu mascota.",
       "id": 5
+    },
+    {
+      "nombre_servicio": "Baño y peinado",
+      "veterinario_servicio": "Dr. Juan Pérez",
+      "precio_servicio": "5000",
+      "img_servicio": "https://images.pexels.com/photos/7469233/pexels-photo-7469233.jpeg",
+      "descripcion_servicio": "asdasdasdasd",
+      "id": 6
     }
   ]
 }

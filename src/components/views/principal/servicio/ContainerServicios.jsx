@@ -1,12 +1,12 @@
-import { Button, Row } from "react-bootstrap";
 import CardServicio from "./CardServicio";
 import { useEffect, useState } from "react";
 import { obtenerServicios } from "../../../helpers/queries";
 import {Swiper, SwiperSlide} from "swiper/react";
-import { Navigation, EffectCoverflow } from "swiper/modules";
+import { Navigation, EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
+import "swiper/css/autoplay";
 import NavegacionSlider from "../producto/NavegacionSlider";
 
 const ContainerServicios = () => {
@@ -33,11 +33,15 @@ const ContainerServicios = () => {
     <Swiper
     effect={"coverflow"}
     grabCursor={true}
-    autoplay={true}
+    autoplay={{
+      delay: 4000,
+      disableOnInteraction: true,
+      pauseOnMouseEnter: true,
+    }}
     loop={true}
     centeredSlides={true}
     slidesPerView={1}
-    spaceBetween={68}
+    spaceBetween={16}
     initialSlide={0}
     coverflowEffect={{
       rotate: 0,
@@ -50,7 +54,7 @@ const ContainerServicios = () => {
       nextEl: ".plan-swiper-button-next",
       prevEl: ".plan-swiper-button-prev",
     }}
-    modules={[EffectCoverflow,Navigation]}
+    modules={[EffectCoverflow,Navigation, Autoplay]}
     breakpoints={{
       576: {
         slidesPerView: 1
