@@ -67,7 +67,7 @@ const Inicio = () => {
                 variant="primary"
                 className="px-4 py-3 rounded-4 fw-bolder"
                 as={Link}
-                to={"/login"}
+                to={"*"}
               >
                 Reservar Turno
               </Button>
